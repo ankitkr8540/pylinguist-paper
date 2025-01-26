@@ -2,11 +2,10 @@ import argparse
 from pathlib import Path
 import sys
 from data.input.preprocessor import DatasetPreprocessor 
-from pylinguist.utils.partial_translator import partial_translate_examples
+from pylinguist.utils.partial_translator import partial_translate_examples, PartialTranslator
 from pylinguist.utils.logger import setup_logger
 from pylinguist.models.stage1.deepl import DeepLTranslator
 from pylinguist.models.stage1.google import GoogleTranslator
-from pylinguist.models.stage1.base import TranslationError
 import pandas as pd 
 from datetime import datetime
 from tqdm import tqdm
@@ -127,48 +126,42 @@ def run_partial_translation(args):
         logger.error(f"Error during partial translation: {str(e)}")
         return False
     
-def initialize_translator(args):
-    """Initialize appropriate translator based on arguments."""
-    try:
-        if args.stage1 == 'google':
-            return GoogleTranslator(args.source_lang, args.target_lang)
-            
-        elif args.stage1 == 'deepl':
-            if not args.deepl_key and not os.getenv('DEEPL_API_KEY'):
-                raise TranslationError("DeepL API key required")
-            return DeepLTranslator(
-                args.source_lang, 
-                args.target_lang, 
-                api_key=args.deepl_key
-            )
-            
-    except Exception as e:
-        raise TranslationError(f"Error initializing translator: {str(e)}")
-    
 def run_stage1_translation(args, partial_df):
     """Run Stage 1 translation using selected service."""
     try:
         logger.info(f"Starting Stage 1 translation using {args.stage1}...")
-        translator = initialize_translator(args)
+
+        # Initialize translator
+        if args.stage1 == 'google':
+            translator = GoogleTranslator(source_lang=args.source_lang, target_lang=args.target_lang)
+        elif args.stage1 == 'deepl':
+            translator = DeepLTranslator(args.source_lang, args.target_lang, keyword_dict=keyword_dict)
+        else:
+            logger.error("Invalid stage 1 translation service.")
+            return False
         
-        # Translate each partially translated code
-        full_translations = []
-        for _, row in tqdm(partial_df.iterrows(), total=partial_df.shape[0], desc="Translating"):
+        # Translate examples
+        translated_lines = []
+        for i, row in tqdm(partial_df.iterrows(), total=len(partial_df)):
             translated_code = translator.translate_code(row['Partial_translated_code'])
-            full_translations.append({
-            'English_code': row['English_code'],
-            'Partial_translated_code': row['Partial_translated_code'],
-            f'Full_{args.stage1}_translated_code': translated_code
+            translated_lines.append({
+                'English_code': row['English_code'],
+                'source_code': row['Partial_translated_code'],
+                f"{args.stage1}_translated_code": translated_code
             })
-            
-        # Save full translations
+
+        # Create DataFrame
+        translated_df = pd.DataFrame(translated_lines)
+
+
+        # Save results
         output_dir = Path("data/output/stage1")
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        output_dir.mkdir(parents=True, exist_ok=True)
+
         output_file = output_dir / f"Stage_1_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.train_samples}_{args.test_samples}.csv"
-        pd.DataFrame(full_translations).to_csv(output_file, index=False)
-        
-        logger.info(f"Full translations saved to: {output_file}")
-        return pd.DataFrame(full_translations)
+        translated_df.to_csv(output_file, index=False)
+
+        logger.info(f"Stage 1 translation completed. Results saved to: {output_file}")
         
     except Exception as e:
         logger.error(f"Error in Stage 1 translation: {str(e)}")

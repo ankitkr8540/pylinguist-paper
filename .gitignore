@@ -1,2 +1,4 @@
 ignore_files.txt
 workspaceArchiver.txt
+*/.__pycache__/*
+*/.vscode/*
