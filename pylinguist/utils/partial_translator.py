@@ -1,135 +1,134 @@
+# pylinguist/utils/partial_translator.py
+
 import pandas as pd
 import re
 from pathlib import Path
 from typing import List, Dict, Optional
+import logging
+from ..utils.language_extractor import extract_keyword_header, extract_language
+from ..utils.logger import setup_logger
 from tqdm import tqdm
 import sys
-
-def setup_logger():
-    # Logger setup implementation here
-    pass
 
 logger = setup_logger()
 
 class PartialTranslator:
+    """Handles partial translation using Joshua keywords while preserving code structure."""
+    
     def __init__(self, source_lang: str, target_lang: str, 
                  keywords_path: Path = Path("data/keywords/Joshua_Keywords.csv")):
         self.source_lang = source_lang
         self.target_lang = target_lang
         self.keywords_path = keywords_path
         self.keyword_dict = self._load_keywords()
-
+        
     def _load_keywords(self) -> Dict[str, str]:
+        """Load keyword mappings for specified languages."""
         try:
+            source_col = extract_keyword_header(self.source_lang)
+            target_col = extract_keyword_header(self.target_lang)
+            
             keywords_df = pd.read_csv(self.keywords_path)
-            source_col = f"{self.source_lang}Key.txt"
-            target_col = f"{self.target_lang}Key.txt"
             
-            translation_dict = {
-                str(row[source_col]).strip(): str(row[target_col]).strip()
-                for _, row in keywords_df.iterrows()
-                if pd.notna(row[source_col]) and pd.notna(row[target_col])
-            }
-            
-            logger.info(f"Loaded {len(translation_dict)} keywords")
+            translation_dict = {}
+            for _, row in keywords_df.iterrows():
+                source_word = str(row[source_col]).strip()
+                target_word = str(row[target_col]).strip()
+                if pd.notna(source_word) and pd.notna(target_word):
+                    translation_dict[source_word] = target_word
+                    
+            logger.info(f"Loaded keywords dictionary for {extract_language(self.source_lang)} "
+                     f"to {extract_language(self.target_lang)}")
+                     
             return translation_dict
             
         except Exception as e:
-            logger.error(f"Keywords loading failed: {str(e)}")
+            logger.error(f"Error loading keywords: {str(e)}")
             sys.exit(1)
-
-    def _extract_components(self, line: str) -> Dict[str, str]:
-        """Extract code, comments and strings from line."""
-        components = {'code': line, 'comment': '', 'strings': []}
-        
-        # Extract comments
-        if '#' in line:
-            components['code'], components['comment'] = line.split('#', 1)
-            components['comment'] = '#' + components['comment']
-            
-        # Extract string literals
-        string_pattern = r'(\".*?\"|\'.*?\')'
-        components['strings'] = re.findall(string_pattern, components['code'])
-        components['code'] = re.sub(string_pattern, 'STRING_PLACEHOLDER', components['code'])
-        
-        return components
-
-    def _translate_token(self, token: str) -> str:
-        """Translate individual token with special handling."""
-        if token.isspace():
-            return token
-            
-        # Handle function calls with parentheses
-        if token in ['print', 'input', 'len', 'range', 'str', 'int', 'float']:
-            return self.keyword_dict.get(token, token) + ' '
-            
-        # Handle compound words
-        if '_' in token:
-            parts = token.split('_')
-            translated_parts = [self.keyword_dict.get(part, part) for part in parts]
-            return '_'.join(translated_parts)
-            
-        return self.keyword_dict.get(token, token)
-
-    def _translate_code_part(self, code: str) -> str:
-        """Translate code while preserving structure."""
-        tokens = re.findall(r'[a-zA-Z_]+|\d+|[^\w\s]|\s+', code)
-        translated_tokens = [self._translate_token(token) for token in tokens]
-        return ''.join(translated_tokens)
-
-    def translate_line(self, line: str) -> str:
-        """Translate a single line of code."""
-        if not line.strip():
-            return line
-            
-        # Get indentation
-        indent = len(line) - len(line.lstrip())
-        components = self._extract_components(line)
-        
-        # Translate code part
-        translated_code = self._translate_code_part(components['code'])
-        
-        # Restore strings
-        for string in components['strings']:
-            translated_code = translated_code.replace('STRING_PLACEHOLDER', string, 1)
-            
-        # Add back comment and indentation
-        return ' ' * indent + translated_code + components['comment']
+            raise
+    
+    def translate_word(self, word: str) -> str:
+        """Translate single word unless it contains underscores."""
+        return word if '_' in word else self.keyword_dict.get(word, word)
 
     def translate_code(self, code: str) -> str:
-        """Translate entire code snippet."""
-        if not isinstance(code, str):
-            return ""
-            
-        if '\\n' in code:
-            lines = code.strip("'\"").split('\\n')
-            translated_lines = [self.translate_line(line.strip()) for line in lines]
-            return '\\n '.join(translated_lines)
-            
         lines = code.split('\n')
-        return '\n'.join(self.translate_line(line) for line in lines)
-
+        translated_lines = []
+        
+        function_pattern = r'(\w+(?:_\w+)*)(\s*\()([^)]*?)(\))'
+        
+        for line in lines:
+            if not line.strip():
+                translated_lines.append(line)
+                continue
+                
+            code_part, comment_part = line, ""
+            if '#' in line:
+                code_part, comment_part = line.split('#', 1)
+                comment_part = '#' + comment_part
+            
+            strings = []
+            string_pattern = r'(\".*?\"|\'.*?\')'
+            for match in re.finditer(string_pattern, code_part):
+                strings.append(match.group(0))
+            
+            placeholder_code = re.sub(string_pattern, 'STRING_PLACEHOLDER', code_part)
+            
+            def tokenize_func(match):
+                func_name = match.group(1)
+                translated_func = self.translate_word(func_name)
+                params = match.group(3)
+                translated_params = []
+                
+                if params:
+                    param_tokens = re.findall(r'\w+(?:_\w+)*|[^\w\s]', params)
+                    translated_params = [self.translate_word(token) for token in param_tokens]
+                    
+                return f"{translated_func}{match.group(2)}{' '.join(translated_params)}{match.group(4)}"
+                
+            placeholder_code = re.sub(function_pattern, tokenize_func, placeholder_code)
+            
+            tokens = re.findall(r'\w+(?:_\w+)*|\s+|[^\w\s]', placeholder_code)
+            translated_tokens = [self.translate_word(token) if not token.isspace() else token 
+                                for token in tokens]
+            
+            translated_code = ''.join(translated_tokens)
+            for string in strings:
+                translated_code = translated_code.replace('STRING_PLACEHOLDER', string, 1)
+                
+            translated_lines.append(translated_code + comment_part)
+        
+        return '\n'.join(translated_lines)
+    
+    
 def partial_translate_examples(data_path: Path, source_lang: str, target_lang: str, 
                             start_index: int, test_samples: int, train_samples: int) -> pd.DataFrame:
+    """
+    Translate multiple examples from dataset.
+    Returns DataFrame with original and translated code.
+    """
     try:
         df = pd.read_csv(data_path)
-        total_samples = test_samples + train_samples
-        if start_index + total_samples > len(df):
-            start_index = 0
-        
-        selected_df = df.iloc[start_index:start_index + total_samples]
         translator = PartialTranslator(source_lang, target_lang)
         
-        translations = [
-            {
-                'English_code': row['English_code'],
-                'Partial_translated_code': translator.translate_code(row['English_code'])
-            }
-            for _, row in tqdm(selected_df.iterrows(), total=len(selected_df), desc="Translating code")
-        ]
+        total_samples = test_samples + train_samples
+        if start_index + total_samples > len(df):
+            logger.warning("Requested range exceeds dataset size. Adjusting start index...")
+            start_index = 0
+            
+        selected_df = df.iloc[start_index:start_index + total_samples]
+        
+        translations = []
+        
+        for _, row in tqdm(pd.DataFrame(selected_df).iterrows(), total=len(selected_df), desc="Translating code"):
+            translated_code = translator.translate_code(row['English_code'])
+            translations.append({
+            'English_code': row['English_code'],
+            'Partial_translated_code': translated_code
+            })
         
         return pd.DataFrame(translations)
         
     except Exception as e:
-        logger.error(f"Translation failed: {str(e)}")
+        logger.error(f"Error in partial translation: {str(e)}")
         raise
