@@ -1,0 +1,224 @@
+FrenchKey,SpanishKey,KurdishKey,EnglishKey,HindiKey,BengaliKey,MandarinKey,GreekKey
+valeur_absolue,valor_absoluto,بەهای_ڕەها,abs,निरपेक्ष_मान,পরম_মান,绝对值,απόλ
+tous,todo,گشت,all,सब,সব,全,όλα
+quelconque,cualquier,هەر,any,कोई,যেকোনো,任何,όποια
+ascii,ascii,ascii,ascii,आस्की,আস্কি,ascii码,ascii
+binaire,binario,دوودوویی,bin,द्वि,বাইনারি,二进制,δυαδική
+booléen,booleano,بوولیەن,bool,बूल,বুলিয়ান,布尔值,λογική
+tableau_d'octets,matriz_de_bytes,ڕیزی_بایت,bytearray,बाइटरे,বাইট_অ্যারে,字节数组,πίνακας_byte
+octets,bytes,بایتەکان,bytes,बाइट्स,বাইট,字节,bytes
+appelable,invocable,پەیوەندی_پێوە_دەکرێت,callable,बुलाने_योग्य,কলযোগ্য,可调用的,κλητός
+caractères,car,کاراکتەر,chr,अक्षर,অক্ষর,特点,χαρακτήρας
+méthode_de_classe,método_de_clase,شێوازی_پۆل,classmethod,वर्ग_विधि,ক্লাস_পদ্ধতি,类方法,μέθοδος_κλάσης
+compiler,compilar,کۆمپایڵ_بکە,compile,संकलन,সংগ্রহ_করা,编译,συντάσσω
+complexe,complejo,ئاڵۆز,complex,समिश्र,জটিল,复杂的,μιγαδική
+supprimer_l'attribut,eliminar_atributo,تایبەتمەندی_سڕینەوە,delattr,गुणमिट,বৈশিষ্ট্য_মুছে_দেয়া,删除属性,διαγρ_χαρκτ
+dictionnaire,diccionario,فەرهەنگ,dict,कोश,অভিধান,字典,λεξικό
+annuaire,directorio,بەڕێوەبەرایەتی,dir,निर्देशिका,নির্দেশক,目录,ευρ
+opération_modulo,módulo_de_división,دابەشکردنی_مۆدیولۆس,divmod,भाग_मापांक,মডুলাস_ভাগ_করা,除模数,βάση_διαίρεσης
+énumérer,enumerar,ژمارە_بکەرەوە,enumerate,गणना,গোনা,枚举,απαρίθμησε
+évaluer,evaluar,هەڵسەنگاندن,eval,आंकें,মূল্যায়ন,评估,αξιολόγησε
+exécuter,ejecutar,جێبەجێکردن,exec,अमल,কার্যকর_করা,执行,εκτέλεσε
+filtre,filtrar,فلتەر,filter,छानें,বাছাই,筛选,φίλτρο
+virgulem_flottante,punto_flotante,خاڵی_هەڵدەفڕێت,float,दश,ফ্লোট,浮点,κινητής_υποδιαστολής
+format,formato,فۆرمات,format,प्रारूप,বিন্যাস,格式,μορφή
+ensemble_figé,conjunto_inmutable,سێتی_بەستوو,frozenset,जमासेट,ফ্রোজেন_সেট,冷冻集,παγωμένο_σύνολο
+obtenir_l'attribut,obtener_atributo,سیفەت_بەدەست_بهێنە,getattr,गुणप्राप्त,বৈশিষ্ট্য_নেয়া,获取属性,πάρε_χαρακτηριστικό
+globales,globales,جیهانیەکان,globals,वैश्विक,বিশ্বব্যাপী,全局变量,καθολικές
+a_un_attribut,tiene_atributo,سیفەتی_هەیە,hasattr,गुणहै,বৈশিষ্ট্য_আছে,有属性,έχει_χαρακτηριστικό
+hacher,dispersión,هاش,hash,हैश,হ্যাশ,散列,κατακερματισμός
+aider,ayuda,یارمەتیدان,help,मदद,সাহায্য,帮,βοήθεια
+hexadécimal,hexadecimal,شەش_دەهەمی,hex,षोडश,হেক্স,十六进制,δεκαεξαδική
+identité,identidad,ناسنامە,id,पहचान,পরিচয়,身份,ταυτότητα
+entré,entrada,هاتنە_ژوورەوە,input,इनपुट,ইনপুট,输入,είσοδος
+entier,entero,ژمارەیەکی_تەواو,int,अंक,পূর্ণসংখ্যা,整数,ακέραιη
+instance,es_instancia,نموونەیە,isinstance,उदाहरण_है,উদাহরণ,是实例,είναι_παράδειγμα
+est_une_sous-classe,es_subclase,ژێرپۆلە,issubclass,उपवर्ग_है,উপশ্রেণী,是子类,είναι_υποκλάση
+itérateur,iterador,دووبارەکەرەوە,iter,दोहरा,পুনরাবৃত্তিকারী,迭代器,επαναλήπτης
+longueur,longitud,درێژی,len,लंबाई,দৈর্ঘ্য,长度,μήκος
+liste,lista,لیست,list,सूची,তালিকা,列,λίστα
+locaux,locales,خەڵکی_ناوچەکە,locals,लोकल,স্থানীয়,本地,τοπική
+carte,mapa,نەخشە,map,नक्शा,মানচিত্র,地图,αντιστοιχία
+maximum,max,زۆرترین,max,अधिकतम,সর্বোচ্চ,最大,μέγιστο
+mémoire_visuelle,vista_de_la_memoria,دیمەنی_بیرگە,memoryview,स्मृति_दर्शन,মেমরি_ভিউ,内存视图,προβολή_μνήμης
+le_minimum,min,کەمترین,min,न्यूनतम,সর্বনিম্ন,最低,ελάχιστο
+suivant,próximo,دواتر,next,अगला,পরবর্তী,下一个,επόμενο
+chose,obj,شت,object,चीज़,বস্তু,对象,αντικείμενο
+octal,octales,هەشتەمی,oct,अष्ट,অক্ট,八进制,οκταδική
+ouvrir,abrir,کردنەوە,open,खोल,খোলা,打开,άνοιξε
+ordinal,ordinal,ڕێزبەندی,ord,क्रम,পূরণবাচক,序数,τακτική
+Puissance,elevar,هێز,pow,घात,ক্ষমতা,次方,δύναμη
+imprimer,imprimir,چاپکردن,print,छापिये ,ছাপা,打印,τύπωσε
+propriété,propiedad,سامان,property,संपत्ति,সম্পত্তি,财产,ιδιότητα
+Portée,rango,ڕێژە,range,रेंज,পরিসীমা,范围,εύρος
+représenter,representar,نوێنەرایەتی,repr,लघूरूप,চিত্রিত_করা,代表,εκπροσώπησε
+renversé,invertido,پێچەوانە_کراوەتەوە,reversed,उल्टा,বিপরীত,颠倒的,αντίστροφη
+rond,redondear,خول,round,गोल,বৃত্তাকার,取整,στογγυλοποίησε
+ensemble,conjunto,دانان,set,सेट,সেট,集合,σύνολο
+définir_l'attribut,establecer atributo,تایبەتمەندی_دانان,setattr,सेटगुण,বৈশিষ্ট্য_সেট_করা,设置属性,θέσε_χαρακτηριστικό
+découper,rebanada,قاش,slice,फाँक,টুকরা,片,φέτα
+trié,ordenado,ڕیزکراوە,sorted,क्रमबद्ध,সাজানো,排列,ταξινομημένη
+méthode_statique,método estático,شێوازی_ئیستاتیک,staticmethod,स्थिर्विधि,স্ট্যাটিক_পদ্ধতি,静态方法,στατική_μέθοδος
+string,cadena,ڕستە,str,स्ट्रिंग,স্ট্রিং,字串,συμβολοσειρά
+addition,suma,کۆکردنەوە,sum,योग,সমষ্টি,求和,άθροισε
+sur-ensemble,superconjunto,سوپەرسێت,super,सुपरसेट,সুপারসেট,超集,υπερσύνολο
+tuple,tupla,tuple,tuple,ट्यूपल,টাপল,元组,τούπλα
+taper,tipo,جۆر,type,प्रकार,প্রকার,类型,τύπος
+variables,vars,گۆڕاوەکان,vars,चर,ভেরিয়েবল,变量,μεταβλητές
+Zip_*:_français,cremallera,زیپ,zip,ज़िप,জিপ,压缩,σύνδεσε
+capitaliser,capitalizar,سەرمایەگوزاری,capitalize,बड़ा_करें,বড়_হাতের_অক্ষর,大写,κεφαλαιοποίησε
+cas_pli,minusc,تاودانی_کەیس,casefold,केस_तह,কেস_ভাঁজ,折叠,δίπλωμα_θήκης
+centre,centrar,ناوەند,center,केंद्र,কেন্দ্র,中央,κέντρο
+compter,contar,گێرانەوە,count,गिनें,গণনা,数,μέτρησε
+encoder,codificar,کۆدکردن,encode,एन्कोड,সঙ্কেতাক্ষরে_লিখা,编码,κωδικοποίησε
+terminer_par,termina_con,بە_کۆتایی_دێت,endswith,से_ख़त्म,দিয়ে_শেষ_হয়,以。。结束,τελειώνει_με
+développer_les_onglets,expandir pestañas,تابەکان_فراوان_بکە,expandtabs,टैबफैल,ট্যাব_প্রসারিত_করা,展开选项卡,επέκταση_καρτελών
+trouver,encontrar,دۆزینەوە,find,ढूँढो,অনুসন্ধান,找,εύρεση
+formater_la_carte,formatear_mapa,نەخشەی_فۆرمات,format_map,प्रारूप_नक्शा,বিন্যাস_মানচিত্র,格式图,μορφή_αντιστοιχίας
+indice,índice,ئیندێکس,index,सूचक,সূচক,指数,δείκτης
+est_alphanumérique,es_alfanumérico,ئەلفوبێی_ژمارەییە,isalnum,अंकाक्षर_है,আলফানিউমেরিক,是字母数字,είναι_αλφαριθμητική
+est_alphabétique,es_alfabético,بە_ئەلفوبێیە,isalpha,अक्षर_है,বর্ণানুক্রমিক,是字母的,είναι_αλφαβητική
+est_ASCII,es_ascii,is_ascii_یە,isascii,आस्की_है,আস্কি,是ascii,είναι_ascii
+est_décimal,es_decimal,دەهەمییە,isdecimal,दशमलव_है,দশমিক,是小数,είναι_δεκαδική
+est_un_chiffre,es_dígito,ژمارەیە,isdigit,अंक_है,সংখ্যা,是数字,είναι_ψηφίο
+est_un_identifiant,es_identificador,ناسێنەرە,isidentifier,पहचान_है,সনাক্তকারী,是标识符,είναι_αναγνωριστικό
+est_plus_bas,es_minuscula,کەمترە,islower,कम_है,কম,是小写,είναι_πεζά
+est_numérique,es_numérico,ژمارەیی_یە,isnumeric,नंबर_है,সংখ্যাসূচক,是数字,είναι_αριθμητική
+est_imprimable,es_imprimible,دەتوانرێت_چاپ_بکرێت,isprintable,प्रिंट_योग्य,মুদ্রণযোগ্য,是可打印的,είναι_εκτυπώσιμη
+est_l'espace,es_espacio,فەزایە,isspace,ख़ाली_है,স্পেস,是空格,είναι_χώρος
+est_le_titre,es_titulo,ناونیشانە,istitle,शीर्षक_है,শিরোনাম,是标题,είναι_τίτλος
+est_en_majuscule,es_mayúscula,پیتی_گەورەیە,isupper,बड़ा_है,বড়_হাতের_অক্ষর,是大写,είναι_κεφαλαία
+rejoindre,unir,پەیوەندیکردن,join,जोड़,যোগদান,加入,ένωσε
+justifier_à_gauche,justificar_a_la_izquierda,چەپ_پاساو_بدە,ljust,बाएँ_संरेखित,বাম_ন্যায্যতা,左对齐,στοίχισε_αριστερά
+plus_bas,en_minuscula,کەمتر,lower,छोटा,কম,降低,πεζά
+enlever_de_gauche,remover_izquierda,شریتی_چەپ,lstrip,बाईंहट,বাম_ফালা,左带,αφαίρεσε_αριστερά
+faire_la_traduction,traducir,وەرگێڕان_بکە,maketrans,अनुवाद,অনুবাদ_করা,翻译,κάνε_μετάφραση
+partitionner,particionar,دابەشکردن,partition,विभाजन,বিভাজন,分割,διχοτόμηση
+remplacer,reemplazar,شوێن_گرتنەوە,replace,बदल,প্রতিস্থাপন,代替,αντικατέστησε
+recherche_inversée,búsqueda_inversa,پێچەوانە_دۆزینەوە,rfind,उलटखोज,উল্টো_অনুসন্ধান,反向查找,αντίστροφη_εύρεση
+index_inversé,índice inverso,ئیندێکسی_پێچەوانە,rindex,उलटसूचक,উল্টো_সূচক,反向索引,αντίστροφος_δείκτης
+justifier_à_droite,justificar_a_la_derecha,ڕاست_پاساو_بدە,rjust,दाएँ_संरेखित,অধিকার_ন্যায্যতা,右对齐,στοίχισε_δεξιά
+partitionner_à_droite,partición_derecha,دابەشکردنی_ڕاست,rpartition,दाईं_ओर_से_विभाजन,ডান_ভাগ,右分区,δεξιά_διχοτόμηση
+division_à_droite,división_derecha,ڕاست_دابەشبوون,rsplit,दाएँ_बाँट,ডান_বিভক্ত,右分裂,δεξιά_διάσπαση
+bande_droite,remueve_derecha,شریتی_ڕاست,rstrip,दाएँ_उघाड़,ডান_ফালা,右带,αφαίρεσε_δεξιά
+diviser,dividir,لەتکردن,split,बाँट,বিভক্ত,分开,διάσπαση
+diviser_les_lignes,separar_lineas,هێڵە_دابەشکراوەکان,splitlines,पंक्ति_विभाजन,বিভক্ত_রেখা,分割线,διάσπασε_γραμμές
+commence_avec,comienza_con,سەرەتا_بە...,startswith,से_शुरू,শুরু_করা,以。。开始,ξεκινάει_με
+enlever,remueve,لابردن,strip,उघाड़,ফালা,条,αφαίρεσε
+cas_d'échange,intercambiar_caso,کەیسی_سواپ,swapcase,केस_बदल,কেস_অদলবদল,交换案例,ανταλλαξε_γράμματα
+Titre,título,ناونیشان,title,शीर्षक,শিরোনাম,标题,τίτλος
+Traduire,traducir,وەرگێڕان,translate,अनुवाद,অনুবাদ_করা,翻译,μετάφρασε
+majuscule,mayúscula,پیتی_گەورە,upper,बड़ा,বড়_হাতের_অক্ষর,大写,κεφαλαία
+remplissage_avec_zéro,rellenar_con_cero,سفر_پڕکردنەوە,zfill,शून्य_भर,শূন্য_ভরাট,填零,μηδενικό_γέμισμα
+ajouter,adjuntar,زیاد_بکە,append,संलग्न,সংযোজন,加,προσάρτησε
+supprimer,limpiar,ڕوون,clear,स्पष्ट,স্পষ্ট,清除,καθάρισε
+copier,copiar,کۆپی_بکە,copy,कॉपी,অনুলিপি,复制,αντέγραψε
+ajouter,extender,درێژکردنەوە,extend,बढ़ा,বর্ধিত_করা,延长,επέκτεινε
+insérer,insertar,تێکردن,insert,डाल,সন্নিবেশ,插入,εισάγετε
+enlever,retirar,پۆپ,pop,पॉप,পপ,移除,βγάλε
+éliminer,eliminar,لابردن,remove,निकाल,অপসারণ,删除,αφαίρεσε
+inverser,invertir,پێچەوانە_کردنەوە,reverse,उलट,উল্টা,反向,αντέστρεψε
+trier,ordenar,جۆر,sort,क्रमित,সাজানো,排列,ταξινόμησε
+de_clés,desde_llaves,لە_کلیلەکانەوە,fromkeys,कीज़_से,চাবি_থেকে,从键,από_κλειδιά
+obtenir,obtener,وەرگرتن,get,पाना,নেয়া,得到,πάρε
+éléments,elementos,کەرەستەکان,items,सामान,জিনিস,项目,αντικείμενα
+clés,llaves,کلیلەکان,keys,कीज़,চাবি,键值,κλειδιά
+enlever_un_element,retirar_elemento,بابەتی_پۆپ,popitem,पॉप_आइटम,জিনিস_পপ_করা,移除项目,βγάλε_αντικείμενο
+définir_par_defaut,asignar_predeterminado,بیكە_بە_سەرەكی,setdefault,सेट_डिफ़ॉल्ट,ডিফল্ট_সেট_করা,默认设置,όρισε_προεπιλογή
+mettre_à_jour,actualizar,نوێکردنەوە,update,उद्यतन,হালনাগাদ,更新,ενημέρωσε
+valeurs,valores,بەهاکان,values,मान,মান,值,αξίες
+ajouter,agregar,زیادکردن,add,योग,যোগ_করা,添加,πρόσθεσε
+différence,diferencia,جیاوازی,difference,अंतर,পার্থক্য,区别,διαφορά
+mise_à_jour_de_la_différence,actualizar_diferencia,نوێکردنەوەی_جیاوازی,difference_update,अंतर_अद्यतन,পার্থক্য_হালনাগাদ_করা,差异更新,ενημέρωσε_διαφορά
+Jeter,descartar,ڕەتکردنەوە,discard,खारिज,বাতিল_করা,丢弃,απόρριψε
+intersection,intersección,یەکتربڕین,intersection,प्रतिच्छेद,প্রতিচ্ছেদ,交集,τομή
+mise_à_jour_de_l'intersection,actualizar_intersección,نوێکردنەوەی_چوارڕێیان,intersection_update,प्रतिच्छेद_उद्यतन,প্রতিচ্ছেদ_হালনাগাদ_করা,交集更新,ενημέρωσε_τομή
+est_disjoint,es_disjunto,ناتەبایە,isdisjoint,असंयुक्त_है,বিচ্ছিন্ন,是不相交的,είναι_ασύμβατο
+est_un_sous-ensemble,es_subconjunto,ژێرکۆمەڵە,issubset,सबसेट_है,উপশ্রেণী,是子集,είναι_υποσύνολο
+est_un_sur-ensemble,es_superconjunto,سوپەرسێتە,issuperset,सुपरसेट_है,সুপারসেট,是超集,είναι_υπερσύνολο
+différence_symétrique,diferencia_simétrica,جیاوازی_سیمیتری,symmetric_difference,सममित_अंतर,প্রতিসম_পার্থক্য,对称差异,συμμετρική_διαφορά
+symétrique,actualizar_diferencia_simétrica,نوێکردنەوەی_جیاوازی_هاوسەنگ,symmetric_difference_update,सममित_अंतर_अद्यतन,প্রতিসম_পার্থক্য_হালনাগাদ_করা,对称差异更新,ενημέρωσε_συμμετρική_διαφοράς
+union,unión,یەکێتی,union,संघ,ঐক্য,并集,ένωση
+Fermer,cerrar,داخستن,close,बंद,বন্ধ,关闭,κλείσε
+détacher,despegar or separar,جیابکەرەوە,detach,जुदा,বিচ্ছিন্ন_করা,分离,απόσπασε
+numéro_du_fichier,número_de_archivos,ژمارەی_فایل,fileno,फ़ाइलनं,ফাইল_নাম্বার,文件号,αριθμός_αρχείου
+vider,terminar_compresión,فڵشکردن,flush,फ़्लश,ফ্লাশ,齐平,γράψε_αμέσως
+est_interactif,es_interactivo,کارلێککارانەیە,isatty,संवादात्मक_है,ইন্টারেক্টিভ,是互动的,είναι_διαδραστικό
+lire,leer,خوێندنەوە,read,पढ़,পড়া,读,διάβασε
+lisible,legible,خوێنەرەوە,readable,पढ़ने_योग्य,পাঠযোগ্য,可读的,αναγνώσιμο
+lire_la_ligne,leer_linea,دێڕی_خوێندنەوە,readline,पंक्ति_पढ़,পংক্তি_পড়ুন,读行,διάβασε_γραμμή
+lire_des_lignes,leer_lineas,دێڕەکان_بخوێنەرەوە,readlines,पंक्तियाँ_पढ़ें,পংক্তি_পড়ুন,读多行,διάβασε_γραμμές
+chercher,buscar,گەڕان,seek,माँग,সন্ধান_করা,找,αναζήτησε
+recherchable,buscable,بەدوایدا_دەگەڕێت,seekable,खोज_योग्य,সন্ধানযোগ্য,可寻找的,αναζητήσιμος
+raconter,retornar_fotograma,پێ_ووتن,tell,बताना,বলা,告诉,πες
+tronquer,truncar,بڕین,truncate,काट-छांट,কাটা,截短,κόψε
+écrivable,escribible,دەتوانرێت_بنووسرێت,writable,लिखने_योग्य,লিখনযোগ্য,可写的,εγγράψιμο
+écrivez,escribir,نووسین,write,लिखो,লিখা,写,γράψε
+écrire_des_lignes,escribir_lineas,دێڕ_بنووسە,writelines,पंक्तियाँ_लिखो,পংক্তি_লিখা,写行,γράψε_γραμμές
+et,y,و,and,और,এবং,和,και
+a,como,وەک,as,की_तरह,হিসাবে,作为,σαν
+affirmer,confirmar,دووپاتی_بکەرەوە,assert,दावा,জাহির_করা,断言,βεβαίωσε
+Pause,romper,شکاندن,break,तोड़,বিরতি,中断,διέκοψε
+classe,clase,پۆل,class,वर्ग,শ্রেণী,类,κλάσση
+Continuez,continuar,بەردەوام_بوون,continue,जारी,চালিয়ে_যাওয়া,继续,συνέχισε
+définir,definir,پێناسەکردن,def,परिभाषा,সংজ্ঞায়িত_করা,定义,καθόρισε
+effacer,borrar,سڕینەوە,del,मिट,মুছে_ফেলা,删除,διάγραψε
+sinon_si,sino_si,ئەگەرنا_ئەگەر...,elif,वरना_यदि,অন্যথায়_যদি,否则如果,αλλιώς_αν
+autre,sino,ئی_تر,else,वरना,অন্য,别的,αλλιώς
+sauf,excepto,جگە_لە,except,सिवाय,ছাড়া,除了,εκτός
+Faux,FALSO,هەڵە,False ,असत्य,মিথ্যা,错误的,Ψευδής
+finalement,finalmente,لەکۆتاییدا,finally,अंत_में,অবশেষে,最后,τελικά
+pour,para,بۆ,for,के_लिए,জন্য,为了,Για
+à_partir_de,desde,لە,from,से,থেকে,从,από
+global,global,جیهانی,global,वैश्विक,বিশ্বব্যাপী,全局的,καθολική
+si,si,ئەگەر,if,यदि,যদি,如果,αν
+importer,importar,هاوردەکردن,import,आयात,আমদানি,进口,εισαγωγή
+dans,en,لەناو,in,में,ভিতরে,在,σε
+est,es,بریتیە_لە,is,है,হয়,是,είναι
+lambda,lambda,لامبدا,lambda,लैम्ब्डा,ল্যাম্বডা,匿名函数,λάμδα
+Aucun,Ninguno,هیچ,None,कुछ_नहीं,কোনোটিই_নয়,空值,Τίποτα
+non_local,no_local,ناخۆجێی,nonlocal,गैरलोकल,অ-স্থানীয়,非本地,μη-τοπικά
+pas,no,نەخێر,not,ना,না,不是,όχι
+ou_alors,o,یان,or ,या,বা,或者,ή
+passer,pasar,تێپەڕین,pass,जाने_दो,অতিক্রম_করা,经过,προσπέρασε
+lever_une_exception,elevar_excepción,ئیستسنای_بەرز_بکەنەوە,raise,उठाओ,ব্যতিক্রম_উত্থাপন_করা,引发异常,έγειρε_εξαίρεση
+retour,retornar,گەڕانەوە,return,वापस,ফিরে_আসা,返回,επιστροφή
+Vrai,Verdadero,ڕاست,True ,सत्य,সত্য,真的,Αληθής
+essayer,intentar,هەوڵدان,try,प्रयत्न,চেষ্টা_করা,尝试,προσπάθησε
+tandis_que,mientras,لەکاتێکدا,while,जबतक,যখন,当,ενώ
+avec,con,لەگەڵ,with,साथ,সঙ্গে,和,με
+rendement,ceder,بەرهەم,yield,त्याग,সমর্পণ_করা,产生,παραχώρησε
+Erreur_arithmétique,Error aritmético,هەڵەی_ژمێریاری,ArithmeticError,अंकगणितीय_त्रुटि,পাটিগণিত_ত্রুটি,算术错误,Αριθμητικό_σφάλμα
+Erreur_d'assertion,Error de aserción,هەڵەی_جەختکردنەوە,AssertionError,दावा_त्रुटि,দাবী_ত্রুটি,断言错误,Σφάλμα_Βεβαίωσης
+Erreur_d'attribut,Error de atributo,هەڵەی_تایبەتمەندی,AttributeError,गुण_त्रुटि,বৈশিষ্ট্য_ত্রুটি,属性错误,Σφάλμα_χαρακτηριστικού
+Exception,Excepción,بەدەرکردن,Exception,अपवाद,ব্যতিক্রম,例外,Εξαίρεση
+Erreur_de_fin_de_fichier,Error de fin de archivo,هەڵەی_کۆتایی_پەڕگە,EOFError,फ़ाइल_अंत_त्रुटि,ফাইল_সমাপ্তির_ত্রুটি,文件结束错误,Σφάλμα_τέλους_αρχείου
+Erreur_en_virgule_flottante,Error de punto flotante,هەڵەی_خاڵی_هەڵدەفڕێت,FloatingPointError,दशामवलव_त्रुटि,ফ্লোটিং_পয়েন্ট_ত্রুটি,浮点错误,Σφάλμα_κινητής_υποδιαστολής
+Sortie_du_générateur,Salida del generador,دەرچوونی_مۆلیدە,GeneratorExit,जेनरेटर_निकास,জেনারেটর_প্রস্থান,生成器退出,Έξοδος_γεννήτριας
+Erreur_d'importation,error de importación,هەڵەی_هاوردەکردن,ImportError,आयात_त्रुटि,আমদানি_ত্রুটি৷,导入错误,Σφάλμα_εισαγωγής
+Erreur_d'indentation,Error de indentación,هەڵەی_چەقاندنەوە,IndentationError ,खाँचा_त्रुटि,ইন্ডেন্টেশন_ত্রুটি,缩进错误,Σφάλμα_εσοχής
+Erreur_d'index,Error de índice,هەڵەی_ئیندێکس,IndexError,सूचकांक_त्रुटि,সূচক_ত্রুটি,索引错误,Σφάλμα_δείκτη
+Erreur_de_clé,Error de llave,هەڵەی_کلیل,KeyError,की_त्रुटि,মূল_ত্রুটি,键值错误,Σφάλμα_κλειδιού
+Interruption_clavier,Interrupción del teclado,پچڕانی_کیبۆرد,KeyboardInterrupt,कीबोर्ड_टोक,কীবোর্ড_বাধা,键盘中断,Διακοπή_πληκτρολογίου
+Erreur_de_recherche,Error de búsqueda,هەڵەی_گەڕان,LookupError,खोज_त्रुटि,অনুসন্ধান_ত্রুটি,查找错误,Σφάλμα_αναζήτησης
+Erreur_de_mémoire,error de memoria,هەڵەی_بیرگە,MemoryError,स्मृति_त्रुटि,মেমরি_ত্রুটি,内存错误,Σφάλμα_μνήμης
+Erreur_de_nom,Error de nombre,هەڵەی_ناو,NameError,नाम_त्रुटि,নামের_ত্রুটি,名称错误,Σφάλμα_ονόματος
+Erreur_non_implémentée,Error de no implementación,هەڵەی_جێبەجێ_نەکراو,NotImplementedError,अकार्यान्वित_त्रुटि,বাস্তবায়িত_হয়নি_ত্রুটি,未实施错误,Μη_υλοποιημένο_σφάλμα
+Erreur_du_système_d'exploitation,error del sistema operativo,هەڵەی_سیستەمی_کارپێکردن,OSError,ओएस_त्रुटि,OS_ত্রুটি,操作系统错误,Σφάλμα_λειτουργικού_συστήματος
+Erreur_de_débordement,Error de desbordamiento,هەڵەی_سەرڕێژبوون,OverflowError,अतिप्रवाह_त्रुटि,ওভারফ্লো_ত্রুটি,溢出错误,Σφάλμα_υπερχείλισης
+Erreur_de_référence,Error de referencia,هەڵەی_ئاماژە,ReferenceError,संदर्भ_त्रुटि,রেফারেন্স_ত্রুটি,参考错误,Σφάλμα_αναφοράς
+Erreur_d'exécution,Error de tiempo de ejecución,هەڵەی_کاتی_کارکردن,RuntimeError,रनटाइम_त्रुटि,রানটাইম_ত্রুটি,运行时错误,Σφάλμα_χρόνου_εκτέλεσης
+Arrêter_l'itération,Detener iteración,دووبارەکردنەوە_بوەستێنە,StopIteration,दोहराना_रोकें,পুনরাবৃত্তি_বন্ধ_করা,停止迭代,Διακοπή_επανάληψης
+Erreur_de_syntaxe,Error de sintaxis,هەڵەی_ڕستەسازی,SyntaxError,वाक्यविन्यास_त्रुटि,বাক্যগঠন_ত্রুটি,语法错误,Συντακτικό_λάθος
+Erreur_d'onglet,Error de pestaña,هەڵەی_تاب,TabError,टैब_त्रुटि,ট্যাব_ত্রুটি,标签错误,Σφάλμα_καρτέλας
+Erreur_système,Error del sistema,هەڵە_هەیە_لە_سیستەمدا,SystemError,सिस्टम_त्रुटि,সিস্টেম_ত্রুটি,系统错误,Σφάλμα_συστήματος
+Sortie_du_système,Salida del sistema,دەرچوونی_سیستەم,SystemExit,सिस्टम_निकास,সিস্টেম_প্রস্থান,系统退出,Έξοδος_συστήματος
+Erreur-type,Error de tipeo,هەڵەی_جۆر,TypeError,प्रकार_त्रुटि,টাইপ_ত্রুটি,输入错误,Τυπογραφικό_λάθος
+Erreur_locale_non_liée,Error local no enlazado,هەڵەی_ناوخۆیی_نەبەستراو,UnboundLocalError,असीम_लोकल_त्रुटि,আনবাউন্ড_স্থানীয়_ত্রুটি,未绑定本地错误,Τοπικό_σφάλμα_χωρίς_Όριο
+Erreur_Unicode,Error de Unicode,هەڵەی_یونیکۆد,UnicodeError,यूनिकोड_त्रुटि,ইউনিকোড_ত্রুটি,统一码错误,Σφάλμα_Unicode
+Erreur_d'encodage_Unicode,Error de codificación Unicode,هەڵەی_ئینکۆدی_یونیکۆد,UnicodeEncodeError,यूनिकोड_एनकोड_त्रुटि,ইউনিকোড_সঙ্কেতাক্ষর_ত্রুটি,Unicode_编码错误,Σφάλμα_κωδικοποίησης_Unicode
+Erreur_de_décodage_Unicode,Error de decodificación Unicode,هەڵەی_یونیکۆد_دیکۆد,UnicodeDecodeError,यूनिकोड_डिकोड_त्रुटि,ইউনিকোড_পাঠোদ্ধার_ত্রুটি,Unicode_解码错误,Σφάλμα_αποκωδικοποίησης_Unicode
+Erreur_de_traduction_Unicode,Error de traducción de Unicode,هەڵەی_وەرگێڕانی_یونیکۆد,UnicodeTranslateError,यूनिकोड_अनुवाद_त्रुटि,ইউনিকোড_অনুবাদ_ত্রুটি,Unicode_翻译错误,Σφάλμα_μετάφρασης_Unicode
+Erreur_de_valeur,Error de valor,هەڵەی_بەها,ValueError,मान_त्रुटि,মান_ত্রুটি,值错误,Σφάλμα_τιμής
+Erreur_de_division_zéro,Error de división cero,هەڵەی_دابەشکردنی_سفر,ZeroDivisionError,शून्य_भाग_त्रुटि,শূন্য_বিভাগ_ত্রুটি,零除法误差,Σφάλμα_Διαίρεσης_με_Μηδέν
+,,,,,,,

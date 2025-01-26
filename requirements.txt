@@ -1,0 +1,10 @@
+# Core dependencies
+pandas
+numpy
+torch
+transformers
+deep-translator
+nltk
+sacrebleu
+openai
+datasets
