@@ -16,7 +16,7 @@ class DeepLTranslator(BaseTranslator):
     def __init__(self, source_lang: str, target_lang: str, api_key: Optional[str] = None):
         super().__init__(source_lang, target_lang)
         self.api_key = api_key or os.getenv('DEEPL_API_KEY')
-        self.base_url = "https://api-free.deepl.com/v2"
+        self.base_url = "https://api-free.deepl.com/v1"
         self.char_limit = 30000
         
     def translate_text(self, text: str) -> str:

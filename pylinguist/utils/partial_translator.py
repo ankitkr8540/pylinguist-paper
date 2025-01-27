@@ -102,7 +102,7 @@ class PartialTranslator:
     
     
 def partial_translate_examples(data_path: Path, source_lang: str, target_lang: str, 
-                            start_index: int, test_samples: int, train_samples: int) -> pd.DataFrame:
+                            start_index: int, stage1_samples: int, stage2_samples: int) -> pd.DataFrame:
     """
     Translate multiple examples from dataset.
     Returns DataFrame with original and translated code.
@@ -111,7 +111,7 @@ def partial_translate_examples(data_path: Path, source_lang: str, target_lang: s
         df = pd.read_csv(data_path)
         translator = PartialTranslator(source_lang, target_lang)
         
-        total_samples = test_samples + train_samples
+        total_samples = stage1_samples + stage2_samples
         if start_index + total_samples > len(df):
             logger.warning("Requested range exceeds dataset size. Adjusting start index...")
             start_index = 0
