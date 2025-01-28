@@ -2,9 +2,9 @@ from abc import ABC, abstractmethod
 from typing import Dict, List, Optional
 import pandas as pd
 from ...utils.logger import setup_logger
+import os
 
 logger = setup_logger('stage2.base')
-
 class BaseEnhancer(ABC):
     """Base class for Stage 2 translation enhancement."""
     
@@ -13,7 +13,7 @@ class BaseEnhancer(ABC):
         self.target_lang = target_lang
         self.translator_name = translator_name
         self.cache = {}
-        
+
     def create_prompt(self, examples_df: pd.DataFrame, code_to_translate: str) -> str:
         """Create prompt with examples and code to translate."""
         examples_text = ""

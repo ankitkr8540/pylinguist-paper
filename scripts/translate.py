@@ -130,8 +130,13 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
             logger.error("Llama translator not implemented yet")
             return False
         elif args.stage2 == 'claude':
-            logger.error("Claude translator not implemented yet")
-            return False
+            from pylinguist.models.stage2.claude import ClaudeTranslator
+            enhancer = ClaudeTranslator(
+                source_lang=args.source_lang,
+                target_lang=args.target_lang,
+                translator_name=args.stage1
+            )
+            
         else:
             logger.error("Invalid Stage 2 translator")
             return False

@@ -2,14 +2,14 @@ from openai import OpenAI
 import os
 import time
 from typing import Optional
-
+from dotenv import load_dotenv
 from pylinguist.utils.language_extractor import extract_language
 from .base import BaseEnhancer
 from ...utils.logger import setup_logger
 import pandas as pd
 
 logger = setup_logger('stage2.gpt')
-
+load_dotenv()
 class GPTEnhancer(BaseEnhancer):
     """GPT model implementation for Stage 2 translation enhancement."""
     
@@ -18,9 +18,7 @@ class GPTEnhancer(BaseEnhancer):
         target_lang = extract_language(target_lang)
         source_lang = extract_language(source_lang)
         super().__init__(source_lang, target_lang, translator_name)
-        api_key_path = os.path.join(os.path.dirname(__file__), "../../../API.txt")
-        with open(api_key_path, 'r') as file:
-            self.api_key = file.read().strip()
+        self.api_key = os.getenv("OPENAI_API_KEY")
         if not self.api_key:
             raise ValueError("OpenAI API key not found in environment")
             
