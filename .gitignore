@@ -6,4 +6,4 @@ __pycache__/
 /data/output/partial_translation
 /data/output/stage1
 /data/output/stage2
-API.txt
+.env
