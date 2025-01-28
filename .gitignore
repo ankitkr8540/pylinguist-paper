@@ -3,4 +3,7 @@ workspaceArchiver.txt
 __pycache__/
 **/.__pycache__/*
 */.vscode/*
+/data/output/partial_translation
+/data/output/stage1
+/data/output/stage2
 API.txt
