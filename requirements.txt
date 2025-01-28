@@ -8,3 +8,5 @@ nltk
 sacrebleu
 openai
 datasets
+python-dotenv
+anthropic
