@@ -113,31 +113,62 @@ def run_stage1_translation(args, partial_df):
         logger.error(f"Stage 1 translation error: {str(e)}")
         return False
 
-def run_stage2_translation(args, stage1_df, partial_df):
+def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
+    """Run Stage 2 translation using selected model."""
     try:
         logger.info(f"Starting Stage 2 translation using {args.stage2}...")
         
+        # Initialize appropriate model
+        if args.stage2 == 'gpt':
+            from pylinguist.models.stage2.gpt import GPTEnhancer
+            enhancer = GPTEnhancer(
+                source_lang=args.source_lang,
+                target_lang=args.target_lang,
+                translator_name=args.stage1
+            )
+        elif args.stage2 == 'llama':
+            logger.error("Llama translator not implemented yet")
+            return False
+        elif args.stage2 == 'claude':
+            logger.error("Claude translator not implemented yet")
+            return False
+        else:
+            logger.error("Invalid Stage 2 translator")
+            return False
+        
+        # Get stage2 samples from partial translations
         translated_lines = []
         start_idx = args.start_index + args.stage1_samples
         end_idx = start_idx + args.stage2_samples
         
-        for i, row in tqdm(partial_df.iloc[start_idx:end_idx].iterrows(), total=args.stage2_samples):
-            translated_lines.append({
-                'English_code': row['English_code'],
-                'Partial_translated_code': row['Partial_translated_code'],
-                'stage1_result': stage1_df.iloc[i-start_idx][f'{args.stage1}_translated_code']
-            })
+        # Process each sample
+        for chunk_size in chunk_list:
+            for i, row in tqdm(partial_df.iloc[start_idx:end_idx].iterrows(), 
+                            total=args.stage2_samples, 
+                            desc="Stage 2 Translation with few shot Example Size of " + str(chunk_size)):
+                translated_code = enhancer.enhance_translation(
+                    code=row['Partial_translated_code'],
+                    examples_df=stage1_df[args.start_index:chunk_size if chunk_size <= len(stage1_df) else len(stage1_df)]
+                )
+                
+                translated_lines.append({
+                    'English_code': row['English_code'],
+                    'Partial_translated_code': row['Partial_translated_code'],
+                    f'{args.stage2}_translated_code': translated_code
+                })
             
-        output_dir = Path("data/output/stage2")
-        output_file = output_dir / f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
-        pd.DataFrame(translated_lines).to_csv(output_file, index=False)
-        
+            # Save results
+            output_dir = Path("data/output/stage2")
+            output_file = output_dir / f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
+            pd.DataFrame(translated_lines).to_csv(output_file, index=False)
         logger.info(f"Stage 2 translation saved to: {output_file}")
         return True
+        
     except Exception as e:
         logger.error(f"Stage 2 translation error: {str(e)}")
         return False
-
+    
+    
 def main():
     args = parse_args()
     check_paths()
@@ -160,6 +191,8 @@ def main():
         if not partial_file.exists():
             if not run_partial_translation(args):
                 return 1
+        else:
+            logger.info("Partial translation already exists. Skipping.")
                 
         # Stage 1
         stage1_file = Path("data/output/stage1") / \
@@ -168,19 +201,29 @@ def main():
         if not stage1_file.exists():
             if not run_stage1_translation(args, pd.read_csv(partial_file)):
                 return 1
+        else:
+            logger.info("Stage 1 translation already exists. Skipping.")
                 
         if not args.stage2:
             logger.info("Stage 1 pipeline completed successfully")
             return 0
             
         # Stage 2
-        stage2_file = Path("data/output/stage2") / \
-            f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
-            
-        if not stage2_file.exists():
-            if not run_stage2_translation(args, pd.read_csv(stage1_file), pd.read_csv(partial_file)):
+        chunk_sizes = [5, 10, 15, 25]
+        stage2_files = [
+            Path("data/output/stage2") / \
+            f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
+            for chunk_size in chunk_sizes
+        ]
+        
+        missing_chunks = [chunk_sizes[i] for i, file in enumerate(stage2_files) if not file.exists()]
+        
+        if missing_chunks:
+            if not run_stage2_translation(args, pd.read_csv(stage1_file), pd.read_csv(partial_file), missing_chunks):
                 return 1
-                
+        else:
+            logger.info("Stage 2 translation already exists. Skipping.")
+            
         logger.info("Complete pipeline finished successfully")
         return 0
         
