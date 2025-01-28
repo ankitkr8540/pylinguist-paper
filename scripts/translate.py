@@ -209,7 +209,7 @@ def main():
             return 0
             
         # Stage 2
-        chunk_sizes = [5, 10, 15, 25]
+        chunk_sizes = [min(args.stage1_samples, size) for size in [5, 10, 15, 25]]
         stage2_files = [
             Path("data/output/stage2") / \
             f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
