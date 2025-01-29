@@ -6,4 +6,5 @@ __pycache__/
 /data/output/partial_translation
 /data/output/stage1
 /data/output/stage2
+/data/output/back_translation/partial_back_translation
 .env
