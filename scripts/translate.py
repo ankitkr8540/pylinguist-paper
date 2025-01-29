@@ -172,7 +172,38 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
     except Exception as e:
         logger.error(f"Stage 2 translation error: {str(e)}")
         return False
-    
+
+def run_back_translation(args, stage2_files, chunk_list):
+
+    print("stage2_files", stage2_files) ## stage2_files is a dataframe
+    print("chunk_list", chunk_list) # single digit number
+
+    try:
+        # Use stage2 dataframe and First do the partially translate the f'{stage2}_translated_code using joshua_keyword
+        logger.info(f"Step 1: Starting partial back translation using Joshua keyword...")
+        results = partial_translate_examples(
+            data_path=stage2_files,
+            source_lang=args.target_lang,
+            target_lang=args.source_lang,
+            start_index=0,
+            stage1_samples=0,
+            stage2_samples=args.stage2_samples,
+            back_translation=True,
+            stage2_model=args.stage2
+        )
+
+        output_dir = Path("data/output/back_translation/partial_back_translation")
+        output_file = output_dir / f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_list}.csv"
+        results.to_csv(output_file, index=False)
+        logger.info(f"Partial back translation saved to: {output_file}")
+
+        return True
+
+
+    except Exception as e:
+        logger.error(f"Back translation error: {str(e)}")
+        return False
+
     
 def main():
     args = parse_args()
@@ -229,12 +260,45 @@ def main():
         else:
             logger.info("Stage 2 translation already exists. Skipping.")
             
-        logger.info("Complete pipeline finished successfully")
-        return 0
+        logger.info("Forward translation pipeline completed successfully")
+
+      # Back Translation section in main()
+        logger.info("Starting back translation process...")
+        
+        # Create necessary directories
+        Path("data/output/back_translation/partial_back_translation").mkdir(parents=True, exist_ok=True)
+        
+        # Process each stage2 file for back translation
+        for chunk_size in chunk_sizes:
+            # Check if stage2 file exists for this chunk size
+            stage2_file = Path("data/output/stage2") / \
+                f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
+            
+            if not stage2_file.exists():
+                logger.warning(f"Stage 2 file not found for chunk size {chunk_size}, skipping...")
+                continue
+                
+            # Check if partial back translation already exists
+            partial_back_file = Path("data/output/back_translation/partial_back_translation/") / \
+                f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_size}.csv"
+            
+            if partial_back_file.exists():
+                logger.info(f"Partial back translation already exists for chunk size {chunk_size}, skipping...")
+                continue
+                
+            logger.info(f"Processing back translation for chunk size {chunk_size}")
+            
+            # Run back translation for this chunk
+            if not run_back_translation(args, stage2_file, chunk_size):
+                logger.error(f"Back translation failed for chunk size {chunk_size}")
+                return 1
+            
+        logger.info("Back translation process completed successfully")
         
     except Exception as e:
         logger.error(f"Pipeline error: {str(e)}")
+        import traceback
+        logger.error(traceback.format_exc())
         return 1
-
 if __name__ == "__main__":
     sys.exit(main())
