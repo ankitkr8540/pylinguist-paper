@@ -197,6 +197,7 @@ def run_back_translation(args, stage2_files, chunk_list):
         )
 
         output_dir = Path("data/output/back_translation/partial_back_translation")
+        output_dir.mkdir(parents=True, exist_ok=True)
         output_file = output_dir / f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_list}.csv"
         results.to_csv(output_file, index=False)
         logger.info(f"Partial back translation saved to: {output_file}")
@@ -256,6 +257,7 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
 
         # Save results
         output_dir = Path("data/output/back_translation/Final_back_translation")
+        output_dir.mkdir(parents=True, exist_ok=True)
         output_file = output_dir / f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk}.csv"
         pd.DataFrame(translated_lines).to_csv(output_file, index=False)
 
