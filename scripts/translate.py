@@ -8,6 +8,7 @@ from pylinguist.models.stage1.google import GoogleTranslator
 from pylinguist.models.stage1.deepl import DeepLTranslator
 import pandas as pd 
 from tqdm import tqdm
+import traceback
 
 logger = setup_logger()
 
@@ -269,102 +270,148 @@ def main():
     
     try:
         # Preprocessing
+        logger.info("Starting preprocessing check...")
         if not check_dataset_exists() or args.force_preprocess:
+            logger.info("Running preprocessing pipeline...")
             if not run_preprocessing(args):
+                logger.error("Preprocessing failed")
                 return 1
         else:
             logger.info("Dataset exists. Skipping preprocessing.")
             
         if args.preprocess_only:
+            logger.info("Preprocess only flag set. Exiting.")
             return 0
+            
+        # Forward Translation Pipeline
+        logger.info(f"Starting translation pipeline: {args.source_lang} -> {args.target_lang}")
             
         # Partial Translation
         partial_file = Path("data/output/partial_translation") / \
             f"partial_translation_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
             
         if not partial_file.exists():
+            logger.info("Starting partial translation...")
             if not run_partial_translation(args):
+                logger.error("Partial translation failed")
                 return 1
         else:
-            logger.info("Partial translation already exists. Skipping.")
+            logger.info("Partial translation exists. Skipping.")
                 
-        # Stage 1
+        # Stage 1 Translation
         stage1_file = Path("data/output/stage1") / \
             f"Stage_1_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
             
         if not stage1_file.exists():
-            if not run_stage1_translation(args, pd.read_csv(partial_file)):
+            logger.info(f"Running Stage 1 translation using {args.stage1}...")
+            try:
+                partial_df = pd.read_csv(partial_file)
+                if not run_stage1_translation(args, partial_df):
+                    logger.error("Stage 1 translation failed")
+                    return 1
+            except Exception as e:
+                logger.error(f"Error reading partial translation file: {str(e)}")
                 return 1
         else:
-            logger.info("Stage 1 translation already exists. Skipping.")
+            logger.info("Stage 1 translation exists. Skipping.")
                 
         if not args.stage2:
             logger.info("Stage 1 pipeline completed successfully")
             return 0
             
-        # Stage 2
-        chunk_sizes = [min(args.stage1_samples, size) for size in [5, 10, 15, 25]]
-        stage2_files = [
-            Path("data/output/stage2") / \
-            f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
-            for chunk_size in chunk_sizes
-        ]
+        # Stage 2 Translation
+        base_chunk_sizes = [5, 10, 15, 25]
+        chunk_sizes = list(set([min(args.stage1_samples, size) for size in base_chunk_sizes]))
+        chunk_sizes.sort()  # Ensure ordered processing
+        logger.info(f"Stage 2: Processing chunk sizes: {chunk_sizes}")
         
-        missing_chunks = [chunk_sizes[i] for i, file in enumerate(stage2_files) if not file.exists()]
+        stage2_files = {
+            chunk_size: Path("data/output/stage2") / \
+                f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
+            for chunk_size in chunk_sizes
+        }
+        
+        missing_chunks = [size for size, file in stage2_files.items() if not file.exists()]
         
         if missing_chunks:
-            if not run_stage2_translation(args, pd.read_csv(stage1_file), pd.read_csv(partial_file), missing_chunks):
+            logger.info(f"Processing missing Stage 2 chunks: {missing_chunks}")
+            try:
+                stage1_df = pd.read_csv(stage1_file)
+                partial_df = pd.read_csv(partial_file)
+                if not run_stage2_translation(args, stage1_df, partial_df, missing_chunks):
+                    logger.error("Stage 2 translation failed")
+                    return 1
+                for chunk_size in missing_chunks:
+                    logger.info(f"Stage 2 file saved: {stage2_files[chunk_size]}")
+            except Exception as e:
+                logger.error(f"Error in Stage 2 translation: {str(e)}")
                 return 1
         else:
-            logger.info("Stage 2 translation already exists. Skipping.")
+            logger.info("All Stage 2 translations exist. Skipping.")
             
-        logger.info("Forward translation pipeline completed successfully")
+        logger.info("Forward translation pipeline completed")
 
-      # Back Translation section in main()
-        logger.info("Starting back translation process...")
+        # Back Translation Pipeline
+        logger.info(f"Starting back translation pipeline: {args.target_lang} -> {args.source_lang}")
         
-        # Create necessary directories
-        Path("data/output/back_translation/partial_back_translation").mkdir(parents=True, exist_ok=True)
+        # Create back translation directories
+        back_translation_dirs = {
+            'partial': Path("data/output/back_translation/partial_back_translation"),
+            'final': Path("data/output/back_translation/Final_back_translation")
+        }
         
-        # Process each stage2 file for back translation
+        for dir_path in back_translation_dirs.values():
+            dir_path.mkdir(parents=True, exist_ok=True)
+        
+        # Process each chunk size for back translation
         for chunk_size in chunk_sizes:
-            # Check if stage2 file exists for this chunk size
-            stage2_file = Path("data/output/stage2") / \
-                f"Stage_2_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
+            logger.info(f"\nProcessing back translation for chunk size {chunk_size}")
             
-            if not stage2_file.exists():
-                logger.warning(f"Stage 2 file not found for chunk size {chunk_size}, skipping...")
-                continue
-                
-            # Check if partial back translation already exists
-            partial_back_file = Path("data/output/back_translation/partial_back_translation/") / \
+            # Define files for this chunk
+            stage2_file = stage2_files[chunk_size]
+            partial_back_file = back_translation_dirs['partial'] / \
                 f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_size}.csv"
+            final_back_file = back_translation_dirs['final'] / \
+                f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
             
-            if partial_back_file.exists():
-                logger.info(f"Partial back translation already exists for chunk size {chunk_size}, skipping...")
+            # Skip if already processed
+            if partial_back_file.exists() and final_back_file.exists():
+                logger.info(f"Back translation exists for chunk size {chunk_size}. Skipping.")
                 continue
                 
-            logger.info(f"Processing back translation for chunk size {chunk_size}")
-            
-            # Run back translation for this chunk
-            if not run_back_translation(args, stage2_file, chunk_size):
-                logger.error(f"Back translation failed for chunk size {chunk_size}")
-                return 1
-        # Now use the partial_back_translation file to do the final back translation using the back translation model
-        # Run back translation for this chunk
-            if not run_final_back_translation(args, pd.read_csv(stage1_file), pd.read_csv(partial_back_file), chunk_size):
-                logger.error(f"Back translation failed for chunk size {chunk_size}")
-                return 1
-            
-        logger.info("Back translation process completed successfully")
+            try:
+                # Step 1: Partial Back Translation
+                if not partial_back_file.exists():
+                    logger.info("Running partial back translation...")
+                    if not run_back_translation(args, stage2_file, chunk_size):
+                        logger.error("Partial back translation failed")
+                        return 1
+                    logger.info(f"Partial back translation saved: {partial_back_file}")
+                
+                # Step 2: Final Back Translation
 
-
-              
+                if not final_back_file.exists():
+                    logger.info("Running final back translation...")
+                    stage1_df = pd.read_csv(stage1_file)
+                    partial_back_df = pd.read_csv(partial_back_file)
+                    
+                    if not run_final_back_translation(args, stage1_df, partial_back_df, chunk_size):
+                        logger.error("Final back translation failed")
+                        return 1
+                    logger.info(f"Final back translation saved: {final_back_file}")
+                
+            except Exception as e:
+                logger.error(f"Error in back translation for chunk {chunk_size}: {str(e)}")
+                logger.error(traceback.format_exc())
+                return 1
+            
+        logger.info("\nComplete translation pipeline finished successfully")
+        return 0
         
     except Exception as e:
         logger.error(f"Pipeline error: {str(e)}")
-        import traceback
         logger.error(traceback.format_exc())
         return 1
+    
 if __name__ == "__main__":
     sys.exit(main())
