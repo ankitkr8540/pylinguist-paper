@@ -204,6 +204,64 @@ def run_back_translation(args, stage2_files, chunk_list):
         logger.error(f"Back translation error: {str(e)}")
         return False
 
+def run_final_back_translation(args, stage1_df, partial_df, chunk):
+    try:
+        logger.info(f"Step 2: Starting final back translation using {args.stage2}...")
+        
+        # Initialize appropriate model
+        if args.stage2 == 'gpt':
+            from pylinguist.models.stage2.gpt import GPTEnhancer
+            enhancer = GPTEnhancer(
+                source_lang=args.target_lang,
+                target_lang=args.source_lang,
+                translator_name=args.stage1
+            )
+        elif args.stage2 == 'llama':
+            logger.error("Llama translator not implemented yet")
+            return False
+        elif args.stage2 == 'claude':
+            from pylinguist.models.stage2.claude import ClaudeTranslator
+            enhancer = ClaudeTranslator(
+                source_lang=args.source_lang,
+                target_lang=args.target_lang,
+                translator_name=args.stage1
+            )
+            return True
+            
+        else:
+            logger.error("Invalid Stage 2 translator")
+            return False
+        
+        # Get stage2 samples from partial translations
+        translated_lines = []
+        start_idx = args.start_index + args.stage1_samples
+        end_idx = start_idx + args.stage2_samples
+        
+        # Process each sample
+        for i, row in tqdm(partial_df.iterrows(), total=args.stage2_samples):
+            translated_code = enhancer.enhance_translation(
+                code = row[f'{args.stage2}_partial_back_translated_code'],
+                examples_df = stage1_df[args.start_index:chunk if chunk <= len(stage1_df) else len(stage1_df)]
+            )
+
+            translated_lines.append({
+                'Original Code': row['English_code'],
+                f'{args.stage2}_partial_translated_code': row[f'{args.stage2}_partial_back_translated_code'],
+                f'{args.stage2}_back_translated_code': translated_code
+            })
+
+        # Save results
+        output_dir = Path("data/output/back_translation/Final_back_translation")
+        output_file = output_dir / f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk}.csv"
+        pd.DataFrame(translated_lines).to_csv(output_file, index=False)
+
+        logger.info(f"Final back translation saved to: {output_file}")
+        return True
+    
+    except Exception as e:
+        logger.error(f"Final back translation error: {str(e)}")
+        return False
+
     
 def main():
     args = parse_args()
@@ -292,8 +350,16 @@ def main():
             if not run_back_translation(args, stage2_file, chunk_size):
                 logger.error(f"Back translation failed for chunk size {chunk_size}")
                 return 1
+        # Now use the partial_back_translation file to do the final back translation using the back translation model
+        # Run back translation for this chunk
+            if not run_final_back_translation(args, pd.read_csv(stage1_file), pd.read_csv(partial_back_file), chunk_size):
+                logger.error(f"Back translation failed for chunk size {chunk_size}")
+                return 1
             
         logger.info("Back translation process completed successfully")
+
+
+              
         
     except Exception as e:
         logger.error(f"Pipeline error: {str(e)}")
