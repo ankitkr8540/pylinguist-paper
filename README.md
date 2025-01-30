@@ -12,5 +12,5 @@ pip install -r requirements.txt
 
 ```bash
 # Basic translation
-python scripts/translate.py --source-lang en --target-lang hi --stage1 google --input-file code.py
+python3 scripts/translate.py --source-lang en --target-lang hi --start-index 0 --stage1-samples 10 --stage2-samples 2 --stage1 google --stage2 gpt
 ```
