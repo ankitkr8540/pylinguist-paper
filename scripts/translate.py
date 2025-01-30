@@ -223,8 +223,8 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
         elif args.stage2 == 'claude':
             from pylinguist.models.stage2.claude import ClaudeTranslator
             enhancer = ClaudeTranslator(
-                source_lang=args.source_lang,
-                target_lang=args.target_lang,
+                source_lang=args.target_lang,
+                target_lang=args.source_lang,
                 translator_name=args.stage1
             )
             return True
