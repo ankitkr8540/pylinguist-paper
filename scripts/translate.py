@@ -1,14 +1,17 @@
 import argparse
 from pathlib import Path
 import sys
+from typing import List
 from data.input.preprocessor import DatasetPreprocessor 
 from pylinguist.utils.partial_translator import partial_translate_examples
 from pylinguist.utils.logger import setup_logger
 from pylinguist.models.stage1.google import GoogleTranslator
 from pylinguist.models.stage1.deepl import DeepLTranslator
+from evaluate import evaluate_translations
 import pandas as pd 
 from tqdm import tqdm
 import traceback
+import json
 
 logger = setup_logger()
 
@@ -253,7 +256,7 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
 
         # Save results
         output_dir = Path("data/output/back_translation/Final_back_translation")
-        output_file = output_dir / f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk}.csv"
+        output_file = output_dir / f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk}.csv"
         pd.DataFrame(translated_lines).to_csv(output_file, index=False)
 
         logger.info(f"Final back translation saved to: {output_file}")
@@ -372,7 +375,7 @@ def main():
             partial_back_file = back_translation_dirs['partial'] / \
                 f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_size}.csv"
             final_back_file = back_translation_dirs['final'] / \
-                f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_{chunk_size}.csv"
+                f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_size}.csv"
             
             # Skip if already processed
             if partial_back_file.exists() and final_back_file.exists():
@@ -406,8 +409,15 @@ def main():
                 return 1
             
         logger.info("\nComplete translation pipeline finished successfully")
+      # Run evaluation
+        if evaluate_translations(args):
+            logger.info("Evaluation completed successfully")
+        else:
+            logger.error("Evaluation failed")
+            
+        logger.info("\nComplete pipeline with evaluation finished successfully")
         return 0
-        
+
     except Exception as e:
         logger.error(f"Pipeline error: {str(e)}")
         logger.error(traceback.format_exc())
