@@ -27,7 +27,7 @@ def parse_args():
     parser.add_argument('--source-lang', type=str, required=True)
     parser.add_argument('--target-lang', type=str, required=True)
     parser.add_argument('--stage1', type=str, choices=['google', 'deepl'], required=True)
-    parser.add_argument('--stage2', type=str, choices=['gpt', 'llama', 'claude'])
+    parser.add_argument('--stage2', type=str, choices=['gpt', 'llama', 'claude','deepseek'])
     return parser.parse_args()
 
 def check_paths():
@@ -140,6 +140,13 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
                 target_lang=args.target_lang,
                 translator_name=args.stage1
             )
+        elif args.stage2 == 'deepseek':
+            from pylinguist.models.stage2.deepseek import DeepSeekEnhancer
+            enhancer = DeepSeekEnhancer(
+                source_lang=args.source_lang,
+                target_lang=args.target_lang,
+                translator_name=args.stage1
+            )
             
         else:
             logger.error("Invalid Stage 2 translator")
@@ -232,6 +239,13 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
                 translator_name=args.stage1
             )
             return True
+        elif args.stage2 == 'deepseek':
+            from pylinguist.models.stage2.deepseek import DeepSeekEnhancer
+            enhancer = DeepSeekEnhancer(
+                source_lang=args.target_lang,
+                target_lang=args.source_lang,
+                translator_name=args.stage1
+            )
             
         else:
             logger.error("Invalid Stage 2 translator")
