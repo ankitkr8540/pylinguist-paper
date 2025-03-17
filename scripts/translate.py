@@ -2,7 +2,7 @@ import argparse
 from pathlib import Path
 import sys
 from typing import List
-from data.input.preprocessor import DatasetPreprocessor 
+from data.input.preprocessor import DatasetPreprocessor
 from pylinguist.utils.partial_translator import partial_translate_examples
 from pylinguist.utils.logger import setup_logger
 from pylinguist.models.stage1.google import GoogleTranslator
@@ -36,7 +36,8 @@ def check_paths():
         Path("data/input/samples"),
         Path("data/output/partial_translation"),
         Path("data/output/stage1"),
-        Path("data/output/stage2")
+        Path("data/output/stage2"),
+        Path("data/output/evaluation/stage1")
     ]
     for path in paths:
         path.mkdir(parents=True, exist_ok=True)
@@ -184,7 +185,7 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
         logger.error(f"Stage 2 translation error: {str(e)}")
         return False
 
-def run_back_translation(args, stage2_files, chunk_list):
+def run_back_translation(args, stage2_files, chunk_list, is_stage1=False):
 
     print("stage2_files", stage2_files) ## stage2_files is a dataframe
     print("chunk_list", chunk_list) # single digit number
@@ -198,16 +199,23 @@ def run_back_translation(args, stage2_files, chunk_list):
             target_lang=args.source_lang,
             start_index=0,
             stage1_samples=0,
-            stage2_samples=args.stage2_samples,
+            stage2_samples=args.stage2_samples if not is_stage1 else args.stage1_samples,
             back_translation=True,
-            stage2_model=args.stage2
+            stage2_model=args.stage2 if not is_stage1 else args.stage1
         )
 
-        output_dir = Path("data/output/back_translation/partial_back_translation")
-        output_dir.mkdir(parents=True, exist_ok=True)
-        output_file = output_dir / f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_list}.csv"
-        results.to_csv(output_file, index=False)
-        logger.info(f"Partial back translation saved to: {output_file}")
+        if not is_stage1:
+            output_dir = Path("data/output/back_translation/partial_back_translation")
+            output_dir.mkdir(parents=True, exist_ok=True)
+            output_file = output_dir / f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_list}.csv"
+            results.to_csv(output_file, index=False)
+            logger.info(f"Partial back translation saved to: {output_file}")
+        else:
+            output_dir = Path("data/output/back_translation/stage1_partial_back_translation")
+            output_dir.mkdir(parents=True, exist_ok=True)
+            output_file = output_dir / f"stage1_partial_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv"
+            results.to_csv(output_file, index=False)
+            logger.info(f"Stage 1 partial back translation saved to: {output_file}")
 
         return True
 
@@ -282,6 +290,52 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
         logger.error(f"Final back translation error: {str(e)}")
         return False
 
+def run_stage1_final_back_translation(args, partial_df):
+    try:
+        logger.info(f"Starting Stage 1 back translation using {args.stage1}...")
+        
+        if args.stage1 == 'google':
+            translator = GoogleTranslator(source_lang=args.target_lang, target_lang=args.source_lang)
+        elif args.stage1 == 'deepl':
+            translator = DeepLTranslator(source_lang=args.target_lang, target_lang=args.source_lang)
+        else:
+            logger.error("Invalid Stage 1 translator")
+            return False
+            
+        translated_lines = []
+        for i, row in tqdm(partial_df.iterrows(), total=args.stage1_samples):
+            if i >= args.stage1_samples:
+                break
+            translated_code = translator.translate_code(row[f'{args.stage1}_partial_back_translated_code'])
+            translated_lines.append({
+                'English_code': row['English_code'],
+                'Partial_translated_code': row[f'{args.stage1}_partial_back_translated_code'],
+                f'{args.stage1}_back_translated_code': translated_code
+            })
+            
+        output_dir = Path("data/output/back_translation/stage1_final_back_translation")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_file = output_dir / f"Stage_1_Final_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
+        pd.DataFrame(translated_lines).to_csv(output_file, index=False)
+        
+        logger.info(f"Stage 1 back translation saved to: {output_file}")
+        return True
+    except Exception as e:
+        logger.error(f"Stage 1 back translation error: {str(e)}")
+        return False
+
+def run_stage1_evaluation(args, stage1_df):
+    try:
+        logger.info("Starting evaluation for Stage 1 translation...")
+        run_back_translation(args, stage1_df, 0, is_stage1=True)
+        stage1_back_df = pd.read_csv(Path("data/output/back_translation/stage1_partial_back_translation") / f"stage1_partial_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv")
+        run_stage1_final_back_translation(args, stage1_back_df)
+        
+        return True
+    
+    except Exception as e:
+        logger.error(f"Stage 1 evaluation error: {str(e)}")
+        return False
     
 def main():
     args = parse_args()
@@ -333,6 +387,22 @@ def main():
                 return 1
         else:
             logger.info("Stage 1 translation exists. Skipping.")
+
+        # Stage 1 Evaluation
+        stage1_eval = Path("data/output/evaluation/stage1") / \
+            f"Stage_1_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}_eval.csv"
+
+        if not stage1_eval.exists():
+            logger.info(f"Running evaluation for Stage 1 translation using {args.stage1}...")
+            try:
+                # stage1_df = pd.read_csv(stage1_file)
+                if not run_stage1_evaluation(args, stage1_file):
+                    logger.error("Stage 1 evaluation failed")
+                    return 1
+            except Exception as e:
+                logger.error(f"Error reading Stage 1 translation file: {str(e)}")
+                return 1
+            
                 
         if not args.stage2:
             logger.info("Stage 1 pipeline completed successfully")

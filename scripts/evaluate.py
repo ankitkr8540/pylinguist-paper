@@ -329,16 +329,19 @@ class TranslationEvaluator:
         logger.info(f"Token Match: {summary['token_match']:.4f}")
         logger.info(f"Overall Score: {summary['overall_score']:.4f}")
 
-def evaluate_translations(args) -> bool:
+def evaluate_translations(args, isStage1: bool = False) -> bool:
     """Main entry point for translation evaluation."""
     evaluator = TranslationEvaluator(args)
-    
-    chunk_sizes = [min(args.stage1_samples, size) for size in [5, 10, 15, 25]]
-    success = True
-    
-    for chunk_size in chunk_sizes:
-        if not evaluator.evaluate_translations(chunk_size):
-            logger.error(f"Evaluation failed for chunk size {chunk_size}")
-            success = False
+
+    if not isStage1:
+        chunk_sizes = [min(args.stage1_samples, size) for size in [5, 10, 15, 25]]
+        success = True
+        
+        for chunk_size in chunk_sizes:
+            if not evaluator.evaluate_translations(chunk_size):
+                logger.error(f"Evaluation failed for chunk size {chunk_size}")
+                success = False
+    else:
+        success = evaluator.evaluate_translations(args.stage1_samples)
             
     return success
