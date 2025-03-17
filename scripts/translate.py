@@ -330,7 +330,8 @@ def run_stage1_evaluation(args, stage1_df):
         run_back_translation(args, stage1_df, 0, is_stage1=True)
         stage1_back_df = pd.read_csv(Path("data/output/back_translation/stage1_partial_back_translation") / f"stage1_partial_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv")
         run_stage1_final_back_translation(args, stage1_back_df)
-        
+        if evaluate_translations(args, isStage1=True):
+            logger.info("Evaluation completed successfully")
         return True
     
     except Exception as e:

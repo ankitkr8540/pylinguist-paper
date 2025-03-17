@@ -203,44 +203,71 @@ class CodeEvaluator:
 class TranslationEvaluator:
     """Handles evaluation of translation files."""
     
-    def __init__(self, args):
+    def __init__(self, args, isStage1: bool = False):
         """Initialize with command line arguments."""
         self.args = args
         self.evaluator = CodeEvaluator()
         self.eval_dir = Path("data/output/evaluation")
+        self.isStage1 = isStage1  
         self.eval_dir.mkdir(parents=True, exist_ok=True)
 
-    def evaluate_translations(self, chunk_size: int) -> bool:
+    def evaluate_translations(self, chunk_size: int = 0) -> bool:
         """
         Evaluate translations for a specific chunk size.
         """
         try:
-            logger.info(f"\nEvaluating translations for chunk size {chunk_size}")
-            
-            # Get input file
-            back_trans_file = Path("data/output/back_translation/Final_back_translation") / \
-                f"Final_back_translation_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage2_samples}_{chunk_size}.csv"
+            if not self.isStage1:
+                logger.info(f"\nEvaluating translations for chunk size {chunk_size}")
                 
-            if not back_trans_file.exists():
-                logger.error(f"Back translation file not found: {back_trans_file}")
-                return False
+                # Get input file
+                back_trans_file = Path("data/output/back_translation/Final_back_translation") / \
+                    f"Final_back_translation_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage2_samples}_{chunk_size}.csv"
+                    
+                if not back_trans_file.exists():
+                    logger.error(f"Back translation file not found: {back_trans_file}")
+                    return False
+                    
+                # Read translations
+                try:
+                    df = pd.read_csv(back_trans_file)
+                    logger.info(f"Found {len(df)} translations to evaluate")
+                    logger.info(f"Columns in file: {df.columns.tolist()}")
+                except Exception as e:
+                    logger.error(f"Error reading file {back_trans_file}: {str(e)}")
+                    return False
+            else:
+                logger.info(f"\nEvaluating translations for stage 1")
+
+                # Get input file
+                back_trans_file = Path("data/output/back_translation/stage1_final_back_translation") / \
+                    f"Stage_1_Final_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.start_index}_{self.args.stage1_samples}_{self.args.stage2_samples}.csv"
                 
-            # Read translations
-            try:
-                df = pd.read_csv(back_trans_file)
-                logger.info(f"Found {len(df)} translations to evaluate")
-                logger.info(f"Columns in file: {df.columns.tolist()}")
-            except Exception as e:
-                logger.error(f"Error reading file {back_trans_file}: {str(e)}")
-                return False
+                if not back_trans_file.exists():
+                    logger.error(f"Back translation file not found: {back_trans_file}")
+                    return False
+                
+                # Read translations
+                try:
+                    df = pd.read_csv(back_trans_file)
+                    logger.info(f"Found {len(df)} translations to evaluate")
+                    logger.info(f"Columns in file: {df.columns.tolist()}")
+                except Exception as e:
+                    logger.error(f"Error reading file {back_trans_file}: {str(e)}")
+                    return False
+                
             
             results = []
             for idx, row in df.iterrows():
                 try:
                     # Extract code using proper column names
-                    original = row['Original Code']
-                    translated = row[f'{self.args.stage2}_partial_translated_code']
-                    back_translated = row[f'{self.args.stage2}_back_translated_code']
+                    if not self.isStage1:
+                        original = row['Original Code']
+                        translated = row[f'{self.args.stage2}_partial_translated_code']
+                        back_translated = row[f'{self.args.stage2}_back_translated_code']
+                    else:
+                        original = row['English_code']
+                        translated = row['Partial_translated_code']
+                        back_translated = row[f'{self.args.stage1}_back_translated_code']
                     
                     if pd.isna(original) or pd.isna(back_translated):
                         logger.warning(f"Missing code in row {idx + 1}, skipping...")
@@ -290,8 +317,8 @@ class TranslationEvaluator:
             # Save detailed results
             df = pd.DataFrame(results)
             details_file = self.eval_dir / \
-                f"evaluation_details_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.csv"
-            df.to_csv(details_file, index=False)
+                f"evaluation_details_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.csv" if not self.isStage1 else self.eval_dir/f"stage1/evaluation_details_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage1_samples}.csv"
+            df.to_csv(details_file, index=False)  
             
             # Calculate and save summary
             summary = {
@@ -306,7 +333,7 @@ class TranslationEvaluator:
             }
             
             summary_file = self.eval_dir / \
-                f"evaluation_summary_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.json"
+                f"evaluation_summary_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.json" if not self.isStage1 else self.eval_dir/f"stage1/evaluation_summary_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage1_samples}.json"
             with open(summary_file, 'w') as f:
                 json.dump(summary, f, indent=4)
                 
@@ -331,7 +358,7 @@ class TranslationEvaluator:
 
 def evaluate_translations(args, isStage1: bool = False) -> bool:
     """Main entry point for translation evaluation."""
-    evaluator = TranslationEvaluator(args)
+    evaluator = TranslationEvaluator(args, isStage1)
 
     if not isStage1:
         chunk_sizes = [min(args.stage1_samples, size) for size in [5, 10, 15, 25]]
@@ -342,6 +369,9 @@ def evaluate_translations(args, isStage1: bool = False) -> bool:
                 logger.error(f"Evaluation failed for chunk size {chunk_size}")
                 success = False
     else:
-        success = evaluator.evaluate_translations(args.stage1_samples)
+        success = True
+        if not evaluator.evaluate_translations():
+            logger.error("Evaluation failed for stage 1 translations")
+            success = False
             
     return success
