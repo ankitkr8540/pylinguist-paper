@@ -220,7 +220,7 @@ class TranslationEvaluator:
                 logger.info(f"\nEvaluating translations for chunk size {chunk_size}")
                 
                 # Get input file
-                back_trans_file = Path("data/output/back_translation/Final_back_translation") / \
+                back_trans_file = Path("data/output/back_translation/stage2/final_back_translation") / \
                     f"Final_back_translation_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage2_samples}_{chunk_size}.csv"
                     
                 if not back_trans_file.exists():
@@ -239,8 +239,8 @@ class TranslationEvaluator:
                 logger.info(f"\nEvaluating translations for stage 1")
 
                 # Get input file
-                back_trans_file = Path("data/output/back_translation/stage1_final_back_translation") / \
-                    f"Stage_1_Final_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.start_index}_{self.args.stage1_samples}_{self.args.stage2_samples}.csv"
+                back_trans_file = Path("data/output/back_translation/stage1/final_back_translation") / \
+                    f"final_back_translation_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.start_index}_{self.args.stage1_samples}_{self.args.stage2_samples}.csv"
                 
                 if not back_trans_file.exists():
                     logger.error(f"Back translation file not found: {back_trans_file}")
@@ -317,7 +317,7 @@ class TranslationEvaluator:
             # Save detailed results
             df = pd.DataFrame(results)
             details_file = self.eval_dir / \
-                f"evaluation_details_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.csv" if not self.isStage1 else self.eval_dir/f"stage1/evaluation_details_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage1_samples}.csv"
+                f"stage2/evaluation_details_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.csv" if not self.isStage1 else self.eval_dir/f"stage1/evaluation_details_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage1_samples}.csv"
             df.to_csv(details_file, index=False)  
             
             # Calculate and save summary
@@ -333,7 +333,7 @@ class TranslationEvaluator:
             }
             
             summary_file = self.eval_dir / \
-                f"evaluation_summary_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.json" if not self.isStage1 else self.eval_dir/f"stage1/evaluation_summary_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage1_samples}.json"
+                f"stage2/evaluation_summary_{self.args.stage2}_{self.args.source_lang}_{self.args.target_lang}_{chunk_size}.json" if not self.isStage1 else self.eval_dir/f"stage1/evaluation_summary_{self.args.stage1}_{self.args.source_lang}_{self.args.target_lang}_{self.args.stage1_samples}.json"
             with open(summary_file, 'w') as f:
                 json.dump(summary, f, indent=4)
                 

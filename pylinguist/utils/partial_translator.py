@@ -69,8 +69,8 @@ class PartialTranslator:
                     translation_dict[source_word] = target_word
                     translation_dict[target_word] = source_word  # Add reverse mapping
                     
-            logger.info(f"Loaded bidirectional keywords dictionary for {extract_language(self.source_lang)} "
-                     f"<-> {extract_language(self.target_lang)}")
+            # logger.info(f"Loaded bidirectional keywords dictionary for {extract_language(self.source_lang)} "
+            #          f"<-> {extract_language(self.target_lang)}")
                      
             return translation_dict
             
@@ -320,13 +320,13 @@ class PartialTranslator:
         return text  # Placeholder for potential text translation
 
 
-def partial_translate_examples(data_path: Path, source_lang: str, target_lang: str, 
+def             partial_translate_examples(data_path: Path, source_lang: str, target_lang: str, 
                             start_index: int = 0, stage1_samples: int = 0, stage2_samples: int = 0, 
                             back_translation: bool = False, stage2_model: str = "") -> pd.DataFrame:
     """Translate multiple examples from dataset."""
     try:
         df = pd.read_csv(data_path)
-        logger.info(f"Translating from {source_lang} to {target_lang}")
+        # logger.info(f"Translating from {source_lang} to {target_lang}")
         
         translator = PartialTranslator(source_lang, target_lang)
         
