@@ -37,7 +37,12 @@ def check_paths():
         Path("data/output/partial_translation"),
         Path("data/output/stage1"),
         Path("data/output/stage2"),
-        Path("data/output/evaluation/stage1")
+        Path("data/output/back_translation/stage1/partial_back_translation"),
+        Path("data/output/back_translation/stage1/final_back_translation"),
+        Path("data/output/back_translation/stage2/partial_back_translation"),
+        Path("data/output/back_translation/stage2/final_back_translation"),
+        Path("data/output/evaluation/stage1"),
+        Path("data/output/evaluation/stage2"),
     ]
     for path in paths:
         path.mkdir(parents=True, exist_ok=True)
@@ -185,14 +190,13 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
         logger.error(f"Stage 2 translation error: {str(e)}")
         return False
 
-def run_back_translation(args, stage2_files, chunk_list, is_stage1=False):
+def run_partial_back_translation(args, stage2_files, chunk_list, is_stage1=False):
 
-    print("stage2_files", stage2_files) ## stage2_files is a dataframe
-    print("chunk_list", chunk_list) # single digit number
+    # print("stage2_files", stage2_files) ## stage2_files is a dataframe
+    # print("chunk_list", chunk_list) # single digit number
 
     try:
         # Use stage2 dataframe and First do the partially translate the f'{stage2}_translated_code using joshua_keyword
-        logger.info(f"Step 1: Starting partial back translation using Joshua keyword...")
         results = partial_translate_examples(
             data_path=stage2_files,
             source_lang=args.target_lang,
@@ -205,15 +209,15 @@ def run_back_translation(args, stage2_files, chunk_list, is_stage1=False):
         )
 
         if not is_stage1:
-            output_dir = Path("data/output/back_translation/partial_back_translation")
+            output_dir = Path("data/output/back_translation/stage2/partial_back_translation")
             output_dir.mkdir(parents=True, exist_ok=True)
             output_file = output_dir / f"partial_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk_list}.csv"
             results.to_csv(output_file, index=False)
-            logger.info(f"Partial back translation saved to: {output_file}")
+            logger.info(f"Stage 2 Partial back translation saved to: {output_file}")
         else:
-            output_dir = Path("data/output/back_translation/stage1_partial_back_translation")
+            output_dir = Path("data/output/back_translation/stage1/partial_back_translation")
             output_dir.mkdir(parents=True, exist_ok=True)
-            output_file = output_dir / f"stage1_partial_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv"
+            output_file = output_dir / f"partial_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv"
             results.to_csv(output_file, index=False)
             logger.info(f"Stage 1 partial back translation saved to: {output_file}")
 
@@ -278,7 +282,7 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
             })
 
         # Save results
-        output_dir = Path("data/output/back_translation/Final_back_translation")
+        output_dir = Path("data/output/back_translation/stage2/final_back_translation")
         output_dir.mkdir(parents=True, exist_ok=True)
         output_file = output_dir / f"Final_back_translation_{args.stage2}_{args.source_lang}_{args.target_lang}_{args.stage2_samples}_{chunk}.csv"
         pd.DataFrame(translated_lines).to_csv(output_file, index=False)
@@ -313,9 +317,9 @@ def run_stage1_final_back_translation(args, partial_df):
                 f'{args.stage1}_back_translated_code': translated_code
             })
             
-        output_dir = Path("data/output/back_translation/stage1_final_back_translation")
+        output_dir = Path("data/output/back_translation/stage1/final_back_translation")
         output_dir.mkdir(parents=True, exist_ok=True)
-        output_file = output_dir / f"Stage_1_Final_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
+        output_file = output_dir / f"final_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
         pd.DataFrame(translated_lines).to_csv(output_file, index=False)
         
         logger.info(f"Stage 1 back translation saved to: {output_file}")
@@ -327,13 +331,40 @@ def run_stage1_final_back_translation(args, partial_df):
 def run_stage1_evaluation(args, stage1_df):
     try:
         logger.info("Starting evaluation for Stage 1 translation...")
-        run_back_translation(args, stage1_df, 0, is_stage1=True)
-        stage1_back_df = pd.read_csv(Path("data/output/back_translation/stage1_partial_back_translation") / f"stage1_partial_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv")
-        run_stage1_final_back_translation(args, stage1_back_df)
-        if evaluate_translations(args, isStage1=True):
-            logger.info("Evaluation completed successfully")
-        return True
-    
+        partial_dir = Path("data/output/back_translation/stage1/partial_back_translation")
+        partial_file = partial_dir / f"partial_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv"
+        if not partial_file.exists():
+            logger.info("Running partial back translation for evaluation...")
+            if run_partial_back_translation(args, stage1_df, 0, is_stage1=True):
+                logger.info("Partial back translation saved successfully")
+            else:
+                logger.error("Partial back translation failed")
+                return False
+        else:
+            logger.info("Partial back translation exists. Skipping.")
+        stage1_back_df = pd.read_csv(partial_file)
+        final_dir = Path("data/output/back_translation/stage1/final_back_translation")
+        final_file = final_dir / f"final_back_translation_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.start_index}_{args.stage1_samples}_{args.stage2_samples}.csv"
+        if not final_file.exists():
+            logger.info("Running final back translation for evaluation...")
+            if run_stage1_final_back_translation(args, stage1_back_df):
+                logger.info("Final back translation saved successfully")
+            else:
+                logger.error("Final back translation failed")
+                return False
+        else:
+            logger.info("Final back translation exists. Skipping.")
+        eval_dir = Path("data/output/evaluation/stage1")
+        eval_file = eval_dir / f"stage1/evaluation_details_{args.stage1}_{args.source_lang}_{args.target_lang}_{args.stage1_samples}.csv"
+        if not eval_file.exists():
+            if evaluate_translations(args, isStage1=True):
+                logger.info("Evaluation completed successfully")
+                return True
+            else:
+                logger.error("Evaluation failed")
+                return False
+        else:
+            logger.info("Evaluation file exists. Skipping.")
     except Exception as e:
         logger.error(f"Stage 1 evaluation error: {str(e)}")
         return False
@@ -446,8 +477,8 @@ def main():
         
         # Create back translation directories
         back_translation_dirs = {
-            'partial': Path("data/output/back_translation/partial_back_translation"),
-            'final': Path("data/output/back_translation/Final_back_translation")
+            'partial': Path("data/output/back_translation/stage2/partial_back_translation"),
+            'final': Path("data/output/back_translation/stage2/final_back_translation")
         }
         
         for dir_path in back_translation_dirs.values():
@@ -473,7 +504,7 @@ def main():
                 # Step 1: Partial Back Translation
                 if not partial_back_file.exists():
                     logger.info("Running partial back translation...")
-                    if not run_back_translation(args, stage2_file, chunk_size):
+                    if not run_partial_back_translation(args, stage2_file, chunk_size):
                         logger.error("Partial back translation failed")
                         return 1
                     logger.info(f"Partial back translation saved: {partial_back_file}")
