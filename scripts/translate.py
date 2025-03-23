@@ -192,9 +192,6 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
 
 def run_partial_back_translation(args, stage2_files, chunk_list, is_stage1=False):
 
-    # print("stage2_files", stage2_files) ## stage2_files is a dataframe
-    # print("chunk_list", chunk_list) # single digit number
-
     try:
         # Use stage2 dataframe and First do the partially translate the f'{stage2}_translated_code using joshua_keyword
         results = partial_translate_examples(
