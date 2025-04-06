@@ -231,17 +231,15 @@ class BaseTranslator(ABC):
         return word, i - start
 
     def _process_tokens(self, tokens: List[Dict[str, str]]) -> str:
-        """Process tokens while preserving structure."""
+        """Process tokens with improved handling for function names and compound words."""
         result = []
         i = 0
+        
         while i < len(tokens):
             token = tokens[i]
             
-            if token['type'] == 'space':
-                result.append(token['value'])
-            elif token['type'] == 'string':
-                result.append(token['value'])
-            elif token['type'] == 'operator':
+            if token['type'] in ('space', 'operator', 'string'):
+                # Preserve spaces, operators, and strings as is
                 result.append(token['value'])
             elif token['type'] == 'word':
                 word = token['value']
@@ -251,57 +249,75 @@ class BaseTranslator(ABC):
                     result.append(word)
                     i += 1
                     continue
+                
+                # Skip translation for special Python identifiers and common variables
+                skip_words = {'self', 'cls', 'super', 'i', 'j', 'k', 'x', 'y', 'z', 'n', 'm'}
+                if word in skip_words or word.isdigit():
+                    result.append(word)
+                    i += 1
+                    continue
+                
+                # Check if this is a function/method call
+                is_function = (i + 1 < len(tokens) and 
+                            tokens[i+1]['type'] == 'operator' and 
+                            tokens[i+1]['value'] == '(')
+                
+                # Handle translation based on word structure and context
+                if '_' in word:
+                    # Translate compound word as a single semantic unit
+                    phrase = word.replace('_', ' ')
+                    translated = self.translate_text(phrase)
                     
-                # Check if it's a method call
-                if (i > 0 and tokens[i-1]['value'] == '.' and 
-                    i + 1 < len(tokens) and tokens[i+1]['value'] == '('):
-                    # Translate method name
-                    translated = self._translate_token(word)
-                    result.append(translated)
-                elif (i + 1 < len(tokens) and 
-                      tokens[i+1]['type'] == 'operator' and 
-                      tokens[i+1]['value'] == '('):
-                    # Translate function name
-                    translated = self._translate_token(word)
-                    result.append(translated)
-                else:
-                    # Regular word - check for snake_case
-                    if '_' in word:
-                        parts = word.split('_')
-                        translated_parts = []
-                        for part in parts:
-                            if self.is_target_language(part):
-                                translated_parts.append(part)  # Skip if already translated
-                            else:
-                                translated_parts.append(self._translate_token(part))
-                        result.append('_'.join(translated_parts))
+                    if translated:
+                        result.append(translated.replace(' ', '_'))
                     else:
-                        translated = self._translate_token(word)
-                        result.append(translated)
-            
+                        result.append(word)  # Fallback to original
+                else:
+                    # Handle simple words
+                    translated = self.translate_text(word)
+                    
+                    if translated:
+                        # Ensure function names remain single tokens
+                        if is_function and ' ' in translated:
+                            result.append(translated.replace(' ', '_'))
+                        else:
+                            result.append(translated)
+                    else:
+                        result.append(word)  # Fallback to original
+                
             i += 1
         
         return ''.join(result)
 
     def _translate_token(self, token: str) -> str:
-        """Translate a single token."""
+        """Translate a single token with improved handling for compound words."""
         if not token or token.isspace():
             return token
             
         # Skip translation if already in target language
         if self.is_target_language(token):
             return token
+        
+        # Handle compound words with underscores (snake_case)
+        if '_' in token:
+            # Convert the entire token to a space-separated phrase for better translation
+            phrase = token.replace('_', ' ')
             
-        # Skip common programming keywords that shouldn't be translated
-        common_keywords = {'if', 'else', 'for', 'while', 'def', 'class', 'return', 'import', 
-                         'from', 'as', 'try', 'except', 'finally', 'with', 'in', 'is', 'not',
-                         'and', 'or', 'True', 'False', 'None', 'print', 'input', 'len', 'super'}
-        if token in common_keywords:
+            # Translate the entire phrase as a single semantic unit
+            translated_phrase = self.translate_text(phrase)
+            
+            # If translation succeeded, convert spaces back to underscores
+            if translated_phrase:
+                return translated_phrase.replace(' ', '_')
             return token
-            
-        # Implement your token translation logic here
-        # This might involve using your translate_text method
-        return self.translate_text(token)
+        
+        # For simple tokens, translate directly
+        translated = self.translate_text(token)
+        
+        # Ensure no spaces in the result (convert to underscores if needed)
+        if translated and ' ' in translated:
+            return translated.replace(' ', '_')
+        return translated or token
 
     @abstractmethod
     def translate_text(self, text: str) -> str:

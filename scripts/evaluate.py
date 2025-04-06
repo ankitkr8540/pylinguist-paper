@@ -361,7 +361,7 @@ def evaluate_translations(args, isStage1: bool = False) -> bool:
     evaluator = TranslationEvaluator(args, isStage1)
 
     if not isStage1:
-        chunk_sizes = [min(args.stage1_samples, size) for size in [5, 10, 15, 25]]
+        chunk_sizes = [min(args.stage1_samples, size) for size in [0, 5, 10, 15, 25]]
         success = True
         
         for chunk_size in chunk_sizes:

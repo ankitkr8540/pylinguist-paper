@@ -438,7 +438,7 @@ def main():
             return 0
             
         # Stage 2 Translation
-        base_chunk_sizes = [5, 10, 15, 25]
+        base_chunk_sizes = [0,5, 10, 15, 25]
         chunk_sizes = list(set([min(args.stage1_samples, size) for size in base_chunk_sizes]))
         chunk_sizes.sort()  # Ensure ordered processing
         logger.info(f"Stage 2: Processing chunk sizes: {chunk_sizes}")
