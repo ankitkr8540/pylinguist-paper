@@ -23,7 +23,7 @@ class GPTEnhancer(BaseEnhancer):
             raise ValueError("OpenAI API key not found in environment")
             
         self.client = OpenAI(api_key=self.api_key)
-        self.model = "gpt-4o-mini"
+        self.model = "gpt-4o"
         self.temperature = 0
         self.max_retries = 3
         self.retry_delay = 1
