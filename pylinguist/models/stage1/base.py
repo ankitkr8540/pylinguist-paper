@@ -30,7 +30,7 @@ class BaseTranslator(ABC):
         """Get regex pattern for language characters."""
         if lang not in self.LANGUAGE_CHARS:
             logger.warning(f"No specific character set defined for {lang}, using default")
-            return r'[\w\d_]'
+            return r'[\w\d_]' #
             
         chars = self.LANGUAGE_CHARS[lang]
         if len(chars) == 1:  # Latin-based scripts
@@ -40,21 +40,43 @@ class BaseTranslator(ABC):
     
     def is_target_language(self, text: str) -> bool:
         """Check if text is already in target language."""
-        # For non-Latin scripts, check if any character is in target language range
-        if len(self.LANGUAGE_CHARS.get(self.target_lang, [])) == 2:
-            target_start, target_end = self.LANGUAGE_CHARS[self.target_lang]
+        # Check if text is a number
+        if text.isdigit():
+            return True
+        
+        # For English as target language
+        if self.target_lang == 'en':
+            # Check if word is mostly English letters
+            english_chars = 0
             for char in text:
-                if target_start <= char <= target_end:
+                if char.isalpha() and ord('a') <= ord(char.lower()) <= ord('z'):
+                    english_chars += 1
                     return True
             return False
         
-        # For Latin scripts with special characters, check target language pattern
-        target_pattern = self._get_language_pattern(self.target_lang)
-        for char in text:
-            if re.match(target_pattern, char) and not re.match(r'[a-zA-Z0-9_]', char):
-                return True
+        # For Hindi and other non-Latin scripts
+        elif self.target_lang in ['hi', 'bn', 'zh', 'el', 'ku']:
+            # Get Unicode range for target language
+            if len(self.LANGUAGE_CHARS.get(self.target_lang, [])) == 2:
+                target_start, target_end = self.LANGUAGE_CHARS[self.target_lang]
                 
-        # Could be further improved with language detection libraries
+                # Check each character to see if it's in the target language Unicode range
+                for char in text:
+                    # Skip spaces, underscores, and digits
+                    if char.isspace() or char == '_' or char.isdigit():
+                        continue
+                        
+                    # If any character is in the target language range, the word is in target language
+                    if target_start <= char <= target_end:
+                        return True
+        
+        # For Latin-based languages like Spanish, French
+        elif self.target_lang in ['es', 'fr']:
+            target_pattern = self._get_language_pattern(self.target_lang)
+            for char in text:
+                if re.match(target_pattern, char) and not re.match(r'[a-zA-Z0-9_]', char):
+                    return True
+        
         return False
     
     def translate_code(self, code: str) -> str:
@@ -164,7 +186,7 @@ class BaseTranslator(ABC):
                 continue
                 
             # Handle operators and punctuation
-            if char in '()+-*/=<>!,[]{}.:':
+            if code[i] in '()[]{}+-*/%=<>!&|^~.,;:?@#$\'"\\':
                 operator, length = self._consume_operator(code, i)
                 tokens.append({'type': 'operator', 'value': operator})
                 i += length
@@ -211,12 +233,26 @@ class BaseTranslator(ABC):
 
     def _consume_operator(self, code: str, start: int) -> Tuple[str, int]:
         """Consume operator or punctuation."""
-        char = code[start]
-        if start + 1 < len(code):
-            next_char = code[start + 1]
-            if char + next_char in {'==', '!=', '<=', '>=', '//', '**'}:
-                return char + next_char, 2
-        return char, 1
+    
+        # Try to match three-character operators first
+        if start + 3 <= len(code):
+            three_chars = code[start:start+3]
+            if three_chars in {'<<=', '>>=', '...'}:
+                return three_chars, 3
+
+        # Then try two-character operators
+        if start + 2 <= len(code):
+            two_chars = code[start:start+2]
+            if two_chars in {
+                '==', '!=', '<=', '>=', '//', '**',
+                '+=', '-=', '*=', '/=', '%=', '&=',
+                '|=', '^=', '<<', '>>', '&&', '||',
+                '++', '--', '->', '=>', '::'
+            }:
+                return two_chars, 2
+
+        # Otherwise, it's a single-character operator
+        return code[start], 1
 
     def _consume_word(self, code: str, start: int, word_pattern: str) -> Tuple[str, int]:
         """Consume word with language-specific characters and digits."""
@@ -231,7 +267,6 @@ class BaseTranslator(ABC):
         return word, i - start
 
     def _process_tokens(self, tokens: List[Dict[str, str]]) -> str:
-        """Process tokens with improved handling for function names and compound words."""
         result = []
         i = 0
         
@@ -250,45 +285,41 @@ class BaseTranslator(ABC):
                     i += 1
                     continue
                 
-                # Skip translation for special Python identifiers and common variables
-                skip_words = {'self', 'cls', 'super', 'i', 'j', 'k', 'x', 'y', 'z', 'n', 'm'}
+                # Skip translation for special identifiers
+                skip_words = {'__init__', '__name__', '__main__', 'self', 'cls', 'args', 'kwargs'}
                 if word in skip_words or word.isdigit():
                     result.append(word)
                     i += 1
                     continue
+                
+                # Process identifiers - variables, functions, etc.
+                translated = None
                 
                 # Check if this is a function/method call
                 is_function = (i + 1 < len(tokens) and 
                             tokens[i+1]['type'] == 'operator' and 
                             tokens[i+1]['value'] == '(')
                 
-                # Handle translation based on word structure and context
+                # Handle translation based on word structure
                 if '_' in word:
-                    # Translate compound word as a single semantic unit
+                    # For compound words, translate the entire phrase
                     phrase = word.replace('_', ' ')
                     translated = self.translate_text(phrase)
-                    
-                    if translated:
-                        result.append(translated.replace(' ', '_'))
-                    else:
-                        result.append(word)  # Fallback to original
                 else:
-                    # Handle simple words
+                    # For simple words
                     translated = self.translate_text(word)
-                    
-                    if translated:
-                        # Ensure function names remain single tokens
-                        if is_function and ' ' in translated:
-                            result.append(translated.replace(' ', '_'))
-                        else:
-                            result.append(translated)
-                    else:
-                        result.append(word)  # Fallback to original
                 
+                # Critical fix: Always replace spaces with underscores for identifiers
+                if translated:
+                    # Force underscore format for identifiers to maintain valid Python syntax
+                    formatted = translated.replace(' ', '_')
+                    result.append(formatted)
+                else:
+                    result.append(word)
+                    
             i += 1
         
         return ''.join(result)
-
     def _translate_token(self, token: str) -> str:
         """Translate a single token with improved handling for compound words."""
         if not token or token.isspace():

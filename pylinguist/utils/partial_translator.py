@@ -178,7 +178,7 @@ class PartialTranslator:
                 continue
                 
             # Handle operators and punctuation
-            if char in '()+-*/=<>!,[]{}.:':
+            if code[i] in '()[]{}+-*/%=<>!&|^~.,;:?@#$\'"\\':
                 operator, length = self._consume_operator(code, i)
                 tokens.append({'type': 'operator', 'value': operator})
                 i += length

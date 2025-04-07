@@ -17,7 +17,8 @@ class GoogleTranslator(BaseTranslator):
             
         try:
             text = text[:self.char_limit] if len(text) > self.char_limit else text
-            return self.translator.translate(text)
+            # Perform the translation
+            return self.translator.translate(text).replace('-', '_')
         except Exception as e:
             logger.error(f"Translation failed: {str(e)}")
             return text
