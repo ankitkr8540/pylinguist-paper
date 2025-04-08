@@ -247,7 +247,6 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
                 target_lang=args.source_lang,
                 translator_name=args.stage1
             )
-            return True
         elif args.stage2 == 'deepseek':
             from pylinguist.models.stage2.deepseek import DeepSeekEnhancer
             enhancer = DeepSeekEnhancer(

@@ -10,7 +10,7 @@ JOSHUA_KEYWORD = {
         'en': 'EnglishKey',
         'hi': 'HindiKey',
         'bn': 'BengaliKey',
-        'zh': 'MandarinKey',
+        'zh-CN': 'MandarinKey',
         'el': 'GreekKey'
     }
 
@@ -21,7 +21,7 @@ LANGUAGE_CODES = {
     'en': 'English',
     'hi': 'Hindi',
     'bn': 'Bengali',
-    'zh': 'Mandarin',
+    'zh-CN': 'Mandarin',
     'el': 'Greek'
 }
 

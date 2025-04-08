@@ -21,7 +21,7 @@ class PartialTranslator:
     LANGUAGE_CHARS = {
         'hi': ('\u0900', '\u097F'),  # Devanagari (Hindi)
         'bn': ('\u0980', '\u09FF'),  # Bengali
-        'zh': ('\u4E00', '\u9FFF'),  # Chinese
+        'zh-CN': ('\u4E00', '\u9FFF'),  # Chinese
         'el': ('\u0370', '\u03FF'),  # Greek
         'ku': ('\u0600', '\u06FF'),  # Kurdish (Arabic script)
         'es': ('a-zA-ZáéíóúüñÁÉÍÓÚÜÑ',),  # Spanish

@@ -11,7 +11,7 @@ logger = setup_logger('pylinguist.stage1.deepl')
 
 class DeepLTranslator(BaseTranslator):
     LANG_MAP = {'en': 'EN', 'de': 'DE', 'fr': 'FR', 'es': 'ES', 'it': 'IT',
-                'ja': 'JA', 'hi': 'HI', 'zh': 'ZH', 'pt': 'PT', 'ru': 'RU'}
+                'ja': 'JA', 'hi': 'HI', 'zh-CN': 'ZH', 'pt': 'PT', 'ru': 'RU'}
     
     def __init__(self, source_lang: str, target_lang: str, api_key: Optional[str] = None):
         super().__init__(source_lang, target_lang)
