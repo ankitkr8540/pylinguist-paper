@@ -19,7 +19,7 @@ class ClaudeTranslator(BaseEnhancer):
         if not self.api_key:
             raise ValueError("ANTHROPIC_API_KEY environment variable not set")
         self.client = anthropic.Anthropic(api_key=self.api_key)
-        self.model = "claude-3-opus-20240229"
+        self.model = "claude-3-5-haiku-20241022"
         self.max_retries = 3
         self.retry_delay = 2
         
