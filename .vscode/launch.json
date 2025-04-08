@@ -1,7 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
-
+    
     {
       "name": "Debug Translate Script",
       "type": "debugpy",
@@ -10,13 +10,20 @@
       "python": "/Users/ankitkumar/miniconda3/envs/pylinguist/bin/python",
       "console": "integratedTerminal",
       "args": [
-        "--source-lang", "en",
-        "--target-lang", "hi",
-        "--start-index", "0",
-        "--stage1-samples", "15",
-        "--stage2-samples", "10",
-        "--stage1", "google",
-        "--stage2", "gpt"
+        "--source-lang",
+        "en",
+        "--target-lang",
+        "hi",
+        "--start-index",
+        "0",
+        "--stage1-samples",
+        "5",
+        "--stage2-samples",
+        "1",
+        "--stage1",
+        "google",
+        "--stage2",
+        "gpt"
       ],
       "env": {
         "PYTHONPATH": "${workspaceFolder}"
