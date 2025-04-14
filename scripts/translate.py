@@ -6,7 +6,6 @@ from data.input.preprocessor import DatasetPreprocessor
 from pylinguist.utils.partial_translator import partial_translate_examples
 from pylinguist.utils.logger import setup_logger
 from pylinguist.models.stage1.google import GoogleTranslator
-from pylinguist.models.stage1.deepl import DeepLTranslator
 from evaluate import evaluate_translations
 import pandas as pd 
 from tqdm import tqdm
@@ -26,8 +25,8 @@ def parse_args():
     parser.add_argument('--stage2-samples', type=int, default=30)
     parser.add_argument('--source-lang', type=str, required=True)
     parser.add_argument('--target-lang', type=str, required=True)
-    parser.add_argument('--stage1', type=str, choices=['google', 'deepl'], required=True)
-    parser.add_argument('--stage2', type=str, choices=['gpt', 'llama', 'claude','deepseek'])
+    parser.add_argument('--stage1', type=str, choices=['google'], required=True)
+    parser.add_argument('--stage2', type=str, choices=['gpt', 'claude'])
     return parser.parse_args()
 
 def check_paths():
@@ -96,8 +95,6 @@ def run_stage1_translation(args, partial_df):
         
         if args.stage1 == 'google':
             translator = GoogleTranslator(source_lang=args.source_lang, target_lang=args.target_lang)
-        elif args.stage1 == 'deepl':
-            translator = DeepLTranslator(source_lang=args.source_lang, target_lang=args.target_lang)
         else:
             logger.error("Invalid Stage 1 translator")
             return False
@@ -136,9 +133,6 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
                 target_lang=args.target_lang,
                 translator_name=args.stage1
             )
-        elif args.stage2 == 'llama':
-            logger.error("Llama translator not implemented yet")
-            return False
         elif args.stage2 == 'claude':
             from pylinguist.models.stage2.claude import ClaudeTranslator
             enhancer = ClaudeTranslator(
@@ -146,13 +140,7 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
                 target_lang=args.target_lang,
                 translator_name=args.stage1
             )
-        elif args.stage2 == 'deepseek':
-            from pylinguist.models.stage2.deepseek import DeepSeekEnhancer
-            enhancer = DeepSeekEnhancer(
-                source_lang=args.source_lang,
-                target_lang=args.target_lang,
-                translator_name=args.stage1
-            )
+
             
         else:
             logger.error("Invalid Stage 2 translator")
@@ -237,19 +225,9 @@ def run_final_back_translation(args, stage1_df, partial_df, chunk):
                 target_lang=args.source_lang,
                 translator_name=args.stage1
             )
-        elif args.stage2 == 'llama':
-            logger.error("Llama translator not implemented yet")
-            return False
         elif args.stage2 == 'claude':
             from pylinguist.models.stage2.claude import ClaudeTranslator
             enhancer = ClaudeTranslator(
-                source_lang=args.target_lang,
-                target_lang=args.source_lang,
-                translator_name=args.stage1
-            )
-        elif args.stage2 == 'deepseek':
-            from pylinguist.models.stage2.deepseek import DeepSeekEnhancer
-            enhancer = DeepSeekEnhancer(
                 source_lang=args.target_lang,
                 target_lang=args.source_lang,
                 translator_name=args.stage1
@@ -296,8 +274,6 @@ def run_stage1_final_back_translation(args, partial_df):
         
         if args.stage1 == 'google':
             translator = GoogleTranslator(source_lang=args.target_lang, target_lang=args.source_lang)
-        elif args.stage1 == 'deepl':
-            translator = DeepLTranslator(source_lang=args.target_lang, target_lang=args.source_lang)
         else:
             logger.error("Invalid Stage 1 translator")
             return False
