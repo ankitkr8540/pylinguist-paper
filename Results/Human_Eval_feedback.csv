@@ -1,0 +1,733 @@
+Number of references given to model,English Code,Translated Hindi Code,Syntax Correctness,Semantic Preservation,Hindi Language Quality
+5,"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","परिभाषा उलटें_मैट्रिक्स(मैट्रिक्स):
+    नया_मैट्रिक्स = []
+    के_लिए ई में रेंज(लंबाई(मैट्रिक्स)):
+        नया_मैट्रिक्स.संलग्न([])
+        के_लिए जे में रेंज(लंबाई(मैट्रिक्स[ई])):
+            नया_मैट्रिक्स[ई].डाल(0, मैट्रिक्स[ई][जे])
+    वापस नया_मैट्रिक्स
+
+
+# परीक्षण_केस 1
+मैट्रिक्स1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# अपेक्षित_आउटपुट: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स1))
+
+# परीक्षण_केस 2
+मैट्रिक्स2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# अपेक्षित_आउटपुट: [[8, 7, 6, 5], [4, 3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स2))
+
+# परीक्षण_केस 3
+मैट्रिक्स3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# अपेक्षित_आउटपुट: [[6, 5], [4, 3], [2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स3))",5.0,5.0,5.0
+5,"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","परिभाषा फिबोनाच्ची(एन):
+    यदि एन == 0:
+        वापस 0
+    वरना_यदि एन == 1:
+        वापस 1
+    वरना:
+        वापस फिबोनाच्ची(एन-1) + फिबोनाच्ची(एन-2)
+
+#उदाहरण_उपयोग
+एन = 10
+फिबोनाच्ची_संख्या = फिबोनाच्ची(एन)
+छापिये(f""फिबोनाच्ची संख्या सूचक {एन} है {फिबोनाच्ची_संख्या}."")",5.0,5.0,5.0
+5,"
+def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)
+","परिभाषा गिनें_विशिष्ट_व्यंजन(डोरी):
+    व्यंजन = सेट()
+    छोटे_डोरी = डोरी.छोटा()
+    के_लिए चार में छोटे_डोरी:
+        यदि चार.अक्षर_है() और चार ना में 'aeiou':
+            व्यंजन.योग(चार)
+    वापस लंबाई(व्यंजन)",5.0,5.0,4.0
+5,"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","परिभाषा फ़िल्टर_और_बदलें(डोरी):
+    स्वर = ['अ', 'इ', 'उ', 'ओ', 'ए']
+    फ़िल्टर_किए_गए_शब्द = []
+    
+    शब्द = डोरी.बाँट()
+    
+    के_लिए शब्द में शब्द:
+        यदि कोई(चार.अंक_है() या ना चार.अक्षर_है() के_लिए चार में शब्द):
+            जारी
+        
+        यदि लंबाई(शब्द) > 3 और कोई(चार में स्वर के_लिए चार में शब्द):
+            फ़िल्टर_किया_गया_शब्द = """"
+            के_लिए चार में शब्द:
+                यदि चार में स्वर:
+                    स्वर_सूचक = स्वर.सूचक(चार)
+                    अगला_स्वर = स्वर[(स्वर_सूचक + 1) % लंबाई(स्वर)]
+                    फ़िल्टर_किया_गया_शब्द += अगला_स्वर
+                वरना:
+                    फ़िल्टर_किया_गया_शब्द += चार
+            फ़िल्टर_किए_गए_शब्द.संलग्न(फ़िल्टर_किया_गया_शब्द)
+    
+    वापस "" "".जोड़(फ़िल्टर_किए_गए_शब्द)
+
+
+# उदाहरण उपयोग:
+इनपुट_डोरी = ""नमस्ते दुनिया! यह एक परीक्षण डोरी है। मुझे फ़िल्टर करें यदि मैं संख्याएँ या विशेष अक्षर शामिल करता हूँ।""
+आउटपुट_डोरी = फ़िल्टर_और_बदलें(इनपुट_डोरी)
+छापिये(आउटपुट_डोरी)",5.0,5.0,4.0
+5,"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","परिभाषा है_विषम_मुख्य_100_से_ज्यादा(संख्या):
+    यदि संख्या <= 100 या संख्या % 2 == 0:  # जाँचें यदि संख्या 100_से_कम_या_बराबर_है_या_सम_है
+        वापस असत्य
+    के_लिए ई में रेंज(3, अंक(संख्या**0.5) + 1, 2):  # केवल_विषम_संख्याओं_से_विभाज्यता_की_जाँच
+        यदि संख्या % ई == 0:
+            वापस असत्य
+    वापस सत्य
+
+परिभाषा खोजें_दूसरा_सबसे_छोटा_विषम_मुख्य_100_से_ज्यादा(सरणी):
+    सबसे_छोटा = दूसरा_सबसे_छोटा = दश('inf')
+    के_लिए संख्या में सरणी:
+        यदि है_विषम_मुख्य_100_से_ज्यादा(संख्या):
+            यदि संख्या < सबसे_छोटा:
+                दूसरा_सबसे_छोटा = सबसे_छोटा
+                सबसे_छोटा = संख्या
+            वरना_यदि संख्या < दूसरा_सबसे_छोटा:
+                दूसरा_सबसे_छोटा = संख्या
+    वापस दूसरा_सबसे_छोटा",5.0,5.0,5.0
+10,"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","परिभाषा उलटें_मैट्रिक्स(मैट्रिक्स):
+    नया_मैट्रिक्स = []
+    के_लिए ई में रेंज(लंबाई(मैट्रिक्स)):
+        नया_मैट्रिक्स.संलग्न([])
+        के_लिए जे में रेंज(लंबाई(मैट्रिक्स[ई])):
+            नया_मैट्रिक्स[ई].डाल(0, मैट्रिक्स[ई][जे])
+    वापस नया_मैट्रिक्स
+
+
+# परीक्षण_केस 1
+मैट्रिक्स1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# अपेक्षित आउटपुट: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स1))
+
+# परीक्षण_केस 2
+मैट्रिक्स2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# अपेक्षित आउटपुट: [[8, 7, 6, 5], [4, 3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स2))
+
+# परीक्षण_केस 3
+मैट्रिक्स3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# अपेक्षित आउटपुट: [[6, 5], [4, 3], [2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स3))",5.0,5.0,5.0
+10,"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","परिभाषा फिबोनाच्ची(एन):
+    यदि एन == 0:
+        वापस 0
+    वरना_यदि एन == 1:
+        वापस 1
+    वरना:
+        वापस फिबोनाच्ची(एन-1) + फिबोनाच्ची(एन-2)
+
+#उपयोग का उदाहरण
+एन = 10
+फिबोनाच्ची_संख्या = फिबोनाच्ची(एन)
+छापिये (एफ"" फिबोनाच्ची संख्या सूचक {एन} है {फिबोनाच्ची_संख्या}."")",5.0,5.0,5.0
+10,"
+def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)
+","परिभाषा गिनें_विशिष्ट_व्यंजन(डोरी):
+    व्यंजन = सेट()
+    छोटे_डोरी = डोरी.छोटा()
+    के_लिए चार में छोटे_डोरी:
+        यदि चार.अक्षर_है() और चार ना में 'aeiou':
+            व्यंजन.योग(चार)
+    वापस लंबाई(व्यंजन)",5.0,5.0,4.0
+10,"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","परिभाषा फ़िल्टर_और_बदलें(डोरी):
+    स्वर = ['ए', 'ई', 'आई', 'ओ', 'यू']
+    फ़िल्टर_किए_गए_शब्द = []
+    
+    शब्द = डोरी.बाँट()
+    
+    के_लिए शब्द में शब्द:
+        यदि कोई(चार.अंक_है() या ना चार.अक्षर_है() के_लिए चार में शब्द):
+            जारी
+        
+        यदि लंबाई(शब्द) > 3 और कोई(चार में स्वर के_लिए चार में शब्द):
+            फ़िल्टर_किया_गया_शब्द = """"
+            के_लिए चार में शब्द:
+                यदि चार में स्वर:
+                    स्वर_सूचकांक = स्वर.सूचक(चार)
+                    अगला_स्वर = स्वर[(स्वर_सूचकांक + 1) % लंबाई(स्वर)]
+                    फ़िल्टर_किया_गया_शब्द += अगला_स्वर
+                वरना:
+                    फ़िल्टर_किया_गया_शब्द += चार
+            फ़िल्टर_किए_गए_शब्द.संलग्न(फ़िल्टर_किया_गया_शब्द)
+    
+    वापस "" "".जोड़(फ़िल्टर_किए_गए_शब्द)
+
+
+#उपयोग का उदाहरण:
+इनपुट_डोरी = ""नमस्ते दुनिया! यह एक परीक्षण डोरी है। मुझे फ़िल्टर करें यदि मैं संख्याएँ या विशेष अक्षर शामिल करता हूँ।""
+आउटपुट_डोरी = फ़िल्टर_और_बदलें(इनपुट_डोरी)
+छापिये(आउटपुट_डोरी)",5.0,5.0,4.0
+10,"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","परिभाषा है_विषम_मुख्य_100_से_बड़ा(संख्या):
+    यदि संख्या <= 100 या संख्या % 2 == 0:  # जाँचें यदि संख्या 100 से कम या बराबर है या सम है
+        वापस असत्य
+    के_लिए ई में रेंज(3, अंक(संख्या**0.5) + 1, 2):  # केवल विषम संख्याओं द्वारा विभाज्यता की जाँच करें
+        यदि संख्या % ई == 0:
+            वापस असत्य
+    वापस सत्य
+
+परिभाषा खोजें_दूसरा_सबसे_छोटा_विषम_मुख्य_100_से_बड़ा(सरणी):
+    सबसे_छोटा = दूसरा_सबसे_छोटा = दश('inf')
+    के_लिए संख्या में सरणी:
+        यदि है_विषम_मुख्य_100_से_बड़ा(संख्या):
+            यदि संख्या < सबसे_छोटा:
+                दूसरा_सबसे_छोटा = सबसे_छोटा
+                सबसे_छोटा = संख्या
+            वरना_यदि संख्या < दूसरा_सबसे_छोटा:
+                दूसरा_सबसे_छोटा = संख्या
+    वापस दूसरा_सबसे_छोटा",,,
+20,"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","परिभाषा उलटें_मैट्रिक्स(मैट्रिक्स):
+    नया_मैट्रिक्स = []
+    के_लिए ई में रेंज(लंबाई(मैट्रिक्स)):
+        नया_मैट्रिक्स.संलग्न([])
+        के_लिए जे में रेंज(लंबाई(मैट्रिक्स[ई])):
+            नया_मैट्रिक्स[ई].डाल(0, मैट्रिक्स[ई][जे])
+    वापस नया_मैट्रिक्स
+
+
+# परीक्षण_केस 1
+मैट्रिक्स1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# अपेक्षित आउटपुट: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स1))
+
+# परीक्षण_केस 2
+मैट्रिक्स2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# अपेक्षित आउटपुट: [[8, 7, 6, 5], [4, 3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स2))
+
+# परीक्षण_केस 3
+मैट्रिक्स3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# अपेक्षित आउटपुट: [[6, 5], [4, 3], [2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स3))",5.0,5.0,5.0
+20,"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","परिभाषा फाइबोनैचि(एन):
+    यदि एन == 0:
+        वापस 0
+    वरना_यदि एन == 1:
+        वापस 1
+    वरना:
+        वापस फाइबोनैचि(एन-1) + फाइबोनैचि(एन-2)
+
+#उदाहरण_उपयोग
+एन = 10
+फाइबोनैचि_संख्या = फाइबोनैचि(एन)
+छापिये (एफ"" फाइबोनैचि संख्या पर सूचक {एन} है {फाइबोनैचि_संख्या}."")",5.0,5.0,5.0
+20,"
+def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)
+","परिभाषा गिनें_विशिष्ट_व्यंजन(डोरी):
+    व्यंजन = सेट()
+    निचला_डोरी = डोरी.छोटा()
+    के_लिए चार में निचला_डोरी:
+        यदि चार.अक्षर_है() और चार ना में 'ए', 'ई', 'आई', 'ओ', 'यू':
+            व्यंजन.योग(चार)
+    वापस लंबाई(व्यंजन)",5.0,4.0,3.0
+20,"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","परिभाषा फ़िल्टर_और_बदलें(डोरी):
+    स्वर = ['ए', 'ई', 'आई', 'ओ', 'यू']
+    फ़िल्टर_किए_गए_शब्द = []
+    
+    शब्द = डोरी.बाँट()
+    
+    के_लिए शब्द में शब्द:
+        यदि कोई(चार.अंक_है() या ना चार.अक्षर_है() के_लिए चार में शब्द):
+            जारी
+        
+        यदि लंबाई(शब्द) > 3 और कोई(चार में स्वर के_लिए चार में शब्द):
+            फ़िल्टर_किया_गया_शब्द = """"
+            के_लिए चार में शब्द:
+                यदि चार में स्वर:
+                    स्वर_सूचक = स्वर.सूचक(चार)
+                    अगला_स्वर = स्वर[(स्वर_सूचक + 1) % लंबाई(स्वर)]
+                    फ़िल्टर_किया_गया_शब्द += अगला_स्वर
+                वरना:
+                    फ़िल्टर_किया_गया_शब्द += चार
+            फ़िल्टर_किए_गए_शब्द.संलग्न(फ़िल्टर_किया_गया_शब्द)
+    
+    वापस "" "".जोड़(फ़िल्टर_किए_गए_शब्द)
+
+
+#उदाहरण_उपयोग:
+इनपुट_डोरी = ""नमस्ते दुनिया! यह एक परीक्षण डोरी है। मुझे फ़िल्टर करें यदि मैं संख्याएँ या विशेष वर्ण शामिल करता हूँ।""
+आउटपुट_डोरी = फ़िल्टर_और_बदलें(इनपुट_डोरी)
+छापिये(आउटपुट_डोरी)",5.0,5.0,4.0
+20,"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","परिभाषा है_विषम_मुख्य_100_से_अधिक(संख्या):
+    यदि संख्या <= 100 या संख्या % 2 == 0:  # जाँचें यदि संख्या 100 से कम या बराबर है या विषम है
+        वापस असत्य
+    के_लिए ई में रेंज(3, अंक(संख्या**0.5) + 1, 2):  # केवल विषम संख्याओं द्वारा विभाज्यता की जाँच करें
+        यदि संख्या % ई == 0:
+            वापस असत्य
+    वापस सत्य
+
+परिभाषा ढूँढो_दूसरा_सबसे_छोटा_विषम_मुख्य_100_से_अधिक(आगमन):
+    सबसे_छोटा = दूसरा_सबसे_छोटा = दश('inf')
+    के_लिए संख्या में आगमन:
+        यदि है_विषम_मुख्य_100_से_अधिक(संख्या):
+            यदि संख्या < सबसे_छोटा:
+                दूसरा_सबसे_छोटा = सबसे_छोटा
+                सबसे_छोटा = संख्या
+            वरना_यदि संख्या < दूसरा_सबसे_छोटा:
+                दूसरा_सबसे_छोटा = संख्या
+    वापस दूसरा_सबसे_छोटा",5.0,5.0,4.0
+30,"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","परिभाषा उलटें_मैट्रिक्स(मैट्रिक्स):
+    नया_मैट्रिक्स = []
+    के_लिए ई में रेंज(लंबाई(मैट्रिक्स)):
+        नया_मैट्रिक्स.संलग्न([])
+        के_लिए जे में रेंज(लंबाई(मैट्रिक्स[ई])):
+            नया_मैट्रिक्स[ई].डाल(0, मैट्रिक्स[ई][जे])
+    वापस नया_मैट्रिक्स
+
+
+#परीक्षण मामला 1
+मैट्रिक्स1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+#अपेक्षित आउटपुट: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स1))
+
+#परीक्षण मामला 2
+मैट्रिक्स2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+#अपेक्षित आउटपुट: [[8, 7, 6, 5], [4, 3, 2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स2))
+
+#परीक्षण मामला 3
+मैट्रिक्स3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+#अपेक्षित आउटपुट: [[6, 5], [4, 3], [2, 1]]
+छापिये(उलटें_मैट्रिक्स(मैट्रिक्स3))",5.0,5.0,5.0
+30,"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","परिभाषा फाइबोनैचि(एन):
+    यदि एन == 0:
+        वापस 0
+    वरना_यदि एन == 1:
+        वापस 1
+    वरना:
+        वापस फाइबोनैचि(एन-1) + फाइबोनैचि(एन-2)
+
+#उदाहरण_उपयोग
+एन = 10
+फाइबोनैचि_संख्या = फाइबोनैचि(एन)
+छापिये (एफ"" फाइबोनैचि संख्या सूचक {एन} है {फाइबोनैचि_संख्या}."")",5.0,5.0,5.0
+30,"
+def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)
+","परिभाषा गिनें_विशिष्ट_व्यंजन(डोरी):
+    व्यंजन = सेट()
+    लोअरकेस_डोरी = डोरी.छोटा()
+    के_लिए चार में लोअरकेस_डोरी:
+        यदि चार.अक्षर_है() और चार ना में 'एईआईओयू':
+            व्यंजन.योग(चार)
+    वापस लंबाई(व्यंजन)",5.0,5.0,4.0
+30,"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","परिभाषा फ़िल्टर_और_बदलें(डोरी):
+    स्वर = ['ए', 'ई', 'आई', 'ओ', 'यू']
+    फ़िल्टर_किए_गए_शब्द = []
+    
+    शब्द = डोरी.बाँट()
+    
+    के_लिए शब्द में शब्द:
+        यदि कोई(चार.अंक_है() या ना चार.अक्षर_है() के_लिए चार में शब्द):
+            जारी
+        
+        यदि लंबाई(शब्द) > 3 और कोई(चार में स्वर के_लिए चार में शब्द):
+            फ़िल्टर_किया_गया_शब्द = """"
+            के_लिए चार में शब्द:
+                यदि चार में स्वर:
+                    स्वर_सूचक = स्वर.सूचक(चार)
+                    अगला_स्वर = स्वर[(स्वर_सूचक + 1) % लंबाई(स्वर)]
+                    फ़िल्टर_किया_गया_शब्द += अगला_स्वर
+                वरना:
+                    फ़िल्टर_किया_गया_शब्द += चार
+            फ़िल्टर_किए_गए_शब्द.संलग्न(फ़िल्टर_किया_गया_शब्द)
+    
+    वापस "" "".जोड़(फ़िल्टर_किए_गए_शब्द)
+
+
+#उदाहरण_उपयोग:
+इनपुट_डोरी = ""नमस्ते दुनिया! यह है एक परीक्षण स्ट्रिंग. मुझे फ़िल्टर करें यदि मैं संख्याएँ या विशेष वर्ण शामिल करता हूँ.""
+आउटपुट_डोरी = फ़िल्टर_और_बदलें(इनपुट_डोरी)
+छापिये(आउटपुट_डोरी)",5.0,5.0,4.0
+30,"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","परिभाषा है_विषम_अभाज्य_100_से_बड़ा(संख्या):
+    यदि संख्या <= 100 या संख्या % 2 == 0:  # जाँचें यदि संख्या 100 से कम या बराबर है या विषम है
+        वापस असत्य
+    के_लिए ई में रेंज(3, अंक(संख्या**0.5) + 1, 2):  # केवल विषम संख्याओं द्वारा विभाज्यता की जाँच करें
+        यदि संख्या % ई == 0:
+            वापस असत्य
+    वापस सत्य
+
+परिभाषा ढूँढो_दूसरा_सबसे_छोटा_विषम_अभाज्य_100_से_बड़ा(आगमन):
+    सबसे_छोटा = दूसरा_सबसे_छोटा = दश('असीमित')
+    के_लिए संख्या में आगमन:
+        यदि है_विषम_अभाज्य_100_से_बड़ा(संख्या):
+            यदि संख्या < सबसे_छोटा:
+                दूसरा_सबसे_छोटा = सबसे_छोटा
+                सबसे_छोटा = संख्या
+            वरना_यदि संख्या < दूसरा_सबसे_छोटा:
+                दूसरा_सबसे_छोटा = संख्या
+    वापस दूसरा_सबसे_छोटा",5.0,5.0,
