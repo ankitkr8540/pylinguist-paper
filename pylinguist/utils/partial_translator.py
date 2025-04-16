@@ -30,7 +30,7 @@ class PartialTranslator:
     }
 
     def __init__(self, source_lang: str, target_lang: str, 
-                 keywords_path: Path = Path("data/keywords/Joshua_Keywords.csv")):
+                 keywords_path: Path = Path("data/keywords/Unipy_Keywords.csv")):
         """Initialize translator with source and target languages."""
         self.source_lang = source_lang
         self.target_lang = target_lang

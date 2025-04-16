@@ -181,7 +181,7 @@ def run_stage2_translation(args, stage1_df, partial_df, chunk_list):
 def run_partial_back_translation(args, stage2_files, chunk_list, is_stage1=False):
 
     try:
-        # Use stage2 dataframe and First do the partially translate the f'{stage2}_translated_code using joshua_keyword
+        # Use stage2 dataframe and First do the partially translate the f'{stage2}_translated_code using unipy_keyword
         results = partial_translate_examples(
             data_path=stage2_files,
             source_lang=args.target_lang,
