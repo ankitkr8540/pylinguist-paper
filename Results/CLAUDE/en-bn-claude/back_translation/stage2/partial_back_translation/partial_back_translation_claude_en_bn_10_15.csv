@@ -1,0 +1,579 @@
+English_code,claude_translated_code,claude_partial_back_translated_code
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","সংজ্ঞায়িত_করা উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স):
+    নতুন_ম্যাট্রিক্স = []
+    জন্য আই ভিতরে পরিসীমা(দৈর্ঘ্য(ম্যাট্রিক্স)):
+        নতুন_ম্যাট্রিক্স.সংযোজন([])
+        জন্য জে ভিতরে পরিসীমা(দৈর্ঘ্য(ম্যাট্রিক্স[আই])):
+            নতুন_ম্যাট্রিক্স[আই].সন্নিবেশ(0, ম্যাট্রিক্স[আই][জে])
+    ফিরে_আসা নতুন_ম্যাট্রিক্স
+
+ #পরীক্ষা_মামলা ১
+ম্যাট্রিক্স১ = [[১, ২, ৩],
+           [৪, ৫, ৬],
+           [৭, ৮, ৯]]
+ #প্রত্যাশিত_ফলাফল: [[৯, ৮, ৭], [৬, ৫, ৪], [৩, ২, ১]]
+ছাপা(উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স১))
+
+ #পরীক্ষা_মামলা ২
+ম্যাট্রিক্স২ = [[১, ২, ৩, ৪],
+           [৫, ৬, ৭, ৮]]
+ #প্রত্যাশিত_ফলাফল: [[৮, ৭, ৬, ৫], [৪, ৩, ২, ১]]
+ছাপা(উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স২))
+
+ #পরীক্ষা_মামলা ৩
+ম্যাট্রিক্স৩ = [[১, ২],
+           [৩, ৪],
+           [৫, ৬]]
+ #প্রত্যাশিত_ফলাফল: [[৬, ৫], [৪, ৩], [২, ১]]
+ছাপা(উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স৩))","def উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স):
+    নতুন_ম্যাট্রিক্স = []
+    for আই in range(len(ম্যাট্রিক্স)):
+        নতুন_ম্যাট্রিক্স.append([])
+        for জে in range(len(ম্যাট্রিক্স[আই])):
+            নতুন_ম্যাট্রিক্স[আই].insert(0, ম্যাট্রিক্স[আই][জে])
+    return নতুন_ম্যাট্রিক্স
+
+  #পরীক্ষা_মামলা ১
+ম্যাট্রিক্স১ = [[১, ২, ৩],
+           [৪, ৫, ৬],
+           [৭, ৮, ৯]]
+  #প্রত্যাশিত_ফলাফল: [[৯, ৮, ৭], [৬, ৫, ৪], [৩, ২, ১]]
+print(উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স১))
+
+  #পরীক্ষা_মামলা ২
+ম্যাট্রিক্স২ = [[১, ২, ৩, ৪],
+           [৫, ৬, ৭, ৮]]
+  #প্রত্যাশিত_ফলাফল: [[৮, ৭, ৬, ৫], [৪, ৩, ২, ১]]
+print(উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স২))
+
+  #পরীক্ষা_মামলা ৩
+ম্যাট্রিক্স৩ = [[১, ২],
+           [৩, ৪],
+           [৫, ৬]]
+  #প্রত্যাশিত_ফলাফল: [[৬, ৫], [৪, ৩], [২, ১]]
+print(উল্টা_ম্যাট্রিক্স(ম্যাট্রিক্স৩))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","সংজ্ঞায়িত_করা ফাইবোনাচ্চি(ন):
+    যদি ন == 0:
+        ফিরে_আসা 0
+    অন্যথায়_যদি ন == 1:
+        ফিরে_আসা 1
+    অন্য:
+        ফিরে_আসা ফাইবোনাচ্চি(ন-1) + ফাইবোনাচ্চি(ন-2)
+
+ #উদাহরণ ব্যবহার
+ন = 10
+ফাইবোনাচ্চি_সংখ্যা = ফাইবোনাচ্চি(ন)
+ছাপা(f""সূচকে {ন} এর ফাইবোনাচ্চি সংখ্যাটি হল {ফাইবোনাচ্চি_সংখ্যা}।"")","def ফাইবোনাচ্চি(ন):
+    if ন == 0:
+        return 0
+    elif ন == 1:
+        return 1
+    else:
+        return ফাইবোনাচ্চি(ন-1) + ফাইবোনাচ্চি(ন-2)
+
+  #উদাহরণ ব্যবহার
+ন = 10
+ফাইবোনাচ্চি_সংখ্যা = ফাইবোনাচ্চি(ন)
+print(f""সূচকে {ন} এর ফাইবোনাচ্চি সংখ্যাটি হল {ফাইবোনাচ্চি_সংখ্যা}।"")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","def সংখ্যা_অনন্য_ব্যঞ্জনবর্ণ(বাক্য):
+    ব্যঞ্জনবর্ণ = সেট()
+    ক্ষুদ্র_বাক্য = বাক্য.নিম্ন()
+    for অক্ষর in ক্ষুদ্র_বাক্য:
+        যদি অক্ষর.বর্ণানুক্রমিক() এবং অক্ষর not in 'aeiou':
+            ব্যঞ্জনবর্ণ.যোগ(অক্ষর)
+    return len(ব্যঞ্জনবর্ণ)","সংজ্ঞায়িত_করা সংখ্যা_অনন্য_ব্যঞ্জনবর্ণ(বাক্য):
+    ব্যঞ্জনবর্ণ = set()
+    ক্ষুদ্র_বাক্য = বাক্য.নিম্ন()
+    জন্য chr ভিতরে ক্ষুদ্র_বাক্য:
+        if chr.isalpha() and chr না ভিতরে 'aeiou':
+            ব্যঞ্জনবর্ণ.যোগ(chr)
+    ফিরে_আসা দৈর্ঘ্য(ব্যঞ্জনবর্ণ)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","সংজ্ঞায়িত_করা ছাকনি_এবং_প্রতিস্থাপন(বাক্য):
+    স্বরবর্ণ = ['a', 'e', 'i', 'o', 'u']
+    ছাকা_শব্দ = []
+    
+    শব্দ_তালিকা = বাক্য.বিভক্ত()
+    
+    জন্য শব্দ ভিতরে শব্দ_তালিকা:
+        যদি যেকোনো(অক্ষর.সংখ্যা() বা না অক্ষর.বর্ণানুক্রমিক() জন্য অক্ষর ভিতরে শব্দ):
+            চালিয়ে_যাওয়া
+        
+        যদি দৈর্ঘ্য(শব্দ) > 3 এবং যেকোনো(অক্ষর ভিতরে স্বরবর্ণ জন্য অক্ষর ভিতরে শব্দ):
+            ছাকা_শব্দ_টি = """"
+            জন্য অক্ষর ভিতরে শব্দ:
+                যদি অক্ষর ভিতরে স্বরবর্ণ:
+                    স্বর_সূচক = স্বরবর্ণ.সূচক(অক্ষর)
+                    পরবর্তী_স্বর = স্বরবর্ণ[(স্বর_সূচক + 1) % দৈর্ঘ্য(স্বরবর্ণ)]
+                    ছাকা_শব্দ_টি += পরবর্তী_স্বর
+                অন্য:
+                    ছাকা_শব্দ_টি += অক্ষর
+            ছাকা_শব্দ.সংযোজন(ছাকা_শব্দ_টি)
+    
+    ফিরে_আসা "" "".যোগদান(ছাকা_শব্দ)
+
+
+ #ব্যবহার_উদাহরণ:
+ইনপুট_বাক্য = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+আউটপুট_বাক্য = ছাকনি_এবং_প্রতিস্থাপন(ইনপুট_বাক্য)
+ছাপা(আউটপুট_বাক্য)","def ছাকনি_এবং_প্রতিস্থাপন(বাক্য):
+    স্বরবর্ণ = ['a', 'e', 'i', 'o', 'u']
+    ছাকা_শব্দ = []
+    
+    শব্দ_তালিকা = বাক্য.split()
+    
+    for শব্দ in শব্দ_তালিকা:
+        if any(chr.isdigit() or not chr.isalpha() for chr in শব্দ):
+            চালিয়ে_যাওয়া
+        
+        if len(শব্দ) > 3 and any(chr in স্বরবর্ণ for chr in শব্দ):
+            ছাকা_শব্দ_টি = """"
+            for chr in শব্দ:
+                if chr in স্বরবর্ণ:
+                    স্বর_সূচক = স্বরবর্ণ.index(chr)
+                    পরবর্তী_স্বর = স্বরবর্ণ[(স্বর_সূচক + 1) % len(স্বরবর্ণ)]
+                    ছাকা_শব্দ_টি += পরবর্তী_স্বর
+                else:
+                    ছাকা_শব্দ_টি += chr
+            ছাকা_শব্দ.append(ছাকা_শব্দ_টি)
+    
+    return "" "".join(ছাকা_শব্দ)
+
+
+  #ব্যবহার_উদাহরণ:
+ইনপুট_বাক্য = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+আউটপুট_বাক্য = ছাকনি_এবং_প্রতিস্থাপন(ইনপুট_বাক্য)
+print(আউটপুট_বাক্য)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","সংজ্ঞায়িত_করা is_odd_prime_greater_than_100(সংখ্যা):
+    যদি সংখ্যা <= 100 বা সংখ্যা % 2 == 0: #১০০ এর সমান বা কম সংখ্যা বা জোড় সংখ্যা পরীক্ষা করুন
+        ফিরে_আসা মিথ্যা
+    জন্য i ভিতরে পরিসীমা(3, পূর্ণসংখ্যা(সংখ্যা**0.5) + 1, 2): #শুধুমাত্র বিজোড় সংখ্যাগুলির বিভাজ্যতা পরীক্ষা করুন
+        যদি সংখ্যা % i == 0:
+            ফিরে_আসা মিথ্যা
+    ফিরে_আসা সত্য
+
+সংজ্ঞায়িত_করা খুঁজে_বের_করো_দ্বিতীয়_সবচেয়ে_ছোট_বিজোড়_অভাজ্য_১০০_এর_বেশি(অ্যারে):
+    সবচেয়ে_ছোট = দ্বিতীয়_সবচেয়ে_ছোট = ফ্লোট('inf')
+    জন্য সংখ্যা ভিতরে অ্যারে:
+        যদি is_odd_prime_greater_than_100(সংখ্যা):
+            যদি সংখ্যা < সবচেয়ে_ছোট:
+                দ্বিতীয়_সবচেয়ে_ছোট = সবচেয়ে_ছোট
+                সবচেয়ে_ছোট = সংখ্যা
+            অন্যথায়_যদি সংখ্যা < দ্বিতীয়_সবচেয়ে_ছোট:
+                দ্বিতীয়_সবচেয়ে_ছোট = সংখ্যা
+    ফিরে_আসা দ্বিতীয়_সবচেয়ে_ছোট","def is_odd_prime_greater_than_100(isdigit):
+    if isdigit <= 100 or isdigit % 2 == 0: #১০০ এর সমান বা কম সংখ্যা বা জোড় সংখ্যা পরীক্ষা করুন
+        return False
+    for i in range(3, int(isdigit**0.5) + 1, 2): #শুধুমাত্র বিজোড় সংখ্যাগুলির বিভাজ্যতা পরীক্ষা করুন
+        if isdigit % i == 0:
+            return False
+    return True
+
+def খুঁজে_বের_করো_দ্বিতীয়_সবচেয়ে_ছোট_বিজোড়_অভাজ্য_১০০_এর_বেশি(অ্যারে):
+    সবচেয়ে_ছোট = দ্বিতীয়_সবচেয়ে_ছোট = float('inf')
+    for isdigit in অ্যারে:
+        if is_odd_prime_greater_than_100(isdigit):
+            if isdigit < সবচেয়ে_ছোট:
+                দ্বিতীয়_সবচেয়ে_ছোট = সবচেয়ে_ছোট
+                সবচেয়ে_ছোট = isdigit
+            elif isdigit < দ্বিতীয়_সবচেয়ে_ছোট:
+                দ্বিতীয়_সবচেয়ে_ছোট = isdigit
+    return দ্বিতীয়_সবচেয়ে_ছোট"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","শ্রেণী বিভাজক_পাওয়া_যায়নি_ত্রুটি(ব্যতিক্রম):
+    অতিক্রম_করা
+
+শ্রেণী একাধিক_বিভাজক_ত্রুটি(ব্যতিক্রম):
+    অতিক্রম_করা
+
+চেষ্টা_করা:
+    আমার_স্ট্রিং = ""হ্যালো, বিশ্ব!""
+    বিভাজক = ""#""
+
+    # ভুল উপায়ে স্ট্রিংটিকে বিভাজকে বিভাজন করা
+    বিভাজিত_স্ট্রিং = আমার_স্ট্রিং.বিভক্ত(বিভাজক, 1)
+    যদি না বিভাজিত_স্ট্রিং:
+        ব্যতিক্রম_উত্থাপন_করা বিভাজক_পাওয়া_যায়নি_ত্রুটি(""বিভাজক স্ট্রিংয়ে পাওয়া যায়নি"")
+
+    # অতিরিক্ত প্রয়োজনীয়তা:
+    # যদি বিভাজকটি স্ট্রিংয়ে একবারের বেশি পাওয়া যায়, তাহলে একটি কাস্টম ব্যতিক্রম তৈরি করুন ""একাধিক_বিভাজক_ত্রুটি""
+
+    # ভুল উপায়ে স্ট্রিংটিকে বিভাজকে বিভাজন করা
+    বিভাজিত_স্ট্রিং = আমার_স্ট্রিং.বিভক্ত(বিভাজক)
+    যদি দৈর্ঘ্য(বিভাজিত_স্ট্রিং) > 2:
+        ব্যতিক্রম_উত্থাপন_করা একাধিক_বিভাজক_ত্রুটি(""স্ট্রিংয়ে একাধিক বিভাজক পাওয়া গেছে"")
+
+ছাড়া বিভাজক_পাওয়া_যায়নি_ত্রুটি হিসাবে e:
+    ছাপা(""ত্রুটি:"", e)
+
+ছাড়া একাধিক_বিভাজক_ত্রুটি হিসাবে e:
+    ছাপা(""ত্রুটি:"", e)
+
+ছাড়া ব্যতিক্রম হিসাবে e:
+    ছাপা(""ত্রুটি:"", e)","class বিভাজক_পাওয়া_যায়নি_ত্রুটি(Exception):
+    pass
+
+class একাধিক_বিভাজক_ত্রুটি(Exception):
+    pass
+
+try:
+    আমার_স্ট্রিং = ""হ্যালো, বিশ্ব!""
+    বিভাজক = ""#""
+
+     #ভুল উপায়ে স্ট্রিংটিকে বিভাজকে বিভাজন করা
+    বিভাজিত_স্ট্রিং = আমার_স্ট্রিং.split(বিভাজক, 1)
+    if not বিভাজিত_স্ট্রিং:
+        raise বিভাজক_পাওয়া_যায়নি_ত্রুটি(""বিভাজক স্ট্রিংয়ে পাওয়া যায়নি"")
+
+     #অতিরিক্ত প্রয়োজনীয়তা:
+     #যদি বিভাজকটি স্ট্রিংয়ে একবারের বেশি পাওয়া যায়, তাহলে একটি কাস্টম ব্যতিক্রম তৈরি করুন ""একাধিক_বিভাজক_ত্রুটি""
+
+     #ভুল উপায়ে স্ট্রিংটিকে বিভাজকে বিভাজন করা
+    বিভাজিত_স্ট্রিং = আমার_স্ট্রিং.split(বিভাজক)
+    if len(বিভাজিত_স্ট্রিং) > 2:
+        raise একাধিক_বিভাজক_ত্রুটি(""স্ট্রিংয়ে একাধিক বিভাজক পাওয়া গেছে"")
+
+except বিভাজক_পাওয়া_যায়নি_ত্রুটি as e:
+    print(""ত্রুটি:"", e)
+
+except একাধিক_বিভাজক_ত্রুটি as e:
+    print(""ত্রুটি:"", e)
+
+except Exception as e:
+    print(""ত্রুটি:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","সংজ্ঞায়িত_করা সূচক_অভিধান_তৈরি_করা(তালিকা_এক, তালিকা_দুই):
+    যদি দৈর্ঘ্য(তালিকা_এক) != দৈর্ঘ্য(তালিকা_দুই):
+        ব্যতিক্রম_উত্থাপন_করা মান_ত্রুটি(""ইনপুট তালিকাগুলি সমান দৈর্ঘ্যের হতে হবে"")
+    
+    সূচক_অভিধান = {}
+    জন্য i ভিতরে পরিসীমা(দৈর্ঘ্য(তালিকা_এক)):
+        যদি উদাহরণ(তালিকা_এক[i], (তালিকা, অভিধান, টাপল)) এবং উদাহরণ(তালিকা_দুই[i], (তালিকা, অভিধান, টাপল)):
+            যদি উদাহরণ(তালিকা_এক[i], সেট) বা উদাহরণ(তালিকা_দুই[i], সেট):
+                ব্যতিক্রম_উত্থাপন_করা মান_ত্রুটি(""ইনপুট তালিকাগুলিতে সেট থাকতে পারবে না"")
+            
+            অনুপ্রবেশিত_অভিধান = {}
+            যদি উদাহরণ(তালিকা_এক[i], অভিধান) এবং উদাহরণ(তালিকা_দুই[i], অভিধান):
+                যদি দৈর্ঘ্য(তালিকা_এক[i]) != দৈর্ঘ্য(তালিকা_দুই[i]):
+                    ব্যতিক্রম_উত্থাপন_করা মান_ত্রুটি(""অনুপ্রবেশিত অভিধানগুলিতে সমান সংখ্যক উপাদান থাকতে হবে"")
+                
+                জন্য চাবি ভিতরে তালিকা_এক[i].চাবি():
+                    যদি চাবি না ভিতরে তালিকা_দুই[i]:
+                        ব্যতিক্রম_উত্থাপন_করা মান_ত্রুটি(""অনুপ্রবেশিত অভিধানগুলিতে একই চাবি থাকতে হবে"")
+                    অনুপ্রবেশিত_অভিধান[চাবি] = (তালিকা_এক[i][চাবি], তালিকা_দুই[i][চাবি])
+            অন্যথায়_যদি উদাহরণ(তালিকা_এক[i], তালিকা) এবং উদাহরণ(তালিকা_দুই[i], তালিকা):
+                যদি দৈর্ঘ্য(তালিকা_এক[i]) != দৈর্ঘ্য(তালিকা_দুই[i]):
+                    ব্যতিক্রম_উত্থাপন_করা মান_ত্রুটি(""অনুপ্রবেশিত তালিকাগুলি সমান দৈর্ঘ্যের হতে হবে"")
+                
+                জন্য j ভিতরে পরিসীমা(দৈর্ঘ্য(তালিকা_এক[i])):
+                    অনুপ্রবেশিত_অভিধান[j] = (তালিকা_এক[i][j], তালিকা_দুই[i][j])
+            অন্যথায়_যদি উদাহরণ(তালিকা_এক[i], টাপল) এবং উদাহরণ(তালিকা_দুই[i], টাপল):
+                যদি দৈর্ঘ্য(তালিকা_এক[i]) != দৈর্ঘ্য(তালিকা_দুই[i]):
+                    ব্যতিক্রম_উত্থাপন_করা মান_ত্রুটি(""টাপলগুলি সমান দৈর্ঘ্যের হতে হবে"")
+                
+                জন্য j ভিতরে পরিসীমা(দৈর্ঘ্য(তালিকা_এক[i])):
+                    অনুপ্রবেশিত_অভিধান[j] = (তালিকা_এক[i][j], তালিকা_দুই[i][j])
+            
+            সূচক_অভিধান[i] = অনুপ্রবেশিত_অভিধান
+        অন্য:
+            সূচক_অভিধান[i] = (তালিকা_এক[i], তালিকা_দুই[i])
+    
+    ফিরে_আসা সূচক_অভিধান","def সূচক_অভিধান_তৈরি_করা(তালিকা_এক, তালিকা_দুই):
+    if len(তালিকা_এক) != len(তালিকা_দুই):
+        raise ValueError(""ইনপুট তালিকাগুলি সমান দৈর্ঘ্যের হতে হবে"")
+    
+    সূচক_অভিধান = {}
+    for i in range(len(তালিকা_এক)):
+        if isinstance(তালিকা_এক[i], (list, dict, tuple)) and isinstance(তালিকা_দুই[i], (list, dict, tuple)):
+            if isinstance(তালিকা_এক[i], set) or isinstance(তালিকা_দুই[i], set):
+                raise ValueError(""ইনপুট তালিকাগুলিতে সেট থাকতে পারবে না"")
+            
+            অনুপ্রবেশিত_অভিধান = {}
+            if isinstance(তালিকা_এক[i], dict) and isinstance(তালিকা_দুই[i], dict):
+                if len(তালিকা_এক[i]) != len(তালিকা_দুই[i]):
+                    raise ValueError(""অনুপ্রবেশিত অভিধানগুলিতে সমান সংখ্যক উপাদান থাকতে হবে"")
+                
+                for keys in তালিকা_এক[i].keys():
+                    if keys not in তালিকা_দুই[i]:
+                        raise ValueError(""অনুপ্রবেশিত অভিধানগুলিতে একই চাবি থাকতে হবে"")
+                    অনুপ্রবেশিত_অভিধান[keys] = (তালিকা_এক[i][keys], তালিকা_দুই[i][keys])
+            elif isinstance(তালিকা_এক[i], list) and isinstance(তালিকা_দুই[i], list):
+                if len(তালিকা_এক[i]) != len(তালিকা_দুই[i]):
+                    raise ValueError(""অনুপ্রবেশিত তালিকাগুলি সমান দৈর্ঘ্যের হতে হবে"")
+                
+                for j in range(len(তালিকা_এক[i])):
+                    অনুপ্রবেশিত_অভিধান[j] = (তালিকা_এক[i][j], তালিকা_দুই[i][j])
+            elif isinstance(তালিকা_এক[i], tuple) and isinstance(তালিকা_দুই[i], tuple):
+                if len(তালিকা_এক[i]) != len(তালিকা_দুই[i]):
+                    raise ValueError(""টাপলগুলি সমান দৈর্ঘ্যের হতে হবে"")
+                
+                for j in range(len(তালিকা_এক[i])):
+                    অনুপ্রবেশিত_অভিধান[j] = (তালিকা_এক[i][j], তালিকা_দুই[i][j])
+            
+            সূচক_অভিধান[i] = অনুপ্রবেশিত_অভিধান
+        else:
+            সূচক_অভিধান[i] = (তালিকা_এক[i], তালিকা_দুই[i])
+    
+    return সূচক_অভিধান"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","সংজ্ঞায়িত_করা সর্বাধিক_সংখ্যা(ক, খ, গ):
+    #সংখ্যাগুলিকে বাইনারিতে রূপান্তর করুন
+    ক_বাইনারি = বাইনারি(ক)
+    খ_বাইনারি = বাইনারি(খ)
+    গ_বাইনারি = বাইনারি(গ)
+    
+    #প্রত্যেক সংখ্যার বাইনারি উপস্থাপনায় ১-এর সংখ্যা গণনা করুন
+    ক_গণনা = ক_বাইনারি.গণনা('১')
+    খ_গণনা = খ_বাইনারি.গণনা('১')
+    গ_গণনা = গ_বাইনারি.গণনা('১')
+    
+    #সর্বাধিক সংখ্যা খুঁজে বের করতে গণনাগুলি তুলনা করুন
+    যদি ক_গণনা > খ_গণনা এবং ক_গণনা > গ_গণনা:
+        ফিরে_আসা ক
+    অন্যথায়_যদি খ_গণনা > ক_গণনা এবং খ_গণনা > গ_গণনা:
+        ফিরে_আসা খ
+    অন্য:
+        ফিরে_আসা গ","def সর্বাধিক_সংখ্যা(ক, খ, গ):
+     #সংখ্যাগুলিকে বাইনারিতে রূপান্তর করুন
+    ক_বাইনারি = bin(ক)
+    খ_বাইনারি = bin(খ)
+    গ_বাইনারি = bin(গ)
+    
+     #প্রত্যেক সংখ্যার বাইনারি উপস্থাপনায় ১-এর সংখ্যা গণনা করুন
+    ক_গণনা = ক_বাইনারি.count('১')
+    খ_গণনা = খ_বাইনারি.count('১')
+    গ_গণনা = গ_বাইনারি.count('১')
+    
+     #সর্বাধিক সংখ্যা খুঁজে বের করতে গণনাগুলি তুলনা করুন
+    if ক_গণনা > খ_গণনা and ক_গণনা > গ_গণনা:
+        return ক
+    elif খ_গণনা > ক_গণনা and খ_গণনা > গ_গণনা:
+        return খ
+    else:
+        return গ"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","সংজ্ঞায়িত_করা দ্রুত_সাজানো(তালিকা):
+    যদি দৈর্ঘ্য(তালিকা) <= 1:
+        ফিরে_আসা তালিকা, 0
+    অন্য:
+        মধ্যবর্তী = তালিকা[0]
+        কম = [x জন্য x ভিতরে তালিকা[1:] যদি x <= মধ্যবর্তী]
+        বেশি = [x জন্য x ভিতরে তালিকা[1:] যদি x > মধ্যবর্তী]
+        সাজানো_কম, তুলনা_কম = দ্রুত_সাজানো(কম)
+        সাজানো_বেশি, তুলনা_বেশি = দ্রুত_সাজানো(বেশি)
+        তুলনা = দৈর্ঘ্য(তালিকা) - 1 + তুলনা_কম + তুলনা_বেশি
+        সাজানো_তালিকা = সাজানো_বেশি + [মধ্যবর্তী] + সাজানো_কম
+        ফিরে_আসা সাজানো_তালিকা, তুলনা
+
+ #কোড পরীক্ষা করা হচ্ছে
+তালিকা = [5, 3, 9, 5, 2, 8, 4]
+সাজানো_তালিকা, তুলনা = দ্রুত_সাজানো(তালিকা)
+ছাপা(""সাজানো তালিকা:"", সাজানো_তালিকা)
+ছাপা(""তুলনার সংখ্যা:"", তুলনা)","def দ্রুত_সাজানো(list):
+    if len(list) <= 1:
+        return list, 0
+    else:
+        মধ্যবর্তী = list[0]
+        lower = [x for x in list[1:] if x <= মধ্যবর্তী]
+        বেশি = [x for x in list[1:] if x > মধ্যবর্তী]
+        সাজানো_কম, তুলনা_কম = দ্রুত_সাজানো(lower)
+        সাজানো_বেশি, তুলনা_বেশি = দ্রুত_সাজানো(বেশি)
+        তুলনা = len(list) - 1 + তুলনা_কম + তুলনা_বেশি
+        সাজানো_তালিকা = সাজানো_বেশি + [মধ্যবর্তী] + সাজানো_কম
+        return সাজানো_তালিকা, তুলনা
+
+  #কোড পরীক্ষা করা হচ্ছে
+list = [5, 3, 9, 5, 2, 8, 4]
+সাজানো_তালিকা, তুলনা = দ্রুত_সাজানো(list)
+print(""সাজানো তালিকা:"", সাজানো_তালিকা)
+print(""তুলনার সংখ্যা:"", তুলনা)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","def দূরত্ব_গণনা_করা(বিন্দু_১, বিন্দু_২):
+    দূরত্ব = ((বিন্দু_২[0] - বিন্দু_১[0])**2 + (বিন্দু_২[1] - বিন্দু_১[1])**2 + (বিন্দু_২[2] - বিন্দু_১[2])**2) ** 0.5
+    ফিরে_আসা দূরত্ব","সংজ্ঞায়িত_করা দূরত্ব_গণনা_করা(বিন্দু_১, বিন্দু_২):
+    দূরত্ব = ((বিন্দু_২[0] - বিন্দু_১[0])**2 + (বিন্দু_২[1] - বিন্দু_১[1])**2 + (বিন্দু_২[2] - বিন্দু_১[2])**2) ** 0.5
+    return দূরত্ব"

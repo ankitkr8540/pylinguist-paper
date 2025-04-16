@@ -1,0 +1,2321 @@
+English_code,Partial_translated_code,gpt_translated_code
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","پێناسەکردن reverse_matrix(matrix):
+    new_matrix = []
+    بۆ i لەناو ڕێژە(درێژی(matrix)):
+        new_matrix.زیاد_بکە([])
+        بۆ j لەناو ڕێژە(درێژی(matrix[i])):
+            new_matrix[i].تێکردن(0, matrix[i][j])
+    گەڕانەوە new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(reverse_matrix(matrix3))","پێناسەکردن وەستانەوە_ماتریکس(ماتریکس):
+    ماتریکسی_نوێ = []
+    بۆ i لەناو ڕێژە(درێژی(ماتریکس)):
+        ماتریکسی_نوێ.زیاد_بکە([])
+        بۆ j لەناو ڕێژە(درێژی(ماتریکس[i])):
+            ماتریکسی_نوێ[i].تێکردن(0, ماتریکس[i][j])
+    گەڕانەوە ماتریکسی_نوێ
+
+
+#تاقیکردنەوەی کەیس 1
+ماتریکس1 = [[1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]]
+#ئەنجامی چاوەڕوانکراو: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(وەستانەوە_ماتریکس(ماتریکس1))
+
+#تاقیکردنەوەی کەیس 2
+ماتریکس2 = [[1, 2, 3, 4],
+            [5, 6, 7, 8]]
+#ئەنجامی چاوەڕوانکراو: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(وەستانەوە_ماتریکس(ماتریکس2))
+
+#تاقیکردنەوەی کەیس 3
+ماتریکس3 = [[1, 2],
+            [3, 4],
+            [5, 6]]
+#ئەنجامی چاوەڕوانکراو: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(وەستانەوە_ماتریکس(ماتریکس3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن fibonacci(n):
+    ئەگەر n == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... n == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+چاپکردن(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن فێرکاری_fibonacci(ژمارە):
+    ئەگەر ژمارە == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... ژمارە == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە فێرکاری_fibonacci(ژمارە-1) + فێرکاری_fibonacci(ژمارە-2)
+
+# نموونە بەکارهێنان
+ژمارە = 10
+ژمارەی_fibonacci = فێرکاری_fibonacci(ژمارە)
+چاپکردن(f""ژمارەی Fibonacci لە ئاماژە {ژمارە} بریتییە لە {ژمارەی_fibonacci}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","پێناسەکردن count_unique_consonants(string):
+    consonants = دانان()
+    lowercase_string = string.کەمتر()
+    بۆ char لەناو lowercase_string:
+        ئەگەر char.بە_ئەلفوبێیە() و char نەخێر لەناو 'aeiou':
+            consonants.زیادکردن(char)
+    گەڕانەوە درێژی(consonants)","پێناسەکردن ژمارە_یەکە_کان_بێ_هەنگ(string):
+    هەنگەکان = دانان()
+    کەمتر_کردن_سترینگ = string.کەمتر()
+    بۆ پیت لەناو کەمتر_کردن_سترینگ:
+        ئەگەر پیت.بە_ئەلفوبێیە() و پیت نەخێر لەناو 'aeiou':
+            هەنگەکان.زیادکردن(pit)
+    گەڕانەوە درێژی(هەنگەکان)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","پێناسەکردن filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.لەتکردن()
+    
+    بۆ word لەناو words:
+        ئەگەر هەر(char.ژمارەیە() یان نەخێر char.بە_ئەلفوبێیە() بۆ char لەناو word):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(word) > 3 و هەر(char لەناو vowels بۆ char لەناو word):
+            filtered_word = """"
+            بۆ char لەناو word:
+                ئەگەر char لەناو vowels:
+                    vowel_index = vowels.ئیندێکس(char)
+                    next_vowel = vowels[(vowel_index + 1) % درێژی(vowels)]
+                    filtered_word += next_vowel
+                ئی_تر:
+                    filtered_word += char
+            filtered_words.زیاد_بکە(filtered_word)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+چاپکردن(output_string)","پێناسەکردن فلتەر_و_گۆڕین(دەق):
+    هەنجەکان = ['a', 'e', 'i', 'o', 'u']
+    وشەکان_ی_فلتەرکراو = []
+    
+    وشەکان = دەق.لەتکردن()
+    
+    بۆ وشە لەناو وشەکان:
+        ئەگەر هەر(پیت.ژمارەیە() یان نەخێر پیت.بە_ئەلفوبێیە() بۆ پیت لەناو وشە):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(وشە) > 3 و هەر(پیت لەناو هەنجەکان بۆ پیت لەناو وشە):
+            وشە_ی_فلتەرکراو = """"
+            بۆ پیت لەناو وشە:
+                ئەگەر پیت لەناو هەنجەکان:
+                    ئیندێکس_ی_هەنجە = هەنجەکان.ئیندێکس(pit)
+                    هەنجەی_دواتر = هەنجەکان[(ئیندێکس_ی_هەنجە + 1) % درێژی(هەنجەکان)]
+                    وشە_ی_فلتەرکراو += هەنجەی_دواتر
+                ئی_تر:
+                    وشە_ی_فلتەرکراو += پیت
+            وشەکان_ی_فلتەرکراو.زیاد_بکە(وشە_ی_فلتەرکراو)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(وشەکان_ی_فلتەرکراو)
+
+
+# نموونەی بەکارهێنان:
+دەق_ی_هاتوو = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+دەق_ی_هاتوو = فلتەر_و_گۆڕین(دەق_ی_هاتوو)
+چاپکردن(دەق_ی_هاتوو)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","پێناسەکردن isOddPrimeGreaterThan100(number):
+    ئەگەر number <= 100 یان number % 2 == 0: #Check if number is less than or equal to 100 or even
+        گەڕانەوە هەڵە
+    بۆ i لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        ئەگەر number % i == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو array:
+        ئەگەر isOddPrimeGreaterThan100(number):
+            ئەگەر number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            ئەگەرنا_ئەگەر... number < secondSmallest:
+                secondSmallest = number
+    گەڕانەوە secondSmallest","پێناسەکردن ژمارەی_تاق_سەرەکی_گەورەتر_لە_سەد(number):
+    ئەگەر number <= 100 یان number % 2 == 0: #پشکنین ئەگەر ژمارە کەمتر یان یەکسانە بە سەد یان جفتە
+        گەڕانەوە هەڵە
+    بۆ i لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): #پشکنین بە تاقە ژمارەکان تەنها
+        ئەگەر number % i == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن دۆزینەوەی_دووەمین_ژمارەی_تاق_سەرەکی_گەورەتر_لە_سەد(array):
+    بچوکترین = دووەمین_بچوکترین = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو array:
+        ئەگەر ژمارەی_تاق_سەرەکی_گەورەتر_لە_سەد(number):
+            ئەگەر number < بچوکترین:
+                دووەمین_بچوکترین = بچوکترین
+                بچوکترین = number
+            ئەگەرنا_ئەگەر... number < دووەمین_بچوکترین:
+                دووەمین_بچوکترین = number
+    گەڕانەوە دووەمین_بچوکترین"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","پۆل SeparatorNotFoundError(بەدەرکردن):
+    تێپەڕین
+
+پۆل MultipleSeparatorsError(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator, 1)
+    ئەگەر نەخێر split_string:
+        ئیستسنای_بەرز_بکەنەوە SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator)
+    ئەگەر درێژی(split_string) > 2:
+        ئیستسنای_بەرز_بکەنەوە MultipleSeparatorsError(""Multiple separators found in string"")
+
+جگە_لە SeparatorNotFoundError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە MultipleSeparatorsError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""Error:"", e)","پۆل جیاکەرەوە نەدۆزرایەوە هەڵە(بەدەرکردن):
+    تێپەڕین
+
+پۆل چەندین جیاکەرەوە هەڵە(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    رشته_من = ""سڵاو، جیهان!""
+    جیاکەرەوە = ""#""
+
+    # ڕێگای هەڵە بۆ لەتکردنی رشته لەسەر جیاکەرەوە
+    رشته_لەتکراو = رشته_من.لەتکردن(جیاکەرەوە, 1)
+    ئەگەر نەخێر رشته_لەتکراو:
+        ئیستسنای_بەرز_بکەنەوە جیاکەرەوە نەدۆزرایەوە هەڵە(""جیاکەرەوە لە رشته نەدۆزرایەوە"")
+
+    # داواکاری زیادە:
+    # ئەگەر جیاکەرەوە زیاتر لە یەکجار لە رشته دۆزرایەوە، ئیستسنای تایبەتی ""چەندین جیاکەرەوە هەڵە"" بەرز بکە
+
+    # ڕێگای هەڵە بۆ لەتکردنی رشته لەسەر جیاکەرەوە
+    رشته_لەتکراو = رشته_من.لەتکردن(جیاکەرەوە)
+    ئەگەر درێژی(رشته_لەتکراو) > 2:
+        ئیستسنای_بەرز_بکەنەوە چەندین جیاکەرەوە هەڵە(""چەندین جیاکەرەوە لە رشته دۆزرایەوە"")
+
+جگە_لە جیاکەرەوە نەدۆزرایەوە هەڵە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە چەندین جیاکەرەوە هەڵە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""هەڵە:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","پێناسەکردن create_index_dictionary(list_one, list_two):
+    ئەگەر درێژی(list_one) != درێژی(list_two):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    بۆ i لەناو ڕێژە(درێژی(list_one)):
+        ئەگەر نموونەیە(list_one[i], (لیست, فەرهەنگ, tuple)) و نموونەیە(list_two[i], (لیست, فەرهەنگ, tuple)):
+            ئەگەر نموونەیە(list_one[i], دانان) یان نموونەیە(list_two[i], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            ئەگەر نموونەیە(list_one[i], فەرهەنگ) و نموونەیە(list_two[i], فەرهەنگ):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested dictionaries must have the same number of elements"")
+                
+                بۆ key لەناو list_one[i].کلیلەکان():
+                    ئەگەر key نەخێر لەناو list_two[i]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], لیست) و نموونەیە(list_two[i], لیست):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested lists must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], tuple) و نموونەیە(list_two[i], tuple):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Tuples must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        ئی_تر:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    گەڕانەوە index_dict","پێناسەکردن دروستکردنی_فەرهەنگی_شێوازی(لیست_یەکەم, لیست_دووەم):
+    ئەگەر درێژی(لیست_یەکەم) != درێژی(لیست_دووەم):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان دەبێت هەمان درێژی هەبێت"")
+    
+    فەرهەنگی_شێوازی = {}
+    بۆ i لەناو ڕێژە(درێژی(لیست_یەکەم)):
+        ئەگەر نموونەیە(لیست_یەکەم[i], (لیست, فەرهەنگ, tuple)) و نموونەیە(لیست_دووەم[i], (لیست, فەرهەنگ, tuple)):
+            ئەگەر نموونەیە(لیست_یەکەم[i], دانان) یان نموونەیە(لیست_دووەم[i], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان ناتوانن دانانەکان بگرن"")
+            
+            فەرهەنگی_نەستە = {}
+            ئەگەر نموونەیە(لیست_یەکەم[i], فەرهەنگ) و نموونەیە(لیست_دووەم[i], فەرهەنگ):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""فەرهەنگە نەستەکان دەبێت هەمان ژمارەی بڕگەکان هەبێت"")
+                
+                بۆ کلیل لەناو لیست_یەکەم[i].کلیلەکان():
+                    ئەگەر کلیل نەخێر لەناو لیست_دووەم[i]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""کلیلەکان لە فەرهەنگە نەستەکان دەبێت هەمان بێت"")
+                    فەرهەنگی_نەستە[کلیل] = (لیست_یەکەم[i][کلیل], لیست_دووەم[i][کلیل])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[i], لیست) و نموونەیە(لیست_دووەم[i], لیست):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستە نەستەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ j لەناو ڕێژە(درێژی(لیست_یەکەم[i])):
+                    فەرهەنگی_نەستە[j] = (لیست_یەکەم[i][j], لیست_دووەم[i][j])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[i], tuple) و نموونەیە(لیست_دووەم[i], tuple):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""tupleەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ j لەناو ڕێژە(درێژی(لیست_یەکەم[i])):
+                    فەرهەنگی_نەستە[j] = (لیست_یەکەم[i][j], لیست_دووەم[i][j])
+            
+            فەرهەنگی_شێوازی[i] = فەرهەنگی_نەستە
+        ئی_تر:
+            فەرهەنگی_شێوازی[i] = (لیست_یەکەم[i], لیست_دووەم[i])
+    
+    گەڕانەوە فەرهەنگی_شێوازی"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","پێناسەکردن find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = دوودوویی(a)
+    b_bin = دوودوویی(b)
+    c_bin = دوودوویی(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.گێرانەوە('1')
+    b_count = b_bin.گێرانەوە('1')
+    c_count = c_bin.گێرانەوە('1')
+    
+     #Compare the counts to find the maximum
+    ئەگەر a_count > b_count و a_count > c_count:
+        گەڕانەوە a
+    ئەگەرنا_ئەگەر... b_count > a_count و b_count > c_count:
+        گەڕانەوە b
+    ئی_تر:
+        گەڕانەوە c","پێناسەکردن دۆزینەوە_زۆرترین(ئ, ب, ج):
+    #گۆڕینی ژمارەکان بۆ دوودوویی
+    ئ_دوودوویی = دوودوویی(ئ)
+    ب_دوودوویی = دوودوویی(ب)
+    ج_دوودوویی = دوودوویی(ج)
+    
+    #ژمارەی ١کان لە نیشانی دوودوویی هەریەک ژمارەکان
+    ئ_ژمارە = ئ_دوودوویی.گێرانەوە('1')
+    ب_ژمارە = ب_دوودوویی.گێرانەوە('1')
+    ج_ژمارە = ج_دوودوویی.گێرانەوە('1')
+    
+    #پێشبینینەوەی ژمارەکان بۆ دۆزینەوەی زۆرترین
+    ئەگەر ئ_ژمارە > ب_ژمارە و ئ_ژمارە > ج_ژمارە:
+        گەڕانەوە ئ
+    ئەگەرنا_ئەگەر... ب_ژمارە > ئ_ژمارە و ب_ژمارە > ج_ژمارە:
+        گەڕانەوە ب
+    ئی_تر:
+        گەڕانەوە ج"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","پێناسەکردن quick_sort(arr):
+    ئەگەر درێژی(arr) <= 1:
+        گەڕانەوە arr, 0
+    ئی_تر:
+        pivot = arr[0]
+        less = [x بۆ x لەناو arr[1:] ئەگەر x <= pivot]
+        greater = [x بۆ x لەناو arr[1:] ئەگەر x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = درێژی(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        گەڕانەوە sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+چاپکردن(""Sorted Array:"", sorted_arr)
+چاپکردن(""Number of Comparisons:"", comparisons)","پێناسەکردن خێرا_ڕیزکردن(لیست):
+    ئەگەر درێژی(لیست) <= 1:
+        گەڕانەوە لیست, 0
+    ئی_تر:
+        پێوانە = لیست[0]
+        کەمتر = [ئەمە بۆ ئەمە لەناو لیست[1:] ئەگەر ئەمە <= پێوانە]
+        زۆرتر = [ئەمە بۆ ئەمە لەناو لیست[1:] ئەگەر ئەمە > پێوانە]
+        ڕیزکراوی_کەمتر، هەژمارەکان_کەمتر = خێرا_ڕیزکردن(کەمتر)
+        ڕیزکراوی_زۆرتر، هەژمارەکان_زۆرتر = خێرا_ڕیزکردن(زۆرتر)
+        هەژمارەکان = درێژی(لیست) - 1 + هەژمارەکان_کەمتر + هەژمارەکان_زۆرتر
+        ڕیزکراوی_لیست = ڕیزکراوی_زۆرتر + [پێوانە] + ڕیزکراوی_کەمتر
+        گەڕانەوە ڕیزکراوی_لیست, هەژمارەکان
+
+# تاقیکردنەوەی کۆد
+لیست = [5, 3, 9, 5, 2, 8, 4]
+ڕیزکراوی_لیست, هەژمارەکان = خێرا_ڕیزکردن(لیست)
+چاپکردن(""لیستی ڕیزکراو:"", ڕیزکراوی_لیست)
+چاپکردن(""ژمارەی هەژمارەکان:"", هەژمارەکان)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","پێناسەکردن calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    گەڕانەوە distance","پێناسەکردن هەژمارکردن_دووری(خاڵ١, خاڵ٢):
+    دووری = ((خاڵ٢[0] - خاڵ١[0])**2 + (خاڵ٢[1] - خاڵ١[1])**2 + (خاڵ٢[2] - خاڵ١[2])**2) ** 0.5
+    گەڕانەوە دووری"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","پێناسەکردن reverse_matrix(matrix):
+    new_matrix = []
+    بۆ i لەناو ڕێژە(درێژی(matrix)):
+        new_matrix.زیاد_بکە([])
+        بۆ j لەناو ڕێژە(درێژی(matrix[i])):
+            new_matrix[i].تێکردن(0, matrix[i][j])
+    گەڕانەوە new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(reverse_matrix(matrix3))","پێناسەکردن پاشگۆزاری_matrix(matrix):
+    matrix_nw = []
+    بۆ ez لەناو ڕێژە(درێژی(matrix)):
+        matrix_nw.زیاد_بکە([])
+        بۆ J لەناو ڕێژە(درێژی(matrix[ez])):
+            matrix_nw[ez].تێکردن(0, matrix[ez][J])
+    گەڕانەوە matrix_nw
+
+
+# ئەزمونەکانی تاقیکردنەوە 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# هەڵبژاردنی چاوەڕوانکراو: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(pashgozari_matrix(matrix1))
+
+# ئەزمونەکانی تاقیکردنەوە 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# هەڵبژاردنی چاوەڕوانکراو: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(pashgozari_matrix(matrix2))
+
+# ئەزمونەکانی تاقیکردنەوە 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# هەڵبژاردنی چاوەڕوانکراو: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(pashgozari_matrix(matrix3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن fibonacci(n):
+    ئەگەر n == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... n == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+چاپکردن(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن فێبۆناچی(n):
+    ئەگەر n == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... n == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە فێبۆناچی(n-1) + فێبۆناچی(n-2)
+
+# نموونەی بەکارهێنان
+n = 10
+ژمارەی_فێبۆناچی = فێبۆناچی(n)
+چاپکردن(f""ژمارەی فێبۆناچی لە ئیندەکس {n} بریتیە لە {ژمارەی_فێبۆناچی}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","پێناسەکردن count_unique_consonants(string):
+    consonants = دانان()
+    lowercase_string = string.کەمتر()
+    بۆ char لەناو lowercase_string:
+        ئەگەر char.بە_ئەلفوبێیە() و char نەخێر لەناو 'aeiou':
+            consonants.زیادکردن(char)
+    گەڕانەوە درێژی(consonants)","پێناسەکردن hejmartin_hurêkanî_taybet(ben):
+    hurêkan = دانان()
+    benê_kêmتر = ben.کەمتر()
+    بۆ ekar لەناو benê_kêmتر:
+        ئەگەر ekar.بە_ئەلفوبێیە() و ekar نەخێر لەناو 'aeiou':
+            hurêkan.زیادکردن(ekar)
+    گەڕانەوە درێژی(hurêkan)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","پێناسەکردن filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.لەتکردن()
+    
+    بۆ word لەناو words:
+        ئەگەر هەر(char.ژمارەیە() یان نەخێر char.بە_ئەلفوبێیە() بۆ char لەناو word):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(word) > 3 و هەر(char لەناو vowels بۆ char لەناو word):
+            filtered_word = """"
+            بۆ char لەناو word:
+                ئەگەر char لەناو vowels:
+                    vowel_index = vowels.ئیندێکس(char)
+                    next_vowel = vowels[(vowel_index + 1) % درێژی(vowels)]
+                    filtered_word += next_vowel
+                ئی_تر:
+                    filtered_word += char
+            filtered_words.زیاد_بکە(filtered_word)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+چاپکردن(output_string)","پێناسەکردن پالپەش_و_گوهورین(ben):
+    dengdar = ['a', 'e', 'i', 'o', 'u']
+    peyvên_پالپەشکراو = []
+    
+    peyvên = ben.لەتکردن()
+    
+    بۆ peyv لەناو peyvên:
+        ئەگەر هەر(ekar.ژمارەیە() یان نەخێر ekar.بە_ئەلفوبێیە() بۆ ekar لەناو peyv):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(peyv) > 3 و هەر(ekar لەناو dengdar بۆ ekar لەناو peyv):
+            peyv_پالپەشکراو = """"
+            بۆ ekar لەناو peyv:
+                ئەگەر ekar لەناو dengdar:
+                    ئیندێکس_dengdar = dengdar.ئیندێکس(ekar)
+                    dengdar_داهاتوو = dengdar[(ئیندێکس_dengdar + 1) % درێژی(dengdar)]
+                    peyv_پالپەشکراو += dengdar_داهاتوو
+                ئی_تر:
+                    peyv_پالپەشکراو += ekar
+            peyvên_پالپەشکراو.زیاد_بکە(peyv_پالپەشکراو)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(peyvên_پالپەشکراو)
+
+
+# نموونەی بەکارهێنان:
+ben_ورودی = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+ben_هاتوو = پالپەش_و_گوهورین(ben_ورودی)
+چاپکردن(ben_هاتوو)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","پێناسەکردن isOddPrimeGreaterThan100(number):
+    ئەگەر number <= 100 یان number % 2 == 0: #Check if number is less than or equal to 100 or even
+        گەڕانەوە هەڵە
+    بۆ i لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        ئەگەر number % i == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو array:
+        ئەگەر isOddPrimeGreaterThan100(number):
+            ئەگەر number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            ئەگەرنا_ئەگەر... number < secondSmallest:
+                secondSmallest = number
+    گەڕانەوە secondSmallest","پێناسەکردن Serokwezîr_e_cûd_ji_100_mezin(number):
+    ئەگەر number <= 100 یان number % 2 == 0: # Kontrol bikin ku hejmar kêmtir an wek 100 e an jî cûd e
+        گەڕانەوە هەڵە
+    بۆ ez لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): # Kontrol bikin ku tenê ji hêla hejmarên cûd ve parve dibe
+        ئەگەر number % ez == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن Dîtina_dûyemîn_bêhêz_cûd_ji_100_mezin(array):
+    biçûkترین = dûyemîn_biçûkترین = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو array:
+        ئەگەر Serokwezîr_e_cûd_ji_100_mezin(number):
+            ئەگەر number < biçûkترین:
+                dûyemîn_biçûkترین = biçûkترین
+                biçûkترین = number
+            ئەگەرنا_ئەگەر... number < dûyemîn_biçûkترین:
+                dûyemîn_biçûkترین = number
+    گەڕانەوە dûyemîn_biçûkترین"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","پۆل SeparatorNotFoundError(بەدەرکردن):
+    تێپەڕین
+
+پۆل MultipleSeparatorsError(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator, 1)
+    ئەگەر نەخێر split_string:
+        ئیستسنای_بەرز_بکەنەوە SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator)
+    ئەگەر درێژی(split_string) > 2:
+        ئیستسنای_بەرز_بکەنەوە MultipleSeparatorsError(""Multiple separators found in string"")
+
+جگە_لە SeparatorNotFoundError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە MultipleSeparatorsError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""Error:"", e)","پۆل جیاکردنەوە_نەدۆزرایەوە_هەڵە(بەدەرکردن):
+    تێپەڕین
+
+پۆل چەندین_جیاکردنەوە_هەڵە(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    بنەما_بن = ""Hello, World!""
+    جیاکردنەوە = ""#""
+
+    # ڕێگای هەڵە بۆ لەتکردنی بنەما_بن لەسەر جیاکردنەوە
+    بنەما_بن_لەتکراو = بنەما_بن.لەتکردن(جیاکردنەوە, 1)
+    ئەگەر نەخێر بنەما_بن_لەتکراو:
+        ئیستسنای_بەرز_بکەنەوە جیاکردنەوە_نەدۆزرایەوە_هەڵە(""جیاکردنەوە نەدۆزرایەوە لە بن"")
+
+    # پێویستی زیادە:
+    # ئەگەر جیاکردنەوە زیاتر لە یەکجار لە بنەما_بن دۆزرابێت، ئیستسنای تایبەتی بەرز بکەنەوە بە ناوی ""چەندین_جیاکردنەوە_هەڵە""
+
+    # ڕێگای هەڵە بۆ لەتکردنی بنەما_بن لەسەر جیاکردنەوە
+    بنەما_بن_لەتکراو = بنەما_بن.لەتکردن(جیاکردنەوە)
+    ئەگەر درێژی(بنەما_بن_لەتکراو) > 2:
+        ئیستسنای_بەرز_بکەنەوە چەندین_جیاکردنەوە_هەڵە(""چەندین جیاکردنەوە دۆزرایەوە لە بن"")
+
+جگە_لە جیاکردنەوە_نەدۆزرایەوە_هەڵە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە چەندین_جیاکردنەوە_هەڵە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""هەڵە:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","پێناسەکردن create_index_dictionary(list_one, list_two):
+    ئەگەر درێژی(list_one) != درێژی(list_two):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    بۆ i لەناو ڕێژە(درێژی(list_one)):
+        ئەگەر نموونەیە(list_one[i], (لیست, فەرهەنگ, tuple)) و نموونەیە(list_two[i], (لیست, فەرهەنگ, tuple)):
+            ئەگەر نموونەیە(list_one[i], دانان) یان نموونەیە(list_two[i], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            ئەگەر نموونەیە(list_one[i], فەرهەنگ) و نموونەیە(list_two[i], فەرهەنگ):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested dictionaries must have the same number of elements"")
+                
+                بۆ key لەناو list_one[i].کلیلەکان():
+                    ئەگەر key نەخێر لەناو list_two[i]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], لیست) و نموونەیە(list_two[i], لیست):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested lists must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], tuple) و نموونەیە(list_two[i], tuple):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Tuples must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        ئی_تر:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    گەڕانەوە index_dict","پێناسەکردن دروستکردنی_فەرهەنگی_ئیندەکس(لیست_یەکەم, لیست_دووەم):
+    ئەگەر درێژی(لیست_یەکەم) != درێژی(لیست_دووەم):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان دەبێت هەمان درێژی هەبێت"")
+    
+    فەرهەنگی_ئیندەکس = {}
+    بۆ ez لەناو ڕێژە(درێژی(لیست_یەکەم)):
+        ئەگەر نموونەیە(لیست_یەکەم[ez], (لیست, فەرهەنگ, تیوپڵ)) و نموونەیە(لیست_دووەم[ez], (لیست, فەرهەنگ, تیوپڵ)):
+            ئەگەر نموونەیە(لیست_یەکەم[ez], دانان) یان نموونەیە(لیست_دووەم[ez], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان نابێت دانانەکان لەخۆبگرن"")
+            
+            فەرهەنگی_هاوپۆل = {}
+            ئەگەر نموونەیە(لیست_یەکەم[ez], فەرهەنگ) و نموونەیە(لیست_دووەم[ez], فەرهەنگ):
+                ئەگەر درێژی(لیست_یەکەم[ez]) != درێژی(لیست_دووەم[ez]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""فەرهەنگە هاوپۆلەکان دەبێت هەمان ژمارەی بەرەکان هەبێت"")
+                
+                بۆ کلیل لەناو لیست_یەکەم[ez].کلیلەکان():
+                    ئەگەر کلیل نەخێر لەناو لیست_دووەم[ez]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""کلیلەکان لە فەرهەنگە هاوپۆلەکان دەبێت هەمان بێت"")
+                    فەرهەنگی_هاوپۆل[کلیل] = (لیست_یەکەم[ez][کلیل], لیست_دووەم[ez][کلیل])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[ez], لیست) و نموونەیە(لیست_دووەم[ez], لیست):
+                ئەگەر درێژی(لیست_یەکەم[ez]) != درێژی(لیست_دووەم[ez]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستە هاوپۆلەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ J لەناو ڕێژە(درێژی(لیست_یەکەم[ez])):
+                    فەرهەنگی_هاوپۆل[J] = (لیست_یەکەم[ez][J], لیست_دووەم[ez][J])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[ez], تیوپڵ) و نموونەیە(لیست_دووەم[ez], تیوپڵ):
+                ئەگەر درێژی(لیست_یەکەم[ez]) != درێژی(لیست_دووەم[ez]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""تیوپڵەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ J لەناو ڕێژە(درێژی(لیست_یەکەم[ez])):
+                    فەرهەنگی_هاوپۆل[J] = (لیست_یەکەم[ez][J], لیست_دووەم[ez][J])
+            
+            فەرهەنگی_ئیندەکس[ez] = فەرهەنگی_هاوپۆل
+        ئی_تر:
+            فەرهەنگی_ئیندەکس[ez] = (لیست_یەکەم[ez], لیست_دووەم[ez])
+    
+    گەڕانەوە فەرهەنگی_ئیندەکس"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","پێناسەکردن find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = دوودوویی(a)
+    b_bin = دوودوویی(b)
+    c_bin = دوودوویی(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.گێرانەوە('1')
+    b_count = b_bin.گێرانەوە('1')
+    c_count = c_bin.گێرانەوە('1')
+    
+     #Compare the counts to find the maximum
+    ئەگەر a_count > b_count و a_count > c_count:
+        گەڕانەوە a
+    ئەگەرنا_ئەگەر... b_count > a_count و b_count > c_count:
+        گەڕانەوە b
+    ئی_تر:
+        گەڕانەوە c","پێناسەکردن dîtina_herî_zor(a, b, c):
+    # Guhêrandina hejmaran bo binary
+    a_du = دوودوویی(a)
+    b_du = دوودوویی(b)
+    c_du = دوودوویی(c)
+    
+    # Guhêrandina hejmarên 1an di nîşana binary ya her hejmarê de
+    a_gêran = a_du.گێرانەوە('1')
+    b_gêran = b_du.گێرانەوە('1')
+    c_gêran = c_du.گێرانەوە('1')
+    
+    # Pêşandana gêranan bo dîtina herî zor
+    ئەگەر a_gêran > b_gêran و a_gêran > c_gêran:
+        گەڕانەوە a
+    ئەگەرنا_ئەگەر... b_gêran > a_gêran و b_gêran > c_gêran:
+        گەڕانەوە b
+    ئی_تر:
+        گەڕانەوە c"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","پێناسەکردن quick_sort(arr):
+    ئەگەر درێژی(arr) <= 1:
+        گەڕانەوە arr, 0
+    ئی_تر:
+        pivot = arr[0]
+        less = [x بۆ x لەناو arr[1:] ئەگەر x <= pivot]
+        greater = [x بۆ x لەناو arr[1:] ئەگەر x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = درێژی(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        گەڕانەوە sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+چاپکردن(""Sorted Array:"", sorted_arr)
+چاپکردن(""Number of Comparisons:"", comparisons)","پێناسەکردن خێرا_ڕیزکردن(ئارەی):
+    ئەگەر درێژی(ئارەی) <= 1:
+        گەڕانەوە ئارەی, 0
+    ئی_تر:
+        pivot = ئارەی[0]
+        کەمتر = [x بۆ x لەناو ئارەی[1:] ئەگەر x <= pivot]
+        زۆرتر = [x بۆ x لەناو ئارەی[1:] ئەگەر x > pivot]
+        ڕیزکراوی_کەمتر, پەیوەندینەکان_کەمتر = خێرا_ڕیزکردن(کەمتر)
+        ڕیزکراوی_زۆرتر, پەیوەندینەکان_زۆرتر = خێرا_ڕیزکردن(زۆرتر)
+        پەیوەندینەکان = درێژی(ئارەی) - 1 + پەیوەندینەکان_کەمتر + پەیوەندینەکان_زۆرتر
+        ڕیزکراوی_ئارەی = ڕیزکراوی_زۆرتر + [pivot] + ڕیزکراوی_کەمتر
+        گەڕانەوە ڕیزکراوی_ئارەی, پەیوەندینەکان
+
+# تاقیکردنەوەی کۆد
+ئارەی = [5, 3, 9, 5, 2, 8, 4]
+ڕیزکراوی_ئارەی, پەیوەندینەکان = خێرا_ڕیزکردن(ئارەی)
+چاپکردن(""ڕیزکراوی ئارەی:"", ڕیزکراوی_ئارەی)
+چاپکردن(""ژمارەی پەیوەندینەکان:"", پەیوەندینەکان)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","پێناسەکردن calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    گەڕانەوە distance","پێناسەکردن hesab_kirina_dûrî(nuqte1, nuqte2):
+    dûrî = ((nuqte2[0] - nuqte1[0])**2 + (nuqte2[1] - nuqte1[1])**2 + (nuqte2[2] - nuqte1[2])**2) ** 0.5
+    گەڕانەوە dûrî"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","پێناسەکردن reverse_matrix(matrix):
+    new_matrix = []
+    بۆ i لەناو ڕێژە(درێژی(matrix)):
+        new_matrix.زیاد_بکە([])
+        بۆ j لەناو ڕێژە(درێژی(matrix[i])):
+            new_matrix[i].تێکردن(0, matrix[i][j])
+    گەڕانەوە new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(reverse_matrix(matrix3))","پێناسەکردن matrix_vegerandin(matrix):
+    matrix_nwê = []
+    بۆ i لەناو ڕێژە(درێژی(matrix)):
+        matrix_nwê.زیاد_بکە([])
+        بۆ j لەناو ڕێژە(درێژی(matrix[i])):
+            matrix_nwê[i].تێکردن(0, matrix[i][j])
+    گەڕانەوە matrix_nwê
+
+
+ # Mînakî 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ # Derket: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(matrix_vegerandin(matrix1))
+
+ # Mînakî 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ # Derket: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(matrix_vegerandin(matrix2))
+
+ # Mînakî 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ # Derket: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(matrix_vegerandin(matrix3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن fibonacci(n):
+    ئەگەر n == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... n == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+چاپکردن(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن fibonacci(n):
+    ئەگەر n == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... n == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە fibonacci(n-1) + fibonacci(n-2)
+
+ # Bikaranîna mînakî
+n = 10
+hejmarek_fibonacci = fibonacci(n)
+چاپکردن(f""Fibonacci hejmarek li indeksa {n} ye {hejmarek_fibonacci}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","پێناسەکردن count_unique_consonants(string):
+    consonants = دانان()
+    lowercase_string = string.کەمتر()
+    بۆ char لەناو lowercase_string:
+        ئەگەر char.بە_ئەلفوبێیە() و char نەخێر لەناو 'aeiou':
+            consonants.زیادکردن(char)
+    گەڕانەوە درێژی(consonants)","پێناسەکردن hejmartina_hemberên_taybet(string):
+    hember = دانان()
+    ben_kêm = string.کەمتر()
+    بۆ ekar لەناو ben_kêm:
+        ئەگەر ekar.بە_ئەلفوبێیە() و ekar نەخێر لەناو 'aeiou':
+            hember.زیادکردن(ekar)
+    گەڕانەوە درێژی(hember)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","پێناسەکردن filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.لەتکردن()
+    
+    بۆ word لەناو words:
+        ئەگەر هەر(char.ژمارەیە() یان نەخێر char.بە_ئەلفوبێیە() بۆ char لەناو word):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(word) > 3 و هەر(char لەناو vowels بۆ char لەناو word):
+            filtered_word = """"
+            بۆ char لەناو word:
+                ئەگەر char لەناو vowels:
+                    vowel_index = vowels.ئیندێکس(char)
+                    next_vowel = vowels[(vowel_index + 1) % درێژی(vowels)]
+                    filtered_word += next_vowel
+                ئی_تر:
+                    filtered_word += char
+            filtered_words.زیاد_بکە(filtered_word)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+چاپکردن(output_string)","پێناسەکردن پالپەش_و_گوهورین(ben):
+    dengdar = ['a', 'e', 'i', 'o', 'u']
+    peyvên_palpêşkirî = []
+    
+    peyv = ben.لەتکردن()
+    
+    بۆ peyv لەناو peyv:
+        ئەگەر هەر(ekar.ژمارەیە() یان نەخێر ekar.بە_ئەلفوبێیە() بۆ ekar لەناو peyv):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(peyv) > 3 و هەر(ekar لەناو dengdar بۆ ekar لەناو peyv):
+            peyvê_palpêşkirî = """"
+            بۆ ekar لەناو peyv:
+                ئەگەر ekar لەناو dengdar:
+                    ئیندێکسی_dengdar = dengdar.ئیندێکس(ekar)
+                    dengdarê_dû = dengdar[(ئیندێکسی_dengdar + 1) % درێژی(dengdar)]
+                    peyvê_palpêşkirî += dengdarê_dû
+                ئی_تر:
+                    peyvê_palpêşkirî += ekar
+            peyvên_palpêşkirî.زیاد_بکە(peyvê_palpêşkirî)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(peyvên_palpêşkirî)
+
+
+ # Bikaranîna mînakî:
+benê_input = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+benê_output = پالپەش_و_گوهورین(benê_input)
+چاپکردن(benê_output)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","پێناسەکردن isOddPrimeGreaterThan100(number):
+    ئەگەر number <= 100 یان number % 2 == 0: #Check if number is less than or equal to 100 or even
+        گەڕانەوە هەڵە
+    بۆ i لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        ئەگەر number % i == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو array:
+        ئەگەر isOddPrimeGreaterThan100(number):
+            ئەگەر number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            ئەگەرنا_ئەگەر... number < secondSmallest:
+                secondSmallest = number
+    گەڕانەوە secondSmallest","پێناسەکردن Serokwezîr_e_tek_û_mezin_tir_ji_100(number):
+    ئەگەر number <= 100 یان number % 2 == 0: # Kontrol bikin ka hejmar kêmtir e an wek yek e 100 an jî yek e
+        گەڕانەوە هەڵە
+    بۆ ez لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): # Kontrol bikin ka tenê bi hejmarên tek veqetîne
+        ئەگەر number % ez == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن Duyemîn_herî_bicûk_tek_serokwezîr_mezin_tir_ji_100(bak):
+    Herî_bicûk = Duyemîn_herî_bicûk = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو bak:
+        ئەگەر Serokwezîr_e_tek_û_mezin_tir_ji_100(number):
+            ئەگەر number < Herî_bicûk:
+                Duyemîn_herî_bicûk = Herî_bicûk
+                Herî_bicûk = number
+            ئەگەرنا_ئەگەر... number < Duyemîn_herî_bicûk:
+                Duyemîn_herî_bicûk = number
+    گەڕانەوە Duyemîn_herî_bicûk"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","پۆل SeparatorNotFoundError(بەدەرکردن):
+    تێپەڕین
+
+پۆل MultipleSeparatorsError(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator, 1)
+    ئەگەر نەخێر split_string:
+        ئیستسنای_بەرز_بکەنەوە SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator)
+    ئەگەر درێژی(split_string) > 2:
+        ئیستسنای_بەرز_بکەنەوە MultipleSeparatorsError(""Multiple separators found in string"")
+
+جگە_لە SeparatorNotFoundError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە MultipleSeparatorsError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""Error:"", e)","پۆل فەرامۆشکردنی_جیاکەرەوە(بەدەرکردن):
+    تێپەڕین
+
+پۆل هەڵەی_چندین_جیاکەرەوە(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    بنەما = ""سڵاو، جیهان!""
+    جیاکەرەوە = ""#""
+
+     # ڕێگای هەڵە بۆ لەتکردنی بنەما لەسەر جیاکەرەوە
+    بنەما_لەتکراو = بنەما.لەتکردن(جیاکەرەوە, 1)
+    ئەگەر نەخێر بنەما_لەتکراو:
+        ئیستسنای_بەرز_بکەنەوە فەرامۆشکردنی_جیاکەرەوە(""جیاکەرەوە لە بنەما نەدۆزرایەوە"")
+
+     # پێویستی زیادە:
+     # ئەگەر جیاکەرەوە زیاتر لە یەکجار لە بنەما دۆزرابێت، ئیستسنای تایبەتی ""هەڵەی_چندین_جیاکەرەوە"" بەرز بکەنەوە
+
+     # ڕێگای هەڵە بۆ لەتکردنی بنەما لەسەر جیاکەرەوە
+    بنەما_لەتکراو = بنەما.لەتکردن(جیاکەرەوە)
+    ئەگەر درێژی(بنەما_لەتکراو) > 2:
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_چندین_جیاکەرەوە(""چندین جیاکەرەوە لە بنەما دۆزرایەوە"")
+
+جگە_لە فەرامۆشکردنی_جیاکەرەوە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە هەڵەی_چندین_جیاکەرەوە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""هەڵە:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","پێناسەکردن create_index_dictionary(list_one, list_two):
+    ئەگەر درێژی(list_one) != درێژی(list_two):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    بۆ i لەناو ڕێژە(درێژی(list_one)):
+        ئەگەر نموونەیە(list_one[i], (لیست, فەرهەنگ, tuple)) و نموونەیە(list_two[i], (لیست, فەرهەنگ, tuple)):
+            ئەگەر نموونەیە(list_one[i], دانان) یان نموونەیە(list_two[i], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            ئەگەر نموونەیە(list_one[i], فەرهەنگ) و نموونەیە(list_two[i], فەرهەنگ):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested dictionaries must have the same number of elements"")
+                
+                بۆ key لەناو list_one[i].کلیلەکان():
+                    ئەگەر key نەخێر لەناو list_two[i]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], لیست) و نموونەیە(list_two[i], لیست):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested lists must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], tuple) و نموونەیە(list_two[i], tuple):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Tuples must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        ئی_تر:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    گەڕانەوە index_dict","پێناسەکردن فەرهەنگی_ئیندەکس_دروست_بکە(لیست_یەکەم, لیست_دووەم):
+    ئەگەر درێژی(لیست_یەکەم) != درێژی(لیست_دووەم):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان دەبێت هەمان درێژی هەبێت"")
+    
+    فەرهەنگی_ئیندەکس = {}
+    بۆ i لەناو ڕێژە(درێژی(لیست_یەکەم)):
+        ئەگەر نموونەیە(لیست_یەکەم[i], (لیست, فەرهەنگ, تیوپڵ)) و نموونەیە(لیست_دووەم[i], (لیست, فەرهەنگ, تیوپڵ)):
+            ئەگەر نموونەیە(لیست_یەکەم[i], دانان) یان نموونەیە(لیست_دووەم[i], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان ناتوانن دانانەکان بگرن"")
+            
+            فەرهەنگی_هاوپۆل = {}
+            ئەگەر نموونەیە(لیست_یەکەم[i], فەرهەنگ) و نموونەیە(لیست_دووەم[i], فەرهەنگ):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""فەرهەنگە هاوپۆلەکان دەبێت هەمان ژمارەی بەرەکان هەبێت"")
+                
+                بۆ کلیل لەناو لیست_یەکەم[i].کلیلەکان():
+                    ئەگەر کلیل نەخێر لەناو لیست_دووەم[i]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""کلیلەکان لە فەرهەنگە هاوپۆلەکان دەبێت هەمان بەرەکان هەبێت"")
+                    فەرهەنگی_هاوپۆل[کلیل] = (لیست_یەکەم[i][کلیل], لیست_دووەم[i][کلیل])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[i], لیست) و نموونەیە(لیست_دووەم[i], لیست):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستە هاوپۆلەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ j لەناو ڕێژە(درێژی(لیست_یەکەم[i])):
+                    فەرهەنگی_هاوپۆل[j] = (لیست_یەکەم[i][j], لیست_دووەم[i][j])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[i], تیوپڵ) و نموونەیە(لیست_دووەم[i], تیوپڵ):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""تیوپڵەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ j لەناو ڕێژە(درێژی(لیست_یەکەم[i])):
+                    فەرهەنگی_هاوپۆل[j] = (لیست_یەکەم[i][j], لیست_دووەم[i][j])
+            
+            فەرهەنگی_ئیندەکس[i] = فەرهەنگی_هاوپۆل
+        ئی_تر:
+            فەرهەنگی_ئیندەکس[i] = (لیست_یەکەم[i], لیست_دووەم[i])
+    
+    گەڕانەوە فەرهەنگی_ئیندەکس"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","پێناسەکردن find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = دوودوویی(a)
+    b_bin = دوودوویی(b)
+    c_bin = دوودوویی(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.گێرانەوە('1')
+    b_count = b_bin.گێرانەوە('1')
+    c_count = c_bin.گێرانەوە('1')
+    
+     #Compare the counts to find the maximum
+    ئەگەر a_count > b_count و a_count > c_count:
+        گەڕانەوە a
+    ئەگەرنا_ئەگەر... b_count > a_count و b_count > c_count:
+        گەڕانەوە b
+    ئی_تر:
+        گەڕانەوە c","پێناسەکردن Cihê_herî_bilind(b, c, d):
+     # Hejmara binarî veguherînin
+    b_bin = دوودوویی(b)
+    c_bin = دوودوویی(c)
+    d_bin = دوودوویی(d)
+    
+     # Hejmara 1an di nîşana binarî ya her hejmarê de bijêrin
+    b_gêran = b_bin.گێرانەوە('1')
+    c_gêran = c_bin.گێرانەوە('1')
+    d_gêran = d_bin.گێرانەوە('1')
+    
+     # Hejmara bijêrin da ku cihê herî bilind bibînin
+    ئەگەر b_gêran > c_gêran و b_gêran > d_gêran:
+        گەڕانەوە b
+    ئەگەرنا_ئەگەر... c_gêran > b_gêran و c_gêran > d_gêran:
+        گەڕانەوە c
+    ئی_تر:
+        گەڕانەوە d"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","پێناسەکردن quick_sort(arr):
+    ئەگەر درێژی(arr) <= 1:
+        گەڕانەوە arr, 0
+    ئی_تر:
+        pivot = arr[0]
+        less = [x بۆ x لەناو arr[1:] ئەگەر x <= pivot]
+        greater = [x بۆ x لەناو arr[1:] ئەگەر x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = درێژی(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        گەڕانەوە sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+چاپکردن(""Sorted Array:"", sorted_arr)
+چاپکردن(""Number of Comparisons:"", comparisons)","پێناسەکردن زوو_ڕیزکردن(لیستە):
+    ئەگەر درێژی(لیستە) <= 1:
+        گەڕانەوە لیستە, 0
+    ئی_تر:
+        پەیوەندیدان = لیستە[0]
+        کەمتر = [x بۆ x لەناو لیستە[1:] ئەگەر x <= پەیوەندیدان]
+        زۆرتر = [x بۆ x لەناو لیستە[1:] ئەگەر x > پەیوەندیدان]
+        ڕیزکراوی_کەمتر, بەرزکردنەوەی_کەمتر = زوو_ڕیزکردن(کەمتر)
+        ڕیزکراوی_زۆرتر, بەرزکردنەوەی_زۆرتر = زوو_ڕیزکردن(زۆرتر)
+        بەرزکردنەوە = درێژی(لیستە) - 1 + بەرزکردنەوەی_کەمتر + بەرزکردنەوەی_زۆرتر
+        ڕیزکراوی_لیستە = ڕیزکراوی_زۆرتر + [پەیوەندیدان] + ڕیزکراوی_کەمتر
+        گەڕانەوە ڕیزکراوی_لیستە, بەرزکردنەوە
+
+# تاقیکردنەوەی کۆد
+لیستە = [5, 3, 9, 5, 2, 8, 4]
+ڕیزکراوی_لیستە, بەرزکردنەوە = زوو_ڕیزکردن(لیستە)
+چاپکردن(""ڕیزکراوی لیستە:"", ڕیزکراوی_لیستە)
+چاپکردن(""ژمارەی بەرزکردنەوەکان:"", بەرزکردنەوە)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","پێناسەکردن calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    گەڕانەوە distance","پێناسەکردن mesafeyê_hesab_bikin(nokta1, nokta2):
+    mesafe = ((nokta2[0] - nokta1[0])**2 + (nokta2[1] - nokta1[1])**2 + (nokta2[2] - nokta1[2])**2) ** 0.5
+    گەڕانەوە mesafe"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","پێناسەکردن reverse_matrix(matrix):
+    new_matrix = []
+    بۆ i لەناو ڕێژە(درێژی(matrix)):
+        new_matrix.زیاد_بکە([])
+        بۆ j لەناو ڕێژە(درێژی(matrix[i])):
+            new_matrix[i].تێکردن(0, matrix[i][j])
+    گەڕانەوە new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(reverse_matrix(matrix3))","پێناسەکردن matrix_vegerandin(matrix):
+    matrix_nwê = []
+    بۆ i لەناو ڕێژە(درێژی(matrix)):
+        matrix_nwê.زیاد_بکە([])
+        بۆ j لەناو ڕێژە(درێژی(matrix[i])):
+            matrix_nwê[i].تێکردن(0, matrix[i][j])
+    گەڕانەوە matrix_nwê
+
+
+ # Mînakî 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ # Derket: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+چاپکردن(matrix_vegerandin(matrix1))
+
+ # Mînakî 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ # Derket: [[8, 7, 6, 5], [4, 3, 2, 1]]
+چاپکردن(matrix_vegerandin(matrix2))
+
+ # Mînakî 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ # Derket: [[6, 5], [4, 3], [2, 1]]
+چاپکردن(matrix_vegerandin(matrix3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن fibonacci(n):
+    ئەگەر n == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... n == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+چاپکردن(f""The Fibonacci number at index {n} is {fibonacci_number}."")","پێناسەکردن fibonacci(n):
+    ئەگەر n == 0:
+        گەڕانەوە 0
+    ئەگەرنا_ئەگەر... n == 1:
+        گەڕانەوە 1
+    ئی_تر:
+        گەڕانەوە fibonacci(n-1) + fibonacci(n-2)
+
+  # Bikaranîna mînakî
+n = 10
+ژمارەی_fibonacci = fibonacci(n)
+چاپکردن(f""ژمارەی Fibonacci لە فهرست {n} بریتیە لە {ژمارەی_fibonacci}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","پێناسەکردن count_unique_consonants(string):
+    consonants = دانان()
+    lowercase_string = string.کەمتر()
+    بۆ char لەناو lowercase_string:
+        ئەگەر char.بە_ئەلفوبێیە() و char نەخێر لەناو 'aeiou':
+            consonants.زیادکردن(char)
+    گەڕانەوە درێژی(consonants)","پێناسەکردن hejmartina_hurên_taybet(ben):
+    hur = دانان()
+    ben_kêm = ben.کەمتر()
+    بۆ ekar لەناو ben_kêm:
+        ئەگەر ekar.بە_ئەلفوبێیە() و ekar نەخێر لەناو 'aeiou':
+            hur.زیادکردن(ekar)
+    گەڕانەوە درێژی(hur)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","پێناسەکردن filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.لەتکردن()
+    
+    بۆ word لەناو words:
+        ئەگەر هەر(char.ژمارەیە() یان نەخێر char.بە_ئەلفوبێیە() بۆ char لەناو word):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(word) > 3 و هەر(char لەناو vowels بۆ char لەناو word):
+            filtered_word = """"
+            بۆ char لەناو word:
+                ئەگەر char لەناو vowels:
+                    vowel_index = vowels.ئیندێکس(char)
+                    next_vowel = vowels[(vowel_index + 1) % درێژی(vowels)]
+                    filtered_word += next_vowel
+                ئی_تر:
+                    filtered_word += char
+            filtered_words.زیاد_بکە(filtered_word)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+چاپکردن(output_string)","پێناسەکردن filter_û_biguhezînin(ben):
+    dengdar = ['a', 'e', 'i', 'o', 'u']
+    peyvên_filtrekirî = []
+    
+    peyv = ben.لەتکردن()
+    
+    بۆ peyv لەناو peyv:
+        ئەگەر هەر(ekar.ژمارەیە() یان نەخێر ekar.بە_ئەلفوبێیە() بۆ ekar لەناو peyv):
+            بەردەوام_بوون
+        
+        ئەگەر درێژی(peyv) > 3 و هەر(ekar لەناو dengdar بۆ ekar لەناو peyv):
+            peyv_filtrekirî = """"
+            بۆ ekar لەناو peyv:
+                ئەگەر ekar لەناو dengdar:
+                    index_dengdar = dengdar.ئیندێکس(ekar)
+                    dengdar_piştî = dengdar[(index_dengdar + 1) % درێژی(dengdar)]
+                    peyv_filtrekirî += dengdar_piştî
+                ئی_تر:
+                    peyv_filtrekirî += ekar
+            peyvên_filtrekirî.زیاد_بکە(peyv_filtrekirî)
+    
+    گەڕانەوە "" "".پەیوەندیکردن(peyvên_filtrekirî)
+
+
+ # Bikaranîna mînakî:
+ben_input = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+ben_output = filter_û_biguhezînin(ben_input)
+چاپکردن(ben_output)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","پێناسەکردن isOddPrimeGreaterThan100(number):
+    ئەگەر number <= 100 یان number % 2 == 0: #Check if number is less than or equal to 100 or even
+        گەڕانەوە هەڵە
+    بۆ i لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        ئەگەر number % i == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو array:
+        ئەگەر isOddPrimeGreaterThan100(number):
+            ئەگەر number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            ئەگەرنا_ئەگەر... number < secondSmallest:
+                secondSmallest = number
+    گەڕانەوە secondSmallest","پێناسەکردن Serokwezîr_e_tek_ji_100_mezin(number):
+    ئەگەر number <= 100 یان number % 2 == 0: # Kontrol bikin ka hejmar kêmtir an wekhev e bi 100 an jî tek e
+        گەڕانەوە هەڵە
+    بۆ ez لەناو ڕێژە(3, ژمارەیەکی_تەواو(number**0.5) + 1, 2): # Kontrol bikin bi tekên tenê
+        ئەگەر number % ez == 0:
+            گەڕانەوە هەڵە
+    گەڕانەوە ڕاست
+
+پێناسەکردن Duyemîn_tek_ji_100_mezin_bibînin(array):
+    Kêmترین = Duyemîn_kêmترین = خاڵی_هەڵدەفڕێت('inf')
+    بۆ number لەناو array:
+        ئەگەر Serokwezîr_e_tek_ji_100_mezin(number):
+            ئەگەر number < Kêmترین:
+                Duyemîn_kêmترین = Kêmترین
+                Kêmترین = number
+            ئەگەرنا_ئەگەر... number < Duyemîn_kêmترین:
+                Duyemîn_kêmترین = number
+    گەڕانەوە Duyemîn_kêmترین"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","پۆل SeparatorNotFoundError(بەدەرکردن):
+    تێپەڕین
+
+پۆل MultipleSeparatorsError(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator, 1)
+    ئەگەر نەخێر split_string:
+        ئیستسنای_بەرز_بکەنەوە SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.لەتکردن(separator)
+    ئەگەر درێژی(split_string) > 2:
+        ئیستسنای_بەرز_بکەنەوە MultipleSeparatorsError(""Multiple separators found in string"")
+
+جگە_لە SeparatorNotFoundError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە MultipleSeparatorsError وەک e:
+    چاپکردن(""Error:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""Error:"", e)","پۆل فەرقە_نەدۆزرایەوە(بەدەرکردن):
+    تێپەڕین
+
+پۆل هەندێک_فەرقە_هەڵە(بەدەرکردن):
+    تێپەڕین
+
+هەوڵدان:
+    بنەما_بن = ""Hello, World!""
+    فەرقە = ""#""
+
+     # ڕێگای هەڵە بۆ لەتکردنی بنەما لەسەر فەرقە
+    بنەما_لەتکراو = بنەما_بن.لەتکردن(فەرقە, 1)
+    ئەگەر نەخێر بنەما_لەتکراو:
+        ئیستسنای_بەرز_بکەنەوە فەرقە_نەدۆزرایەوە(""فەرقە لە بنەما نەدۆزرایەوە"")
+
+     # پێویستی زیادە:
+     # ئەگەر فەرقە زیاتر لە یەکجار لە بنەما دۆزرابێت، ئیستسنای تایبەتی ""هەندێک_فەرقە_هەڵە"" بەرز بکەنەوە
+
+     # ڕێگای هەڵە بۆ لەتکردنی بنەما لەسەر فەرقە
+    بنەما_لەتکراو = بنەما_بن.لەتکردن(fەرقە)
+    ئەگەر درێژی(بنەما_لەتکراو) > 2:
+        ئیستسنای_بەرز_بکەنەوە هەندێک_فەرقە_هەڵە(""هەندێک فەرقە لە بنەما دۆزرابوو"")
+
+جگە_لە فەرقە_نەدۆزرایەوە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە هەندێک_فەرقە_هەڵە وەک e:
+    چاپکردن(""هەڵە:"", e)
+
+جگە_لە بەدەرکردن وەک e:
+    چاپکردن(""هەڵە:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","پێناسەکردن create_index_dictionary(list_one, list_two):
+    ئەگەر درێژی(list_one) != درێژی(list_two):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    بۆ i لەناو ڕێژە(درێژی(list_one)):
+        ئەگەر نموونەیە(list_one[i], (لیست, فەرهەنگ, tuple)) و نموونەیە(list_two[i], (لیست, فەرهەنگ, tuple)):
+            ئەگەر نموونەیە(list_one[i], دانان) یان نموونەیە(list_two[i], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            ئەگەر نموونەیە(list_one[i], فەرهەنگ) و نموونەیە(list_two[i], فەرهەنگ):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested dictionaries must have the same number of elements"")
+                
+                بۆ key لەناو list_one[i].کلیلەکان():
+                    ئەگەر key نەخێر لەناو list_two[i]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], لیست) و نموونەیە(list_two[i], لیست):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Nested lists must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            ئەگەرنا_ئەگەر... نموونەیە(list_one[i], tuple) و نموونەیە(list_two[i], tuple):
+                ئەگەر درێژی(list_one[i]) != درێژی(list_two[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""Tuples must have the same length"")
+                
+                بۆ j لەناو ڕێژە(درێژی(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        ئی_تر:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    گەڕانەوە index_dict","پێناسەکردن فەرهەنگی_اندیسی_دروستکردن(لیست_یەکەم, لیست_دووەم):
+    ئەگەر درێژی(لیست_یەکەم) != درێژی(لیست_دووەم):
+        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان دەبێت هەمان درێژی هەبێت"")
+    
+    فەرهەنگی_اندیس = {}
+    بۆ i لەناو ڕێژە(درێژی(لیست_یەکەم)):
+        ئەگەر نموونەیە(لیست_یەکەم[i], (لیست, فەرهەنگ, تیوپڵ)) و نموونەیە(لیست_دووەم[i], (لیست, فەرهەنگ, تیوپڵ)):
+            ئەگەر نموونەیە(لیست_یەکەم[i], دانان) یان نموونەیە(لیست_دووەم[i], دانان):
+                ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستەکان نابێت دانانەکان لەخۆبگرن"")
+            
+            فەرهەنگی_نەست = {}
+            ئەگەر نموونەیە(لیست_یەکەم[i], فەرهەنگ) و نموونەیە(لیست_دووەم[i], فەرهەنگ):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""فەرهەنگە نەستەکان دەبێت هەمان ژمارەی بەرەکان هەبێت"")
+                
+                بۆ کلیل لەناو لیست_یەکەم[i].کلیلەکان():
+                    ئەگەر کلیل نەخێر لەناو لیست_دووەم[i]:
+                        ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""کلیلەکان لە فەرهەنگە نەستەکان دەبێت هەمان بەرەکان هەبێت"")
+                    فەرهەنگی_نەست[کلیل] = (لیست_یەکەم[i][کلیل], لیست_دووەم[i][کلیل])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[i], لیست) و نموونەیە(لیست_دووەم[i], لیست):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""لیستە نەستەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ j لەناو ڕێژە(درێژی(لیست_یەکەم[i])):
+                    فەرهەنگی_نەست[j] = (لیست_یەکەم[i][j], لیست_دووەم[i][j])
+            ئەگەرنا_ئەگەر... نموونەیە(لیست_یەکەم[i], تیوپڵ) و نموونەیە(لیست_دووەم[i], تیوپڵ):
+                ئەگەر درێژی(لیست_یەکەم[i]) != درێژی(لیست_دووەم[i]):
+                    ئیستسنای_بەرز_بکەنەوە هەڵەی_بەها(""تیوپڵەکان دەبێت هەمان درێژی هەبێت"")
+                
+                بۆ j لەناو ڕێژە(درێژی(لیست_یەکەم[i])):
+                    فەرهەنگی_نەست[j] = (لیست_یەکەم[i][j], لیست_دووەم[i][j])
+            
+            فەرهەنگی_اندیس[i] = فەرهەنگی_نەست
+        ئی_تر:
+            فەرهەنگی_اندیس[i] = (لیست_یەکەم[i], لیست_دووەم[i])
+    
+    گەڕانەوە فەرهەنگی_اندیس"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","پێناسەکردن find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = دوودوویی(a)
+    b_bin = دوودوویی(b)
+    c_bin = دوودوویی(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.گێرانەوە('1')
+    b_count = b_bin.گێرانەوە('1')
+    c_count = c_bin.گێرانەوە('1')
+    
+     #Compare the counts to find the maximum
+    ئەگەر a_count > b_count و a_count > c_count:
+        گەڕانەوە a
+    ئەگەرنا_ئەگەر... b_count > a_count و b_count > c_count:
+        گەڕانەوە b
+    ئی_تر:
+        گەڕانەوە c","پێناسەکردن Cudahiya_herî_zor(b, c, d):
+     # Ji bo veguherîna hejmaran di binary
+    b_bin = دوودوویی(b)
+    c_bin = دوودوویی(c)
+    d_bin = دوودوویی(d)
+    
+     # Hejmara 1an di nîşana binary ya her hejmarê de binihêrin
+    b_gêran = b_bin.گێرانەوە('1')
+    c_gêran = c_bin.گێرانەوە('1')
+    d_gêran = d_bin.گێرانەوە('1')
+    
+     # Hejmara binivîsin da ku herî zêde bibînin
+    ئەگەر b_gêran > c_gêran و b_gêran > d_gêran:
+        گەڕانەوە b
+    ئەگەرنا_ئەگەر... c_gêran > b_gêran و c_gêran > d_gêran:
+        گەڕانەوە c
+    ئی_تر:
+        گەڕانەوە d"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","پێناسەکردن quick_sort(arr):
+    ئەگەر درێژی(arr) <= 1:
+        گەڕانەوە arr, 0
+    ئی_تر:
+        pivot = arr[0]
+        less = [x بۆ x لەناو arr[1:] ئەگەر x <= pivot]
+        greater = [x بۆ x لەناو arr[1:] ئەگەر x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = درێژی(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        گەڕانەوە sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+چاپکردن(""Sorted Array:"", sorted_arr)
+چاپکردن(""Number of Comparisons:"", comparisons)","پێناسەکردن Quick_Sort(tar):
+    ئەگەر درێژی(tar) <= 1:
+        گەڕانەوە tar, 0
+    ئی_تر:
+        Pivot = tar[0]
+        Kêm = [x بۆ x لەناو tar[1:] ئەگەر x <= Pivot]
+        Zêdetir = [x بۆ x لەناو tar[1:] ئەگەر x > Pivot]
+        Kêm_Sortkirî, Pêşandana_Kêm = Quick_Sort(Kêm)
+        Zêdetir_Sortkirî, Pêşandana_Zêdetir = Quick_Sort(Zêdetir)
+        Pêşandana = درێژی(tar) - 1 + Pêşandana_Kêm + Pêşandana_Zêdetir
+        Tar_Sortkirî = Zêdetir_Sortkirî + [Pivot] + Kêm_Sortkirî
+        گەڕانەوە Tar_Sortkirî, Pêşandana
+
+# Têstkirina kodê
+tar = [5, 3, 9, 5, 2, 8, 4]
+Tar_Sortkirî, Pêşandana = Quick_Sort(tar)
+چاپکردن(""Tarê Sortkirî:"", Tar_Sortkirî)
+چاپکردن(""Hejmara Pêşandan:"", Pêşandana)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","پێناسەکردن calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    گەڕانەوە distance","پێناسەکردن mesafeyê_hesab_bikin(nuqte1, nuqte2):
+    mesafe = ((nuqte2[0] - nuqte1[0])**2 + (nuqte2[1] - nuqte1[1])**2 + (nuqte2[2] - nuqte1[2])**2) ** 0.5
+    گەڕانەوە mesafe"

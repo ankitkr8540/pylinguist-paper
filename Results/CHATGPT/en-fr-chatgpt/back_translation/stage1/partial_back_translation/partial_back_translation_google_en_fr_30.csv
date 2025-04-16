@@ -1,0 +1,1978 @@
+English_code,google_translated_code,google_partial_back_translated_code
+"for i in range(10):  # First digit
+    for j in range(10):  # Second digit
+        for k in range(10):  # Third digit
+            # Checking for the conditions
+            if i != 5 and j != 5 and k != 5 and i != j and i != k and j != k:
+                print(i, j, k)","verser je pavé Portée(10): # Premier chiffre
+    verser J pavé Portée(10): # Deuxième chiffre
+        verser k pavé Portée(10): # Troisième chiffre
+              # Vérification des conditions
+            si je != 5 ET J != 5 ET k != 5 ET je != J ET je != k ET J != k:
+                imprimer(je, J, k)","verser je pavé range(10): #Premier chiffre
+    verser J pavé range(10): #Deuxième chiffre
+        verser k pavé range(10): #Troisième chiffre
+               #Vérification des conditions
+            if je != 5 ET J != 5 ET k != 5 ET je != J ET je != k ET J != k:
+                print(je, J, k)"
+"def count_distinct_states(matrix):
+    count = 0
+    states = set()
+    for row in matrix:
+        for col in row:
+            state = ''.join(col)
+            if state not in states:
+                count += 1
+            states.add(state)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(count_distinct_states(matrix))
+# Output: 4","définir compter_les_états_distincts(matrice):
+    compter = 0
+    états = ensemble()
+    verser rangée pavé matrice:
+        verser col pavé rangée:
+            État = ''.réjouissance(col)
+            si État pas pavé états:
+                compter += 1
+            états.ajouter(État)
+    remettre_à_une_revers compter
+
+matrice = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+imprimer(compter_les_états_distincts(matrice))
+  # Sortie: 4","def compter_les_états_distincts(matrice):
+    count = 0
+    états = set()
+    verser rangée pavé matrice:
+        verser col pavé rangée:
+            État = ''.réjouissance(col)
+            if État not pavé états:
+                count += 1
+            états.add(État)
+    remettre_à_une_revers count
+
+matrice = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(compter_les_états_distincts(matrice))
+   #Sortie: 4"
+"def remove_spaces_and_punctuation(s):
+    result = """"
+    for char in s:
+        if char.isalnum():
+            result += char
+    return result","définir supprimer_les_espaces_et_la_ponctuation(s):
+    résultat = """"
+    verser carboniser pavé s:
+        si carboniser.est_alphanumérique():
+            résultat += carboniser
+    remettre_à_une_revers résultat","def supprimer_les_espaces_et_la_ponctuation(s):
+    résultat = """"
+    verser carboniser pavé s:
+        if carboniser.isalnum():
+            résultat += carboniser
+    remettre_à_une_revers résultat"
+"import math
+
+def is_prime(n):
+    # Check if the number is less than 2 or not an integer
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+    # Check if the number is divisible by any integer from 2 to the square root of n
+    for i in range(2, math.isqrt(n) + 1):
+        if n % i == 0:
+            return ""Not Prime""
+
+    return ""Prime""","importateur mathématiques
+
+définir est_premier(n):
+      # Vérifiez si le nombre est inférieur à 2 ou non un entier
+    si n < 2 ou_alors pas exemple(n, entier):
+        remettre_à_une_revers ""Not Prime""
+
+      # Vérifiez si le nombre est divisible par un entier de 2 à la racine carrée de n
+    verser je pavé Portée(2, mathématiques.isqrt(n) + 1):
+        si n % je == 0:
+            remettre_à_une_revers ""Not Prime""
+
+    remettre_à_une_revers ""Prime""","importateur mathématiques
+
+def est_premier(n):
+       #Vérifiez si le nombre est inférieur à 2 ou non un entier
+    if n < 2 or not exemple(n, int):
+        remettre_à_une_revers ""Not Prime""
+
+       #Vérifiez si le nombre est divisible par un entier de 2 à la racine carrée de n
+    verser je pavé range(2, mathématiques.isqrt(n) + 1):
+        if n % je == 0:
+            remettre_à_une_revers ""Not Prime""
+
+    remettre_à_une_revers ""Prime"""
+"class String:
+    def __init__(self, string):
+        self.string = string
+
+    def replace_odd_occurrences(self, substring, replace_with):
+        count = self.string.count(substring)
+        if count % 2 == 0 or count == 0:
+            return self.string
+
+        result = """"
+        stack = []
+
+        for i in range(len(self.string)):
+            if self.string[i:i+len(substring)] == substring:
+                if len(stack) > 0 and (stack[-1] == '(' or stack[-1] == '['):
+                    stack.append(substring)
+                    result += substring
+                elif len(stack) > 0 and (stack[-1] == ')' or stack[-1] == ']'):
+                    stack.pop()
+                    result += substring
+                else:
+                    stack.append(substring)
+                    result += replace_with
+            else:
+                result += self.string[i]
+
+            if len(stack) > 0 and stack[-1] == substring:
+                stack.pop()
+
+        return result","arrosage Chaîne:
+    définir __init__(self, Str):
+        self.Str = Str
+
+    définir Remplacer_les_événements_étranges(self, sous_chaîne, remplacer_par):
+        compter = self.Str.compter(sous_chaîne)
+        si compter % 2 == 0 ou_alors compter == 0:
+            remettre_à_une_revers self.Str
+
+        résultat = """"
+        empiler = []
+
+        verser je pavé Portée(longueur(self.Str)):
+            si self.Str[je:je+longueur(sous_chaîne)] == sous_chaîne:
+                si longueur(empiler) > 0 ET (empiler[-1] == '(' ou_alors empiler[-1] == '['):
+                    empiler.ajouter(sous_chaîne)
+                    résultat += sous_chaîne
+                Sinon_Si longueur(empiler) > 0 ET (empiler[-1] == ')' ou_alors empiler[-1] == ']'):
+                    empiler.émousser()
+                    résultat += sous_chaîne
+                auditeur:
+                    empiler.ajouter(sous_chaîne)
+                    résultat += remplacer_par
+            auditeur:
+                résultat += self.Str[je]
+
+            si longueur(empiler) > 0 ET empiler[-1] == sous_chaîne:
+                empiler.émousser()
+
+        remettre_à_une_revers résultat","arrosage Chaîne:
+    def __init__(self, Str):
+        self.Str = Str
+
+    def Remplacer_les_événements_étranges(self, sous_chaîne, remplacer_par):
+        count = self.Str.count(sous_chaîne)
+        if count % 2 == 0 or count == 0:
+            remettre_à_une_revers self.Str
+
+        résultat = """"
+        empiler = []
+
+        verser je pavé range(len(self.Str)):
+            if self.Str[je:je+len(sous_chaîne)] == sous_chaîne:
+                if len(empiler) > 0 ET (empiler[-1] == '(' or empiler[-1] == '['):
+                    empiler.add(sous_chaîne)
+                    résultat += sous_chaîne
+                Sinon_Si len(empiler) > 0 ET (empiler[-1] == ')' or empiler[-1] == ']'):
+                    empiler.émousser()
+                    résultat += sous_chaîne
+                auditeur:
+                    empiler.add(sous_chaîne)
+                    résultat += remplacer_par
+            auditeur:
+                résultat += self.Str[je]
+
+            if len(empiler) > 0 ET empiler[-1] == sous_chaîne:
+                empiler.émousser()
+
+        remettre_à_une_revers résultat"
+"def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def has_digit_7(num):
+    while num > 0:
+        if num % 10 == 7:
+            return True
+        num //= 10
+    return False
+
+def sum_of_primes():
+    sum_of_primes = 0
+    for num in range(1000000, 2000001):
+        if is_prime(num) and not has_digit_7(num):
+            sum_of_primes += num
+    return sum_of_primes
+
+result = sum_of_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)","définir est_premier(nobs):
+    si nobs <= 1:
+        remettre_à_une_revers Faux
+    verser je pavé Portée(2, entier(nobs**0.5) + 1):
+        si nobs % je == 0:
+            remettre_à_une_revers Faux
+    remettre_à_une_revers Vrai
+
+définir a_le_chiffre_7(nobs):
+    tandis_que nobs > 0:
+        si nobs % 10 == 7:
+            remettre_à_une_revers Vrai
+        nobs //= 10
+    remettre_à_une_revers Faux
+
+définir somme_des_nombres_premiers():
+    somme_des_nombres_premiers = 0
+    verser nobs pavé Portée(1000000, 2000001):
+        si est_premier(nobs) ET pas a_le_chiffre_7(nobs):
+            somme_des_nombres_premiers += nobs
+    remettre_à_une_revers somme_des_nombres_premiers
+
+résultat = somme_des_nombres_premiers()
+imprimer(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", résultat)","def est_premier(nobs):
+    if nobs <= 1:
+        remettre_à_une_revers False
+    verser je pavé range(2, int(nobs**0.5) + 1):
+        if nobs % je == 0:
+            remettre_à_une_revers False
+    remettre_à_une_revers True
+
+def a_le_chiffre_7(nobs):
+    while nobs > 0:
+        if nobs % 10 == 7:
+            remettre_à_une_revers True
+        nobs //= 10
+    remettre_à_une_revers False
+
+def somme_des_nombres_premiers():
+    somme_des_nombres_premiers = 0
+    verser nobs pavé range(1000000, 2000001):
+        if est_premier(nobs) ET not a_le_chiffre_7(nobs):
+            somme_des_nombres_premiers += nobs
+    remettre_à_une_revers somme_des_nombres_premiers
+
+résultat = somme_des_nombres_premiers()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", résultat)"
+"def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def find_prime_sum_array(N, M, X):
+    prime_sum_array = []
+    current_number = M
+    sum_so_far = 0
+
+    while len(prime_sum_array) < N and current_number <= X:
+        if is_prime(sum_so_far + current_number):
+            prime_sum_array.append(current_number)
+            sum_so_far += current_number
+        current_number += M
+
+    if not is_prime(sum_so_far):
+        return []
+
+    return prime_sum_array
+
+# Example usage
+N = 5
+M = 3
+X = 20
+
+result = find_prime_sum_array(N, M, X)
+print(result)","définir est_premier(nobs):
+    si nobs < 2:
+        remettre_à_une_revers Faux
+    verser je pavé Portée(2, entier(nobs ** 0.5) + 1):
+        si nobs % je == 0:
+            remettre_à_une_revers Faux
+    remettre_à_une_revers Vrai
+
+définir Trouver_un_tableau_de_somme_Prime(N, M, X):
+    Tableau_de_somme_privilégiée = []
+    numéro_actuel = M
+    Somme_jusqu'à_présent = 0
+
+    tandis_que longueur(Tableau_de_somme_privilégiée) < N ET numéro_actuel <= X:
+        si est_premier(Summer_jusqu'à_présent + numéro_actuel):
+            Tableau_de_somme_privilégiée.ajouter(numéro_actuel)
+            Somme_jusqu'à_présent += numéro_actuel
+        numéro_actuel += M
+
+    si pas est_premier(Summer_jusqu'à_présent):
+        remettre_à_une_revers []
+
+    remettre_à_une_revers Tableau_de_somme_privilégiée
+
+  # Exemple d'utilisation
+N = 5
+M = 3
+X = 20
+
+résultat = Trouver_un_tableau_de_somme_Prime(N, M, X)
+imprimer(résultat)","def est_premier(nobs):
+    if nobs < 2:
+        remettre_à_une_revers False
+    verser je pavé range(2, int(nobs ** 0.5) + 1):
+        if nobs % je == 0:
+            remettre_à_une_revers False
+    remettre_à_une_revers True
+
+def Trouver_un_tableau_de_somme_Prime(N, M, X):
+    Tableau_de_somme_privilégiée = []
+    numéro_actuel = M
+    Somme_jusqu'à_présent = 0
+
+    while len(Tableau_de_somme_privilégiée) < N ET numéro_actuel <= X:
+        if est_premier(Summer_jusqu'à_présent + numéro_actuel):
+            Tableau_de_somme_privilégiée.add(numéro_actuel)
+            Somme_jusqu'à_présent += numéro_actuel
+        numéro_actuel += M
+
+    if not est_premier(Summer_jusqu'à_présent):
+        remettre_à_une_revers []
+
+    remettre_à_une_revers Tableau_de_somme_privilégiée
+
+   #Exemple d'utilisation
+N = 5
+M = 3
+X = 20
+
+résultat = Trouver_un_tableau_de_somme_Prime(N, M, X)
+print(résultat)"
+"def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def max_prime_difference(arr):
+    primes = []
+    for num in arr:
+        if is_prime(abs(num)):
+            primes.append(abs(num))
+    if len(primes) < 2:
+        return 0
+    max_diff = 0
+    for i in range(len(primes)-1):
+        diff = abs(primes[i] - primes[i+1])
+        if diff > max_diff:
+            max_diff = diff
+    return max_diff","définir est_premier(n):
+    si n < 2:
+        remettre_à_une_revers Faux
+    verser je pavé Portée(2, entier(n**0.5) + 1):
+        si n % je == 0:
+            remettre_à_une_revers Faux
+    remettre_à_une_revers Vrai
+
+définir Différence_maximale(art):
+    nombrer = []
+    verser nobs pavé art:
+        si est_premier(Valeur_Absolu(nobs)):
+            nombrer.ajouter(Valeur_Absolu(nobs))
+    si longueur(nombrer) < 2:
+        remettre_à_une_revers 0
+    Max_Diff = 0
+    verser je pavé Portée(longueur(nombrer)-1):
+        difficulté = Valeur_Absolu(nombrer[je] - nombrer[je+1])
+        si difficulté > Max_Diff:
+            Max_Diff = difficulté
+    remettre_à_une_revers Max_Diff","def est_premier(n):
+    if n < 2:
+        remettre_à_une_revers False
+    verser je pavé range(2, int(n**0.5) + 1):
+        if n % je == 0:
+            remettre_à_une_revers False
+    remettre_à_une_revers True
+
+def Différence_maximale(art):
+    nombrer = []
+    verser nobs pavé art:
+        if est_premier(Valeur_Absolu(nobs)):
+            nombrer.add(Valeur_Absolu(nobs))
+    if len(nombrer) < 2:
+        remettre_à_une_revers 0
+    Max_Diff = 0
+    verser je pavé range(len(nombrer)-1):
+        difficulté = Valeur_Absolu(nombrer[je] - nombrer[je+1])
+        if difficulté > Max_Diff:
+            Max_Diff = difficulté
+    remettre_à_une_revers Max_Diff"
+"import math
+
+def calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio):
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate the height using the Law of Sines
+    height = opposite_side_length * math.sin(angle_rad) / side_ratio
+
+    # Calculate the length of the adjacent side using the Law of Cosines
+    adjacent_side_length = math.sqrt(side_lengths**2 + opposite_side_length**2 - 2 * side_lengths * opposite_side_length * math.cos(angle_rad))
+
+    # Calculate the hypotenuse of the triangle
+    hypotenuse = side_lengths / math.cos(angle_rad)
+
+    # Calculate the remaining side using Pythagorean theorem
+    remaining_side_length = math.sqrt(hypotenuse**2 - adjacent_side_length**2)
+
+    # Calculate the final height of the triangle
+    height += remaining_side_length
+
+    return height
+
+
+def simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True):
+    # Initialize variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate initial velocities
+    vx = initial_velocity * math.cos(angle_rad)
+    vy = initial_velocity * math.sin(angle_rad)
+
+    # Simulate the motion until the y-coordinate becomes negative (reached the ground)
+    while y >= 0:
+        # Calculate the acceleration due to air resistance
+        if air_resistance:
+            air_resistance_acceleration = -0.5 * vy**2  # Simplified model for air resistance
+        else:
+            air_resistance_acceleration = 0.0  # No air resistance
+
+        # Calculate the new velocities using the kinematic equations
+        vx += air_resistance_acceleration * math.cos(angle_rad) * time_interval
+        vy += (-9.8 + air_resistance_acceleration * math.sin(angle_rad)) * time_interval
+
+        # Calculate the new position using the kinematic equations
+        x += vx * time_interval
+        y += vy * time_interval
+
+        # Increment the time
+        time += time_interval
+
+    return x, y, time
+
+
+# Example usage
+angle = 45  # Angle in degrees
+side_lengths = 5
+opposite_side_length = 3
+side_ratio = 2
+height = calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio)
+print(f""The height of the triangle is: {height}"")
+
+initial_velocity = 10  # m/s
+time_interval = 0.01  # seconds
+x, y, total_time = simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True)
+print(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","importateur mathématiques
+
+définir Calculer_la_hauteur_du_triangle(angle, longueurs_latérales, Longueur_latérale_opposée, rapport_secondaire):
+      # Convertir l'angle des degrés en radians
+    rad = mathématiques.radians(angle)
+
+      # Calculez la hauteur en utilisant la loi des sinus
+    hauteur = Longueur_latérale_opposée * mathématiques.péché(rad) / rapport_secondaire
+
+      # Calculez la longueur du côté adjacent en utilisant la loi des cosinus
+    longueur_latérale_adjacente = mathématiques.sqrt(longueurs_latérales**2 + Longueur_latérale_opposée**2 - 2 * longueurs_latérales * Longueur_latérale_opposée * mathématiques.cos(rad))
+
+      # Calculez l'hypoténuse du triangle
+    hypoténuse = longueurs_latérales / mathématiques.cos(rad)
+
+      # Calculez le côté restant à l'aide du théorème de Pythagore
+    longueur_latérale_restante = mathématiques.sqrt(hypoténuse**2 - longueur_latérale_adjacente**2)
+
+      # Calculez la hauteur finale du triangle
+    hauteur += longueur_latérale_restante
+
+    remettre_à_une_revers hauteur
+
+
+définir Simuler_le_mouvement_du_triangle(vitesse_initiale, angle, intervalle_de_temps, résistance_à_l'air=Vrai):
+      # Initialiser les variables
+    x = 0.0
+    y = 0.0
+    temps = 0.0
+
+      # Convertir l'angle des degrés en radians
+    rad = mathématiques.radians(angle)
+
+      # Calculer les vitesses initiales
+    vx = vitesse_initiale * mathématiques.cos(rad)
+    vy = vitesse_initiale * mathématiques.péché(rad)
+
+      # Simuler le mouvement jusqu'à ce que la coordonnée y devienne négative (atteint le sol)
+    tandis_que y >= 0:
+          # Calculez l'accélération due à la résistance à l'air
+        si résistance_à_l'air:
+            accélération_de_la_résistance_à_l'air = -0.5 * vy**2 # Modèle simplifié pour la résistance à l'air
+        auditeur:
+            accélération_de_la_résistance_à_l'air = 0.0 # Pas de résistance à l'air
+
+          # Calculez les nouvelles vitesses en utilisant les équations cinématiques
+        vx += accélération_de_la_résistance_à_l'air * mathématiques.cos(rad) * intervalle_de_temps
+        vy += (-9.8 + accélération_de_la_résistance_à_l'air * mathématiques.péché(rad)) * intervalle_de_temps
+
+          # Calculez la nouvelle position à l'aide des équations cinématiques
+        x += vx * intervalle_de_temps
+        y += vy * intervalle_de_temps
+
+          # Incrémenter le temps
+        temps += intervalle_de_temps
+
+    remettre_à_une_revers x, y, temps
+
+
+  # Exemple d'utilisation
+angle = 45 # Angle en degrés
+longueurs_latérales = 5
+Longueur_latérale_opposée = 3
+rapport_secondaire = 2
+hauteur = Calculer_la_hauteur_du_triangle(angle, longueurs_latérales, Longueur_latérale_opposée, rapport_secondaire)
+imprimer(f""The height of the triangle is: {height}"")
+
+vitesse_initiale = 10 # MS
+intervalle_de_temps = 0.01 # secondes
+x, y, temps_total = Simuler_le_mouvement_du_triangle(vitesse_initiale, angle, intervalle_de_temps, résistance_à_l'air=Vrai)
+imprimer(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","importateur mathématiques
+
+def Calculer_la_hauteur_du_triangle(angle, longueurs_latérales, Longueur_latérale_opposée, rapport_secondaire):
+       #Convertir l'angle des degrés en radians
+    rad = mathématiques.radians(angle)
+
+       #Calculez la hauteur en utilisant la loi des sinus
+    hauteur = Longueur_latérale_opposée * mathématiques.péché(rad) / rapport_secondaire
+
+       #Calculez la longueur du côté adjacent en utilisant la loi des cosinus
+    longueur_latérale_adjacente = mathématiques.sqrt(longueurs_latérales**2 + Longueur_latérale_opposée**2 - 2 * longueurs_latérales * Longueur_latérale_opposée * mathématiques.cos(rad))
+
+       #Calculez l'hypoténuse du triangle
+    hypoténuse = longueurs_latérales / mathématiques.cos(rad)
+
+       #Calculez le côté restant à l'aide du théorème de Pythagore
+    longueur_latérale_restante = mathématiques.sqrt(hypoténuse**2 - longueur_latérale_adjacente**2)
+
+       #Calculez la hauteur finale du triangle
+    hauteur += longueur_latérale_restante
+
+    remettre_à_une_revers hauteur
+
+
+def Simuler_le_mouvement_du_triangle(vitesse_initiale, angle, intervalle_de_temps, résistance_à_l'air=Vrai):
+       #Initialiser les variables
+    x = 0.0
+    y = 0.0
+    temps = 0.0
+
+       #Convertir l'angle des degrés en radians
+    rad = mathématiques.radians(angle)
+
+       #Calculer les vitesses initiales
+    vx = vitesse_initiale * mathématiques.cos(rad)
+    vy = vitesse_initiale * mathématiques.péché(rad)
+
+       #Simuler le mouvement jusqu'à ce que la coordonnée y devienne négative (atteint le sol)
+    while y >= 0:
+           #Calculez l'accélération due à la résistance à l'air
+        if résistance_à_l'air:
+            accélération_de_la_résistance_à_l'air = -0.5 * vy**2 # Modèle simplifié pour la résistance à l'air
+        auditeur:
+            accélération_de_la_résistance_à_l'air = 0.0 # Pas de résistance à l'air
+
+           #Calculez les nouvelles vitesses en utilisant les équations cinématiques
+        vx += accélération_de_la_résistance_à_l'air * mathématiques.cos(rad) * intervalle_de_temps
+        vy += (-9.8 + accélération_de_la_résistance_à_l'air * mathématiques.péché(rad)) * intervalle_de_temps
+
+           #Calculez la nouvelle position à l'aide des équations cinématiques
+        x += vx * intervalle_de_temps
+        y += vy * intervalle_de_temps
+
+           #Incrémenter le temps
+        temps += intervalle_de_temps
+
+    remettre_à_une_revers x, y, temps
+
+
+   #Exemple d'utilisation
+angle = 45 #Angle en degrés
+longueurs_latérales = 5
+Longueur_latérale_opposée = 3
+rapport_secondaire = 2
+hauteur = Calculer_la_hauteur_du_triangle(angle, longueurs_latérales, Longueur_latérale_opposée, rapport_secondaire)
+print(f""The height of the triangle is: {height}"")
+
+vitesse_initiale = 10 #MS
+intervalle_de_temps = 0.01 #secondes
+x, y, temps_total = Simuler_le_mouvement_du_triangle(vitesse_initiale, angle, intervalle_de_temps, résistance_à_l'air=Vrai)
+print(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")"
+"import math
+
+def calculate_circle_area(radius):
+    try:
+        radius = float(radius)
+        if radius <= 0:
+            return ""Error: Radius must be a positive number""
+        area = math.pi * radius**2
+        return ""{:.2f}"".format(area)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","importateur mathématiques
+
+définir Calculer_la_zone_du_cercle(rayon):
+    rédacteur:
+        rayon = Virgulem_Flottante(rayon)
+        si rayon <= 0:
+            remettre_à_une_revers ""Error: Radius must be a positive number""
+        zone = mathématiques.pi * rayon**2
+        remettre_à_une_revers ""{:.2f}"".format(zone)
+    saute Erreur_de_Valeur:
+        remettre_à_une_revers ""Error: Invalid input. Radius must be a number""","importateur mathématiques
+
+def Calculer_la_zone_du_cercle(rayon):
+    rédacteur:
+        rayon = Virgulem_Flottante(rayon)
+        if rayon <= 0:
+            remettre_à_une_revers ""Error: Radius must be a positive number""
+        zone = mathématiques.pi * rayon**2
+        remettre_à_une_revers ""{:.2f}"".format(zone)
+    saute Erreur_de_Valeur:
+        remettre_à_une_revers ""Error: Invalid input. Radius must be a number"""
+"def multiply_matrices(A, B):
+    a, b, c = A[0][0], A[0][1], A[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    return [
+        [a*d + b*e, a*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+def power_matrix(A, n):
+    if n == 0:
+        return [[1, 0], [0, 1]]  # Identity matrix
+    
+    result = power_matrix(A, n // 2)
+    result = multiply_matrices(result, result)
+    
+    if n % 2 == 1:
+        result = multiply_matrices(result, A)
+    
+    return result
+
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_matrix(matrix, n - 1)
+    
+    return result[0][0]","définir multiplier_les_matrices(UN, B):
+    comme, b, c = UN[0][0], UN[0][1], UN[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    remettre_à_une_revers [
+        [comme*d + b*e, comme*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+définir matrice_de_puissance(UN, n):
+    si n == 0:
+        remettre_à_une_revers [[1, 0], [0, 1]] # Matrice d'identité
+    
+    résultat = matrice_de_puissance(UN, n // 2)
+    résultat = multiplier_les_matrices(résultat, résultat)
+    
+    si n % 2 == 1:
+        résultat = multiplier_les_matrices(résultat, UN)
+    
+    remettre_à_une_revers résultat
+
+
+définir fibonacci(n):
+    si n == 0:
+        remettre_à_une_revers 0
+    
+    matrice = [[1, 1], [1, 0]]
+    résultat = matrice_de_puissance(matrice, n - 1)
+    
+    remettre_à_une_revers résultat[0][0]","def multiplier_les_matrices(UN, B):
+    comme, b, c = UN[0][0], UN[0][1], UN[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    remettre_à_une_revers [
+        [comme*d + b*e, comme*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+def matrice_de_puissance(UN, n):
+    if n == 0:
+        remettre_à_une_revers [[1, 0], [0, 1]] #Matrice d'identité
+    
+    résultat = matrice_de_puissance(UN, n // 2)
+    résultat = multiplier_les_matrices(résultat, résultat)
+    
+    if n % 2 == 1:
+        résultat = multiplier_les_matrices(résultat, UN)
+    
+    remettre_à_une_revers résultat
+
+
+def fibonacci(n):
+    if n == 0:
+        remettre_à_une_revers 0
+    
+    matrice = [[1, 1], [1, 0]]
+    résultat = matrice_de_puissance(matrice, n - 1)
+    
+    remettre_à_une_revers résultat[0][0]"
+"def debug_program(arr):
+    n = len(arr)
+    return binary_search(arr, 0, n - 1)
+
+def binary_search(arr, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end) // 2
+    
+    if arr[mid] == mid:
+        return mid
+    
+    left_result = binary_search(arr, start, min(mid - 1, arr[mid]))
+    right_result = binary_search(arr, max(mid + 1, arr[mid]), end)
+    
+    return max(left_result, right_result)","définir programme_de_débogage(art):
+    n = longueur(art)
+    remettre_à_une_revers recherche_binaire(art, 0, n - 1)
+
+définir recherche_binaire(art, commencer, fin):
+    si commencer > fin:
+        remettre_à_une_revers -1
+    
+    milieu = (commencer + fin) // 2
+    
+    si art[milieu] == milieu:
+        remettre_à_une_revers milieu
+    
+    Résultat_de_gauche = recherche_binaire(art, commencer, le_minimum(milieu - 1, art[milieu]))
+    Résultat_du_bon = recherche_binaire(art, maximum(milieu + 1, art[milieu]), fin)
+    
+    remettre_à_une_revers maximum(Résultat_de_gauche, Résultat_du_bon)","def programme_de_débogage(art):
+    n = len(art)
+    remettre_à_une_revers recherche_binaire(art, 0, n - 1)
+
+def recherche_binaire(art, commencer, fin):
+    if commencer > fin:
+        remettre_à_une_revers -1
+    
+    milieu = (commencer + fin) // 2
+    
+    if art[milieu] == milieu:
+        remettre_à_une_revers milieu
+    
+    Résultat_de_gauche = recherche_binaire(art, commencer, min(milieu - 1, art[milieu]))
+    Résultat_du_bon = recherche_binaire(art, max(milieu + 1, art[milieu]), fin)
+    
+    remettre_à_une_revers max(Résultat_de_gauche, Résultat_du_bon)"
+"import math
+
+def power(x, y):
+    # Check for invalid inputs
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+    # Check if x is between 1 and 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+    # Check if y is between 0 and 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+    # Custom algorithm for calculating power
+    result = x ** y
+
+    # Check if result exceeds threshold for scientific notation
+    if result > 1e6:
+        return ""{:.2e}"".format(result)
+    else:
+        return result
+
+# Example usage
+x = 2.5
+y = 3
+result = power(x, y)
+print(result)","importateur mathématiques
+
+définir pouvoir(x, y):
+      # Vérifiez les entrées non valides
+    si pas exemple(x, (entier, Virgulem_Flottante)) ou_alors pas exemple(y, entier):
+        remettre_à_une_revers ""Error: Invalid input. Please enter numeric values for x and y.""
+
+      # Vérifiez si x est entre 1 et 10
+    si pas 1 <= x <= 10:
+        remettre_à_une_revers ""Error: x should be between 1 and 10.""
+
+      # Vérifiez si y est entre 0 et 5
+    si pas 0 <= y <= 5:
+        remettre_à_une_revers ""Error: y should be between 0 and 5.""
+
+      # Algorithme personnalisé pour calculer la puissance
+    résultat = x ** y
+
+      # Vérifiez si le résultat dépasse le seuil de notation scientifique
+    si résultat > 1e6:
+        remettre_à_une_revers ""{:.2e}"".format(résultat)
+    auditeur:
+        remettre_à_une_revers résultat
+
+  # Exemple d'utilisation
+x = 2.5
+y = 3
+résultat = pouvoir(x, y)
+imprimer(résultat)","importateur mathématiques
+
+def pouvoir(x, y):
+       #Vérifiez les entrées non valides
+    if not exemple(x, (int, Virgulem_Flottante)) or not exemple(y, int):
+        remettre_à_une_revers ""Error: Invalid input. Please enter numeric values for x and y.""
+
+       #Vérifiez si x est entre 1 et 10
+    if not 1 <= x <= 10:
+        remettre_à_une_revers ""Error: x should be between 1 and 10.""
+
+       #Vérifiez si y est entre 0 et 5
+    if not 0 <= y <= 5:
+        remettre_à_une_revers ""Error: y should be between 0 and 5.""
+
+       #Algorithme personnalisé pour calculer la puissance
+    résultat = x ** y
+
+       #Vérifiez si le résultat dépasse le seuil de notation scientifique
+    if résultat > 1e6:
+        remettre_à_une_revers ""{:.2e}"".format(résultat)
+    auditeur:
+        remettre_à_une_revers résultat
+
+   #Exemple d'utilisation
+x = 2.5
+y = 3
+résultat = pouvoir(x, y)
+print(résultat)"
+"def bubble_sort_descending(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+sorted_arr = bubble_sort_descending(arr)
+print(sorted_arr)","définir Sort_de_bulles_descendant(art):
+    n = longueur(art)
+    verser je pavé Portée(n - 1):
+        verser J pavé Portée(n - je - 1):
+            si art[J] < art[J + 1]:
+                art[J], art[J + 1] = art[J + 1], art[J]
+    remettre_à_une_revers art
+
+art = [3, 2, 1, 5, 4]
+trié_arr = Sort_de_bulles_descendant(art)
+imprimer(trié_arr)","def Sort_de_bulles_descendant(art):
+    n = len(art)
+    verser je pavé range(n - 1):
+        verser J pavé range(n - je - 1):
+            if art[J] < art[J + 1]:
+                art[J], art[J + 1] = art[J + 1], art[J]
+    remettre_à_une_revers art
+
+art = [3, 2, 1, 5, 4]
+trié_arr = Sort_de_bulles_descendant(art)
+print(trié_arr)"
+"def sum_prime_numbers(arr):
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    prime_sum = 0
+    for num in arr:
+        if is_prime(num):
+            prime_sum += num
+    return prime_sum","définir somme_des_nombres_premiers(art):
+    définir est_premier(n):
+        si n <= 1:
+            remettre_à_une_revers Faux
+        verser je pavé Portée(2, entier(n**0.5) + 1):
+            si n % je == 0:
+                remettre_à_une_revers Faux
+        remettre_à_une_revers Vrai
+
+    somme_privilégiée = 0
+    verser nobs pavé art:
+        si est_premier(nobs):
+            somme_privilégiée += nobs
+    remettre_à_une_revers somme_privilégiée","def somme_des_nombres_premiers(art):
+    def est_premier(n):
+        if n <= 1:
+            remettre_à_une_revers False
+        verser je pavé range(2, int(n**0.5) + 1):
+            if n % je == 0:
+                remettre_à_une_revers False
+        remettre_à_une_revers True
+
+    somme_privilégiée = 0
+    verser nobs pavé art:
+        if est_premier(nobs):
+            somme_privilégiée += nobs
+    remettre_à_une_revers somme_privilégiée"
+"def calculate_factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+def calculate_factorials(arr):
+    result = []
+    for num in arr:
+        result.append(calculate_factorial(num))
+    return result
+
+arr = [1, 2, 3, 4, 5]
+factorials = calculate_factorials(arr)
+print(factorials)","définir Calculer_factoriel(n):
+    si n == 0:
+        remettre_à_une_revers 1
+    auditeur:
+        remettre_à_une_revers n * Calculer_factoriel(n - 1)
+
+définir Calculer_les_factoriels(art):
+    résultat = []
+    verser nobs pavé art:
+        résultat.ajouter(Calculer_factoriel(nobs))
+    remettre_à_une_revers résultat
+
+art = [1, 2, 3, 4, 5]
+factorielle = Calculer_les_factoriels(art)
+imprimer(factorielle)","def Calculer_factoriel(n):
+    if n == 0:
+        remettre_à_une_revers 1
+    auditeur:
+        remettre_à_une_revers n * Calculer_factoriel(n - 1)
+
+def Calculer_les_factoriels(art):
+    résultat = []
+    verser nobs pavé art:
+        résultat.add(Calculer_factoriel(nobs))
+    remettre_à_une_revers résultat
+
+art = [1, 2, 3, 4, 5]
+factorielle = Calculer_les_factoriels(art)
+print(factorielle)"
+"def count_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowel_counts = {vowel: 0 for vowel in vowels}
+    
+    for char in text:
+        if char.lower() in vowels:
+            vowel_counts[char.lower()] += 1
+    
+    return vowel_counts
+
+text = ""Hello World!""
+result = count_vowels(text)
+print(result)","définir compter_les_voyelles(texte):
+    voyelles = ['a', 'e', 'i', 'o', 'u']
+    Counts_de_voyelle = {voyelle: 0 verser voyelle pavé voyelles}
+    
+    verser carboniser pavé texte:
+        si carboniser.plus_Bas() pavé voyelles:
+            Counts_de_voyelle[carboniser.plus_Bas()] += 1
+    
+    remettre_à_une_revers Counts_de_voyelle
+
+texte = ""Hello World!""
+résultat = compter_les_voyelles(texte)
+imprimer(résultat)","def compter_les_voyelles(texte):
+    voyelles = ['a', 'e', 'i', 'o', 'u']
+    Counts_de_voyelle = {voyelle: 0 verser voyelle pavé voyelles}
+    
+    verser carboniser pavé texte:
+        if carboniser.plus_Bas() pavé voyelles:
+            Counts_de_voyelle[carboniser.plus_Bas()] += 1
+    
+    remettre_à_une_revers Counts_de_voyelle
+
+texte = ""Hello World!""
+résultat = compter_les_voyelles(texte)
+print(résultat)"
+"import random
+
+def generate_random_number():
+    num = 0
+    while bin(num).count('1') != 4:
+        num = random.randint(0, 15)
+    return num
+
+random_number = generate_random_number()
+print(random_number)","importateur aléatoire
+
+définir générer_un_nombre_aléatoire():
+    nobs = 0
+    tandis_que binaire(nobs).compter('1') != 4:
+        nobs = aléatoire.Randin(0, 15)
+    remettre_à_une_revers nobs
+
+nombre_aléatoire = générer_un_nombre_aléatoire()
+imprimer(nombre_aléatoire)","importateur aléatoire
+
+def générer_un_nombre_aléatoire():
+    nobs = 0
+    while bin(nobs).count('1') != 4:
+        nobs = aléatoire.Randin(0, 15)
+    remettre_à_une_revers nobs
+
+nombre_aléatoire = générer_un_nombre_aléatoire()
+print(nombre_aléatoire)"
+"def multiply(a, b):
+    # Calculate the sign of the result
+    sign = -1 if (a < 0) ^ (b < 0) else 1
+
+    # Convert both numbers to positive
+    a = abs(a)
+    b = abs(b)
+
+    # Initialize the result
+    result = 0
+
+    # Multiply the numbers using bitwise operations
+    while b:
+        # If b is odd, add a to the result
+        if b & 1:
+            result += a
+
+        # Shift a to the left by 1 bit
+        a <<= 1
+
+        # Shift b to the right by 1 bit
+        b >>= 1
+
+    return sign * result","définir multiplier(comme, b):
+      # Calculez le signe du résultat
+    signe = -1 si (comme < 0) ^ (b < 0) auditeur 1
+
+      # Convertir les deux nombres en positifs
+    comme = Valeur_Absolu(comme)
+    b = Valeur_Absolu(b)
+
+      # Initialiser le résultat
+    résultat = 0
+
+      # Multipliez les nombres en utilisant des opérations bit
+    tandis_que b:
+          # Si B est étrange, ajoutez A au résultat
+        si b & 1:
+            résultat += comme
+
+          # Changement A vers la gauche par 1 bit
+        comme <<= 1
+
+          # Changement B vers la droite par 1 bit
+        b >>= 1
+
+    remettre_à_une_revers signe * résultat","def multiplier(comme, b):
+       #Calculez le signe du résultat
+    signe = -1 if (comme < 0) ^ (b < 0) auditeur 1
+
+       #Convertir les deux nombres en positifs
+    comme = Valeur_Absolu(comme)
+    b = Valeur_Absolu(b)
+
+       #Initialiser le résultat
+    résultat = 0
+
+       #Multipliez les nombres en utilisant des opérations bit
+    while b:
+           #Si B est étrange, ajoutez A au résultat
+        if b & 1:
+            résultat += comme
+
+           #Changement A vers la gauche par 1 bit
+        comme <<= 1
+
+           #Changement B vers la droite par 1 bit
+        b >>= 1
+
+    remettre_à_une_revers signe * résultat"
+"def find_longest_element(lst):
+    longest_element = ''
+    longest_index = -1
+    longest_count = 0
+    
+    for i, element in enumerate(lst):
+        if len(str(element)) > len(longest_element):
+            longest_element = str(element)
+            longest_index = i
+            longest_count = 1
+        elif len(str(element)) == len(longest_element):
+            longest_count += 1
+    
+    return longest_element, longest_index, longest_count
+
+# Example usage:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longest_element, longest_index, longest_count = find_longest_element(lst)
+
+print(""Longest Element:"", longest_element)
+print(""Index of Longest Element:"", longest_index)
+print(""Total Occurrences of Longest Element:"", longest_count)","définir trouver_un_élément_le_plus_long(qui):
+    élément_le_plus_long = ''
+    index_le_plus_long = -1
+    le_plus_long_décompte = 0
+    
+    verser je, élément pavé énumérer(qui):
+        si longueur(chaîne(élément)) > longueur(élément_le_plus_long):
+            élément_le_plus_long = chaîne(élément)
+            index_le_plus_long = je
+            le_plus_long_décompte = 1
+        Sinon_Si longueur(chaîne(élément)) == longueur(élément_le_plus_long):
+            le_plus_long_décompte += 1
+    
+    remettre_à_une_revers élément_le_plus_long, index_le_plus_long, le_plus_long_décompte
+
+  # Exemple d'utilisation:
+qui = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+élément_le_plus_long, index_le_plus_long, le_plus_long_décompte = trouver_un_élément_le_plus_long(qui)
+
+imprimer(""Longest Element:"", élément_le_plus_long)
+imprimer(""Index of Longest Element:"", index_le_plus_long)
+imprimer(""Total Occurrences of Longest Element:"", le_plus_long_décompte)","def trouver_un_élément_le_plus_long(qui):
+    élément_le_plus_long = ''
+    index_le_plus_long = -1
+    le_plus_long_décompte = 0
+    
+    verser je, élément pavé enumerate(qui):
+        if len(chaîne(élément)) > len(élément_le_plus_long):
+            élément_le_plus_long = chaîne(élément)
+            index_le_plus_long = je
+            le_plus_long_décompte = 1
+        Sinon_Si len(chaîne(élément)) == len(élément_le_plus_long):
+            le_plus_long_décompte += 1
+    
+    remettre_à_une_revers élément_le_plus_long, index_le_plus_long, le_plus_long_décompte
+
+   #Exemple d'utilisation:
+qui = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+élément_le_plus_long, index_le_plus_long, le_plus_long_décompte = trouver_un_élément_le_plus_long(qui)
+
+print(""Longest Element:"", élément_le_plus_long)
+print(""Index of Longest Element:"", index_le_plus_long)
+print(""Total Occurrences of Longest Element:"", le_plus_long_décompte)"
+"import math
+
+def is_prime(num):
+    if num <= 1:
+        return ""Composite""
+
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return ""Composite""
+
+    return ""Prime""","importateur mathématiques
+
+définir est_premier(nobs):
+    si nobs <= 1:
+        remettre_à_une_revers ""Composite""
+
+    verser je pavé Portée(2, entier(mathématiques.sqrt(nobs)) + 1):
+        si nobs % je == 0:
+            remettre_à_une_revers ""Composite""
+
+    remettre_à_une_revers ""Prime""","importateur mathématiques
+
+def est_premier(nobs):
+    if nobs <= 1:
+        remettre_à_une_revers ""Composite""
+
+    verser je pavé range(2, int(mathématiques.sqrt(nobs)) + 1):
+        if nobs % je == 0:
+            remettre_à_une_revers ""Composite""
+
+    remettre_à_une_revers ""Prime"""
+"def print_primes_without_five(lower, upper):
+    # Step 1: Create a boolean array ""is_prime[0..upper]"" and initialize
+    # all entries it as true.
+    is_prime = [True] * (upper + 1)
+    is_prime[0] = is_prime[1] = False
+
+    # Step 2: Mark all the multiples of prime numbers starting from 2
+    # as false.
+    p = 2
+    while p * p <= upper:
+        if is_prime[p]:
+            for i in range(p * p, upper + 1, p):
+                is_prime[i] = False
+        p += 1
+
+    # Step 3: Print all prime numbers in the given range excluding
+    # numbers containing the digit 5.
+    for num in range(lower, upper + 1):
+        if is_prime[num] and '5' not in str(num):
+            print(num)","définir Imprimez_les_nombres_premiers_sans_cinq(plus_Bas, majuscule):
+      # Étape 1: Créez un tableau booléen ""is_prime [0..upper]"" et initialisez
+      # Toutes les entrées l'ont comme vraie.
+    est_premier = [Vrai] * (majuscule + 1)
+    est_premier[0] = est_premier[1] = Faux
+
+      # Étape 2: Marquez tous les multiples de nombres premiers à partir de 2
+      # comme faux.
+    p = 2
+    tandis_que p * p <= majuscule:
+        si est_premier[p]:
+            verser je pavé Portée(p * p, majuscule + 1, p):
+                est_premier[je] = Faux
+        p += 1
+
+      # Étape 3: Imprimez tous les nombres premiers dans la plage donnée à l'exclusion
+      # Nombres contenant le chiffre 5.
+    verser nobs pavé Portée(plus_Bas, majuscule + 1):
+        si est_premier[nobs] ET '5' pas pavé chaîne(nobs):
+            imprimer(nobs)","def Imprimez_les_nombres_premiers_sans_cinq(plus_Bas, upper):
+       #Étape 1: Créez un tableau booléen ""is_prime [0..upper]"" et initialisez
+       #Toutes les entrées l'ont comme vraie.
+    est_premier = [True] * (upper + 1)
+    est_premier[0] = est_premier[1] = False
+
+       #Étape 2: Marquez tous les multiples de nombres premiers à partir de 2
+       #comme faux.
+    p = 2
+    while p * p <= upper:
+        if est_premier[p]:
+            verser je pavé range(p * p, upper + 1, p):
+                est_premier[je] = False
+        p += 1
+
+       #Étape 3: Imprimez tous les nombres premiers dans la plage donnée à l'exclusion
+       #Nombres contenant le chiffre 5.
+    verser nobs pavé range(plus_Bas, upper + 1):
+        if est_premier[nobs] ET '5' not pavé chaîne(nobs):
+            print(nobs)"
+"import time
+
+# Function to check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Caching mechanism for prime numbers
+prime_cache = {}
+
+# Modified function to check if a number is prime using caching
+def is_prime_cached(n):
+    if n in prime_cache:
+        return prime_cache[n]
+    prime = is_prime(n)
+    prime_cache[n] = prime
+    return prime
+
+# Timer function
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f""Execution time: {end - start} seconds"")
+        return result
+    return wrapper
+
+# List comprehension to generate the list of prime numbers
+@timer
+def generate_prime_palindromic_fibonacci():
+    return [num for num in range(10000, 20001) if is_prime_cached(num) and str(num) == str(num)[::-1] and is_fibonacci(num)]
+
+# Function to check if a number is a Fibonacci number
+def is_fibonacci(n):
+    a, b = 0, 1
+    while b < n:
+        a, b = b, a + b
+    return b == n
+
+# Test the function
+primes = generate_prime_palindromic_fibonacci()
+print(primes)","importateur temps
+
+  # Fonction pour vérifier si un nombre est premier
+définir est_premier(n):
+    si n < 2:
+        remettre_à_une_revers Faux
+    verser je pavé Portée(2, entier(n**0.5) + 1):
+        si n % je == 0:
+            remettre_à_une_revers Faux
+    remettre_à_une_revers Vrai
+
+  # Mécanisme de mise en cache pour les nombres premiers
+cache_prime = {}
+
+  # Fonction modifiée pour vérifier si un nombre est premier en utilisant la mise en cache
+définir Est_ce_que_Prime_est_mis_en_cache(n):
+    si n pavé cache_prime:
+        remettre_à_une_revers cache_prime[n]
+    prime = est_premier(n)
+    cache_prime[n] = prime
+    remettre_à_une_revers prime
+
+  # Fonction de minuterie
+définir minuteur(func):
+    définir emballage(*args, **kwargs):
+        commencer = temps.temps()
+        résultat = func(*args, **kwargs)
+        fin = temps.temps()
+        imprimer(f""Execution time: {end - start} seconds"")
+        remettre_à_une_revers résultat
+    remettre_à_une_revers emballage
+
+  # Compréhension de la liste pour générer la liste des nombres premiers
+@minuteur
+définir générer_des_fibonacci_palindromiques_de_premier_ordre():
+    remettre_à_une_revers [nobs verser nobs pavé Portée(10000, 20001) si Est_ce_que_Prime_est_mis_en_cache(nobs) ET chaîne(nobs) == chaîne(nobs)[::-1] ET est_fibonacci(nobs)]
+
+  # Fonction pour vérifier si un nombre est un numéro Fibonacci
+définir est_fibonacci(n):
+    comme, b = 0, 1
+    tandis_que b < n:
+        comme, b = b, comme + b
+    remettre_à_une_revers b == n
+
+  # Testez la fonction
+nombrer = générer_des_fibonacci_palindromiques_de_premier_ordre()
+imprimer(nombrer)","importateur temps
+
+   #Fonction pour vérifier si un nombre est premier
+def est_premier(n):
+    if n < 2:
+        remettre_à_une_revers False
+    verser je pavé range(2, int(n**0.5) + 1):
+        if n % je == 0:
+            remettre_à_une_revers False
+    remettre_à_une_revers True
+
+   #Mécanisme de mise en cache pour les nombres premiers
+cache_prime = {}
+
+   #Fonction modifiée pour vérifier si un nombre est premier en utilisant la mise en cache
+def Est_ce_que_Prime_est_mis_en_cache(n):
+    if n pavé cache_prime:
+        remettre_à_une_revers cache_prime[n]
+    prime = est_premier(n)
+    cache_prime[n] = prime
+    remettre_à_une_revers prime
+
+   #Fonction de minuterie
+def minuteur(func):
+    def emballage(*args, **kwargs):
+        commencer = temps.temps()
+        résultat = func(*args, **kwargs)
+        fin = temps.temps()
+        print(f""Execution time: {end - start} seconds"")
+        remettre_à_une_revers résultat
+    remettre_à_une_revers emballage
+
+   #Compréhension de la liste pour générer la liste des nombres premiers
+@minuteur
+def générer_des_fibonacci_palindromiques_de_premier_ordre():
+    remettre_à_une_revers [nobs verser nobs pavé range(10000, 20001) if Est_ce_que_Prime_est_mis_en_cache(nobs) ET chaîne(nobs) == chaîne(nobs)[::-1] ET est_fibonacci(nobs)]
+
+   #Fonction pour vérifier si un nombre est un numéro Fibonacci
+def est_fibonacci(n):
+    comme, b = 0, 1
+    while b < n:
+        comme, b = b, comme + b
+    remettre_à_une_revers b == n
+
+   #Testez la fonction
+nombrer = générer_des_fibonacci_palindromiques_de_premier_ordre()
+print(nombrer)"
+"import math
+
+def average_list(lst):
+    if not lst:
+        return None
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    total = 0
+    count = 0
+    
+    for num in lst:
+        if not isinstance(num, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(num, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if math.isnan(num):
+            raise ValueError(""List contains NaN values"")
+        
+        if math.isinf(num):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(num) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        total += num
+        count += 1
+    
+    return total / count","importateur mathématiques
+
+définir liste_moyenne(qui):
+    si pas qui:
+        remettre_à_une_revers Aucun
+    
+    si longueur(qui) == 1:
+        remettre_à_une_revers qui[0]
+    
+    total = 0
+    compter = 0
+    
+    verser nobs pavé qui:
+        si pas exemple(nobs, (entier, Virgulem_Flottante)):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains non-numeric elements"")
+        
+        si exemple(nobs, complexe):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains complex numbers"")
+        
+        si mathématiques.Isnan(nobs):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains NaN values"")
+        
+        si mathématiques.est(nobs):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains infinity or negative infinity values"")
+        
+        si Valeur_Absolu(nobs) > 1E308:
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains numbers that are too large"")
+        
+        total += nobs
+        compter += 1
+    
+    remettre_à_une_revers total / compter","importateur mathématiques
+
+def liste_moyenne(qui):
+    if not qui:
+        remettre_à_une_revers nan
+    
+    if len(qui) == 1:
+        remettre_à_une_revers qui[0]
+    
+    total = 0
+    count = 0
+    
+    verser nobs pavé qui:
+        if not exemple(nobs, (int, Virgulem_Flottante)):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains non-numeric elements"")
+        
+        if exemple(nobs, complex):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains complex numbers"")
+        
+        if mathématiques.Isnan(nobs):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains NaN values"")
+        
+        if mathématiques.is(nobs):
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains infinity or negative infinity values"")
+        
+        if Valeur_Absolu(nobs) > 1E308:
+            Exception_de_levier_UNE Erreur_de_Valeur(""List contains numbers that are too large"")
+        
+        total += nobs
+        count += 1
+    
+    remettre_à_une_revers total / count"
+"import sqlite3
+
+def delete_row(connection):
+    try:
+        # Start a transaction
+        connection.execute(""BEGIN TRANSACTION"")
+
+        # Execute the complex query
+        cursor = connection.execute(""SELECT ..."")
+
+        # Fetch the row to be deleted
+        row = cursor.fetchone()
+
+        if row:
+            # Delete the row using its primary key
+            connection.execute(""DELETE FROM table_name WHERE id=?"", (row['id'],))
+
+        # Commit the transaction
+        connection.execute(""COMMIT"")
+
+        # Close the cursor
+        cursor.close()
+
+    except sqlite3.Error as error:
+        # Rollback the transaction in case of any exception
+        connection.execute(""ROLLBACK"")
+
+        # Display the error message
+        print(f""Error: {error}"")
+
+    finally:
+        # Close the database connection
+        connection.close()
+
+# Create a connection to the SQLite database
+connection = sqlite3.connect(""database.db"")
+
+# Call the function to delete the row
+delete_row(connection)","importateur sqlite3
+
+définir Supprimer_la_ligne(connexion):
+    rédacteur:
+          # Démarrer une transaction
+        connexion.exécuter(""BEGIN TRANSACTION"")
+
+          # Exécuter la requête complexe
+        curseur = connexion.exécuter(""SELECT ..."")
+
+          # Répondre à la ligne pour être supprimée
+        rangée = curseur.récupérer()
+
+        si rangée:
+              # Supprimer la ligne en utilisant sa clé principale
+            connexion.exécuter(""DELETE FROM table_name WHERE id=?"", (rangée['id'],))
+
+          # Engager la transaction
+        connexion.exécuter(""COMMIT"")
+
+          # Fermez le curseur
+        curseur.Fermer()
+
+    saute sqlite3.Erreur un erreur:
+          # Rollback la transaction en cas d'exception
+        connexion.exécuter(""ROLLBACK"")
+
+          # Afficher le message d'erreur
+        imprimer(f""Error: {error}"")
+
+    final:
+          # Fermez la connexion de la base de données
+        connexion.Fermer()
+
+  # Créer une connexion à la base de données SQLite
+connexion = sqlite3.connecter(""database.db"")
+
+  # Appelez la fonction pour supprimer la ligne
+Supprimer_la_ligne(connexion)","importateur sqlite3
+
+def Supprimer_la_ligne(connexion):
+    rédacteur:
+           #Démarrer une transaction
+        connexion.exec(""BEGIN TRANSACTION"")
+
+           #Exécuter la requête complexe
+        curseur = connexion.exec(""SELECT ..."")
+
+           #Répondre à la ligne pour être supprimée
+        rangée = curseur.récupérer()
+
+        if rangée:
+               #Supprimer la ligne en utilisant sa clé principale
+            connexion.exec(""DELETE FROM table_name WHERE id=?"", (rangée['id'],))
+
+           #Engager la transaction
+        connexion.exec(""COMMIT"")
+
+           #Fermez le curseur
+        curseur.close()
+
+    saute sqlite3.Erreur un erreur:
+           #Rollback la transaction en cas d'exception
+        connexion.exec(""ROLLBACK"")
+
+           #Afficher le message d'erreur
+        print(f""Error: {error}"")
+
+    final:
+           #Fermez la connexion de la base de données
+        connexion.close()
+
+   #Créer une connexion à la base de données SQLite
+connexion = sqlite3.connecter(""database.db"")
+
+   #Appelez la fonction pour supprimer la ligne
+Supprimer_la_ligne(connexion)"
+"import re
+
+def extract_emails(string):
+    # Use regular expression pattern to find all email addresses in the string
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, string)
+    
+    # Remove any duplicate email addresses
+    unique_emails = list(set(matches))
+    
+    return unique_emails","importateur concernant
+
+définir extraire_des_e_mails(Str):
+      # Utilisez un modèle d'expression régulière pour trouver toutes les adresses e_mail dans la chaîne
+    modèle = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matchs = concernant.finir(modèle, Str)
+    
+      # Supprimer toutes les adresses e_mail en double
+    e_mails_uniques = liste(ensemble(matchs))
+    
+    remettre_à_une_revers e_mails_uniques","importateur concernant
+
+def extraire_des_e_mails(Str):
+       #Utilisez un modèle d'expression régulière pour trouver toutes les adresses e_mail dans la chaîne
+    modèle = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matchs = concernant.finir(modèle, Str)
+    
+       #Supprimer toutes les adresses e_mail en double
+    e_mails_uniques = list(set(matchs))
+    
+    remettre_à_une_revers e_mails_uniques"
+"def clean_and_sort(lst):
+   result = []
+   for element in lst:
+      if type(element) == int:
+         result.append(element + 5)
+   # implement your own sorting algorithm here
+   n = len(result)
+   for i in range(n):
+      for j in range(0, n-i-1):
+         if result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   return result
+
+print(clean_and_sort([1, 2, ""hello""]))","définir nettoyer_et_trier(qui):
+   résultat = []
+   verser élément pavé qui:
+      si fuseau(élément) == entier:
+         résultat.ajouter(élément + 5)
+     # Implémentez votre propre algorithme de tri ici
+   n = longueur(résultat)
+   verser je pavé Portée(n):
+      verser J pavé Portée(0, n-je-1):
+         si résultat[J] < résultat[J+1]:
+            résultat[J], résultat[J+1] = résultat[J+1], résultat[J]
+   remettre_à_une_revers résultat
+
+imprimer(nettoyer_et_trier([1, 2, ""hello""]))","def nettoyer_et_trier(qui):
+   résultat = []
+   verser élément pavé qui:
+      if fuseau(élément) == int:
+         résultat.add(élément + 5)
+      #Implémentez votre propre algorithme de tri ici
+   n = len(résultat)
+   verser je pavé range(n):
+      verser J pavé range(0, n-je-1):
+         if résultat[J] < résultat[J+1]:
+            résultat[J], résultat[J+1] = résultat[J+1], résultat[J]
+   remettre_à_une_revers résultat
+
+print(nettoyer_et_trier([1, 2, ""hello""]))"
+"def is_valid_palindrome(s):
+    # Convert the string to lowercase
+    s = s.lower()
+    
+    # Initialize the two pointers
+    left = 0
+    right = len(s) - 1
+    
+    while left < right:
+        # Check if the left character is not alphabetic
+        if not s[left].isalpha():
+            left += 1
+            continue
+        
+        # Check if the right character is not alphabetic
+        if not s[right].isalpha():
+            right -= 1
+            continue
+        
+        # Check if the characters at the two positions are equal
+        if s[left] != s[right]:
+            return False
+        
+        # Move the pointers towards the middle
+        left += 1
+        right -= 1
+    
+    return True","définir est_un_palindrome_valide(s):
+      # Convertir la chaîne en minuscules
+    s = s.plus_Bas()
+    
+      # Initialiser les deux pointeurs
+    gauche = 0
+    droite = longueur(s) - 1
+    
+    tandis_que gauche < droite:
+          # Vérifiez si le caractère de gauche n'est pas alphabétique
+        si pas s[gauche].est_alphabétique():
+            gauche += 1
+            Continuz
+        
+          # Vérifiez si le bon caractère n'est pas alphabétique
+        si pas s[droite].est_alphabétique():
+            droite -= 1
+            Continuz
+        
+          # Vérifiez si les caractères aux deux positions sont égaux
+        si s[gauche] != s[droite]:
+            remettre_à_une_revers Faux
+        
+          # Déplacer les pointeurs vers le milieu
+        gauche += 1
+        droite -= 1
+    
+    remettre_à_une_revers Vrai","def est_un_palindrome_valide(s):
+       #Convertir la chaîne en minuscules
+    s = s.plus_Bas()
+    
+       #Initialiser les deux pointeurs
+    gauche = 0
+    droite = len(s) - 1
+    
+    while gauche < droite:
+           #Vérifiez si le caractère de gauche n'est pas alphabétique
+        if not s[gauche].isalpha():
+            gauche += 1
+            Continuz
+        
+           #Vérifiez si le bon caractère n'est pas alphabétique
+        if not s[droite].isalpha():
+            droite -= 1
+            Continuz
+        
+           #Vérifiez si les caractères aux deux positions sont égaux
+        if s[gauche] != s[droite]:
+            remettre_à_une_revers False
+        
+           #Déplacer les pointeurs vers le milieu
+        gauche += 1
+        droite -= 1
+    
+    remettre_à_une_revers True"
+"def is_palindrome(num):
+    # Convert the number to string
+    num_str = str(num)
+    
+    # Check if the number is positive
+    if num <= 0:
+        return False
+    
+    # Check if the number has at least 5 digits
+    if len(num_str) < 5:
+        return False
+    
+    # Check if the number consists of unique digits
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+    # Check if the number is divisible by 7
+    if num % 7 != 0:
+        return False
+    
+    # Check if the number is a palindrome
+    if num_str == num_str[::-1]:
+        return True
+    
+    # Check for palindromic substrings within the number
+    for i in range(len(num_str)):
+        for j in range(i+2, len(num_str)+1):
+            sub_num = num_str[i:j]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+# Testing the script
+# Decimal number
+num_decimal = 12321
+print(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+# Hexadecimal number
+num_hexadecimal = 0x12321
+print(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+# Other test cases
+print(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(f""Is 12321 a palindrome? {is_palindrome(12321)}"")","définir est_palindrome(nobs):
+      # Convertir le numéro en chaîne
+    num = chaîne(nobs)
+    
+      # Vérifiez si le nombre est positif
+    si nobs <= 0:
+        remettre_à_une_revers Faux
+    
+      # Vérifiez si le nombre a au moins 5 chiffres
+    si longueur(num) < 5:
+        remettre_à_une_revers Faux
+    
+      # Vérifiez si le numéro se compose de chiffres uniques
+    si longueur(ensemble(num)) != longueur(num):
+        remettre_à_une_revers Faux
+    
+      # Vérifiez si le numéro est divisible par 7
+    si nobs % 7 != 0:
+        remettre_à_une_revers Faux
+    
+      # Vérifiez si le numéro est un palindrome
+    si num == num[::-1]:
+        remettre_à_une_revers Vrai
+    
+      # Vérifiez les sous_chaînes palindromiques dans le numéro
+    verser je pavé Portée(longueur(num)):
+        verser J pavé Portée(je+2, longueur(num)+1):
+            sub_num = num[je:J]
+            si sub_num == sub_num[::-1]:
+                remettre_à_une_revers Vrai
+    
+    remettre_à_une_revers Faux
+
+  # Tester le script
+  # Numéro décimal
+num_décimal = 12321
+imprimer(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+  # Numéro hexadécimal
+num_hexadécimal = 0x12321
+imprimer(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+  # Autres cas de test
+imprimer(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+imprimer(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+imprimer(f""Is 12321 a palindrome? {is_palindrome(12321)}"")","def est_palindrome(nobs):
+       #Convertir le numéro en chaîne
+    num = chaîne(nobs)
+    
+       #Vérifiez si le nombre est positif
+    if nobs <= 0:
+        remettre_à_une_revers False
+    
+       #Vérifiez si le nombre a au moins 5 chiffres
+    if len(num) < 5:
+        remettre_à_une_revers False
+    
+       #Vérifiez si le numéro se compose de chiffres uniques
+    if len(set(num)) != len(num):
+        remettre_à_une_revers False
+    
+       #Vérifiez si le numéro est divisible par 7
+    if nobs % 7 != 0:
+        remettre_à_une_revers False
+    
+       #Vérifiez si le numéro est un palindrome
+    if num == num[::-1]:
+        remettre_à_une_revers True
+    
+       #Vérifiez les sous_chaînes palindromiques dans le numéro
+    verser je pavé range(len(num)):
+        verser J pavé range(je+2, len(num)+1):
+            sub_num = num[je:J]
+            if sub_num == sub_num[::-1]:
+                remettre_à_une_revers True
+    
+    remettre_à_une_revers False
+
+   #Tester le script
+   #Numéro décimal
+num_décimal = 12321
+print(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+   #Numéro hexadécimal
+num_hexadécimal = 0x12321
+print(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+   #Autres cas de test
+print(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(f""Is 12321 a palindrome? {is_palindrome(12321)}"")"
+"import re
+
+def remove_vowels(string):
+    return re.sub(r'[aeiouAEIOU]', '', string)
+
+def sort_characters(string):
+    frequency = {}
+    for char in string:
+        frequency[char] = frequency.get(char, 0) + 1
+    sorted_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    return sorted_chars
+
+def remove_vowels_and_sort(string):
+    string_without_vowels = remove_vowels(string)
+    sorted_string = sort_characters(string_without_vowels)
+    return ''.join(sorted_string)","importateur concernant
+
+définir Retirer_les_voyelles(Str):
+    remettre_à_une_revers concernant.sous(r'[aeiouAEIOU]', '', Str)
+
+définir trier_les_personnages(Str):
+    fréquence = {}
+    verser carboniser pavé Str:
+        fréquence[carboniser] = fréquence.obtenir(carboniser, 0) + 1
+    Chars_triés = trié(fréquence.clés(), clé=lambda x: (-fréquence[x], x))
+    remettre_à_une_revers Chars_triés
+
+définir supprimer_les_voyelles_et_trier(Str):
+    chaîne_sans_voyelles = Retirer_les_voyelles(Str)
+    chaîne_triée = trier_les_personnages(chaîne_sans_voyelles)
+    remettre_à_une_revers ''.réjouissance(chaîne_triée)","importateur concernant
+
+def Retirer_les_voyelles(Str):
+    remettre_à_une_revers concernant.sous(r'[aeiouAEIOU]', '', Str)
+
+def trier_les_personnages(Str):
+    fréquence = {}
+    verser carboniser pavé Str:
+        fréquence[carboniser] = fréquence.get(carboniser, 0) + 1
+    Chars_triés = sorted(fréquence.keys(), clé=lambda x: (-fréquence[x], x))
+    remettre_à_une_revers Chars_triés
+
+def supprimer_les_voyelles_et_trier(Str):
+    chaîne_sans_voyelles = Retirer_les_voyelles(Str)
+    chaîne_triée = trier_les_personnages(chaîne_sans_voyelles)
+    remettre_à_une_revers ''.réjouissance(chaîne_triée)"

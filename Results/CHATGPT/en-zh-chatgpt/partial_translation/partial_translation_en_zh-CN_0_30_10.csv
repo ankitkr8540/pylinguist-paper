@@ -1,0 +1,1719 @@
+English_code,Partial_translated_code
+"for i in range(10):  # First digit
+    for j in range(10):  # Second digit
+        for k in range(10):  # Third digit
+            # Checking for the conditions
+            if i != 5 and j != 5 and k != 5 and i != j and i != k and j != k:
+                print(i, j, k)","为了 i 在 范围(10): #First digit
+    为了 j 在 范围(10): #Second digit
+        为了 k 在 范围(10): #Third digit
+             #Checking for the conditions
+            如果 i != 5 和 j != 5 和 k != 5 和 i != j 和 i != k 和 j != k:
+                打印(i, j, k)"
+"def count_distinct_states(matrix):
+    count = 0
+    states = set()
+    for row in matrix:
+        for col in row:
+            state = ''.join(col)
+            if state not in states:
+                count += 1
+            states.add(state)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(count_distinct_states(matrix))
+# Output: 4","定义 count_distinct_states(matrix):
+    数 = 0
+    states = 集合()
+    为了 row 在 matrix:
+        为了 col 在 row:
+            state = ''.加入(col)
+            如果 state 不是 在 states:
+                数 += 1
+            states.添加(state)
+    返回 数
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+打印(count_distinct_states(matrix))
+ #Output: 4"
+"def remove_spaces_and_punctuation(s):
+    result = """"
+    for char in s:
+        if char.isalnum():
+            result += char
+    return result","定义 remove_spaces_and_punctuation(s):
+    result = """"
+    为了 char 在 s:
+        如果 char.是字母数字():
+            result += char
+    返回 result"
+"import math
+
+def is_prime(n):
+    # Check if the number is less than 2 or not an integer
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+    # Check if the number is divisible by any integer from 2 to the square root of n
+    for i in range(2, math.isqrt(n) + 1):
+        if n % i == 0:
+            return ""Not Prime""
+
+    return ""Prime""","进口 math
+
+定义 is_prime(n):
+     #Check if the number is less than 2 or not an integer
+    如果 n < 2 或者 不是 是实例(n, 整数):
+        返回 ""Not Prime""
+
+     #Check if the number is divisible by any integer from 2 to the square root of n
+    为了 i 在 范围(2, math.isqrt(n) + 1):
+        如果 n % i == 0:
+            返回 ""Not Prime""
+
+    返回 ""Prime"""
+"class String:
+    def __init__(self, string):
+        self.string = string
+
+    def replace_odd_occurrences(self, substring, replace_with):
+        count = self.string.count(substring)
+        if count % 2 == 0 or count == 0:
+            return self.string
+
+        result = """"
+        stack = []
+
+        for i in range(len(self.string)):
+            if self.string[i:i+len(substring)] == substring:
+                if len(stack) > 0 and (stack[-1] == '(' or stack[-1] == '['):
+                    stack.append(substring)
+                    result += substring
+                elif len(stack) > 0 and (stack[-1] == ')' or stack[-1] == ']'):
+                    stack.pop()
+                    result += substring
+                else:
+                    stack.append(substring)
+                    result += replace_with
+            else:
+                result += self.string[i]
+
+            if len(stack) > 0 and stack[-1] == substring:
+                stack.pop()
+
+        return result","类 String:
+    定义 __init__(self, string):
+        self.string = string
+
+    定义 replace_odd_occurrences(self, substring, replace_with):
+        数 = self.string.数(substring)
+        如果 数 % 2 == 0 或者 数 == 0:
+            返回 self.string
+
+        result = """"
+        stack = []
+
+        为了 i 在 范围(长度(self.string)):
+            如果 self.string[i:i+长度(substring)] == substring:
+                如果 长度(stack) > 0 和 (stack[-1] == '(' 或者 stack[-1] == '['):
+                    stack.加(substring)
+                    result += substring
+                否则如果 长度(stack) > 0 和 (stack[-1] == ')' 或者 stack[-1] == ']'):
+                    stack.移除()
+                    result += substring
+                别的:
+                    stack.加(substring)
+                    result += replace_with
+            别的:
+                result += self.string[i]
+
+            如果 长度(stack) > 0 和 stack[-1] == substring:
+                stack.移除()
+
+        返回 result"
+"def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def has_digit_7(num):
+    while num > 0:
+        if num % 10 == 7:
+            return True
+        num //= 10
+    return False
+
+def sum_of_primes():
+    sum_of_primes = 0
+    for num in range(1000000, 2000001):
+        if is_prime(num) and not has_digit_7(num):
+            sum_of_primes += num
+    return sum_of_primes
+
+result = sum_of_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)","定义 is_prime(num):
+    如果 num <= 1:
+        返回 错误的
+    为了 i 在 范围(2, 整数(num**0.5) + 1):
+        如果 num % i == 0:
+            返回 错误的
+    返回 真的
+
+定义 has_digit_7(num):
+    当 num > 0:
+        如果 num % 10 == 7:
+            返回 真的
+        num //= 10
+    返回 错误的
+
+定义 sum_of_primes():
+    sum_of_primes = 0
+    为了 num 在 范围(1000000, 2000001):
+        如果 is_prime(num) 和 不是 has_digit_7(num):
+            sum_of_primes += num
+    返回 sum_of_primes
+
+result = sum_of_primes()
+打印(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)"
+"def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def find_prime_sum_array(N, M, X):
+    prime_sum_array = []
+    current_number = M
+    sum_so_far = 0
+
+    while len(prime_sum_array) < N and current_number <= X:
+        if is_prime(sum_so_far + current_number):
+            prime_sum_array.append(current_number)
+            sum_so_far += current_number
+        current_number += M
+
+    if not is_prime(sum_so_far):
+        return []
+
+    return prime_sum_array
+
+# Example usage
+N = 5
+M = 3
+X = 20
+
+result = find_prime_sum_array(N, M, X)
+print(result)","定义 is_prime(num):
+    如果 num < 2:
+        返回 错误的
+    为了 i 在 范围(2, 整数(num ** 0.5) + 1):
+        如果 num % i == 0:
+            返回 错误的
+    返回 真的
+
+定义 find_prime_sum_array(N, M, X):
+    prime_sum_array = []
+    current_number = M
+    sum_so_far = 0
+
+    当 长度(prime_sum_array) < N 和 current_number <= X:
+        如果 is_prime(sum_so_far + current_number):
+            prime_sum_array.加(current_number)
+            sum_so_far += current_number
+        current_number += M
+
+    如果 不是 is_prime(sum_so_far):
+        返回 []
+
+    返回 prime_sum_array
+
+ #Example usage
+N = 5
+M = 3
+X = 20
+
+result = find_prime_sum_array(N, M, X)
+打印(result)"
+"def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def max_prime_difference(arr):
+    primes = []
+    for num in arr:
+        if is_prime(abs(num)):
+            primes.append(abs(num))
+    if len(primes) < 2:
+        return 0
+    max_diff = 0
+    for i in range(len(primes)-1):
+        diff = abs(primes[i] - primes[i+1])
+        if diff > max_diff:
+            max_diff = diff
+    return max_diff","定义 is_prime(n):
+    如果 n < 2:
+        返回 错误的
+    为了 i 在 范围(2, 整数(n**0.5) + 1):
+        如果 n % i == 0:
+            返回 错误的
+    返回 真的
+
+定义 max_prime_difference(arr):
+    primes = []
+    为了 num 在 arr:
+        如果 is_prime(绝对值(num)):
+            primes.加(绝对值(num))
+    如果 长度(primes) < 2:
+        返回 0
+    max_diff = 0
+    为了 i 在 范围(长度(primes)-1):
+        diff = 绝对值(primes[i] - primes[i+1])
+        如果 diff > max_diff:
+            max_diff = diff
+    返回 max_diff"
+"import math
+
+def calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio):
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate the height using the Law of Sines
+    height = opposite_side_length * math.sin(angle_rad) / side_ratio
+
+    # Calculate the length of the adjacent side using the Law of Cosines
+    adjacent_side_length = math.sqrt(side_lengths**2 + opposite_side_length**2 - 2 * side_lengths * opposite_side_length * math.cos(angle_rad))
+
+    # Calculate the hypotenuse of the triangle
+    hypotenuse = side_lengths / math.cos(angle_rad)
+
+    # Calculate the remaining side using Pythagorean theorem
+    remaining_side_length = math.sqrt(hypotenuse**2 - adjacent_side_length**2)
+
+    # Calculate the final height of the triangle
+    height += remaining_side_length
+
+    return height
+
+
+def simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True):
+    # Initialize variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate initial velocities
+    vx = initial_velocity * math.cos(angle_rad)
+    vy = initial_velocity * math.sin(angle_rad)
+
+    # Simulate the motion until the y-coordinate becomes negative (reached the ground)
+    while y >= 0:
+        # Calculate the acceleration due to air resistance
+        if air_resistance:
+            air_resistance_acceleration = -0.5 * vy**2  # Simplified model for air resistance
+        else:
+            air_resistance_acceleration = 0.0  # No air resistance
+
+        # Calculate the new velocities using the kinematic equations
+        vx += air_resistance_acceleration * math.cos(angle_rad) * time_interval
+        vy += (-9.8 + air_resistance_acceleration * math.sin(angle_rad)) * time_interval
+
+        # Calculate the new position using the kinematic equations
+        x += vx * time_interval
+        y += vy * time_interval
+
+        # Increment the time
+        time += time_interval
+
+    return x, y, time
+
+
+# Example usage
+angle = 45  # Angle in degrees
+side_lengths = 5
+opposite_side_length = 3
+side_ratio = 2
+height = calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio)
+print(f""The height of the triangle is: {height}"")
+
+initial_velocity = 10  # m/s
+time_interval = 0.01  # seconds
+x, y, total_time = simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True)
+print(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","进口 math
+
+定义 calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio):
+     #Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+     #Calculate the height using the Law of Sines
+    height = opposite_side_length * math.sin(angle_rad) / side_ratio
+
+     #Calculate the length of the adjacent side using the Law of Cosines
+    adjacent_side_length = math.sqrt(side_lengths**2 + opposite_side_length**2 - 2 * side_lengths * opposite_side_length * math.cos(angle_rad))
+
+     #Calculate the hypotenuse of the triangle
+    hypotenuse = side_lengths / math.cos(angle_rad)
+
+     #Calculate the remaining side using Pythagorean theorem
+    remaining_side_length = math.sqrt(hypotenuse**2 - adjacent_side_length**2)
+
+     #Calculate the final height of the triangle
+    height += remaining_side_length
+
+    返回 height
+
+
+定义 simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=真的):
+     #Initialize variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+     #Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+     #Calculate initial velocities
+    vx = initial_velocity * math.cos(angle_rad)
+    vy = initial_velocity * math.sin(angle_rad)
+
+     #Simulate the motion until the y-coordinate becomes negative (reached the ground)
+    当 y >= 0:
+         #Calculate the acceleration due to air resistance
+        如果 air_resistance:
+            air_resistance_acceleration = -0.5 * vy**2 #Simplified model for air resistance
+        别的:
+            air_resistance_acceleration = 0.0 #No air resistance
+
+         #Calculate the new velocities using the kinematic equations
+        vx += air_resistance_acceleration * math.cos(angle_rad) * time_interval
+        vy += (-9.8 + air_resistance_acceleration * math.sin(angle_rad)) * time_interval
+
+         #Calculate the new position using the kinematic equations
+        x += vx * time_interval
+        y += vy * time_interval
+
+         #Increment the time
+        time += time_interval
+
+    返回 x, y, time
+
+
+ #Example usage
+angle = 45 #Angle in degrees
+side_lengths = 5
+opposite_side_length = 3
+side_ratio = 2
+height = calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio)
+打印(f""The height of the triangle is: {height}"")
+
+initial_velocity = 10 #m/s
+time_interval = 0.01 #seconds
+x, y, total_time = simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=真的)
+打印(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")"
+"import math
+
+def calculate_circle_area(radius):
+    try:
+        radius = float(radius)
+        if radius <= 0:
+            return ""Error: Radius must be a positive number""
+        area = math.pi * radius**2
+        return ""{:.2f}"".format(area)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","进口 math
+
+定义 calculate_circle_area(radius):
+    尝试:
+        radius = 浮点(radius)
+        如果 radius <= 0:
+            返回 ""Error: Radius must be a positive number""
+        area = math.pi * radius**2
+        返回 ""{:.2f}"".格式(area)
+    除了 值错误:
+        返回 ""Error: Invalid input. Radius must be a number"""
+"def multiply_matrices(A, B):
+    a, b, c = A[0][0], A[0][1], A[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    return [
+        [a*d + b*e, a*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+def power_matrix(A, n):
+    if n == 0:
+        return [[1, 0], [0, 1]]  # Identity matrix
+    
+    result = power_matrix(A, n // 2)
+    result = multiply_matrices(result, result)
+    
+    if n % 2 == 1:
+        result = multiply_matrices(result, A)
+    
+    return result
+
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_matrix(matrix, n - 1)
+    
+    return result[0][0]","定义 multiply_matrices(A, B):
+    a, b, c = A[0][0], A[0][1], A[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    返回 [
+        [a*d + b*e, a*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+定义 power_matrix(A, n):
+    如果 n == 0:
+        返回 [[1, 0], [0, 1]] #Identity matrix
+    
+    result = power_matrix(A, n // 2)
+    result = multiply_matrices(result, result)
+    
+    如果 n % 2 == 1:
+        result = multiply_matrices(result, A)
+    
+    返回 result
+
+
+定义 fibonacci(n):
+    如果 n == 0:
+        返回 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_matrix(matrix, n - 1)
+    
+    返回 result[0][0]"
+"def debug_program(arr):
+    n = len(arr)
+    return binary_search(arr, 0, n - 1)
+
+def binary_search(arr, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end) // 2
+    
+    if arr[mid] == mid:
+        return mid
+    
+    left_result = binary_search(arr, start, min(mid - 1, arr[mid]))
+    right_result = binary_search(arr, max(mid + 1, arr[mid]), end)
+    
+    return max(left_result, right_result)","定义 debug_program(arr):
+    n = 长度(arr)
+    返回 binary_search(arr, 0, n - 1)
+
+定义 binary_search(arr, start, end):
+    如果 start > end:
+        返回 -1
+    
+    mid = (start + end) // 2
+    
+    如果 arr[mid] == mid:
+        返回 mid
+    
+    left_result = binary_search(arr, start, 最低(mid - 1, arr[mid]))
+    right_result = binary_search(arr, 最大(mid + 1, arr[mid]), end)
+    
+    返回 最大(left_result, right_result)"
+"import math
+
+def power(x, y):
+    # Check for invalid inputs
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+    # Check if x is between 1 and 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+    # Check if y is between 0 and 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+    # Custom algorithm for calculating power
+    result = x ** y
+
+    # Check if result exceeds threshold for scientific notation
+    if result > 1e6:
+        return ""{:.2e}"".format(result)
+    else:
+        return result
+
+# Example usage
+x = 2.5
+y = 3
+result = power(x, y)
+print(result)","进口 math
+
+定义 power(x, y):
+     #Check for invalid inputs
+    如果 不是 是实例(x, (整数, 浮点)) 或者 不是 是实例(y, 整数):
+        返回 ""Error: Invalid input. Please enter numeric values for x and y.""
+
+     #Check if x is between 1 and 10
+    如果 不是 1 <= x <= 10:
+        返回 ""Error: x should be between 1 and 10.""
+
+     #Check if y is between 0 and 5
+    如果 不是 0 <= y <= 5:
+        返回 ""Error: y should be between 0 and 5.""
+
+     #Custom algorithm for calculating power
+    result = x ** y
+
+     #Check if result exceeds threshold for scientific notation
+    如果 result > 1e6:
+        返回 ""{:.2e}"".格式(result)
+    别的:
+        返回 result
+
+ #Example usage
+x = 2.5
+y = 3
+result = power(x, y)
+打印(result)"
+"def bubble_sort_descending(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+sorted_arr = bubble_sort_descending(arr)
+print(sorted_arr)","定义 bubble_sort_descending(arr):
+    n = 长度(arr)
+    为了 i 在 范围(n - 1):
+        为了 j 在 范围(n - i - 1):
+            如果 arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    返回 arr
+
+arr = [3, 2, 1, 5, 4]
+sorted_arr = bubble_sort_descending(arr)
+打印(sorted_arr)"
+"def sum_prime_numbers(arr):
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    prime_sum = 0
+    for num in arr:
+        if is_prime(num):
+            prime_sum += num
+    return prime_sum","定义 sum_prime_numbers(arr):
+    定义 is_prime(n):
+        如果 n <= 1:
+            返回 错误的
+        为了 i 在 范围(2, 整数(n**0.5) + 1):
+            如果 n % i == 0:
+                返回 错误的
+        返回 真的
+
+    prime_sum = 0
+    为了 num 在 arr:
+        如果 is_prime(num):
+            prime_sum += num
+    返回 prime_sum"
+"def calculate_factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+def calculate_factorials(arr):
+    result = []
+    for num in arr:
+        result.append(calculate_factorial(num))
+    return result
+
+arr = [1, 2, 3, 4, 5]
+factorials = calculate_factorials(arr)
+print(factorials)","定义 calculate_factorial(n):
+    如果 n == 0:
+        返回 1
+    别的:
+        返回 n * calculate_factorial(n - 1)
+
+定义 calculate_factorials(arr):
+    result = []
+    为了 num 在 arr:
+        result.加(calculate_factorial(num))
+    返回 result
+
+arr = [1, 2, 3, 4, 5]
+factorials = calculate_factorials(arr)
+打印(factorials)"
+"def count_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowel_counts = {vowel: 0 for vowel in vowels}
+    
+    for char in text:
+        if char.lower() in vowels:
+            vowel_counts[char.lower()] += 1
+    
+    return vowel_counts
+
+text = ""Hello World!""
+result = count_vowels(text)
+print(result)","定义 count_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowel_counts = {vowel: 0 为了 vowel 在 vowels}
+    
+    为了 char 在 text:
+        如果 char.降低() 在 vowels:
+            vowel_counts[char.降低()] += 1
+    
+    返回 vowel_counts
+
+text = ""Hello World!""
+result = count_vowels(text)
+打印(result)"
+"import random
+
+def generate_random_number():
+    num = 0
+    while bin(num).count('1') != 4:
+        num = random.randint(0, 15)
+    return num
+
+random_number = generate_random_number()
+print(random_number)","进口 random
+
+定义 generate_random_number():
+    num = 0
+    当 二进制(num).数('1') != 4:
+        num = random.randint(0, 15)
+    返回 num
+
+random_number = generate_random_number()
+打印(random_number)"
+"def multiply(a, b):
+    # Calculate the sign of the result
+    sign = -1 if (a < 0) ^ (b < 0) else 1
+
+    # Convert both numbers to positive
+    a = abs(a)
+    b = abs(b)
+
+    # Initialize the result
+    result = 0
+
+    # Multiply the numbers using bitwise operations
+    while b:
+        # If b is odd, add a to the result
+        if b & 1:
+            result += a
+
+        # Shift a to the left by 1 bit
+        a <<= 1
+
+        # Shift b to the right by 1 bit
+        b >>= 1
+
+    return sign * result","定义 multiply(a, b):
+     #Calculate the sign of the result
+    sign = -1 如果 (a < 0) ^ (b < 0) 别的 1
+
+     #Convert both numbers to positive
+    a = 绝对值(a)
+    b = 绝对值(b)
+
+     #Initialize the result
+    result = 0
+
+     #Multiply the numbers using bitwise operations
+    当 b:
+         #If b is odd, add a to the result
+        如果 b & 1:
+            result += a
+
+         #Shift a to the left by 1 bit
+        a <<= 1
+
+         #Shift b to the right by 1 bit
+        b >>= 1
+
+    返回 sign * result"
+"def find_longest_element(lst):
+    longest_element = ''
+    longest_index = -1
+    longest_count = 0
+    
+    for i, element in enumerate(lst):
+        if len(str(element)) > len(longest_element):
+            longest_element = str(element)
+            longest_index = i
+            longest_count = 1
+        elif len(str(element)) == len(longest_element):
+            longest_count += 1
+    
+    return longest_element, longest_index, longest_count
+
+# Example usage:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longest_element, longest_index, longest_count = find_longest_element(lst)
+
+print(""Longest Element:"", longest_element)
+print(""Index of Longest Element:"", longest_index)
+print(""Total Occurrences of Longest Element:"", longest_count)","定义 find_longest_element(lst):
+    longest_element = ''
+    longest_index = -1
+    longest_count = 0
+    
+    为了 i, element 在 枚举(lst):
+        如果 长度(字串(element)) > 长度(longest_element):
+            longest_element = 字串(element)
+            longest_index = i
+            longest_count = 1
+        否则如果 长度(字串(element)) == 长度(longest_element):
+            longest_count += 1
+    
+    返回 longest_element, longest_index, longest_count
+
+ #Example usage:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longest_element, longest_index, longest_count = find_longest_element(lst)
+
+打印(""Longest Element:"", longest_element)
+打印(""Index of Longest Element:"", longest_index)
+打印(""Total Occurrences of Longest Element:"", longest_count)"
+"import math
+
+def is_prime(num):
+    if num <= 1:
+        return ""Composite""
+
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return ""Composite""
+
+    return ""Prime""","进口 math
+
+定义 is_prime(num):
+    如果 num <= 1:
+        返回 ""Composite""
+
+    为了 i 在 范围(2, 整数(math.sqrt(num)) + 1):
+        如果 num % i == 0:
+            返回 ""Composite""
+
+    返回 ""Prime"""
+"def print_primes_without_five(lower, upper):
+    # Step 1: Create a boolean array ""is_prime[0..upper]"" and initialize
+    # all entries it as true.
+    is_prime = [True] * (upper + 1)
+    is_prime[0] = is_prime[1] = False
+
+    # Step 2: Mark all the multiples of prime numbers starting from 2
+    # as false.
+    p = 2
+    while p * p <= upper:
+        if is_prime[p]:
+            for i in range(p * p, upper + 1, p):
+                is_prime[i] = False
+        p += 1
+
+    # Step 3: Print all prime numbers in the given range excluding
+    # numbers containing the digit 5.
+    for num in range(lower, upper + 1):
+        if is_prime[num] and '5' not in str(num):
+            print(num)","定义 print_primes_without_five(降低, 大写):
+     #Step 1: Create a boolean array ""is_prime[0..upper]"" and initialize
+     #all entries it as true.
+    is_prime = [真的] * (大写 + 1)
+    is_prime[0] = is_prime[1] = 错误的
+
+     #Step 2: Mark all the multiples of prime numbers starting from 2
+     #as false.
+    p = 2
+    当 p * p <= 大写:
+        如果 is_prime[p]:
+            为了 i 在 范围(p * p, 大写 + 1, p):
+                is_prime[i] = 错误的
+        p += 1
+
+     #Step 3: Print all prime numbers in the given range excluding
+     #numbers containing the digit 5.
+    为了 num 在 范围(降低, 大写 + 1):
+        如果 is_prime[num] 和 '5' 不是 在 字串(num):
+            打印(num)"
+"import time
+
+# Function to check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Caching mechanism for prime numbers
+prime_cache = {}
+
+# Modified function to check if a number is prime using caching
+def is_prime_cached(n):
+    if n in prime_cache:
+        return prime_cache[n]
+    prime = is_prime(n)
+    prime_cache[n] = prime
+    return prime
+
+# Timer function
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f""Execution time: {end - start} seconds"")
+        return result
+    return wrapper
+
+# List comprehension to generate the list of prime numbers
+@timer
+def generate_prime_palindromic_fibonacci():
+    return [num for num in range(10000, 20001) if is_prime_cached(num) and str(num) == str(num)[::-1] and is_fibonacci(num)]
+
+# Function to check if a number is a Fibonacci number
+def is_fibonacci(n):
+    a, b = 0, 1
+    while b < n:
+        a, b = b, a + b
+    return b == n
+
+# Test the function
+primes = generate_prime_palindromic_fibonacci()
+print(primes)","进口 time
+
+ #Function to check if a number is prime
+定义 is_prime(n):
+    如果 n < 2:
+        返回 错误的
+    为了 i 在 范围(2, 整数(n**0.5) + 1):
+        如果 n % i == 0:
+            返回 错误的
+    返回 真的
+
+ #Caching mechanism for prime numbers
+prime_cache = {}
+
+ #Modified function to check if a number is prime using caching
+定义 is_prime_cached(n):
+    如果 n 在 prime_cache:
+        返回 prime_cache[n]
+    prime = is_prime(n)
+    prime_cache[n] = prime
+    返回 prime
+
+ #Timer function
+定义 timer(func):
+    定义 wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        打印(f""Execution time: {end - start} seconds"")
+        返回 result
+    返回 wrapper
+
+ #List comprehension to generate the list of prime numbers
+@timer
+定义 generate_prime_palindromic_fibonacci():
+    返回 [num 为了 num 在 范围(10000, 20001) 如果 is_prime_cached(num) 和 字串(num) == 字串(num)[::-1] 和 is_fibonacci(num)]
+
+ #Function to check if a number is a Fibonacci number
+定义 is_fibonacci(n):
+    a, b = 0, 1
+    当 b < n:
+        a, b = b, a + b
+    返回 b == n
+
+ #Test the function
+primes = generate_prime_palindromic_fibonacci()
+打印(primes)"
+"import math
+
+def average_list(lst):
+    if not lst:
+        return None
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    total = 0
+    count = 0
+    
+    for num in lst:
+        if not isinstance(num, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(num, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if math.isnan(num):
+            raise ValueError(""List contains NaN values"")
+        
+        if math.isinf(num):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(num) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        total += num
+        count += 1
+    
+    return total / count","进口 math
+
+定义 average_list(lst):
+    如果 不是 lst:
+        返回 None
+    
+    如果 长度(lst) == 1:
+        返回 lst[0]
+    
+    total = 0
+    数 = 0
+    
+    为了 num 在 lst:
+        如果 不是 是实例(num, (整数, 浮点)):
+            引发异常 值错误(""List contains non-numeric elements"")
+        
+        如果 是实例(num, 复杂的):
+            引发异常 值错误(""List contains complex numbers"")
+        
+        如果 math.isnan(num):
+            引发异常 值错误(""List contains NaN values"")
+        
+        如果 math.isinf(num):
+            引发异常 值错误(""List contains infinity or negative infinity values"")
+        
+        如果 绝对值(num) > 1e308:
+            引发异常 值错误(""List contains numbers that are too large"")
+        
+        total += num
+        数 += 1
+    
+    返回 total / 数"
+"import sqlite3
+
+def delete_row(connection):
+    try:
+        # Start a transaction
+        connection.execute(""BEGIN TRANSACTION"")
+
+        # Execute the complex query
+        cursor = connection.execute(""SELECT ..."")
+
+        # Fetch the row to be deleted
+        row = cursor.fetchone()
+
+        if row:
+            # Delete the row using its primary key
+            connection.execute(""DELETE FROM table_name WHERE id=?"", (row['id'],))
+
+        # Commit the transaction
+        connection.execute(""COMMIT"")
+
+        # Close the cursor
+        cursor.close()
+
+    except sqlite3.Error as error:
+        # Rollback the transaction in case of any exception
+        connection.execute(""ROLLBACK"")
+
+        # Display the error message
+        print(f""Error: {error}"")
+
+    finally:
+        # Close the database connection
+        connection.close()
+
+# Create a connection to the SQLite database
+connection = sqlite3.connect(""database.db"")
+
+# Call the function to delete the row
+delete_row(connection)","进口 sqlite3
+
+定义 delete_row(connection):
+    尝试:
+         #Start a transaction
+        connection.execute(""BEGIN TRANSACTION"")
+
+         #Execute the complex query
+        cursor = connection.execute(""SELECT ..."")
+
+         #Fetch the row to be deleted
+        row = cursor.fetchone()
+
+        如果 row:
+             #Delete the row using its primary key
+            connection.execute(""DELETE FROM table_name WHERE id=?"", (row['id'],))
+
+         #Commit the transaction
+        connection.execute(""COMMIT"")
+
+         #Close the cursor
+        cursor.关闭()
+
+    除了 sqlite3.Error 作为 error:
+         #Rollback the transaction in case of any exception
+        connection.execute(""ROLLBACK"")
+
+         #Display the error message
+        打印(f""Error: {error}"")
+
+    最后:
+         #Close the database connection
+        connection.关闭()
+
+ #Create a connection to the SQLite database
+connection = sqlite3.connect(""database.db"")
+
+ #Call the function to delete the row
+delete_row(connection)"
+"import re
+
+def extract_emails(string):
+    # Use regular expression pattern to find all email addresses in the string
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, string)
+    
+    # Remove any duplicate email addresses
+    unique_emails = list(set(matches))
+    
+    return unique_emails","进口 re
+
+定义 extract_emails(string):
+     #Use regular expression pattern to find all email addresses in the string
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, string)
+    
+     #Remove any duplicate email addresses
+    unique_emails = 列(集合(matches))
+    
+    返回 unique_emails"
+"def clean_and_sort(lst):
+   result = []
+   for element in lst:
+      if type(element) == int:
+         result.append(element + 5)
+   # implement your own sorting algorithm here
+   n = len(result)
+   for i in range(n):
+      for j in range(0, n-i-1):
+         if result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   return result
+
+print(clean_and_sort([1, 2, ""hello""]))","定义 clean_and_sort(lst):
+   result = []
+   为了 element 在 lst:
+      如果 类型(element) == 整数:
+         result.加(element + 5)
+    #implement your own sorting algorithm here
+   n = 长度(result)
+   为了 i 在 范围(n):
+      为了 j 在 范围(0, n-i-1):
+         如果 result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   返回 result
+
+打印(clean_and_sort([1, 2, ""hello""]))"
+"def is_valid_palindrome(s):
+    # Convert the string to lowercase
+    s = s.lower()
+    
+    # Initialize the two pointers
+    left = 0
+    right = len(s) - 1
+    
+    while left < right:
+        # Check if the left character is not alphabetic
+        if not s[left].isalpha():
+            left += 1
+            continue
+        
+        # Check if the right character is not alphabetic
+        if not s[right].isalpha():
+            right -= 1
+            continue
+        
+        # Check if the characters at the two positions are equal
+        if s[left] != s[right]:
+            return False
+        
+        # Move the pointers towards the middle
+        left += 1
+        right -= 1
+    
+    return True","定义 is_valid_palindrome(s):
+     #Convert the string to lowercase
+    s = s.降低()
+    
+     #Initialize the two pointers
+    left = 0
+    right = 长度(s) - 1
+    
+    当 left < right:
+         #Check if the left character is not alphabetic
+        如果 不是 s[left].是字母的():
+            left += 1
+            继续
+        
+         #Check if the right character is not alphabetic
+        如果 不是 s[right].是字母的():
+            right -= 1
+            继续
+        
+         #Check if the characters at the two positions are equal
+        如果 s[left] != s[right]:
+            返回 错误的
+        
+         #Move the pointers towards the middle
+        left += 1
+        right -= 1
+    
+    返回 真的"
+"def is_palindrome(num):
+    # Convert the number to string
+    num_str = str(num)
+    
+    # Check if the number is positive
+    if num <= 0:
+        return False
+    
+    # Check if the number has at least 5 digits
+    if len(num_str) < 5:
+        return False
+    
+    # Check if the number consists of unique digits
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+    # Check if the number is divisible by 7
+    if num % 7 != 0:
+        return False
+    
+    # Check if the number is a palindrome
+    if num_str == num_str[::-1]:
+        return True
+    
+    # Check for palindromic substrings within the number
+    for i in range(len(num_str)):
+        for j in range(i+2, len(num_str)+1):
+            sub_num = num_str[i:j]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+# Testing the script
+# Decimal number
+num_decimal = 12321
+print(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+# Hexadecimal number
+num_hexadecimal = 0x12321
+print(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+# Other test cases
+print(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(f""Is 12321 a palindrome? {is_palindrome(12321)}"")","定义 is_palindrome(num):
+     #Convert the number to string
+    num_str = 字串(num)
+    
+     #Check if the number is positive
+    如果 num <= 0:
+        返回 错误的
+    
+     #Check if the number has at least 5 digits
+    如果 长度(num_str) < 5:
+        返回 错误的
+    
+     #Check if the number consists of unique digits
+    如果 长度(集合(num_str)) != 长度(num_str):
+        返回 错误的
+    
+     #Check if the number is divisible by 7
+    如果 num % 7 != 0:
+        返回 错误的
+    
+     #Check if the number is a palindrome
+    如果 num_str == num_str[::-1]:
+        返回 真的
+    
+     #Check for palindromic substrings within the number
+    为了 i 在 范围(长度(num_str)):
+        为了 j 在 范围(i+2, 长度(num_str)+1):
+            sub_num = num_str[i:j]
+            如果 sub_num == sub_num[::-1]:
+                返回 真的
+    
+    返回 错误的
+
+ #Testing the script
+ #Decimal number
+num_decimal = 12321
+打印(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+ #Hexadecimal number
+num_hexadecimal = 0x12321
+打印(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+ #Other test cases
+打印(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+打印(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+打印(f""Is 12321 a palindrome? {is_palindrome(12321)}"")"
+"import re
+
+def remove_vowels(string):
+    return re.sub(r'[aeiouAEIOU]', '', string)
+
+def sort_characters(string):
+    frequency = {}
+    for char in string:
+        frequency[char] = frequency.get(char, 0) + 1
+    sorted_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    return sorted_chars
+
+def remove_vowels_and_sort(string):
+    string_without_vowels = remove_vowels(string)
+    sorted_string = sort_characters(string_without_vowels)
+    return ''.join(sorted_string)","进口 re
+
+定义 remove_vowels(string):
+    返回 re.sub(r'[aeiouAEIOU]', '', string)
+
+定义 sort_characters(string):
+    frequency = {}
+    为了 char 在 string:
+        frequency[char] = frequency.得到(char, 0) + 1
+    sorted_chars = 排列(frequency.键值(), key=匿名函数 x: (-frequency[x], x))
+    返回 sorted_chars
+
+定义 remove_vowels_and_sort(string):
+    string_without_vowels = remove_vowels(string)
+    sorted_string = sort_characters(string_without_vowels)
+    返回 ''.加入(sorted_string)"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","定义 reverse_matrix(matrix):
+    new_matrix = []
+    为了 i 在 范围(长度(matrix)):
+        new_matrix.加([])
+        为了 j 在 范围(长度(matrix[i])):
+            new_matrix[i].插入(0, matrix[i][j])
+    返回 new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+打印(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+打印(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+打印(reverse_matrix(matrix3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","定义 fibonacci(n):
+    如果 n == 0:
+        返回 0
+    否则如果 n == 1:
+        返回 1
+    别的:
+        返回 fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+打印(f""The Fibonacci number at index {n} is {fibonacci_number}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","定义 count_unique_consonants(string):
+    consonants = 集合()
+    lowercase_string = string.降低()
+    为了 char 在 lowercase_string:
+        如果 char.是字母的() 和 char 不是 在 'aeiou':
+            consonants.添加(char)
+    返回 长度(consonants)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","定义 filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.分开()
+    
+    为了 word 在 words:
+        如果 任何(char.是数字() 或者 不是 char.是字母的() 为了 char 在 word):
+            继续
+        
+        如果 长度(word) > 3 和 任何(char 在 vowels 为了 char 在 word):
+            filtered_word = """"
+            为了 char 在 word:
+                如果 char 在 vowels:
+                    vowel_index = vowels.指数(char)
+                    next_vowel = vowels[(vowel_index + 1) % 长度(vowels)]
+                    filtered_word += next_vowel
+                别的:
+                    filtered_word += char
+            filtered_words.加(filtered_word)
+    
+    返回 "" "".加入(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+打印(output_string)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","定义 isOddPrimeGreaterThan100(number):
+    如果 number <= 100 或者 number % 2 == 0: #Check if number is less than or equal to 100 or even
+        返回 错误的
+    为了 i 在 范围(3, 整数(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        如果 number % i == 0:
+            返回 错误的
+    返回 真的
+
+定义 findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = 浮点('inf')
+    为了 number 在 array:
+        如果 isOddPrimeGreaterThan100(number):
+            如果 number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            否则如果 number < secondSmallest:
+                secondSmallest = number
+    返回 secondSmallest"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","类 SeparatorNotFoundError(例外):
+    经过
+
+类 MultipleSeparatorsError(例外):
+    经过
+
+尝试:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.分开(separator, 1)
+    如果 不是 split_string:
+        引发异常 SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.分开(separator)
+    如果 长度(split_string) > 2:
+        引发异常 MultipleSeparatorsError(""Multiple separators found in string"")
+
+除了 SeparatorNotFoundError 作为 e:
+    打印(""Error:"", e)
+
+除了 MultipleSeparatorsError 作为 e:
+    打印(""Error:"", e)
+
+除了 例外 作为 e:
+    打印(""Error:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","定义 create_index_dictionary(list_one, list_two):
+    如果 长度(list_one) != 长度(list_two):
+        引发异常 值错误(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    为了 i 在 范围(长度(list_one)):
+        如果 是实例(list_one[i], (列, 字典, 元组)) 和 是实例(list_two[i], (列, 字典, 元组)):
+            如果 是实例(list_one[i], 集合) 或者 是实例(list_two[i], 集合):
+                引发异常 值错误(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            如果 是实例(list_one[i], 字典) 和 是实例(list_two[i], 字典):
+                如果 长度(list_one[i]) != 长度(list_two[i]):
+                    引发异常 值错误(""Nested dictionaries must have the same number of elements"")
+                
+                为了 key 在 list_one[i].键值():
+                    如果 key 不是 在 list_two[i]:
+                        引发异常 值错误(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            否则如果 是实例(list_one[i], 列) 和 是实例(list_two[i], 列):
+                如果 长度(list_one[i]) != 长度(list_two[i]):
+                    引发异常 值错误(""Nested lists must have the same length"")
+                
+                为了 j 在 范围(长度(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            否则如果 是实例(list_one[i], 元组) 和 是实例(list_two[i], 元组):
+                如果 长度(list_one[i]) != 长度(list_two[i]):
+                    引发异常 值错误(""Tuples must have the same length"")
+                
+                为了 j 在 范围(长度(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        别的:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    返回 index_dict"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","定义 find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = 二进制(a)
+    b_bin = 二进制(b)
+    c_bin = 二进制(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.数('1')
+    b_count = b_bin.数('1')
+    c_count = c_bin.数('1')
+    
+     #Compare the counts to find the maximum
+    如果 a_count > b_count 和 a_count > c_count:
+        返回 a
+    否则如果 b_count > a_count 和 b_count > c_count:
+        返回 b
+    别的:
+        返回 c"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","定义 quick_sort(arr):
+    如果 长度(arr) <= 1:
+        返回 arr, 0
+    别的:
+        pivot = arr[0]
+        less = [x 为了 x 在 arr[1:] 如果 x <= pivot]
+        greater = [x 为了 x 在 arr[1:] 如果 x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = 长度(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        返回 sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+打印(""Sorted Array:"", sorted_arr)
+打印(""Number of Comparisons:"", comparisons)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","定义 calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    返回 distance"

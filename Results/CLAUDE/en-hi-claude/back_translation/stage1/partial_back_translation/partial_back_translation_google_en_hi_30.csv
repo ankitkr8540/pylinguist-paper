@@ -1,0 +1,1978 @@
+English_code,google_translated_code,google_partial_back_translated_code
+"for i in range(10):  # First digit
+    for j in range(10):  # Second digit
+        for k in range(10):  # Third digit
+            # Checking for the conditions
+            if i != 5 and j != 5 and k != 5 and i != j and i != k and j != k:
+                print(i, j, k)","के_लिए मैं में रेंज(10): # पहला अंक
+    के_लिए जे में रेंज(10): # द्वितीय अंक
+        के_लिए k में रेंज(10): # तीसरा अंक
+              # शर्तों के लिए जाँच
+            यदि मैं != 5 और जे != 5 और k != 5 और मैं != जे और मैं != k और जे != k:
+                छापिये(मैं, जे, k)","for मैं in range(10): #पहला अंक
+    for जे in range(10): #द्वितीय अंक
+        for k in range(10): #तीसरा अंक
+               #शर्तों के लिए जाँच
+            if मैं != 5 and जे != 5 and k != 5 and मैं != जे and मैं != k and जे != k:
+                print(मैं, जे, k)"
+"def count_distinct_states(matrix):
+    count = 0
+    states = set()
+    for row in matrix:
+        for col in row:
+            state = ''.join(col)
+            if state not in states:
+                count += 1
+            states.add(state)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(count_distinct_states(matrix))
+# Output: 4","परिभाषा अलग__अलग_राज्यों_की_गिनती_करें(मैट्रिक्स):
+    गिनें = 0
+    राज्य_अमेरिका = सेट()
+    के_लिए पंक्ति में मैट्रिक्स:
+        के_लिए कर्नल में पंक्ति:
+            राज्य = ''.जोड़(कर्नल)
+            यदि राज्य ना में राज्य_अमेरिका:
+                गिनें += 1
+            राज्य_अमेरिका.योग(राज्य)
+    वापस गिनें
+
+मैट्रिक्स = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+छापिये(अलग__अलग_राज्यों_की_गिनती_करें(मैट्रिक्स))
+  # आउटपुट: 4","def अलग__अलग_राज्यों_की_गिनती_करें(मैट्रिक्स):
+    count = 0
+    राज्य_अमेरिका = set()
+    for पंक्ति in मैट्रिक्स:
+        for कर्नल in पंक्ति:
+            राज्य = ''.join(कर्नल)
+            if राज्य not in राज्य_अमेरिका:
+                count += 1
+            राज्य_अमेरिका.add(राज्य)
+    return count
+
+मैट्रिक्स = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(अलग__अलग_राज्यों_की_गिनती_करें(मैट्रिक्स))
+   #आउटपुट: 4"
+"def remove_spaces_and_punctuation(s):
+    result = """"
+    for char in s:
+        if char.isalnum():
+            result += char
+    return result","परिभाषा रिक्त_स्थान_और_विराम_चिह्न_निकालें(एस):
+    परिणाम = """"
+    के_लिए लपेटना में एस:
+        यदि लपेटना.अंकाक्षर_है():
+            परिणाम += लपेटना
+    वापस परिणाम","def रिक्त_स्थान_और_विराम_चिह्न_निकालें(एस):
+    परिणाम = """"
+    for लपेटना in एस:
+        if लपेटना.isalnum():
+            परिणाम += लपेटना
+    return परिणाम"
+"import math
+
+def is_prime(n):
+    # Check if the number is less than 2 or not an integer
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+    # Check if the number is divisible by any integer from 2 to the square root of n
+    for i in range(2, math.isqrt(n) + 1):
+        if n % i == 0:
+            return ""Not Prime""
+
+    return ""Prime""","आयात गणित
+
+परिभाषा प्राइम_है(एन):
+      # जांचें कि क्या संख्या 2 से कम है या नहीं पूर्णांक
+    यदि एन < 2 या ना उदाहरण_है(एन, अंक):
+        वापस ""Not Prime""
+
+      # जांचें कि क्या संख्या 2 से n के वर्गमूल से किसी भी पूर्णांक द्वारा विभाज्य है
+    के_लिए मैं में रेंज(2, गणित.isqrt(एन) + 1):
+        यदि एन % मैं == 0:
+            वापस ""Not Prime""
+
+    वापस ""Prime""","import गणित
+
+def प्राइम_है(एन):
+       #जांचें कि क्या संख्या 2 से कम है या नहीं पूर्णांक
+    if एन < 2 or not isinstance(एन, int):
+        return ""Not Prime""
+
+       #जांचें कि क्या संख्या 2 से n के वर्गमूल से किसी भी पूर्णांक द्वारा विभाज्य है
+    for मैं in range(2, गणित.isqrt(एन) + 1):
+        if एन % मैं == 0:
+            return ""Not Prime""
+
+    return ""Prime"""
+"class String:
+    def __init__(self, string):
+        self.string = string
+
+    def replace_odd_occurrences(self, substring, replace_with):
+        count = self.string.count(substring)
+        if count % 2 == 0 or count == 0:
+            return self.string
+
+        result = """"
+        stack = []
+
+        for i in range(len(self.string)):
+            if self.string[i:i+len(substring)] == substring:
+                if len(stack) > 0 and (stack[-1] == '(' or stack[-1] == '['):
+                    stack.append(substring)
+                    result += substring
+                elif len(stack) > 0 and (stack[-1] == ')' or stack[-1] == ']'):
+                    stack.pop()
+                    result += substring
+                else:
+                    stack.append(substring)
+                    result += replace_with
+            else:
+                result += self.string[i]
+
+            if len(stack) > 0 and stack[-1] == substring:
+                stack.pop()
+
+        return result","वर्ग डोरी:
+    परिभाषा __init__(self, डोरी):
+        self.डोरी = डोरी
+
+    परिभाषा विषम_घटनाओं_को_बदलें(self, सबस्ट्रिंग, के_साथ_बदलें):
+        गिनें = self.डोरी.गिनें(सबस्ट्रिंग)
+        यदि गिनें % 2 == 0 या गिनें == 0:
+            वापस self.डोरी
+
+        परिणाम = """"
+        ढेर = []
+
+        के_लिए मैं में रेंज(लंबाई(self.डोरी)):
+            यदि self.डोरी[मैं:मैं+लंबाई(सबस्ट्रिंग)] == सबस्ट्रिंग:
+                यदि लंबाई(ढेर) > 0 और (ढेर[-1] == '(' या ढेर[-1] == '['):
+                    ढेर.संलग्न(सबस्ट्रिंग)
+                    परिणाम += सबस्ट्रिंग
+                वरना_यदि लंबाई(ढेर) > 0 और (ढेर[-1] == ')' या ढेर[-1] == ']'):
+                    ढेर.पॉप()
+                    परिणाम += सबस्ट्रिंग
+                वरना:
+                    ढेर.संलग्न(सबस्ट्रिंग)
+                    परिणाम += के_साथ_बदलें
+            वरना:
+                परिणाम += self.डोरी[मैं]
+
+            यदि लंबाई(ढेर) > 0 और ढेर[-1] == सबस्ट्रिंग:
+                ढेर.पॉप()
+
+        वापस परिणाम","class डोरी:
+    def __init__(self, डोरी):
+        self.डोरी = डोरी
+
+    def विषम_घटनाओं_को_बदलें(self, सबस्ट्रिंग, के_साथ_बदलें):
+        count = self.डोरी.count(सबस्ट्रिंग)
+        if count % 2 == 0 or count == 0:
+            return self.डोरी
+
+        परिणाम = """"
+        ढेर = []
+
+        for मैं in range(len(self.डोरी)):
+            if self.डोरी[मैं:मैं+len(सबस्ट्रिंग)] == सबस्ट्रिंग:
+                if len(ढेर) > 0 and (ढेर[-1] == '(' or ढेर[-1] == '['):
+                    ढेर.append(सबस्ट्रिंग)
+                    परिणाम += सबस्ट्रिंग
+                elif len(ढेर) > 0 and (ढेर[-1] == ')' or ढेर[-1] == ']'):
+                    ढेर.pop()
+                    परिणाम += सबस्ट्रिंग
+                else:
+                    ढेर.append(सबस्ट्रिंग)
+                    परिणाम += के_साथ_बदलें
+            else:
+                परिणाम += self.डोरी[मैं]
+
+            if len(ढेर) > 0 and ढेर[-1] == सबस्ट्रिंग:
+                ढेर.pop()
+
+        return परिणाम"
+"def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def has_digit_7(num):
+    while num > 0:
+        if num % 10 == 7:
+            return True
+        num //= 10
+    return False
+
+def sum_of_primes():
+    sum_of_primes = 0
+    for num in range(1000000, 2000001):
+        if is_prime(num) and not has_digit_7(num):
+            sum_of_primes += num
+    return sum_of_primes
+
+result = sum_of_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)","परिभाषा प्राइम_है(अंकित_करना):
+    यदि अंकित_करना <= 1:
+        वापस असत्य
+    के_लिए मैं में रेंज(2, अंक(अंकित_करना**0.5) + 1):
+        यदि अंकित_करना % मैं == 0:
+            वापस असत्य
+    वापस सत्य
+
+परिभाषा अंक_7_है(अंकित_करना):
+    जबतक अंकित_करना > 0:
+        यदि अंकित_करना % 10 == 7:
+            वापस सत्य
+        गरजना //= 10
+    वापस असत्य
+
+परिभाषा प्राइम्स_का_योग():
+    प्राइम्स_का_योग = 0
+    के_लिए अंकित_करना में रेंज(1000000, 2000001):
+        यदि प्राइम_है(अंकित_करना) और ना अंक_7_है(अंकित_करना):
+            प्राइम्स_का_योग += अंकित_करना
+    वापस प्राइम्स_का_योग
+
+परिणाम = प्राइम्स_का_योग()
+छापिये(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", परिणाम)","def प्राइम_है(अंकित_करना):
+    if अंकित_करना <= 1:
+        return False
+    for मैं in range(2, int(अंकित_करना**0.5) + 1):
+        if अंकित_करना % मैं == 0:
+            return False
+    return True
+
+def अंक_7_है(अंकित_करना):
+    while अंकित_करना > 0:
+        if अंकित_करना % 10 == 7:
+            return True
+        गरजना //= 10
+    return False
+
+def प्राइम्स_का_योग():
+    प्राइम्स_का_योग = 0
+    for अंकित_करना in range(1000000, 2000001):
+        if प्राइम_है(अंकित_करना) and not अंक_7_है(अंकित_करना):
+            प्राइम्स_का_योग += अंकित_करना
+    return प्राइम्स_का_योग
+
+परिणाम = प्राइम्स_का_योग()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", परिणाम)"
+"def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def find_prime_sum_array(N, M, X):
+    prime_sum_array = []
+    current_number = M
+    sum_so_far = 0
+
+    while len(prime_sum_array) < N and current_number <= X:
+        if is_prime(sum_so_far + current_number):
+            prime_sum_array.append(current_number)
+            sum_so_far += current_number
+        current_number += M
+
+    if not is_prime(sum_so_far):
+        return []
+
+    return prime_sum_array
+
+# Example usage
+N = 5
+M = 3
+X = 20
+
+result = find_prime_sum_array(N, M, X)
+print(result)","परिभाषा प्राइम_है(अंकित_करना):
+    यदि अंकित_करना < 2:
+        वापस असत्य
+    के_लिए मैं में रेंज(2, अंक(अंकित_करना ** 0.5) + 1):
+        यदि अंकित_करना % मैं == 0:
+            वापस असत्य
+    वापस सत्य
+
+परिभाषा प्राइम_सम_एरे_खोजें(एन, एम, एक्स):
+    प्रधान_योग_सरणी = []
+    मौजूदा_नंबर = एम
+    अब_तक_योग = 0
+
+    जबतक लंबाई(प्रधान_योग_सरणी) < एन और मौजूदा_नंबर <= एक्स:
+        यदि प्राइम_है(अब_तक_योग + मौजूदा_नंबर):
+            प्रधान_योग_सरणी.संलग्न(मौजूदा_नंबर)
+            अब_तक_योग += मौजूदा_नंबर
+        मौजूदा_नंबर += एम
+
+    यदि ना प्राइम_है(अब_तक_योग):
+        वापस []
+
+    वापस प्रधान_योग_सरणी
+
+  # उदाहरण उपयोग
+एन = 5
+एम = 3
+एक्स = 20
+
+परिणाम = प्राइम_सम_एरे_खोजें(एन, एम, एक्स)
+छापिये(परिणाम)","def प्राइम_है(अंकित_करना):
+    if अंकित_करना < 2:
+        return False
+    for मैं in range(2, int(अंकित_करना ** 0.5) + 1):
+        if अंकित_करना % मैं == 0:
+            return False
+    return True
+
+def प्राइम_सम_एरे_खोजें(एन, एम, एक्स):
+    प्रधान_योग_सरणी = []
+    मौजूदा_नंबर = एम
+    अब_तक_योग = 0
+
+    while len(प्रधान_योग_सरणी) < एन and मौजूदा_नंबर <= एक्स:
+        if प्राइम_है(अब_तक_योग + मौजूदा_नंबर):
+            प्रधान_योग_सरणी.append(मौजूदा_नंबर)
+            अब_तक_योग += मौजूदा_नंबर
+        मौजूदा_नंबर += एम
+
+    if not प्राइम_है(अब_तक_योग):
+        return []
+
+    return प्रधान_योग_सरणी
+
+   #उदाहरण उपयोग
+एन = 5
+एम = 3
+एक्स = 20
+
+परिणाम = प्राइम_सम_एरे_खोजें(एन, एम, एक्स)
+print(परिणाम)"
+"def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def max_prime_difference(arr):
+    primes = []
+    for num in arr:
+        if is_prime(abs(num)):
+            primes.append(abs(num))
+    if len(primes) < 2:
+        return 0
+    max_diff = 0
+    for i in range(len(primes)-1):
+        diff = abs(primes[i] - primes[i+1])
+        if diff > max_diff:
+            max_diff = diff
+    return max_diff","परिभाषा प्राइम_है(एन):
+    यदि एन < 2:
+        वापस असत्य
+    के_लिए मैं में रेंज(2, अंक(एन**0.5) + 1):
+        यदि एन % मैं == 0:
+            वापस असत्य
+    वापस सत्य
+
+परिभाषा अधिकतम_प्रमुख_अंतर(आगमन):
+    अभाज्य = []
+    के_लिए अंकित_करना में आगमन:
+        यदि प्राइम_है(निरपेक्ष_मान(अंकित_करना)):
+            अभाज्य.संलग्न(निरपेक्ष_मान(अंकित_करना))
+    यदि लंबाई(अभाज्य) < 2:
+        वापस 0
+    अधिकतम_अंतर = 0
+    के_लिए मैं में रेंज(लंबाई(अभाज्य)-1):
+        अलग_करना = निरपेक्ष_मान(अभाज्य[मैं] - अभाज्य[मैं+1])
+        यदि अलग_करना > अधिकतम_अंतर:
+            अधिकतम_अंतर = अलग_करना
+    वापस अधिकतम_अंतर","def प्राइम_है(एन):
+    if एन < 2:
+        return False
+    for मैं in range(2, int(एन**0.5) + 1):
+        if एन % मैं == 0:
+            return False
+    return True
+
+def अधिकतम_प्रमुख_अंतर(आगमन):
+    अभाज्य = []
+    for अंकित_करना in आगमन:
+        if प्राइम_है(abs(अंकित_करना)):
+            अभाज्य.append(abs(अंकित_करना))
+    if len(अभाज्य) < 2:
+        return 0
+    अधिकतम_अंतर = 0
+    for मैं in range(len(अभाज्य)-1):
+        अलग_करना = abs(अभाज्य[मैं] - अभाज्य[मैं+1])
+        if अलग_करना > अधिकतम_अंतर:
+            अधिकतम_अंतर = अलग_करना
+    return अधिकतम_अंतर"
+"import math
+
+def calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio):
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate the height using the Law of Sines
+    height = opposite_side_length * math.sin(angle_rad) / side_ratio
+
+    # Calculate the length of the adjacent side using the Law of Cosines
+    adjacent_side_length = math.sqrt(side_lengths**2 + opposite_side_length**2 - 2 * side_lengths * opposite_side_length * math.cos(angle_rad))
+
+    # Calculate the hypotenuse of the triangle
+    hypotenuse = side_lengths / math.cos(angle_rad)
+
+    # Calculate the remaining side using Pythagorean theorem
+    remaining_side_length = math.sqrt(hypotenuse**2 - adjacent_side_length**2)
+
+    # Calculate the final height of the triangle
+    height += remaining_side_length
+
+    return height
+
+
+def simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True):
+    # Initialize variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate initial velocities
+    vx = initial_velocity * math.cos(angle_rad)
+    vy = initial_velocity * math.sin(angle_rad)
+
+    # Simulate the motion until the y-coordinate becomes negative (reached the ground)
+    while y >= 0:
+        # Calculate the acceleration due to air resistance
+        if air_resistance:
+            air_resistance_acceleration = -0.5 * vy**2  # Simplified model for air resistance
+        else:
+            air_resistance_acceleration = 0.0  # No air resistance
+
+        # Calculate the new velocities using the kinematic equations
+        vx += air_resistance_acceleration * math.cos(angle_rad) * time_interval
+        vy += (-9.8 + air_resistance_acceleration * math.sin(angle_rad)) * time_interval
+
+        # Calculate the new position using the kinematic equations
+        x += vx * time_interval
+        y += vy * time_interval
+
+        # Increment the time
+        time += time_interval
+
+    return x, y, time
+
+
+# Example usage
+angle = 45  # Angle in degrees
+side_lengths = 5
+opposite_side_length = 3
+side_ratio = 2
+height = calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio)
+print(f""The height of the triangle is: {height}"")
+
+initial_velocity = 10  # m/s
+time_interval = 0.01  # seconds
+x, y, total_time = simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True)
+print(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","आयात गणित
+
+परिभाषा त्रिकोण_ऊंचाई_की_गणना_करें(कोण, पक्ष_लंबाई, विपरीत_साइड_लंबाई, पक्ष_अनुपात):
+      # कोण को डिग्री से रेडियन में परिवर्तित करें
+    कोण_रेड = गणित.रेडियंस(कोण)
+
+      # सिन के नियम का उपयोग करके ऊंचाई की गणना करें
+    ऊंचाई = विपरीत_साइड_लंबाई * गणित.पाप(कोण_रेड) / पक्ष_अनुपात
+
+      # कोसाइन के कानून का उपयोग करके आसन्न पक्ष की लंबाई की गणना करें
+    आसन्न_पक्ष_लंबाई = गणित.SQRT(पक्ष_लंबाई**2 + विपरीत_साइड_लंबाई**2 - 2 * पक्ष_लंबाई * विपरीत_साइड_लंबाई * गणित.ओल(कोण_रेड))
+
+      # त्रिभुज के हाइपोटेनस की गणना करें
+    कर्ण = पक्ष_लंबाई / गणित.ओल(कोण_रेड)
+
+      # पाइथागोरियन प्रमेय का उपयोग करके शेष पक्ष की गणना करें
+    शेष_साइड_लंबाई = गणित.SQRT(कर्ण**2 - आसन्न_पक्ष_लंबाई**2)
+
+      # त्रिभुज की अंतिम ऊंचाई की गणना करें
+    ऊंचाई += शेष_साइड_लंबाई
+
+    वापस ऊंचाई
+
+
+परिभाषा त्रिभुज_गति_का_अनुकरण_करें(प्रारंभिक_वेग, कोण, समय_अंतराल, हवाई_प्रतिरोध=सत्य):
+      # चर को आरंभ करें
+    एक्स = 0.0
+    y = 0.0
+    समय = 0.0
+
+      # कोण को डिग्री से रेडियन में परिवर्तित करें
+    कोण_रेड = गणित.रेडियंस(कोण)
+
+      # प्रारंभिक वेग की गणना करें
+    वीएक्स = प्रारंभिक_वेग * गणित.ओल(कोण_रेड)
+    वाई = प्रारंभिक_वेग * गणित.पाप(कोण_रेड)
+
+      # गति को अनुकरण करें जब तक कि y_ समन्वय नकारात्मक नहीं हो जाता (जमीन तक पहुंच गया)
+    जबतक y >= 0:
+          # वायु प्रतिरोध के कारण त्वरण की गणना करें
+        यदि हवाई_प्रतिरोध:
+            वायु__प्रतिरोध_त्वरण = -0.5 * वाई**2 # वायु प्रतिरोध के लिए सरलीकृत मॉडल
+        वरना:
+            वायु__प्रतिरोध_त्वरण = 0.0 # कोई वायु प्रतिरोध नहीं
+
+          # कीनेमेटिक समीकरणों का उपयोग करके नए वेग की गणना करें
+        वीएक्स += वायु__प्रतिरोध_त्वरण * गणित.ओल(कोण_रेड) * समय_अंतराल
+        वाई += (-9.8 + वायु__प्रतिरोध_त्वरण * गणित.पाप(कोण_रेड)) * समय_अंतराल
+
+          # कीनेमेटिक समीकरणों का उपयोग करके नई स्थिति की गणना करें
+        एक्स += वीएक्स * समय_अंतराल
+        y += वाई * समय_अंतराल
+
+          # समय बढ़ाना
+        समय += समय_अंतराल
+
+    वापस एक्स, y, समय
+
+
+  # उदाहरण उपयोग
+कोण = 45 # डिग्री में कोण
+पक्ष_लंबाई = 5
+विपरीत_साइड_लंबाई = 3
+पक्ष_अनुपात = 2
+ऊंचाई = त्रिकोण_ऊंचाई_की_गणना_करें(कोण, पक्ष_लंबाई, विपरीत_साइड_लंबाई, पक्ष_अनुपात)
+छापिये(एफ""The height of the triangle is: {height}"")
+
+प्रारंभिक_वेग = 10 # एमएस
+समय_अंतराल = 0.01 # सेकंड
+एक्स, y, कुल_समय = त्रिभुज_गति_का_अनुकरण_करें(प्रारंभिक_वेग, कोण, समय_अंतराल, हवाई_प्रतिरोध=सत्य)
+छापिये(एफ""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","import गणित
+
+def त्रिकोण_ऊंचाई_की_गणना_करें(कोण, पक्ष_लंबाई, विपरीत_साइड_लंबाई, पक्ष_अनुपात):
+       #कोण को डिग्री से रेडियन में परिवर्तित करें
+    कोण_रेड = गणित.रेडियंस(कोण)
+
+       #सिन के नियम का उपयोग करके ऊंचाई की गणना करें
+    ऊंचाई = विपरीत_साइड_लंबाई * गणित.पाप(कोण_रेड) / पक्ष_अनुपात
+
+       #कोसाइन के कानून का उपयोग करके आसन्न पक्ष की लंबाई की गणना करें
+    आसन्न_पक्ष_लंबाई = गणित.SQRT(पक्ष_लंबाई**2 + विपरीत_साइड_लंबाई**2 - 2 * पक्ष_लंबाई * विपरीत_साइड_लंबाई * गणित.ओल(कोण_रेड))
+
+       #त्रिभुज के हाइपोटेनस की गणना करें
+    कर्ण = पक्ष_लंबाई / गणित.ओल(कोण_रेड)
+
+       #पाइथागोरियन प्रमेय का उपयोग करके शेष पक्ष की गणना करें
+    शेष_साइड_लंबाई = गणित.SQRT(कर्ण**2 - आसन्न_पक्ष_लंबाई**2)
+
+       #त्रिभुज की अंतिम ऊंचाई की गणना करें
+    ऊंचाई += शेष_साइड_लंबाई
+
+    return ऊंचाई
+
+
+def त्रिभुज_गति_का_अनुकरण_करें(प्रारंभिक_वेग, कोण, समय_अंतराल, हवाई_प्रतिरोध=True):
+       #चर को आरंभ करें
+    एक्स = 0.0
+    y = 0.0
+    समय = 0.0
+
+       #कोण को डिग्री से रेडियन में परिवर्तित करें
+    कोण_रेड = गणित.रेडियंस(कोण)
+
+       #प्रारंभिक वेग की गणना करें
+    वीएक्स = प्रारंभिक_वेग * गणित.ओल(कोण_रेड)
+    वाई = प्रारंभिक_वेग * गणित.पाप(कोण_रेड)
+
+       #गति को अनुकरण करें जब तक कि y_ समन्वय नकारात्मक नहीं हो जाता (जमीन तक पहुंच गया)
+    while y >= 0:
+           #वायु प्रतिरोध के कारण त्वरण की गणना करें
+        if हवाई_प्रतिरोध:
+            वायु__प्रतिरोध_त्वरण = -0.5 * वाई**2 #वायु प्रतिरोध के लिए सरलीकृत मॉडल
+        else:
+            वायु__प्रतिरोध_त्वरण = 0.0 #कोई वायु प्रतिरोध नहीं
+
+           #कीनेमेटिक समीकरणों का उपयोग करके नए वेग की गणना करें
+        वीएक्स += वायु__प्रतिरोध_त्वरण * गणित.ओल(कोण_रेड) * समय_अंतराल
+        वाई += (-9.8 + वायु__प्रतिरोध_त्वरण * गणित.पाप(कोण_रेड)) * समय_अंतराल
+
+           #कीनेमेटिक समीकरणों का उपयोग करके नई स्थिति की गणना करें
+        एक्स += वीएक्स * समय_अंतराल
+        y += वाई * समय_अंतराल
+
+           #समय बढ़ाना
+        समय += समय_अंतराल
+
+    return एक्स, y, समय
+
+
+   #उदाहरण उपयोग
+कोण = 45 #डिग्री में कोण
+पक्ष_लंबाई = 5
+विपरीत_साइड_लंबाई = 3
+पक्ष_अनुपात = 2
+ऊंचाई = त्रिकोण_ऊंचाई_की_गणना_करें(कोण, पक्ष_लंबाई, विपरीत_साइड_लंबाई, पक्ष_अनुपात)
+print(एफ""The height of the triangle is: {height}"")
+
+प्रारंभिक_वेग = 10 #एमएस
+समय_अंतराल = 0.01 #सेकंड
+एक्स, y, कुल_समय = त्रिभुज_गति_का_अनुकरण_करें(प्रारंभिक_वेग, कोण, समय_अंतराल, हवाई_प्रतिरोध=True)
+print(एफ""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")"
+"import math
+
+def calculate_circle_area(radius):
+    try:
+        radius = float(radius)
+        if radius <= 0:
+            return ""Error: Radius must be a positive number""
+        area = math.pi * radius**2
+        return ""{:.2f}"".format(area)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","आयात गणित
+
+परिभाषा सर्कल_क्षेत्र_की_गणना_करें(RADIUS):
+    प्रयत्न:
+        RADIUS = दश(RADIUS)
+        यदि RADIUS <= 0:
+            वापस ""Error: Radius must be a positive number""
+        क्षेत्र = गणित.अनुकरणीय * RADIUS**2
+        वापस ""{:.2f}"".प्रारूप(क्षेत्र)
+    सिवाय मान_त्रुटि:
+        वापस ""Error: Invalid input. Radius must be a number""","import गणित
+
+def सर्कल_क्षेत्र_की_गणना_करें(RADIUS):
+    try:
+        RADIUS = float(RADIUS)
+        if RADIUS <= 0:
+            return ""Error: Radius must be a positive number""
+        क्षेत्र = गणित.अनुकरणीय * RADIUS**2
+        return ""{:.2f}"".format(क्षेत्र)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number"""
+"def multiply_matrices(A, B):
+    a, b, c = A[0][0], A[0][1], A[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    return [
+        [a*d + b*e, a*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+def power_matrix(A, n):
+    if n == 0:
+        return [[1, 0], [0, 1]]  # Identity matrix
+    
+    result = power_matrix(A, n // 2)
+    result = multiply_matrices(result, result)
+    
+    if n % 2 == 1:
+        result = multiply_matrices(result, A)
+    
+    return result
+
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_matrix(matrix, n - 1)
+    
+    return result[0][0]","परिभाषा गुणा_मैट्रिस(ए, बी):
+    ए, बी, सी = ए[0][0], ए[0][1], ए[1][0]
+    डी, ईटी, एफ = बी[0][0], बी[0][1], बी[1][0]
+    
+    वापस [
+        [ए*डी + बी*ईटी, ए*ईटी + बी*एफ],
+        [सी*डी + ईटी*डी, सी*ईटी + ईटी*एफ]
+    ]
+
+
+परिभाषा बिजली_मैट्रिक्स(ए, एन):
+    यदि एन == 0:
+        वापस [[1, 0], [0, 1]] # शिनाख्त सांचा
+    
+    परिणाम = बिजली_मैट्रिक्स(ए, एन // 2)
+    परिणाम = गुणा_मैट्रिस(परिणाम, परिणाम)
+    
+    यदि एन % 2 == 1:
+        परिणाम = गुणा_मैट्रिस(परिणाम, ए)
+    
+    वापस परिणाम
+
+
+परिभाषा फाइबोनैचि(एन):
+    यदि एन == 0:
+        वापस 0
+    
+    मैट्रिक्स = [[1, 1], [1, 0]]
+    परिणाम = बिजली_मैट्रिक्स(मैट्रिक्स, एन - 1)
+    
+    वापस परिणाम[0][0]","def गुणा_मैट्रिस(ए, बी):
+    ए, बी, सी = ए[0][0], ए[0][1], ए[1][0]
+    डी, ईटी, एफ = बी[0][0], बी[0][1], बी[1][0]
+    
+    return [
+        [ए*डी + बी*ईटी, ए*ईटी + बी*एफ],
+        [सी*डी + ईटी*डी, सी*ईटी + ईटी*एफ]
+    ]
+
+
+def बिजली_मैट्रिक्स(ए, एन):
+    if एन == 0:
+        return [[1, 0], [0, 1]] #शिनाख्त सांचा
+    
+    परिणाम = बिजली_मैट्रिक्स(ए, एन // 2)
+    परिणाम = गुणा_मैट्रिस(परिणाम, परिणाम)
+    
+    if एन % 2 == 1:
+        परिणाम = गुणा_मैट्रिस(परिणाम, ए)
+    
+    return परिणाम
+
+
+def फाइबोनैचि(एन):
+    if एन == 0:
+        return 0
+    
+    मैट्रिक्स = [[1, 1], [1, 0]]
+    परिणाम = बिजली_मैट्रिक्स(मैट्रिक्स, एन - 1)
+    
+    return परिणाम[0][0]"
+"def debug_program(arr):
+    n = len(arr)
+    return binary_search(arr, 0, n - 1)
+
+def binary_search(arr, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end) // 2
+    
+    if arr[mid] == mid:
+        return mid
+    
+    left_result = binary_search(arr, start, min(mid - 1, arr[mid]))
+    right_result = binary_search(arr, max(mid + 1, arr[mid]), end)
+    
+    return max(left_result, right_result)","परिभाषा डिबग_कार्यक्रम(आगमन):
+    एन = लंबाई(आगमन)
+    वापस द्विआधारी_खोज(आगमन, 0, एन - 1)
+
+परिभाषा द्विआधारी_खोज(आगमन, शुरू, अंत):
+    यदि शुरू > अंत:
+        वापस -1
+    
+    मध्य = (शुरू + अंत) // 2
+    
+    यदि आगमन[मध्य] == मध्य:
+        वापस मध्य
+    
+    वाम_परिणाम = द्विआधारी_खोज(आगमन, शुरू, न्यूनतम(मध्य - 1, आगमन[मध्य]))
+    सही_परिणाम = द्विआधारी_खोज(आगमन, अधिकतम(मध्य + 1, आगमन[मध्य]), अंत)
+    
+    वापस अधिकतम(वाम_परिणाम, सही_परिणाम)","def डिबग_कार्यक्रम(आगमन):
+    एन = len(आगमन)
+    return द्विआधारी_खोज(आगमन, 0, एन - 1)
+
+def द्विआधारी_खोज(आगमन, शुरू, अंत):
+    if शुरू > अंत:
+        return -1
+    
+    मध्य = (शुरू + अंत) // 2
+    
+    if आगमन[मध्य] == मध्य:
+        return मध्य
+    
+    वाम_परिणाम = द्विआधारी_खोज(आगमन, शुरू, min(मध्य - 1, आगमन[मध्य]))
+    सही_परिणाम = द्विआधारी_खोज(आगमन, max(मध्य + 1, आगमन[मध्य]), अंत)
+    
+    return max(वाम_परिणाम, सही_परिणाम)"
+"import math
+
+def power(x, y):
+    # Check for invalid inputs
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+    # Check if x is between 1 and 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+    # Check if y is between 0 and 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+    # Custom algorithm for calculating power
+    result = x ** y
+
+    # Check if result exceeds threshold for scientific notation
+    if result > 1e6:
+        return ""{:.2e}"".format(result)
+    else:
+        return result
+
+# Example usage
+x = 2.5
+y = 3
+result = power(x, y)
+print(result)","आयात गणित
+
+परिभाषा शक्ति(एक्स, y):
+      # अमान्य इनपुट के लिए जाँच करें
+    यदि ना उदाहरण_है(एक्स, (अंक, दश)) या ना उदाहरण_है(y, अंक):
+        वापस ""Error: Invalid input. Please enter numeric values for x and y.""
+
+      # जांचें कि क्या x 1 और 10 के बीच है
+    यदि ना 1 <= एक्स <= 10:
+        वापस ""Error: x should be between 1 and 10.""
+
+      # जांचें कि क्या y 0 और 5 के बीच है
+    यदि ना 0 <= y <= 5:
+        वापस ""Error: y should be between 0 and 5.""
+
+      # शक्ति की गणना के लिए कस्टम एल्गोरिथ्म
+    परिणाम = एक्स ** y
+
+      # जांच करें कि क्या परिणाम वैज्ञानिक संकेतन के लिए सीमा से अधिक है
+    यदि परिणाम > 1e6:
+        वापस ""{:.2e}"".प्रारूप(परिणाम)
+    वरना:
+        वापस परिणाम
+
+  # उदाहरण उपयोग
+एक्स = 2.5
+y = 3
+परिणाम = शक्ति(एक्स, y)
+छापिये(परिणाम)","import गणित
+
+def शक्ति(एक्स, y):
+       #अमान्य इनपुट के लिए जाँच करें
+    if not isinstance(एक्स, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+       #जांचें कि क्या x 1 और 10 के बीच है
+    if not 1 <= एक्स <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+       #जांचें कि क्या y 0 और 5 के बीच है
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+       #शक्ति की गणना के लिए कस्टम एल्गोरिथ्म
+    परिणाम = एक्स ** y
+
+       #जांच करें कि क्या परिणाम वैज्ञानिक संकेतन के लिए सीमा से अधिक है
+    if परिणाम > 1e6:
+        return ""{:.2e}"".format(परिणाम)
+    else:
+        return परिणाम
+
+   #उदाहरण उपयोग
+एक्स = 2.5
+y = 3
+परिणाम = शक्ति(एक्स, y)
+print(परिणाम)"
+"def bubble_sort_descending(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+sorted_arr = bubble_sort_descending(arr)
+print(sorted_arr)","परिभाषा बुलबुला_क्रम(आगमन):
+    एन = लंबाई(आगमन)
+    के_लिए मैं में रेंज(एन - 1):
+        के_लिए जे में रेंज(एन - मैं - 1):
+            यदि आगमन[जे] < आगमन[जे + 1]:
+                आगमन[जे], आगमन[जे + 1] = आगमन[जे + 1], आगमन[जे]
+    वापस आगमन
+
+आगमन = [3, 2, 1, 5, 4]
+क्रमबद्ध_गिरफ्तारी = बुलबुला_क्रम(आगमन)
+छापिये(क्रमबद्ध_गिरफ्तारी)","def बुलबुला_क्रम(आगमन):
+    एन = len(आगमन)
+    for मैं in range(एन - 1):
+        for जे in range(एन - मैं - 1):
+            if आगमन[जे] < आगमन[जे + 1]:
+                आगमन[जे], आगमन[जे + 1] = आगमन[जे + 1], आगमन[जे]
+    return आगमन
+
+आगमन = [3, 2, 1, 5, 4]
+क्रमबद्ध_गिरफ्तारी = बुलबुला_क्रम(आगमन)
+print(क्रमबद्ध_गिरफ्तारी)"
+"def sum_prime_numbers(arr):
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    prime_sum = 0
+    for num in arr:
+        if is_prime(num):
+            prime_sum += num
+    return prime_sum","परिभाषा संल्यात्मक_संख्याएँ(आगमन):
+    परिभाषा प्राइम_है(एन):
+        यदि एन <= 1:
+            वापस असत्य
+        के_लिए मैं में रेंज(2, अंक(एन**0.5) + 1):
+            यदि एन % मैं == 0:
+                वापस असत्य
+        वापस सत्य
+
+    मुख्य_योग = 0
+    के_लिए अंकित_करना में आगमन:
+        यदि प्राइम_है(अंकित_करना):
+            मुख्य_योग += अंकित_करना
+    वापस मुख्य_योग","def संल्यात्मक_संख्याएँ(आगमन):
+    def प्राइम_है(एन):
+        if एन <= 1:
+            return False
+        for मैं in range(2, int(एन**0.5) + 1):
+            if एन % मैं == 0:
+                return False
+        return True
+
+    मुख्य_योग = 0
+    for अंकित_करना in आगमन:
+        if प्राइम_है(अंकित_करना):
+            मुख्य_योग += अंकित_करना
+    return मुख्य_योग"
+"def calculate_factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+def calculate_factorials(arr):
+    result = []
+    for num in arr:
+        result.append(calculate_factorial(num))
+    return result
+
+arr = [1, 2, 3, 4, 5]
+factorials = calculate_factorials(arr)
+print(factorials)","परिभाषा फैक्टरियल_की_गणना_करें(एन):
+    यदि एन == 0:
+        वापस 1
+    वरना:
+        वापस एन * फैक्टरियल_की_गणना_करें(एन - 1)
+
+परिभाषा फैक्टरियल्स_की_गणना_करें(आगमन):
+    परिणाम = []
+    के_लिए अंकित_करना में आगमन:
+        परिणाम.संलग्न(फैक्टरियल_की_गणना_करें(अंकित_करना))
+    वापस परिणाम
+
+आगमन = [1, 2, 3, 4, 5]
+फैक्टरियल्स = फैक्टरियल्स_की_गणना_करें(आगमन)
+छापिये(फैक्टरियल्स)","def फैक्टरियल_की_गणना_करें(एन):
+    if एन == 0:
+        return 1
+    else:
+        return एन * फैक्टरियल_की_गणना_करें(एन - 1)
+
+def फैक्टरियल्स_की_गणना_करें(आगमन):
+    परिणाम = []
+    for अंकित_करना in आगमन:
+        परिणाम.append(फैक्टरियल_की_गणना_करें(अंकित_करना))
+    return परिणाम
+
+आगमन = [1, 2, 3, 4, 5]
+फैक्टरियल्स = फैक्टरियल्स_की_गणना_करें(आगमन)
+print(फैक्टरियल्स)"
+"def count_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowel_counts = {vowel: 0 for vowel in vowels}
+    
+    for char in text:
+        if char.lower() in vowels:
+            vowel_counts[char.lower()] += 1
+    
+    return vowel_counts
+
+text = ""Hello World!""
+result = count_vowels(text)
+print(result)","परिभाषा गिनती_स्वर(मूलपाठ):
+    स्वर = ['a', 'e', 'i', 'o', 'u']
+    स्वर_की_गिनती = {स्वर: 0 के_लिए स्वर में स्वर}
+    
+    के_लिए लपेटना में मूलपाठ:
+        यदि लपेटना.छोटा() में स्वर:
+            स्वर_की_गिनती[लपेटना.छोटा()] += 1
+    
+    वापस स्वर_की_गिनती
+
+मूलपाठ = ""Hello World!""
+परिणाम = गिनती_स्वर(मूलपाठ)
+छापिये(परिणाम)","def गिनती_स्वर(मूलपाठ):
+    स्वर = ['a', 'e', 'i', 'o', 'u']
+    स्वर_की_गिनती = {स्वर: 0 for स्वर in स्वर}
+    
+    for लपेटना in मूलपाठ:
+        if लपेटना.lower() in स्वर:
+            स्वर_की_गिनती[लपेटना.lower()] += 1
+    
+    return स्वर_की_गिनती
+
+मूलपाठ = ""Hello World!""
+परिणाम = गिनती_स्वर(मूलपाठ)
+print(परिणाम)"
+"import random
+
+def generate_random_number():
+    num = 0
+    while bin(num).count('1') != 4:
+        num = random.randint(0, 15)
+    return num
+
+random_number = generate_random_number()
+print(random_number)","आयात यादृच्छिक
+
+परिभाषा यादृच्छिक_संख्या_उत्पन्न_करें():
+    अंकित_करना = 0
+    जबतक द्वि(अंकित_करना).गिनें('1') != 4:
+        अंकित_करना = यादृच्छिक.रैंडिंट(0, 15)
+    वापस अंकित_करना
+
+यादृच्छिक_संख्या = यादृच्छिक_संख्या_उत्पन्न_करें()
+छापिये(यादृच्छिक_संख्या)","import यादृच्छिक
+
+def यादृच्छिक_संख्या_उत्पन्न_करें():
+    अंकित_करना = 0
+    while bin(अंकित_करना).count('1') != 4:
+        अंकित_करना = यादृच्छिक.रैंडिंट(0, 15)
+    return अंकित_करना
+
+यादृच्छिक_संख्या = यादृच्छिक_संख्या_उत्पन्न_करें()
+print(यादृच्छिक_संख्या)"
+"def multiply(a, b):
+    # Calculate the sign of the result
+    sign = -1 if (a < 0) ^ (b < 0) else 1
+
+    # Convert both numbers to positive
+    a = abs(a)
+    b = abs(b)
+
+    # Initialize the result
+    result = 0
+
+    # Multiply the numbers using bitwise operations
+    while b:
+        # If b is odd, add a to the result
+        if b & 1:
+            result += a
+
+        # Shift a to the left by 1 bit
+        a <<= 1
+
+        # Shift b to the right by 1 bit
+        b >>= 1
+
+    return sign * result","परिभाषा गुणा(ए, बी):
+      # परिणाम के संकेत की गणना करें
+    संकेत = -1 यदि (ए < 0) ^ (बी < 0) वरना 1
+
+      # दोनों संख्याओं को सकारात्मक में बदलें
+    ए = निरपेक्ष_मान(ए)
+    बी = निरपेक्ष_मान(बी)
+
+      # परिणाम शुरू करें
+    परिणाम = 0
+
+      # बिटवाइज ऑपरेशंस का उपयोग करके संख्याओं को गुणा करें
+    जबतक बी:
+          # यदि B विषम है, तो परिणाम में A जोड़ें
+        यदि बी & 1:
+            परिणाम += ए
+
+          # 1 बिट से बाईं ओर शिफ्ट करें
+        ए <<= 1
+
+          # 1 बिट से दाईं ओर B को शिफ्ट करें
+        बी >>= 1
+
+    वापस संकेत * परिणाम","def गुणा(ए, बी):
+       #परिणाम के संकेत की गणना करें
+    संकेत = -1 if (ए < 0) ^ (बी < 0) else 1
+
+       #दोनों संख्याओं को सकारात्मक में बदलें
+    ए = abs(ए)
+    बी = abs(बी)
+
+       #परिणाम शुरू करें
+    परिणाम = 0
+
+       #बिटवाइज ऑपरेशंस का उपयोग करके संख्याओं को गुणा करें
+    while बी:
+           #यदि B विषम है, तो परिणाम में A जोड़ें
+        if बी & 1:
+            परिणाम += ए
+
+           #1 बिट से बाईं ओर शिफ्ट करें
+        ए <<= 1
+
+           #1 बिट से दाईं ओर B को शिफ्ट करें
+        बी >>= 1
+
+    return संकेत * परिणाम"
+"def find_longest_element(lst):
+    longest_element = ''
+    longest_index = -1
+    longest_count = 0
+    
+    for i, element in enumerate(lst):
+        if len(str(element)) > len(longest_element):
+            longest_element = str(element)
+            longest_index = i
+            longest_count = 1
+        elif len(str(element)) == len(longest_element):
+            longest_count += 1
+    
+    return longest_element, longest_index, longest_count
+
+# Example usage:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longest_element, longest_index, longest_count = find_longest_element(lst)
+
+print(""Longest Element:"", longest_element)
+print(""Index of Longest Element:"", longest_index)
+print(""Total Occurrences of Longest Element:"", longest_count)","परिभाषा सबसे_लंबा_तत्व_खोजें(लाईट):
+    सबसे_लंबा_तत्व = ''
+    सबसे_अधिक_सूचकांक = -1
+    सबसे_लंबे_समय_तक_गिनती = 0
+    
+    के_लिए मैं, तत्व में गणना(लाईट):
+        यदि लंबाई(स्ट्रिंग(तत्व)) > लंबाई(सबसे_लंबा_तत्व):
+            सबसे_लंबा_तत्व = स्ट्रिंग(तत्व)
+            सबसे_अधिक_सूचकांक = मैं
+            सबसे_लंबे_समय_तक_गिनती = 1
+        वरना_यदि लंबाई(स्ट्रिंग(तत्व)) == लंबाई(सबसे_लंबा_तत्व):
+            सबसे_लंबे_समय_तक_गिनती += 1
+    
+    वापस सबसे_लंबा_तत्व, सबसे_अधिक_सूचकांक, सबसे_लंबे_समय_तक_गिनती
+
+  # उदाहरण उपयोग:
+लाईट = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+सबसे_लंबा_तत्व, सबसे_अधिक_सूचकांक, सबसे_लंबे_समय_तक_गिनती = सबसे_लंबा_तत्व_खोजें(लाईट)
+
+छापिये(""Longest Element:"", सबसे_लंबा_तत्व)
+छापिये(""Index of Longest Element:"", सबसे_अधिक_सूचकांक)
+छापिये(""Total Occurrences of Longest Element:"", सबसे_लंबे_समय_तक_गिनती)","def सबसे_लंबा_तत्व_खोजें(लाईट):
+    सबसे_लंबा_तत्व = ''
+    सबसे_अधिक_सूचकांक = -1
+    सबसे_लंबे_समय_तक_गिनती = 0
+    
+    for मैं, तत्व in enumerate(लाईट):
+        if len(str(तत्व)) > len(सबसे_लंबा_तत्व):
+            सबसे_लंबा_तत्व = str(तत्व)
+            सबसे_अधिक_सूचकांक = मैं
+            सबसे_लंबे_समय_तक_गिनती = 1
+        elif len(str(तत्व)) == len(सबसे_लंबा_तत्व):
+            सबसे_लंबे_समय_तक_गिनती += 1
+    
+    return सबसे_लंबा_तत्व, सबसे_अधिक_सूचकांक, सबसे_लंबे_समय_तक_गिनती
+
+   #उदाहरण उपयोग:
+लाईट = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+सबसे_लंबा_तत्व, सबसे_अधिक_सूचकांक, सबसे_लंबे_समय_तक_गिनती = सबसे_लंबा_तत्व_खोजें(लाईट)
+
+print(""Longest Element:"", सबसे_लंबा_तत्व)
+print(""Index of Longest Element:"", सबसे_अधिक_सूचकांक)
+print(""Total Occurrences of Longest Element:"", सबसे_लंबे_समय_तक_गिनती)"
+"import math
+
+def is_prime(num):
+    if num <= 1:
+        return ""Composite""
+
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return ""Composite""
+
+    return ""Prime""","आयात गणित
+
+परिभाषा प्राइम_है(अंकित_करना):
+    यदि अंकित_करना <= 1:
+        वापस ""Composite""
+
+    के_लिए मैं में रेंज(2, अंक(गणित.SQRT(अंकित_करना)) + 1):
+        यदि अंकित_करना % मैं == 0:
+            वापस ""Composite""
+
+    वापस ""Prime""","import गणित
+
+def प्राइम_है(अंकित_करना):
+    if अंकित_करना <= 1:
+        return ""Composite""
+
+    for मैं in range(2, int(गणित.SQRT(अंकित_करना)) + 1):
+        if अंकित_करना % मैं == 0:
+            return ""Composite""
+
+    return ""Prime"""
+"def print_primes_without_five(lower, upper):
+    # Step 1: Create a boolean array ""is_prime[0..upper]"" and initialize
+    # all entries it as true.
+    is_prime = [True] * (upper + 1)
+    is_prime[0] = is_prime[1] = False
+
+    # Step 2: Mark all the multiples of prime numbers starting from 2
+    # as false.
+    p = 2
+    while p * p <= upper:
+        if is_prime[p]:
+            for i in range(p * p, upper + 1, p):
+                is_prime[i] = False
+        p += 1
+
+    # Step 3: Print all prime numbers in the given range excluding
+    # numbers containing the digit 5.
+    for num in range(lower, upper + 1):
+        if is_prime[num] and '5' not in str(num):
+            print(num)","परिभाषा पांच_के_बिना_प्रिंट_प्राइम(छोटा, बड़ा):
+      # चरण 1: एक बूलियन सरणी बनाएं ""is_prime [0..upper]"" और इनिशियलाइज़ करें
+      # सभी प्रविष्टि इसे सच के रूप में करते हैं।
+    प्राइम_है = [सत्य] * (बड़ा + 1)
+    प्राइम_है[0] = प्राइम_है[1] = असत्य
+
+      # चरण 2: 2 से शुरू होने वाले प्राइम नंबरों के सभी गुणकों को चिह्नित करें
+      # गलत के रूप में।
+    पी = 2
+    जबतक पी * पी <= बड़ा:
+        यदि प्राइम_है[पी]:
+            के_लिए मैं में रेंज(पी * पी, बड़ा + 1, पी):
+                प्राइम_है[मैं] = असत्य
+        पी += 1
+
+      # चरण 3: दिए गए रेंज में सभी प्राइम नंबरों को प्रिंट करें
+      # अंक जिसमें अंक 5।
+    के_लिए अंकित_करना में रेंज(छोटा, बड़ा + 1):
+        यदि प्राइम_है[अंकित_करना] और '5' ना में स्ट्रिंग(अंकित_करना):
+            छापिये(अंकित_करना)","def पांच_के_बिना_प्रिंट_प्राइम(lower, upper):
+       #चरण 1: एक बूलियन सरणी बनाएं ""is_prime [0..upper]"" और इनिशियलाइज़ करें
+       #सभी प्रविष्टि इसे सच के रूप में करते हैं।
+    प्राइम_है = [True] * (upper + 1)
+    प्राइम_है[0] = प्राइम_है[1] = False
+
+       #चरण 2: 2 से शुरू होने वाले प्राइम नंबरों के सभी गुणकों को चिह्नित करें
+       #गलत के रूप में।
+    पी = 2
+    while पी * पी <= upper:
+        if प्राइम_है[पी]:
+            for मैं in range(पी * पी, upper + 1, पी):
+                प्राइम_है[मैं] = False
+        पी += 1
+
+       #चरण 3: दिए गए रेंज में सभी प्राइम नंबरों को प्रिंट करें
+       #अंक जिसमें अंक 5।
+    for अंकित_करना in range(lower, upper + 1):
+        if प्राइम_है[अंकित_करना] and '5' not in str(अंकित_करना):
+            print(अंकित_करना)"
+"import time
+
+# Function to check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Caching mechanism for prime numbers
+prime_cache = {}
+
+# Modified function to check if a number is prime using caching
+def is_prime_cached(n):
+    if n in prime_cache:
+        return prime_cache[n]
+    prime = is_prime(n)
+    prime_cache[n] = prime
+    return prime
+
+# Timer function
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f""Execution time: {end - start} seconds"")
+        return result
+    return wrapper
+
+# List comprehension to generate the list of prime numbers
+@timer
+def generate_prime_palindromic_fibonacci():
+    return [num for num in range(10000, 20001) if is_prime_cached(num) and str(num) == str(num)[::-1] and is_fibonacci(num)]
+
+# Function to check if a number is a Fibonacci number
+def is_fibonacci(n):
+    a, b = 0, 1
+    while b < n:
+        a, b = b, a + b
+    return b == n
+
+# Test the function
+primes = generate_prime_palindromic_fibonacci()
+print(primes)","आयात समय
+
+  # यह जांचने के लिए कि क्या कोई नंबर प्राइम है
+परिभाषा प्राइम_है(एन):
+    यदि एन < 2:
+        वापस असत्य
+    के_लिए मैं में रेंज(2, अंक(एन**0.5) + 1):
+        यदि एन % मैं == 0:
+            वापस असत्य
+    वापस सत्य
+
+  # प्राइम नंबर के लिए कैशिंग तंत्र
+प्राइम_कैश = {}
+
+  # यह जांचने के लिए कि क्या कोई नंबर कैशिंग का उपयोग करके प्राइम है
+परिभाषा प्राइम_कैश्ड_है(एन):
+    यदि एन में प्राइम_कैश:
+        वापस प्राइम_कैश[एन]
+    मुख्य = प्राइम_है(एन)
+    प्राइम_कैश[एन] = मुख्य
+    वापस मुख्य
+
+  # टाइमर कार्य
+परिभाषा घड़ी(समारोह):
+    परिभाषा आवरण(*args, **kwargs):
+        शुरू = समय.समय()
+        परिणाम = समारोह(*args, **kwargs)
+        अंत = समय.समय()
+        छापिये(एफ""Execution time: {end - start} seconds"")
+        वापस परिणाम
+    वापस आवरण
+
+  # प्राइम नंबरों की सूची उत्पन्न करने के लिए सूची समझ
+@घड़ी
+परिभाषा प्राइम_पैलिंड्रोमिक_फाइबोनैचि_उत्पन्न_करें():
+    वापस [अंकित_करना के_लिए अंकित_करना में रेंज(10000, 20001) यदि प्राइम_कैश्ड_है(अंकित_करना) और स्ट्रिंग(अंकित_करना) == स्ट्रिंग(अंकित_करना)[::-1] और फाइबोनैचि_है(अंकित_करना)]
+
+  # यह जांचने के लिए कि क्या कोई संख्या एक फाइबोनैकि संख्या है
+परिभाषा फाइबोनैचि_है(एन):
+    ए, बी = 0, 1
+    जबतक बी < एन:
+        ए, बी = बी, ए + बी
+    वापस बी == एन
+
+  # फ़ंक्शन का परीक्षण करें
+अभाज्य = प्राइम_पैलिंड्रोमिक_फाइबोनैचि_उत्पन्न_करें()
+छापिये(अभाज्य)","import समय
+
+   #यह जांचने के लिए कि क्या कोई नंबर प्राइम है
+def प्राइम_है(एन):
+    if एन < 2:
+        return False
+    for मैं in range(2, int(एन**0.5) + 1):
+        if एन % मैं == 0:
+            return False
+    return True
+
+   #प्राइम नंबर के लिए कैशिंग तंत्र
+प्राइम_कैश = {}
+
+   #यह जांचने के लिए कि क्या कोई नंबर कैशिंग का उपयोग करके प्राइम है
+def प्राइम_कैश्ड_है(एन):
+    if एन in प्राइम_कैश:
+        return प्राइम_कैश[एन]
+    मुख्य = प्राइम_है(एन)
+    प्राइम_कैश[एन] = मुख्य
+    return मुख्य
+
+   #टाइमर कार्य
+def घड़ी(समारोह):
+    def आवरण(*args, **kwargs):
+        शुरू = समय.समय()
+        परिणाम = समारोह(*args, **kwargs)
+        अंत = समय.समय()
+        print(एफ""Execution time: {end - start} seconds"")
+        return परिणाम
+    return आवरण
+
+   #प्राइम नंबरों की सूची उत्पन्न करने के लिए सूची समझ
+@घड़ी
+def प्राइम_पैलिंड्रोमिक_फाइबोनैचि_उत्पन्न_करें():
+    return [अंकित_करना for अंकित_करना in range(10000, 20001) if प्राइम_कैश्ड_है(अंकित_करना) and str(अंकित_करना) == str(अंकित_करना)[::-1] and फाइबोनैचि_है(अंकित_करना)]
+
+   #यह जांचने के लिए कि क्या कोई संख्या एक फाइबोनैकि संख्या है
+def फाइबोनैचि_है(एन):
+    ए, बी = 0, 1
+    while बी < एन:
+        ए, बी = बी, ए + बी
+    return बी == एन
+
+   #फ़ंक्शन का परीक्षण करें
+अभाज्य = प्राइम_पैलिंड्रोमिक_फाइबोनैचि_उत्पन्न_करें()
+print(अभाज्य)"
+"import math
+
+def average_list(lst):
+    if not lst:
+        return None
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    total = 0
+    count = 0
+    
+    for num in lst:
+        if not isinstance(num, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(num, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if math.isnan(num):
+            raise ValueError(""List contains NaN values"")
+        
+        if math.isinf(num):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(num) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        total += num
+        count += 1
+    
+    return total / count","आयात गणित
+
+परिभाषा औसत_सूची(लाईट):
+    यदि ना लाईट:
+        वापस कोई_नहीं
+    
+    यदि लंबाई(लाईट) == 1:
+        वापस लाईट[0]
+    
+    कुल = 0
+    गिनें = 0
+    
+    के_लिए अंकित_करना में लाईट:
+        यदि ना उदाहरण_है(अंकित_करना, (अंक, दश)):
+            उठाओ मान_त्रुटि(""List contains non-numeric elements"")
+        
+        यदि उदाहरण_है(अंकित_करना, समिश्र):
+            उठाओ मान_त्रुटि(""List contains complex numbers"")
+        
+        यदि गणित.इस्नान(अंकित_करना):
+            उठाओ मान_त्रुटि(""List contains NaN values"")
+        
+        यदि गणित.isinf(अंकित_करना):
+            उठाओ मान_त्रुटि(""List contains infinity or negative infinity values"")
+        
+        यदि निरपेक्ष_मान(अंकित_करना) > 1E308:
+            उठाओ मान_त्रुटि(""List contains numbers that are too large"")
+        
+        कुल += अंकित_करना
+        गिनें += 1
+    
+    वापस कुल / गिनें","import गणित
+
+def औसत_सूची(लाईट):
+    if not लाईट:
+        return कोई_नहीं
+    
+    if len(लाईट) == 1:
+        return लाईट[0]
+    
+    कुल = 0
+    count = 0
+    
+    for अंकित_करना in लाईट:
+        if not isinstance(अंकित_करना, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(अंकित_करना, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if गणित.इस्नान(अंकित_करना):
+            raise ValueError(""List contains NaN values"")
+        
+        if गणित.isinf(अंकित_करना):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(अंकित_करना) > 1E308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        कुल += अंकित_करना
+        count += 1
+    
+    return कुल / count"
+"import sqlite3
+
+def delete_row(connection):
+    try:
+        # Start a transaction
+        connection.execute(""BEGIN TRANSACTION"")
+
+        # Execute the complex query
+        cursor = connection.execute(""SELECT ..."")
+
+        # Fetch the row to be deleted
+        row = cursor.fetchone()
+
+        if row:
+            # Delete the row using its primary key
+            connection.execute(""DELETE FROM table_name WHERE id=?"", (row['id'],))
+
+        # Commit the transaction
+        connection.execute(""COMMIT"")
+
+        # Close the cursor
+        cursor.close()
+
+    except sqlite3.Error as error:
+        # Rollback the transaction in case of any exception
+        connection.execute(""ROLLBACK"")
+
+        # Display the error message
+        print(f""Error: {error}"")
+
+    finally:
+        # Close the database connection
+        connection.close()
+
+# Create a connection to the SQLite database
+connection = sqlite3.connect(""database.db"")
+
+# Call the function to delete the row
+delete_row(connection)","आयात sqlite3
+
+परिभाषा पंक्ति_को_हटाएं(कनेक्शन):
+    प्रयत्न:
+          # एक लेन _देन शुरू करें
+        कनेक्शन.निष्पादित_करना(""BEGIN TRANSACTION"")
+
+          # जटिल क्वेरी निष्पादित करें
+        कर्सर = कनेक्शन.निष्पादित_करना(""SELECT ..."")
+
+          # हटाए जाने के लिए पंक्ति प्राप्त करें
+        पंक्ति = कर्सर.फेटन()
+
+        यदि पंक्ति:
+              # अपनी प्राथमिक कुंजी का उपयोग करके पंक्ति को हटा दें
+            कनेक्शन.निष्पादित_करना(""DELETE FROM table_name WHERE id=?"", (पंक्ति['id'],))
+
+          # लेन _देन करना
+        कनेक्शन.निष्पादित_करना(""COMMIT"")
+
+          # कर्सर बंद करें
+        कर्सर.बंद()
+
+    सिवाय sqlite3.गलती की_तरह गलती:
+          # किसी भी अपवाद के मामले में लेनदेन को रोलबैक करें
+        कनेक्शन.निष्पादित_करना(""ROLLBACK"")
+
+          # त्रुटि संदेश प्रदर्शित करें
+        छापिये(एफ""Error: {error}"")
+
+    अंत_में:
+          # डेटाबेस कनेक्शन बंद करें
+        कनेक्शन.बंद()
+
+  # SQLite डेटाबेस के लिए एक कनेक्शन बनाएं
+कनेक्शन = sqlite3.जोड़ना(""database.db"")
+
+  # पंक्ति को हटाने के लिए फ़ंक्शन को कॉल करें
+पंक्ति_को_हटाएं(कनेक्शन)","import sqlite3
+
+def पंक्ति_को_हटाएं(कनेक्शन):
+    try:
+           #एक लेन _देन शुरू करें
+        कनेक्शन.निष्पादित_करना(""BEGIN TRANSACTION"")
+
+           #जटिल क्वेरी निष्पादित करें
+        कर्सर = कनेक्शन.निष्पादित_करना(""SELECT ..."")
+
+           #हटाए जाने के लिए पंक्ति प्राप्त करें
+        पंक्ति = कर्सर.फेटन()
+
+        if पंक्ति:
+               #अपनी प्राथमिक कुंजी का उपयोग करके पंक्ति को हटा दें
+            कनेक्शन.निष्पादित_करना(""DELETE FROM table_name WHERE id=?"", (पंक्ति['id'],))
+
+           #लेन _देन करना
+        कनेक्शन.निष्पादित_करना(""COMMIT"")
+
+           #कर्सर बंद करें
+        कर्सर.close()
+
+    except sqlite3.गलती as गलती:
+           #किसी भी अपवाद के मामले में लेनदेन को रोलबैक करें
+        कनेक्शन.निष्पादित_करना(""ROLLBACK"")
+
+           #त्रुटि संदेश प्रदर्शित करें
+        print(एफ""Error: {error}"")
+
+    finally:
+           #डेटाबेस कनेक्शन बंद करें
+        कनेक्शन.close()
+
+   #SQLite डेटाबेस के लिए एक कनेक्शन बनाएं
+कनेक्शन = sqlite3.जोड़ना(""database.db"")
+
+   #पंक्ति को हटाने के लिए फ़ंक्शन को कॉल करें
+पंक्ति_को_हटाएं(कनेक्शन)"
+"import re
+
+def extract_emails(string):
+    # Use regular expression pattern to find all email addresses in the string
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, string)
+    
+    # Remove any duplicate email addresses
+    unique_emails = list(set(matches))
+    
+    return unique_emails","आयात दोबारा
+
+परिभाषा ईमेल_निकालें(डोरी):
+      # स्ट्रिंग में सभी ईमेल पते खोजने के लिए नियमित अभिव्यक्ति पैटर्न का उपयोग करें
+    नमूना = आर'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    माचिस = दोबारा.फाइंडल(नमूना, डोरी)
+    
+      # कोई भी डुप्लिकेट ईमेल पते निकालें
+    अद्वितीय_ईमेल = सूची(सेट(माचिस))
+    
+    वापस अद्वितीय_ईमेल","import दोबारा
+
+def ईमेल_निकालें(डोरी):
+       #स्ट्रिंग में सभी ईमेल पते खोजने के लिए नियमित अभिव्यक्ति पैटर्न का उपयोग करें
+    नमूना = आर'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    माचिस = दोबारा.फाइंडल(नमूना, डोरी)
+    
+       #कोई भी डुप्लिकेट ईमेल पते निकालें
+    अद्वितीय_ईमेल = list(set(माचिस))
+    
+    return अद्वितीय_ईमेल"
+"def clean_and_sort(lst):
+   result = []
+   for element in lst:
+      if type(element) == int:
+         result.append(element + 5)
+   # implement your own sorting algorithm here
+   n = len(result)
+   for i in range(n):
+      for j in range(0, n-i-1):
+         if result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   return result
+
+print(clean_and_sort([1, 2, ""hello""]))","परिभाषा स्वच्छ_और_क्रमबद्ध_करना(लाईट):
+   परिणाम = []
+   के_लिए तत्व में लाईट:
+      यदि प्रकार(तत्व) == अंक:
+         परिणाम.संलग्न(तत्व + 5)
+     # अपने स्वयं के छंटाई एल्गोरिथ्म को यहां लागू करें
+   एन = लंबाई(परिणाम)
+   के_लिए मैं में रेंज(एन):
+      के_लिए जे में रेंज(0, एन-मैं-1):
+         यदि परिणाम[जे] < परिणाम[जे+1]:
+            परिणाम[जे], परिणाम[जे+1] = परिणाम[जे+1], परिणाम[जे]
+   वापस परिणाम
+
+छापिये(स्वच्छ_और_क्रमबद्ध_करना([1, 2, ""hello""]))","def स्वच्छ_और_क्रमबद्ध_करना(लाईट):
+   परिणाम = []
+   for तत्व in लाईट:
+      if type(तत्व) == int:
+         परिणाम.append(तत्व + 5)
+      #अपने स्वयं के छंटाई एल्गोरिथ्म को यहां लागू करें
+   एन = len(परिणाम)
+   for मैं in range(एन):
+      for जे in range(0, एन-मैं-1):
+         if परिणाम[जे] < परिणाम[जे+1]:
+            परिणाम[जे], परिणाम[जे+1] = परिणाम[जे+1], परिणाम[जे]
+   return परिणाम
+
+print(स्वच्छ_और_क्रमबद्ध_करना([1, 2, ""hello""]))"
+"def is_valid_palindrome(s):
+    # Convert the string to lowercase
+    s = s.lower()
+    
+    # Initialize the two pointers
+    left = 0
+    right = len(s) - 1
+    
+    while left < right:
+        # Check if the left character is not alphabetic
+        if not s[left].isalpha():
+            left += 1
+            continue
+        
+        # Check if the right character is not alphabetic
+        if not s[right].isalpha():
+            right -= 1
+            continue
+        
+        # Check if the characters at the two positions are equal
+        if s[left] != s[right]:
+            return False
+        
+        # Move the pointers towards the middle
+        left += 1
+        right -= 1
+    
+    return True","परिभाषा मान्य_palindrome_है(एस):
+      # स्ट्रिंग को लोअरकेस में बदलें
+    एस = एस.छोटा()
+    
+      # दो बिंदुओं को शुरू करें
+    बाएं = 0
+    सही = लंबाई(एस) - 1
+    
+    जबतक बाएं < सही:
+          # जांचें कि क्या बाएं चरित्र वर्णमाला नहीं है
+        यदि ना एस[बाएं].अक्षर_है():
+            बाएं += 1
+            जारी
+        
+          # जांचें कि क्या सही चरित्र वर्णमाला नहीं है
+        यदि ना एस[सही].अक्षर_है():
+            सही -= 1
+            जारी
+        
+          # जांचें कि क्या दो पदों पर वर्ण समान हैं
+        यदि एस[बाएं] != एस[सही]:
+            वापस असत्य
+        
+          # पॉइंटर्स को बीच की ओर ले जाएं
+        बाएं += 1
+        सही -= 1
+    
+    वापस सत्य","def मान्य_palindrome_है(एस):
+       #स्ट्रिंग को लोअरकेस में बदलें
+    एस = एस.lower()
+    
+       #दो बिंदुओं को शुरू करें
+    बाएं = 0
+    सही = len(एस) - 1
+    
+    while बाएं < सही:
+           #जांचें कि क्या बाएं चरित्र वर्णमाला नहीं है
+        if not एस[बाएं].isalpha():
+            बाएं += 1
+            continue
+        
+           #जांचें कि क्या सही चरित्र वर्णमाला नहीं है
+        if not एस[सही].isalpha():
+            सही -= 1
+            continue
+        
+           #जांचें कि क्या दो पदों पर वर्ण समान हैं
+        if एस[बाएं] != एस[सही]:
+            return False
+        
+           #पॉइंटर्स को बीच की ओर ले जाएं
+        बाएं += 1
+        सही -= 1
+    
+    return True"
+"def is_palindrome(num):
+    # Convert the number to string
+    num_str = str(num)
+    
+    # Check if the number is positive
+    if num <= 0:
+        return False
+    
+    # Check if the number has at least 5 digits
+    if len(num_str) < 5:
+        return False
+    
+    # Check if the number consists of unique digits
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+    # Check if the number is divisible by 7
+    if num % 7 != 0:
+        return False
+    
+    # Check if the number is a palindrome
+    if num_str == num_str[::-1]:
+        return True
+    
+    # Check for palindromic substrings within the number
+    for i in range(len(num_str)):
+        for j in range(i+2, len(num_str)+1):
+            sub_num = num_str[i:j]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+# Testing the script
+# Decimal number
+num_decimal = 12321
+print(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+# Hexadecimal number
+num_hexadecimal = 0x12321
+print(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+# Other test cases
+print(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(f""Is 12321 a palindrome? {is_palindrome(12321)}"")","परिभाषा पालिंड्रोम_है(अंकित_करना):
+      # संख्या को स्ट्रिंग में परिवर्तित करें
+    संख्या_स्ट्रैट = स्ट्रिंग(अंकित_करना)
+    
+      # जाँच करें कि क्या संख्या सकारात्मक है
+    यदि अंकित_करना <= 0:
+        वापस असत्य
+    
+      # जांचें कि क्या संख्या में कम से कम 5 अंक हैं
+    यदि लंबाई(संख्या_स्ट्रैट) < 5:
+        वापस असत्य
+    
+      # जांचें कि क्या संख्या में अद्वितीय अंक होते हैं
+    यदि लंबाई(सेट(संख्या_स्ट्रैट)) != लंबाई(संख्या_स्ट्रैट):
+        वापस असत्य
+    
+      # जांचें कि क्या संख्या 7 से विभाज्य है
+    यदि अंकित_करना % 7 != 0:
+        वापस असत्य
+    
+      # जांचें कि क्या नंबर एक पैलिंड्रोम है
+    यदि संख्या_स्ट्रैट == संख्या_स्ट्रैट[::-1]:
+        वापस सत्य
+    
+      # संख्या के भीतर पैलिंड्रोमिक सब्सट्रिंग्स के लिए जाँच करें
+    के_लिए मैं में रेंज(लंबाई(संख्या_स्ट्रैट)):
+        के_लिए जे में रेंज(मैं+2, लंबाई(संख्या_स्ट्रैट)+1):
+            उप_संख्या = संख्या_स्ट्रैट[मैं:जे]
+            यदि उप_संख्या == उप_संख्या[::-1]:
+                वापस सत्य
+    
+    वापस असत्य
+
+  # स्क्रिप्ट का परीक्षण
+  # दशमलव संख्या
+अंकित_दशमलव = 12321
+छापिये(एफ""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+  # हेक्साडेसिमल संख्या
+नुम_हेक्साडेसिमल = 0x12321
+छापिये(एफ""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+  # अन्य परीक्षण मामले
+छापिये(एफ""Is 12345 a palindrome? {is_palindrome(12345)}"")
+छापिये(एफ""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+छापिये(एफ""Is 12321 a palindrome? {is_palindrome(12321)}"")","def पालिंड्रोम_है(अंकित_करना):
+       #संख्या को स्ट्रिंग में परिवर्तित करें
+    संख्या_स्ट्रैट = str(अंकित_करना)
+    
+       #जाँच करें कि क्या संख्या सकारात्मक है
+    if अंकित_करना <= 0:
+        return False
+    
+       #जांचें कि क्या संख्या में कम से कम 5 अंक हैं
+    if len(संख्या_स्ट्रैट) < 5:
+        return False
+    
+       #जांचें कि क्या संख्या में अद्वितीय अंक होते हैं
+    if len(set(संख्या_स्ट्रैट)) != len(संख्या_स्ट्रैट):
+        return False
+    
+       #जांचें कि क्या संख्या 7 से विभाज्य है
+    if अंकित_करना % 7 != 0:
+        return False
+    
+       #जांचें कि क्या नंबर एक पैलिंड्रोम है
+    if संख्या_स्ट्रैट == संख्या_स्ट्रैट[::-1]:
+        return True
+    
+       #संख्या के भीतर पैलिंड्रोमिक सब्सट्रिंग्स के लिए जाँच करें
+    for मैं in range(len(संख्या_स्ट्रैट)):
+        for जे in range(मैं+2, len(संख्या_स्ट्रैट)+1):
+            उप_संख्या = संख्या_स्ट्रैट[मैं:जे]
+            if उप_संख्या == उप_संख्या[::-1]:
+                return True
+    
+    return False
+
+   #स्क्रिप्ट का परीक्षण
+   #दशमलव संख्या
+अंकित_दशमलव = 12321
+print(एफ""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+   #हेक्साडेसिमल संख्या
+नुम_हेक्साडेसिमल = 0x12321
+print(एफ""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+   #अन्य परीक्षण मामले
+print(एफ""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(एफ""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(एफ""Is 12321 a palindrome? {is_palindrome(12321)}"")"
+"import re
+
+def remove_vowels(string):
+    return re.sub(r'[aeiouAEIOU]', '', string)
+
+def sort_characters(string):
+    frequency = {}
+    for char in string:
+        frequency[char] = frequency.get(char, 0) + 1
+    sorted_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    return sorted_chars
+
+def remove_vowels_and_sort(string):
+    string_without_vowels = remove_vowels(string)
+    sorted_string = sort_characters(string_without_vowels)
+    return ''.join(sorted_string)","आयात दोबारा
+
+परिभाषा स्वरों_को_हटा_दें(डोरी):
+    वापस दोबारा.उप(आर'[aeiouAEIOU]', '', डोरी)
+
+परिभाषा छाँटने_वाले_अक्षर(डोरी):
+    आवृत्ति = {}
+    के_लिए लपेटना में डोरी:
+        आवृत्ति[लपेटना] = आवृत्ति.पाना(लपेटना, 0) + 1
+    सॉर्टेड_चार्स = क्रमबद्ध(आवृत्ति.कीज़(), चाबी=लैम्ब्डा एक्स: (-आवृत्ति[एक्स], एक्स))
+    वापस सॉर्टेड_चार्स
+
+परिभाषा स्वर_निकालें_और_सॉर्ट_करें(डोरी):
+    स्वरों_के_बिना_स्ट्रिंग = स्वरों_को_हटा_दें(डोरी)
+    क्रमबद्ध_स्ट्रिंग = छाँटने_वाले_अक्षर(स्वरों_के_बिना_स्ट्रिंग)
+    वापस ''.जोड़(क्रमबद्ध_स्ट्रिंग)","import दोबारा
+
+def स्वरों_को_हटा_दें(डोरी):
+    return दोबारा.उप(आर'[aeiouAEIOU]', '', डोरी)
+
+def छाँटने_वाले_अक्षर(डोरी):
+    आवृत्ति = {}
+    for लपेटना in डोरी:
+        आवृत्ति[लपेटना] = आवृत्ति.get(लपेटना, 0) + 1
+    सॉर्टेड_चार्स = sorted(आवृत्ति.keys(), चाबी=lambda एक्स: (-आवृत्ति[एक्स], एक्स))
+    return सॉर्टेड_चार्स
+
+def स्वर_निकालें_और_सॉर्ट_करें(डोरी):
+    स्वरों_के_बिना_स्ट्रिंग = स्वरों_को_हटा_दें(डोरी)
+    क्रमबद्ध_स्ट्रिंग = छाँटने_वाले_अक्षर(स्वरों_के_बिना_स्ट्रिंग)
+    return ''.join(क्रमबद्ध_स्ट्रिंग)"

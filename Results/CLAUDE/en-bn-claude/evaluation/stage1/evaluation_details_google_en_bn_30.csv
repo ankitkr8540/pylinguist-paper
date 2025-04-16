@@ -1,0 +1,1978 @@
+chunk_size,index,original_code,translated_code,back_translated_code,bleu_score,syntax_valid,structure_score,semantic_score,token_match,overall_score
+0,1,"for i in range(10):  # First digit
+    for j in range(10):  # Second digit
+        for k in range(10):  # Third digit
+            # Checking for the conditions
+            if i != 5 and j != 5 and k != 5 and i != j and i != k and j != k:
+                print(i, j, k)","for আমি in range(10): #প্রথম অঙ্ক
+    for জে in range(10): #দ্বিতীয় সংখ্যা
+        for কে in range(10): #তৃতীয় সংখ্যা
+               #শর্তগুলির জন্য পরীক্ষা করা হচ্ছে
+            if আমি != 5 and জে != 5 and কে != 5 and আমি != জে and আমি != কে and জে != কে:
+                print(আমি, জে, কে)","for I in range(10): # First digit
+    for J in range(10): # Second number
+        for Who in range(10): # Third number
+                # Testing for the conditions is being done
+            if I != 5 and J != 5 and Who != 5 and I != J and I != Who and J != Who:
+                print(I, J, Who)",0.4025636325702218,True,1.0,0.8837680220603943,1.0,0.8572663309261233
+0,2,"def count_distinct_states(matrix):
+    count = 0
+    states = set()
+    for row in matrix:
+        for col in row:
+            state = ''.join(col)
+            if state not in states:
+                count += 1
+            states.add(state)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(count_distinct_states(matrix))
+# Output: 4","def গণনা_স্বতন্ত্র_রাজ্য(ম্যাট্রিক্স):
+    count = 0
+    রাজ্য = set()
+    for সারি in ম্যাট্রিক্স:
+        for কর্নেল in সারি:
+            রাষ্ট্র = ''.join(কর্নেল)
+            if রাষ্ট্র not in রাজ্য:
+                count += 1
+            রাজ্য.add(রাষ্ট্র)
+    return count
+
+ম্যাট্রিক্স = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(গণনা_স্বতন্ত্র_রাজ্য(ম্যাট্রিক্স))
+   #আউটপুট: 4","def Calculate(Matrix):
+    count = 0
+    State = set()
+    for Line in Matrix:
+        for Colonel in Line:
+            State = ''.join(Colonel)
+            if State not in State:
+                count += 1
+            State.add(State)
+    return count
+
+Matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(Calculate(Matrix))
+    # Output: 4",0.5548787721436641,True,0.5,0.6946057677268982,1.0,0.7498969079741125
+0,3,"def remove_spaces_and_punctuation(s):
+    result = """"
+    for char in s:
+        if char.isalnum():
+            result += char
+    return result","def স্পেস_এবং_বিরামচিহ্নগুলি_সরান(এস):
+    ফলাফল = """"
+    for চর in এস:
+        if চর.isalnum():
+            ফলাফল += চর
+    return ফলাফল","def Remove_spaces_and_punctuation(S):
+    Result = """"
+    for Mango in S:
+        if Mango.isalnum():
+            Result += Mango
+    return Result",0.23466272806717112,True,0.5,0.8965445160865784,1.0,0.7262414488307499
+0,4,"import math
+
+def is_prime(n):
+    # Check if the number is less than 2 or not an integer
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+    # Check if the number is divisible by any integer from 2 to the square root of n
+    for i in range(2, math.isqrt(n) + 1):
+        if n % i == 0:
+            return ""Not Prime""
+
+    return ""Prime""","import গণিত
+
+def প্রাইম(এন):
+       #নম্বরটি 2 এর চেয়ে কম কিনা তা পরীক্ষা করুন বা কোনও পূর্ণসংখ্যা নয়
+    if এন < 2 or not isinstance(এন, int):
+        return ""Not Prime""
+
+       #2 থেকে এন এর বর্গমূল পর্যন্ত কোনও পূর্ণসংখ্যার দ্বারা সংখ্যাটি বিভাজ্য কিনা তা পরীক্ষা করে দেখুন
+    for আমি in range(2, গণিত.isqrt(এন) + 1):
+        if এন % আমি == 0:
+            return ""Not Prime""
+
+    return ""Prime""","import Mathematics
+
+def Prime(N):
+        # Check whether the number is less than 2 or no integer
+    if N < 2 or not isinstance(N, int):
+        return ""Not Prime""
+
+        # Check if the number is divided by an integer from 2 to n the square root
+    for I in range(2, Mathematics.isqrt(N) + 1):
+        if N % I == 0:
+            return ""Not Prime""
+
+    return ""Prime""",0.5241358407636589,True,0.5,0.9450916647911072,1.0,0.7938455011109532
+0,5,"class String:
+    def __init__(self, string):
+        self.string = string
+
+    def replace_odd_occurrences(self, substring, replace_with):
+        count = self.string.count(substring)
+        if count % 2 == 0 or count == 0:
+            return self.string
+
+        result = """"
+        stack = []
+
+        for i in range(len(self.string)):
+            if self.string[i:i+len(substring)] == substring:
+                if len(stack) > 0 and (stack[-1] == '(' or stack[-1] == '['):
+                    stack.append(substring)
+                    result += substring
+                elif len(stack) > 0 and (stack[-1] == ')' or stack[-1] == ']'):
+                    stack.pop()
+                    result += substring
+                else:
+                    stack.append(substring)
+                    result += replace_with
+            else:
+                result += self.string[i]
+
+            if len(stack) > 0 and stack[-1] == substring:
+                stack.pop()
+
+        return result","class str:
+    def __init__(self, str):
+        self.str = str
+
+    def বিজোড়_ঘটনাগুলি_প্রতিস্থাপন_করুন(self, সাবস্ট্রিং, সঙ্গে_প্রতিস্থাপন):
+        count = self.str.count(সাবস্ট্রিং)
+        if count % 2 == 0 or count == 0:
+            return self.str
+
+        ফলাফল = """"
+        স্ট্যাক = []
+
+        for আমি in range(len(self.str)):
+            if self.str[আমি:আমি+len(সাবস্ট্রিং)] == সাবস্ট্রিং:
+                if len(স্ট্যাক) > 0 and (স্ট্যাক[-1] == '(' or স্ট্যাক[-1] == '['):
+                    স্ট্যাক.append(সাবস্ট্রিং)
+                    ফলাফল += সাবস্ট্রিং
+                elif len(স্ট্যাক) > 0 and (স্ট্যাক[-1] == ')' or স্ট্যাক[-1] == ']'):
+                    স্ট্যাক.pop()
+                    ফলাফল += সাবস্ট্রিং
+                else:
+                    স্ট্যাক.append(সাবস্ট্রিং)
+                    ফলাফল += সঙ্গে_প্রতিস্থাপন
+            else:
+                ফলাফল += self.str[আমি]
+
+            if len(স্ট্যাক) > 0 and স্ট্যাক[-1] == সাবস্ট্রিং:
+                স্ট্যাক.pop()
+
+        return ফলাফল","class str:
+    def __init__(self, str):
+        self.str = str
+
+    def Replace_the_odd_events(self, Substring, Replace_with):
+        count = self.str.count(Substring)
+        if count % 2 == 0 or count == 0:
+            return self.str
+
+        Result = """"
+        Stack = []
+
+        for I in range(len(self.str)):
+            if self.str[I:I+len(Substring)] == Substring:
+                if len(Stack) > 0 and (Stack[-1] == '(' or Stack[-1] == '['):
+                    Stack.append(Substring)
+                    Result += Substring
+                elif len(Stack) > 0 and (Stack[-1] == ')' or Stack[-1] == ']'):
+                    Stack.pop()
+                    Result += Substring
+                else:
+                    Stack.append(Substring)
+                    Result += Replace_with
+            else:
+                Result += self.str[I]
+
+            if len(Stack) > 0 and Stack[-1] == Substring:
+                Stack.pop()
+
+        return Result",0.48228480755095404,True,0.4444444444444444,0.9258601665496826,1.0,0.7705178837090163
+0,6,"def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def has_digit_7(num):
+    while num > 0:
+        if num % 10 == 7:
+            return True
+        num //= 10
+    return False
+
+def sum_of_primes():
+    sum_of_primes = 0
+    for num in range(1000000, 2000001):
+        if is_prime(num) and not has_digit_7(num):
+            sum_of_primes += num
+    return sum_of_primes
+
+result = sum_of_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)","def প্রাইম(isdigit):
+    if isdigit <= 1:
+        return False
+    for আমি in range(2, int(isdigit**0.5) + 1):
+        if isdigit % আমি == 0:
+            return False
+    return True
+
+def ডিজিট_7_আছে(isdigit):
+    while isdigit > 0:
+        if isdigit % 10 == 7:
+            return True
+        isdigit //= 10
+    return False
+
+def প্রাইমগুলির_যোগফল():
+    প্রাইমগুলির_যোগফল = 0
+    for isdigit in range(1000000, 2000001):
+        if প্রাইম(isdigit) and not ডিজিট_7_আছে(isdigit):
+            প্রাইমগুলির_যোগফল += isdigit
+    return প্রাইমগুলির_যোগফল
+
+ফলাফল = প্রাইমগুলির_যোগফল()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", ফলাফল)","def Prime(isdigit):
+    if isdigit <= 1:
+        return False
+    for I in range(2, int(isdigit**0.5) + 1):
+        if isdigit % I == 0:
+            return False
+    return True
+
+def Have_digit_7(isdigit):
+    while isdigit > 0:
+        if isdigit % 10 == 7:
+            return True
+        isdigit //= 10
+    return False
+
+def Prime():
+    Prime = 0
+    for isdigit in range(1000000, 2000001):
+        if Prime(isdigit) and not Have_digit_7(isdigit):
+            Prime += isdigit
+    return Prime
+
+Result = Prime()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", Result)",0.48673282839160087,True,0.5,0.978159487247467,1.0,0.7929784631278135
+0,7,"def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def find_prime_sum_array(N, M, X):
+    prime_sum_array = []
+    current_number = M
+    sum_so_far = 0
+
+    while len(prime_sum_array) < N and current_number <= X:
+        if is_prime(sum_so_far + current_number):
+            prime_sum_array.append(current_number)
+            sum_so_far += current_number
+        current_number += M
+
+    if not is_prime(sum_so_far):
+        return []
+
+    return prime_sum_array
+
+# Example usage
+N = 5
+M = 3
+X = 20
+
+result = find_prime_sum_array(N, M, X)
+print(result)","def প্রাইম(isdigit):
+    if isdigit < 2:
+        return False
+    for আমি in range(2, int(isdigit ** 0.5) + 1):
+        if isdigit % আমি == 0:
+            return False
+    return True
+
+def প্রাইম_যোগ_অ্যারে_সন্ধান_করুন(এন, মি, এক্স):
+    প্রাইম_যোগ_অ্যারে = []
+    বর্তমান_সংখ্যা = মি
+    এখন_পর্যন্ত_যোগফল = 0
+
+    while len(প্রাইম_যোগ_অ্যারে) < এন and বর্তমান_সংখ্যা <= এক্স:
+        if প্রাইম(এখন_পর্যন্ত_যোগফল + বর্তমান_সংখ্যা):
+            প্রাইম_যোগ_অ্যারে.append(বর্তমান_সংখ্যা)
+            এখন_পর্যন্ত_যোগফল += বর্তমান_সংখ্যা
+        বর্তমান_সংখ্যা += মি
+
+    if not প্রাইম(এখন_পর্যন্ত_যোগফল):
+        return []
+
+    return প্রাইম_যোগ_অ্যারে
+
+   #উদাহরণ ব্যবহার
+এন = 5
+মি = 3
+এক্স = 20
+
+ফলাফল = প্রাইম_যোগ_অ্যারে_সন্ধান_করুন(এন, মি, এক্স)
+print(ফলাফল)","def Prime(isdigit):
+    if isdigit < 2:
+        return False
+    for I in range(2, int(isdigit ** 0.5) + 1):
+        if isdigit % I == 0:
+            return False
+    return True
+
+def Look_for_prime_yoga_array(N, M, X):
+    Prime_yoga_array = []
+    Current_number = M
+    The_sum_so_far = 0
+
+    while len(Prime_yoga_array) < N and Current_number <= X:
+        if Prime(The_sum_so_far + Current_number):
+            Prime_yoga_array.append(Current_number)
+            The_sum_so_far += Current_number
+        Current_number += M
+
+    if not Prime(The_sum_so_far):
+        return []
+
+    return Prime_yoga_array
+
+    # Instance
+N = 5
+M = 3
+X = 20
+
+Result = Look_for_prime_yoga_array(N, M, X)
+print(Result)",0.5141569938705167,True,0.5,0.8236839771270752,1.0,0.7675681941995184
+0,8,"def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def max_prime_difference(arr):
+    primes = []
+    for num in arr:
+        if is_prime(abs(num)):
+            primes.append(abs(num))
+    if len(primes) < 2:
+        return 0
+    max_diff = 0
+    for i in range(len(primes)-1):
+        diff = abs(primes[i] - primes[i+1])
+        if diff > max_diff:
+            max_diff = diff
+    return max_diff","def প্রাইম(এন):
+    if এন < 2:
+        return False
+    for আমি in range(2, int(এন**0.5) + 1):
+        if এন % আমি == 0:
+            return False
+    return True
+
+def সর্বাধিক_প্রধান_পার্থক্য(আর):
+    প্রাইমস = []
+    for isdigit in আর:
+        if প্রাইম(abs(isdigit)):
+            প্রাইমস.append(abs(isdigit))
+    if len(প্রাইমস) < 2:
+        return 0
+    সর্বাধিক_ডিফ = 0
+    for আমি in range(len(প্রাইমস)-1):
+        ডিফ = abs(প্রাইমস[আমি] - প্রাইমস[আমি+1])
+        if ডিফ > সর্বাধিক_ডিফ:
+            সর্বাধিক_ডিফ = ডিফ
+    return সর্বাধিক_ডিফ","def Prime(N):
+    if N < 2:
+        return False
+    for I in range(2, int(N**0.5) + 1):
+        if N % I == 0:
+            return False
+    return True
+
+def The_most_main_difference(More):
+    Primes = []
+    for isdigit in More:
+        if Prime(abs(isdigit)):
+            Primes.append(abs(isdigit))
+    if len(Primes) < 2:
+        return 0
+    Defe = 0
+    for I in range(len(Primes)-1):
+        Def = abs(Primes[I] - Primes[I+1])
+        if Def > Defe:
+            Defe = Def
+    return Defe",0.44275843266747267,True,0.5,0.945685625076294,1.0,0.7776888115487534
+0,9,"import math
+
+def calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio):
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate the height using the Law of Sines
+    height = opposite_side_length * math.sin(angle_rad) / side_ratio
+
+    # Calculate the length of the adjacent side using the Law of Cosines
+    adjacent_side_length = math.sqrt(side_lengths**2 + opposite_side_length**2 - 2 * side_lengths * opposite_side_length * math.cos(angle_rad))
+
+    # Calculate the hypotenuse of the triangle
+    hypotenuse = side_lengths / math.cos(angle_rad)
+
+    # Calculate the remaining side using Pythagorean theorem
+    remaining_side_length = math.sqrt(hypotenuse**2 - adjacent_side_length**2)
+
+    # Calculate the final height of the triangle
+    height += remaining_side_length
+
+    return height
+
+
+def simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True):
+    # Initialize variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate initial velocities
+    vx = initial_velocity * math.cos(angle_rad)
+    vy = initial_velocity * math.sin(angle_rad)
+
+    # Simulate the motion until the y-coordinate becomes negative (reached the ground)
+    while y >= 0:
+        # Calculate the acceleration due to air resistance
+        if air_resistance:
+            air_resistance_acceleration = -0.5 * vy**2  # Simplified model for air resistance
+        else:
+            air_resistance_acceleration = 0.0  # No air resistance
+
+        # Calculate the new velocities using the kinematic equations
+        vx += air_resistance_acceleration * math.cos(angle_rad) * time_interval
+        vy += (-9.8 + air_resistance_acceleration * math.sin(angle_rad)) * time_interval
+
+        # Calculate the new position using the kinematic equations
+        x += vx * time_interval
+        y += vy * time_interval
+
+        # Increment the time
+        time += time_interval
+
+    return x, y, time
+
+
+# Example usage
+angle = 45  # Angle in degrees
+side_lengths = 5
+opposite_side_length = 3
+side_ratio = 2
+height = calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio)
+print(f""The height of the triangle is: {height}"")
+
+initial_velocity = 10  # m/s
+time_interval = 0.01  # seconds
+x, y, total_time = simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True)
+print(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","import গণিত
+
+def ত্রিভুজ_উচ্চতা_গণনা_করুন(কোণ, পাশের_দৈর্ঘ্য, বিপরীত_দিকের_দৈর্ঘ্য, পার্শ্ব_অনুপাত):
+       #ডিগ্রি থেকে রেডিয়ানে অ্যাঙ্গেল রূপান্তর করুন
+    কোণ_রেড = গণিত.রেডিয়ান(কোণ)
+
+       #সাইনসের আইন ব্যবহার করে উচ্চতা গণনা করুন
+    উচ্চতা = বিপরীত_দিকের_দৈর্ঘ্য * গণিত.পাপ(কোণ_রেড) / পার্শ্ব_অনুপাত
+
+       #কোসাইনগুলির আইন ব্যবহার করে সংলগ্ন পক্ষের দৈর্ঘ্য গণনা করুন
+    সংলগ্ন_পাশের_দৈর্ঘ্য = গণিত.এসকিউআরটি(পাশের_দৈর্ঘ্য**2 + বিপরীত_দিকের_দৈর্ঘ্য**2 - 2 * পাশের_দৈর্ঘ্য * বিপরীত_দিকের_দৈর্ঘ্য * গণিত.কোস(কোণ_রেড))
+
+       #ত্রিভুজটির হাইপোটেনিউজ গণনা করুন
+    হাইপোটেনিউজ = পাশের_দৈর্ঘ্য / গণিত.কোস(কোণ_রেড)
+
+       #পাইথাগোরিয়ান উপপাদ্য ব্যবহার করে অবশিষ্ট দিকটি গণনা করুন
+    পাশের_দৈর্ঘ্য = গণিত.এসকিউআরটি(হাইপোটেনিউজ**2 - সংলগ্ন_পাশের_দৈর্ঘ্য**2)
+
+       #ত্রিভুজটির চূড়ান্ত উচ্চতা গণনা করুন
+    উচ্চতা += পাশের_দৈর্ঘ্য
+
+    return উচ্চতা
+
+
+def ত্রিভুজ_গতি_সিমুলেট_করুন(প্রাথমিক_বেগ, কোণ, সময়ের_ব্যবধান, বায়ু_প্রতিরোধ=True):
+       #ভেরিয়েবলগুলি আরম্ভ করুন
+    এক্স = 0.0
+    y = 0.0
+    সময় = 0.0
+
+       #ডিগ্রি থেকে রেডিয়ানে অ্যাঙ্গেল রূপান্তর করুন
+    কোণ_রেড = গণিত.রেডিয়ান(কোণ)
+
+       #প্রাথমিক বেগ গণনা করুন
+    ভিএক্স = প্রাথমিক_বেগ * গণিত.কোস(কোণ_রেড)
+    vy = প্রাথমিক_বেগ * গণিত.পাপ(কোণ_রেড)
+
+       #ওয়াই_সমন্বয় নেতিবাচক না হওয়া পর্যন্ত গতিটি অনুকরণ করুন (মাটিতে পৌঁছেছেন)
+    while y >= 0:
+           #বায়ু প্রতিরোধের কারণে ত্বরণ গণনা করুন
+        if বায়ু_প্রতিরোধ:
+            বায়ু_প্রতিরোধের_ত্বরণ = -0.5 * vy**2 #বায়ু প্রতিরোধের জন্য সরলিকৃত মডেল
+        else:
+            বায়ু_প্রতিরোধের_ত্বরণ = 0.0 #কোনও বায়ু প্রতিরোধের নেই
+
+           #কাইনাম্যাটিক সমীকরণগুলি ব্যবহার করে নতুন বেগগুলি গণনা করুন
+        ভিএক্স += বায়ু_প্রতিরোধের_ত্বরণ * গণিত.কোস(কোণ_রেড) * সময়ের_ব্যবধান
+        vy += (-9.8 + বায়ু_প্রতিরোধের_ত্বরণ * গণিত.পাপ(কোণ_রেড)) * সময়ের_ব্যবধান
+
+           #কাইনেম্যাটিক সমীকরণগুলি ব্যবহার করে নতুন অবস্থান গণনা করুন
+        এক্স += ভিএক্স * সময়ের_ব্যবধান
+        y += vy * সময়ের_ব্যবধান
+
+           #সময় বৃদ্ধি
+        সময় += সময়ের_ব্যবধান
+
+    return এক্স, y, সময়
+
+
+   #উদাহরণ ব্যবহার
+কোণ = 45 #ডিগ্রিতে কোণ
+পাশের_দৈর্ঘ্য = 5
+বিপরীত_দিকের_দৈর্ঘ্য = 3
+পার্শ্ব_অনুপাত = 2
+উচ্চতা = ত্রিভুজ_উচ্চতা_গণনা_করুন(কোণ, পাশের_দৈর্ঘ্য, বিপরীত_দিকের_দৈর্ঘ্য, পার্শ্ব_অনুপাত)
+print(চ""The height of the triangle is: {height}"")
+
+প্রাথমিক_বেগ = 10 #মেসার্স
+সময়ের_ব্যবধান = 0.01 #সেকেন্ড
+এক্স, y, মোট_সময় = ত্রিভুজ_গতি_সিমুলেট_করুন(প্রাথমিক_বেগ, কোণ, সময়ের_ব্যবধান, বায়ু_প্রতিরোধ=True)
+print(চ""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","import Mathematics
+
+def Count_the_height_of_the_triangle(Angle, Side, Opposite_direction, Side_proportion):
+        # Convert Angle from Degree to Radian
+    The_angle_of_the_angle = Mathematics.Radian(Angle)
+
+        # Calculate the height using the law of the sinus
+    Height = Opposite_direction * Mathematics.Sin(The_angle_of_the_angle) / Side_proportion
+
+        # Calculate the length of the adjacent sides using the laws of the Cosine
+    Adjacent_side = Mathematics.SQRT(Side**2 + Opposite_direction**2 - 2 * Side * Opposite_direction * Mathematics.Cos(The_angle_of_the_angle))
+
+        # Calculate the hypotenus of the triangle
+    Hypotenube = Side / Mathematics.Cos(The_angle_of_the_angle)
+
+        # Calculate the remaining side using the Pythagorian epithet
+    Side = Mathematics.SQRT(Hypotenube**2 - Adjacent_side**2)
+
+        # Count the final height of the triangle
+    Height += Side
+
+    return Height
+
+
+def Simulate_the_triangle_speed(Initial_velocity, Angle, Time_interval, To_prevent_the_wind=True):
+        # Start the variables
+    X = 0.0
+    y = 0.0
+    Time = 0.0
+
+        # Convert Angle from Degree to Radian
+    The_angle_of_the_angle = Mathematics.Radian(Angle)
+
+        # Count the initial velocity
+    VX = Initial_velocity * Mathematics.Cos(The_angle_of_the_angle)
+    vy = Initial_velocity * Mathematics.Sin(The_angle_of_the_angle)
+
+        # Mimic the motion until Wi_Manavay is negative (reached the ground)
+    while y >= 0:
+            # Calculate the acceleration due to air resistance
+        if To_prevent_the_wind:
+            Acceleration = -0.5 * vy**2 # Air
+        else:
+            Acceleration = 0.0 # There is no air resistance
+
+            # Calculate new velocity using the kinamatic equations
+        VX += Acceleration * Mathematics.Cos(The_angle_of_the_angle) * Time_interval
+        vy += (-9.8 + Acceleration * Mathematics.Sin(The_angle_of_the_angle)) * Time_interval
+
+            # Calculate new locations using cinematic equations
+        X += VX * Time_interval
+        y += vy * Time_interval
+
+            # Increase
+        Time += Time_interval
+
+    return X, y, Time
+
+
+    # Instance
+Angle = 45 # Degree
+Side = 5
+Opposite_direction = 3
+Side_proportion = 2
+Height = Count_the_height_of_the_triangle(Angle, Side, Opposite_direction, Side_proportion)
+print(F""The height of the triangle is: {height}"")
+
+Initial_velocity = 10 # Messrs.
+Time_interval = 0.01 # Second
+X, y, Time = Simulate_the_triangle_speed(Initial_velocity, Angle, Time_interval, To_prevent_the_wind=True)
+print(F""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")",0.26696332167949166,True,0.5,0.9260041117668152,1.0,0.7385934866892614
+0,10,"import math
+
+def calculate_circle_area(radius):
+    try:
+        radius = float(radius)
+        if radius <= 0:
+            return ""Error: Radius must be a positive number""
+        area = math.pi * radius**2
+        return ""{:.2f}"".format(area)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","import গণিত
+
+def বৃত্ত_অঞ্চল_গণনা_করুন(ব্যাসার্ধ):
+    try:
+        ব্যাসার্ধ = float(ব্যাসার্ধ)
+        if ব্যাসার্ধ <= 0:
+            return ""Error: Radius must be a positive number""
+        অঞ্চল = গণিত.পাই * ব্যাসার্ধ**2
+        return ""{:.2f}"".format(অঞ্চল)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","import Mathematics
+
+def Calculate_the_circle_zone(Radius):
+    try:
+        Radius = float(Radius)
+        if Radius <= 0:
+            return ""Error: Radius must be a positive number""
+        Region = Mathematics.Pile * Radius**2
+        return ""{:.2f}"".format(Region)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""",0.42263703764113936,True,0.5,0.7940453290939331,1.0,0.7433364733470145
+0,11,"def multiply_matrices(A, B):
+    a, b, c = A[0][0], A[0][1], A[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    return [
+        [a*d + b*e, a*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+def power_matrix(A, n):
+    if n == 0:
+        return [[1, 0], [0, 1]]  # Identity matrix
+    
+    result = power_matrix(A, n // 2)
+    result = multiply_matrices(result, result)
+    
+    if n % 2 == 1:
+        result = multiply_matrices(result, A)
+    
+    return result
+
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_matrix(matrix, n - 1)
+    
+    return result[0][0]","def ম্যাট্রিকগুলি_গুণ_করুন(ক, খ):
+    ক, খ, গ = ক[0][0], ক[0][1], ক[1][0]
+    ডি, ই, চ = খ[0][0], খ[0][1], খ[1][0]
+    
+    return [
+        [ক*ডি + খ*ই, ক*ই + খ*চ],
+        [গ*ডি + ই*ডি, গ*ই + ই*চ]
+    ]
+
+
+def পাওয়ার_ম্যাট্রিক্স(ক, এন):
+    if এন == 0:
+        return [[1, 0], [0, 1]] #পরিচয় ম্যাট্রিক্স
+    
+    ফলাফল = পাওয়ার_ম্যাট্রিক্স(ক, এন // 2)
+    ফলাফল = ম্যাট্রিকগুলি_গুণ_করুন(ফলাফল, ফলাফল)
+    
+    if এন % 2 == 1:
+        ফলাফল = ম্যাট্রিকগুলি_গুণ_করুন(ফলাফল, ক)
+    
+    return ফলাফল
+
+
+def ফিবোনাচি(এন):
+    if এন == 0:
+        return 0
+    
+    ম্যাট্রিক্স = [[1, 1], [1, 0]]
+    ফলাফল = পাওয়ার_ম্যাট্রিক্স(ম্যাট্রিক্স, এন - 1)
+    
+    return ফলাফল[0][0]","def Multiply_the_matrices(Ay, B):
+    Ay, B, C = Ay[0][0], Ay[0][1], Ay[1][0]
+    D, E, F = B[0][0], B[0][1], B[1][0]
+    
+    return [
+        [Ay*D + B*E, Ay*E + B*F],
+        [C*D + E*D, C*E + E*F]
+    ]
+
+
+def Power_matrix(Ay, N):
+    if N == 0:
+        return [[1, 0], [0, 1]] # Identity matrix
+    
+    Result = Power_matrix(Ay, N // 2)
+    Result = Multiply_the_matrices(Result, Result)
+    
+    if N % 2 == 1:
+        Result = Multiply_the_matrices(Result, Ay)
+    
+    return Result
+
+
+def Fibonachi(N):
+    if N == 0:
+        return 0
+    
+    Matrix = [[1, 1], [1, 0]]
+    Result = Power_matrix(Matrix, N - 1)
+    
+    return Result[0][0]",0.46956379915502217,True,0.5,0.9427863955497742,1.0,0.7824700389409592
+0,12,"def debug_program(arr):
+    n = len(arr)
+    return binary_search(arr, 0, n - 1)
+
+def binary_search(arr, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end) // 2
+    
+    if arr[mid] == mid:
+        return mid
+    
+    left_result = binary_search(arr, start, min(mid - 1, arr[mid]))
+    right_result = binary_search(arr, max(mid + 1, arr[mid]), end)
+    
+    return max(left_result, right_result)","def ডিবাগ_প্রোগ্রাম(আর):
+    এন = len(আর)
+    return বাইনারি_অনুসন্ধান(আর, 0, এন - 1)
+
+def বাইনারি_অনুসন্ধান(আর, শুরু, শেষ):
+    if শুরু > শেষ:
+        return -1
+    
+    মিড = (শুরু + শেষ) // 2
+    
+    if আর[মিড] == মিড:
+        return মিড
+    
+    বাম_ফলাফল = বাইনারি_অনুসন্ধান(আর, শুরু, min(মিড - 1, আর[মিড]))
+    সঠিক_ফলাফল = বাইনারি_অনুসন্ধান(আর, max(মিড + 1, আর[মিড]), শেষ)
+    
+    return max(বাম_ফলাফল, সঠিক_ফলাফল)","def Debug_program(More):
+    N = len(More)
+    return Binary_search(More, 0, N - 1)
+
+def Binary_search(More, Start, End):
+    if Start > End:
+        return -1
+    
+    Mid = (Start + End) // 2
+    
+    if More[Mid] == Mid:
+        return Mid
+    
+    The_result_of_the_left = Binary_search(More, Start, min(Mid - 1, More[Mid]))
+    Accurate_result = Binary_search(More, max(Mid + 1, More[Mid]), End)
+    
+    return max(The_result_of_the_left, Accurate_result)",0.19218998643029395,True,0.5,0.9132609367370605,1.0,0.7210901846334709
+0,13,"import math
+
+def power(x, y):
+    # Check for invalid inputs
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+    # Check if x is between 1 and 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+    # Check if y is between 0 and 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+    # Custom algorithm for calculating power
+    result = x ** y
+
+    # Check if result exceeds threshold for scientific notation
+    if result > 1e6:
+        return ""{:.2e}"".format(result)
+    else:
+        return result
+
+# Example usage
+x = 2.5
+y = 3
+result = power(x, y)
+print(result)","import গণিত
+
+def শক্তি(এক্স, y):
+       #অবৈধ ইনপুটগুলির জন্য পরীক্ষা করুন
+    if not isinstance(এক্স, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+       #এক্স 1 এবং 10 এর মধ্যে কিনা তা পরীক্ষা করুন
+    if not 1 <= এক্স <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+       #Y 0 থেকে 5 এর মধ্যে কিনা তা পরীক্ষা করুন
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+       #পাওয়ার গণনার জন্য কাস্টম অ্যালগরিদম
+    ফলাফল = এক্স ** y
+
+       #বৈজ্ঞানিক স্বরলিপি জন্য ফলাফল প্রান্তিকের চেয়ে বেশি কিনা তা পরীক্ষা করুন
+    if ফলাফল > 1E6:
+        return ""{:.2e}"".format(ফলাফল)
+    else:
+        return ফলাফল
+
+   #উদাহরণ ব্যবহার
+এক্স = 2.5
+y = 3
+ফলাফল = শক্তি(এক্স, y)
+print(ফলাফল)","import Mathematics
+
+def Power(X, y):
+        # Check for Invalid Inputs
+    if not isinstance(X, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+        # Check whether between X1 and 10
+    if not 1 <= X <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+        #Y 0 থেকে 5 এর মধ্যে কিনা তা পরীক্ষা করুন
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+        # Custom algorithm for power count
+    Result = X ** y
+
+        # Check whether the results for the scientific vocabulary are higher than the marginal
+    if Result > 1E6:
+        return ""{:.2e}"".format(Result)
+    else:
+        return Result
+
+    # Instance
+X = 2.5
+y = 3
+Result = Power(X, y)
+print(Result)",0.6280435817975556,True,0.5,0.7245670557022095,1.0,0.7705221274999531
+0,14,"def bubble_sort_descending(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+sorted_arr = bubble_sort_descending(arr)
+print(sorted_arr)","def বুদ্বুদ_বাছাই_অবতরণ(আর):
+    এন = len(আর)
+    for আমি in range(এন - 1):
+        for জে in range(এন - আমি - 1):
+            if আর[জে] < আর[জে + 1]:
+                আর[জে], আর[জে + 1] = আর[জে + 1], আর[জে]
+    return আর
+
+আর = [3, 2, 1, 5, 4]
+সাজানো_এআরআর = বুদ্বুদ_বাছাই_অবতরণ(আর)
+print(সাজানো_এআরআর)","def Landing_in_the_bubble(More):
+    N = len(More)
+    for I in range(N - 1):
+        for J in range(N - I - 1):
+            if More[J] < More[J + 1]:
+                More[J], More[J + 1] = More[J + 1], More[J]
+    return More
+
+More = [3, 2, 1, 5, 4]
+Sorted_ARR = Landing_in_the_bubble(More)
+print(Sorted_ARR)",0.35100715258712745,True,0.5,0.799412727355957,1.0,0.7300839759886169
+0,15,"def sum_prime_numbers(arr):
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    prime_sum = 0
+    for num in arr:
+        if is_prime(num):
+            prime_sum += num
+    return prime_sum","def সমষ্টি_প্রাথমিক_সংখ্যা(আর):
+    def প্রাইম(এন):
+        if এন <= 1:
+            return False
+        for আমি in range(2, int(এন**0.5) + 1):
+            if এন % আমি == 0:
+                return False
+        return True
+
+    প্রাইম_সুম = 0
+    for isdigit in আর:
+        if প্রাইম(isdigit):
+            প্রাইম_সুম += isdigit
+    return প্রাইম_সুম","def The_initial_number_of_the_sum(More):
+    def Prime(N):
+        if N <= 1:
+            return False
+        for I in range(2, int(N**0.5) + 1):
+            if N % I == 0:
+                return False
+        return True
+
+    Prime_Sumer = 0
+    for isdigit in More:
+        if Prime(isdigit):
+            Prime_Sumer += isdigit
+    return Prime_Sumer",0.4273699828068635,True,0.5,0.8740849494934082,1.0,0.7602909864600543
+0,16,"def calculate_factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+def calculate_factorials(arr):
+    result = []
+    for num in arr:
+        result.append(calculate_factorial(num))
+    return result
+
+arr = [1, 2, 3, 4, 5]
+factorials = calculate_factorials(arr)
+print(factorials)","def ফ্যাক্টরিয়াল_গণনা_করুন(এন):
+    if এন == 0:
+        return 1
+    else:
+        return এন * ফ্যাক্টরিয়াল_গণনা_করুন(এন - 1)
+
+def ফ্যাক্টরিয়ালস_গণনা_করুন(আর):
+    ফলাফল = []
+    for isdigit in আর:
+        ফলাফল.append(ফ্যাক্টরিয়াল_গণনা_করুন(isdigit))
+    return ফলাফল
+
+আর = [1, 2, 3, 4, 5]
+ফ্যাক্টরিয়ালস = ফ্যাক্টরিয়ালস_গণনা_করুন(আর)
+print(ফ্যাক্টরিয়ালস)","def Calculate_Factory(N):
+    if N == 0:
+        return 1
+    else:
+        return N * Calculate_Factory(N - 1)
+
+def Calculate_Factors(More):
+    Result = []
+    for isdigit in More:
+        Result.append(Calculate_Factory(isdigit))
+    return Result
+
+More = [1, 2, 3, 4, 5]
+Factorials = Calculate_Factors(More)
+print(Factorials)",0.40043065925275445,True,0.5,0.8429446816444397,1.0,0.7486750681794389
+0,17,"def count_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowel_counts = {vowel: 0 for vowel in vowels}
+    
+    for char in text:
+        if char.lower() in vowels:
+            vowel_counts[char.lower()] += 1
+    
+    return vowel_counts
+
+text = ""Hello World!""
+result = count_vowels(text)
+print(result)","def কাউন্ট_স্বর(পাঠ্য):
+    স্বর = ['a', 'e', 'i', 'o', 'u']
+    স্বর_গণনা = {স্বর: 0 for স্বর in স্বর}
+    
+    for চর in পাঠ্য:
+        if চর.lower() in স্বর:
+            স্বর_গণনা[চর.lower()] += 1
+    
+    return স্বর_গণনা
+
+পাঠ্য = ""Hello World!""
+ফলাফল = কাউন্ট_স্বর(পাঠ্য)
+print(ফলাফল)","def Count(Text):
+    Vowel = ['a', 'e', 'i', 'o', 'u']
+    Vowel_calculation = {Vowel: 0 for Vowel in Vowel}
+    
+    for Mango in Text:
+        if Mango.lower() in Vowel:
+            Vowel_calculation[Mango.lower()] += 1
+    
+    return Vowel_calculation
+
+Text = ""Hello World!""
+Result = Count(Text)
+print(Result)",0.3980371046303978,True,0.5,0.917608916759491,1.0,0.7631292042779778
+0,18,"import random
+
+def generate_random_number():
+    num = 0
+    while bin(num).count('1') != 4:
+        num = random.randint(0, 15)
+    return num
+
+random_number = generate_random_number()
+print(random_number)","import এলোমেলো
+
+def এলোমেলো_সংখ্যা_উত্পন্ন_করুন():
+    isdigit = 0
+    while bin(isdigit).count('1') != 4:
+        isdigit = এলোমেলো.র্যান্ডিন্ট(0, 15)
+    return isdigit
+
+এলোমেলো_নম্বর = এলোমেলো_সংখ্যা_উত্পন্ন_করুন()
+print(এলোমেলো_নম্বর)","import Rampant
+
+def Generate_random_numbers():
+    isdigit = 0
+    while bin(isdigit).count('1') != 4:
+        isdigit = Rampant.Randint(0, 15)
+    return isdigit
+
+Random_number = Generate_random_numbers()
+print(Random_number)",0.4617459843717227,True,0.5,0.8825276494026184,1.0,0.7688547267548682
+0,19,"def multiply(a, b):
+    # Calculate the sign of the result
+    sign = -1 if (a < 0) ^ (b < 0) else 1
+
+    # Convert both numbers to positive
+    a = abs(a)
+    b = abs(b)
+
+    # Initialize the result
+    result = 0
+
+    # Multiply the numbers using bitwise operations
+    while b:
+        # If b is odd, add a to the result
+        if b & 1:
+            result += a
+
+        # Shift a to the left by 1 bit
+        a <<= 1
+
+        # Shift b to the right by 1 bit
+        b >>= 1
+
+    return sign * result","def গুণ_করুন(ক, খ):
+       #ফলাফলের চিহ্ন গণনা করুন
+    সাইন = -1 if (ক < 0) ^ (খ < 0) else 1
+
+       #উভয় সংখ্যাকে ইতিবাচক রূপান্তর করুন
+    ক = abs(ক)
+    খ = abs(খ)
+
+       #ফলাফল শুরু করুন
+    ফলাফল = 0
+
+       #বিটওয়াইজ অপারেশন ব্যবহার করে সংখ্যাগুলি গুণ করুন
+    while খ:
+           #যদি বি বিজোড় হয় তবে ফলাফলটিতে একটি যুক্ত করুন
+        if খ & 1:
+            ফলাফল += ক
+
+           #1 বিট দ্বারা বাম দিকে একটি স্থানান্তর করুন
+        ক <<= 1
+
+           #বি বি কে 1 বিট দ্বারা ডানদিকে স্থানান্তর করুন
+        খ >>= 1
+
+    return সাইন * ফলাফল","def Multiply(Ay, B):
+        # Count the result of the results
+    Sign = -1 if (Ay < 0) ^ (B < 0) else 1
+
+        # Convert both numbers to positive
+    Ay = abs(Ay)
+    B = abs(B)
+
+        # Start the results
+    Result = 0
+
+        # Multiply the numbers using the Bitwis Operation
+    while B:
+            # If B is odd then add one to the result
+        if B & 1:
+            Result += Ay
+
+            # Make a transfer to the left by 1 bits
+        Ay <<= 1
+
+            # Transfer right by b bk 1 bits
+        B >>= 1
+
+    return Sign * Result",0.2865766099816623,True,0.5,0.9560598731040955,1.0,0.7485272966171516
+0,20,"def find_longest_element(lst):
+    longest_element = ''
+    longest_index = -1
+    longest_count = 0
+    
+    for i, element in enumerate(lst):
+        if len(str(element)) > len(longest_element):
+            longest_element = str(element)
+            longest_index = i
+            longest_count = 1
+        elif len(str(element)) == len(longest_element):
+            longest_count += 1
+    
+    return longest_element, longest_index, longest_count
+
+# Example usage:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longest_element, longest_index, longest_count = find_longest_element(lst)
+
+print(""Longest Element:"", longest_element)
+print(""Index of Longest Element:"", longest_index)
+print(""Total Occurrences of Longest Element:"", longest_count)","def দীর্ঘতম_উপাদান_সন্ধান_করুন(lst):
+    দীর্ঘতম_উপাদান = ''
+    দীর্ঘতম_সূচক = -1
+    দীর্ঘতম_গণনা = 0
+    
+    for আমি, উপাদান in enumerate(lst):
+        if len(str(উপাদান)) > len(দীর্ঘতম_উপাদান):
+            দীর্ঘতম_উপাদান = str(উপাদান)
+            দীর্ঘতম_সূচক = আমি
+            দীর্ঘতম_গণনা = 1
+        elif len(str(উপাদান)) == len(দীর্ঘতম_উপাদান):
+            দীর্ঘতম_গণনা += 1
+    
+    return দীর্ঘতম_উপাদান, দীর্ঘতম_সূচক, দীর্ঘতম_গণনা
+
+   #উদাহরণ ব্যবহার:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+দীর্ঘতম_উপাদান, দীর্ঘতম_সূচক, দীর্ঘতম_গণনা = দীর্ঘতম_উপাদান_সন্ধান_করুন(lst)
+
+print(""Longest Element:"", দীর্ঘতম_উপাদান)
+print(""Index of Longest Element:"", দীর্ঘতম_সূচক)
+print(""Total Occurrences of Longest Element:"", দীর্ঘতম_গণনা)","def Look_for_the_longest_element(lst):
+    The_longest_element = ''
+    Longest_index = -1
+    The_longest_count = 0
+    
+    for I, Component in enumerate(lst):
+        if len(str(Component)) > len(The_longest_element):
+            The_longest_element = str(Component)
+            Longest_index = I
+            The_longest_count = 1
+        elif len(str(Component)) == len(The_longest_element):
+            The_longest_count += 1
+    
+    return The_longest_element, Longest_index, The_longest_count
+
+    # Use of the example:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+The_longest_element, Longest_index, The_longest_count = Look_for_the_longest_element(lst)
+
+print(""Longest Element:"", The_longest_element)
+print(""Index of Longest Element:"", Longest_index)
+print(""Total Occurrences of Longest Element:"", The_longest_count)",0.5109498111533688,True,0.5,0.9644869565963745,1.0,0.7950873535499486
+0,21,"import math
+
+def is_prime(num):
+    if num <= 1:
+        return ""Composite""
+
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return ""Composite""
+
+    return ""Prime""","import গণিত
+
+def প্রাইম(isdigit):
+    if isdigit <= 1:
+        return ""Composite""
+
+    for আমি in range(2, int(গণিত.এসকিউআরটি(isdigit)) + 1):
+        if isdigit % আমি == 0:
+            return ""Composite""
+
+    return ""Prime""","import Mathematics
+
+def Prime(isdigit):
+    if isdigit <= 1:
+        return ""Composite""
+
+    for I in range(2, int(Mathematics.SQRT(isdigit)) + 1):
+        if isdigit % I == 0:
+            return ""Composite""
+
+    return ""Prime""",0.5124105604098974,True,0.5,0.9270936250686646,1.0,0.7879008370957123
+0,22,"def print_primes_without_five(lower, upper):
+    # Step 1: Create a boolean array ""is_prime[0..upper]"" and initialize
+    # all entries it as true.
+    is_prime = [True] * (upper + 1)
+    is_prime[0] = is_prime[1] = False
+
+    # Step 2: Mark all the multiples of prime numbers starting from 2
+    # as false.
+    p = 2
+    while p * p <= upper:
+        if is_prime[p]:
+            for i in range(p * p, upper + 1, p):
+                is_prime[i] = False
+        p += 1
+
+    # Step 3: Print all prime numbers in the given range excluding
+    # numbers containing the digit 5.
+    for num in range(lower, upper + 1):
+        if is_prime[num] and '5' not in str(num):
+            print(num)","def পাঁচটি_ছাড়া_প্রাইমগুলি_মুদ্রণ_করুন(lower, upper):
+       #পদক্ষেপ 1: একটি বুলিয়ান অ্যারে তৈরি করুন ""আইএস_প্রাইম [0..ইউপি]"" এবং আরম্ভ করুন
+       #সমস্ত এটি সত্য হিসাবে প্রবেশ।
+    প্রাইম = [True] * (upper + 1)
+    প্রাইম[0] = প্রাইম[1] = False
+
+       #পদক্ষেপ 2: 2 থেকে শুরু করে প্রাইম সংখ্যার সমস্ত গুণকে চিহ্নিত করুন
+       #মিথ্যা হিসাবে।
+    পি = 2
+    while পি * পি <= upper:
+        if প্রাইম[পি]:
+            for আমি in range(পি * পি, upper + 1, পি):
+                প্রাইম[আমি] = False
+        পি += 1
+
+       #পদক্ষেপ 3: প্রদত্ত পরিসীমা বাদে সমস্ত প্রাইম নম্বর মুদ্রণ করুন
+       #অঙ্ক 5 সমন্বিত সংখ্যা।
+    for isdigit in range(lower, upper + 1):
+        if প্রাইম[isdigit] and '5' not in str(isdigit):
+            print(isdigit)","def Print_the_primes_without_five(lower, upper):
+        # Step 1: Create a Boolean Array ""IS_PREAM [0..AUP]"" and start
+        # All entered as true to it.
+    Prime = [True] * (upper + 1)
+    Prime[0] = Prime[1] = False
+
+        # Identify all qualities of prime numbers starting from Step 2: 2
+        # As false.
+    P = 2
+    while P * P <= upper:
+        if Prime[P]:
+            for I in range(P * P, upper + 1, P):
+                Prime[I] = False
+        P += 1
+
+        # Step 3: Print all Prime number excludes the given range
+        # Number of numbers 5 in digits.
+    for isdigit in range(lower, upper + 1):
+        if Prime[isdigit] and '5' not in str(isdigit):
+            print(isdigit)",0.4929472492370147,True,0.5,0.9682962894439697,1.0,0.7922487077361968
+0,23,"import time
+
+# Function to check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Caching mechanism for prime numbers
+prime_cache = {}
+
+# Modified function to check if a number is prime using caching
+def is_prime_cached(n):
+    if n in prime_cache:
+        return prime_cache[n]
+    prime = is_prime(n)
+    prime_cache[n] = prime
+    return prime
+
+# Timer function
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f""Execution time: {end - start} seconds"")
+        return result
+    return wrapper
+
+# List comprehension to generate the list of prime numbers
+@timer
+def generate_prime_palindromic_fibonacci():
+    return [num for num in range(10000, 20001) if is_prime_cached(num) and str(num) == str(num)[::-1] and is_fibonacci(num)]
+
+# Function to check if a number is a Fibonacci number
+def is_fibonacci(n):
+    a, b = 0, 1
+    while b < n:
+        a, b = b, a + b
+    return b == n
+
+# Test the function
+primes = generate_prime_palindromic_fibonacci()
+print(primes)","import সময়
+
+   #একটি সংখ্যা প্রধান কিনা তা যাচাই করার জন্য ফাংশন
+def প্রাইম(এন):
+    if এন < 2:
+        return False
+    for আমি in range(2, int(এন**0.5) + 1):
+        if এন % আমি == 0:
+            return False
+    return True
+
+   #প্রাইম সংখ্যার জন্য ক্যাচিং প্রক্রিয়া
+প্রাইম_ক্যাশে = {}
+
+   #ক্যাচিং ব্যবহার করে কোনও সংখ্যা প্রধান কিনা তা যাচাই করতে পরিবর্তিত ফাংশন
+def প্রাইম_ক্যাশেড_হয়(এন):
+    if এন in প্রাইম_ক্যাশে:
+        return প্রাইম_ক্যাশে[এন]
+    প্রাইম = প্রাইম(এন)
+    প্রাইম_ক্যাশে[এন] = প্রাইম
+    return প্রাইম
+
+   #টাইমার ফাংশন
+def টাইমার(ফানক):
+    def মোড়ক(*args, **kwargs):
+        শুরু = সময়.সময়()
+        ফলাফল = ফানক(*args, **kwargs)
+        শেষ = সময়.সময়()
+        print(চ""Execution time: {end - start} seconds"")
+        return ফলাফল
+    return মোড়ক
+
+   #প্রাইম সংখ্যার তালিকা উত্পন্ন করতে তালিকা বোধগম্যতা
+@টাইমার
+def প্রাইম_প্যালিনড্রোমিক_ফিবোনাচি_তৈরি_করুন():
+    return [isdigit for isdigit in range(10000, 20001) if প্রাইম_ক্যাশেড_হয়(isdigit) and str(isdigit) == str(isdigit)[::-1] and ফিবোনাচি(isdigit)]
+
+   #কোনও নম্বর ফিবোনাচি নম্বর কিনা তা যাচাই করার জন্য ফাংশন
+def ফিবোনাচি(এন):
+    ক, খ = 0, 1
+    while খ < এন:
+        ক, খ = খ, ক + খ
+    return খ == এন
+
+   #ফাংশন পরীক্ষা
+প্রাইমস = প্রাইম_প্যালিনড্রোমিক_ফিবোনাচি_তৈরি_করুন()
+print(প্রাইমস)","import Time
+
+    # Function to verify whether a number is the main
+def Prime(N):
+    if N < 2:
+        return False
+    for I in range(2, int(N**0.5) + 1):
+        if N % I == 0:
+            return False
+    return True
+
+    # The process of catching for prime numbers
+Prime_cache = {}
+
+    # Varying functions to verify whether a number is major using catching
+def Prime_is_the_carested(N):
+    if N in Prime_cache:
+        return Prime_cache[N]
+    Prime = Prime(N)
+    Prime_cache[N] = Prime
+    return Prime
+
+    # Timer function
+def Timer(Lap):
+    def Wrap(*args, **kwargs):
+        Start = Time.Time()
+        Result = Lap(*args, **kwargs)
+        End = Time.Time()
+        print(F""Execution time: {end - start} seconds"")
+        return Result
+    return Wrap
+
+    # List understandability to generate the list of prime numbers
+@Timer
+def Make_prime_palindromic_fibonachi():
+    return [isdigit for isdigit in range(10000, 20001) if Prime_is_the_carested(isdigit) and str(isdigit) == str(isdigit)[::-1] and Fibonachi(isdigit)]
+
+    # Function to verify whether a number is a fibonachi number
+def Fibonachi(N):
+    Ay, B = 0, 1
+    while B < N:
+        Ay, B = B, Ay + B
+    return B == N
+
+    # Function test
+Primes = Make_prime_palindromic_fibonachi()
+print(Primes)",0.396073737878698,True,0.5,0.93408203125,1.0,0.7660311538257396
+0,24,"import math
+
+def average_list(lst):
+    if not lst:
+        return None
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    total = 0
+    count = 0
+    
+    for num in lst:
+        if not isinstance(num, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(num, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if math.isnan(num):
+            raise ValueError(""List contains NaN values"")
+        
+        if math.isinf(num):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(num) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        total += num
+        count += 1
+    
+    return total / count","import গণিত
+
+def গড়_তালিকা(lst):
+    if not lst:
+        return কিছুই_না
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    মোট = 0
+    count = 0
+    
+    for isdigit in lst:
+        if not isinstance(isdigit, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(isdigit, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if গণিত.ইসানান(isdigit):
+            raise ValueError(""List contains NaN values"")
+        
+        if গণিত.isinf(isdigit):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(isdigit) > 1E308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        মোট += isdigit
+        count += 1
+    
+    return মোট / count","import Mathematics
+
+def Average_list(lst):
+    if not lst:
+        return Nothing
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    Total = 0
+    count = 0
+    
+    for isdigit in lst:
+        if not isinstance(isdigit, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(isdigit, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if Mathematics.Islam(isdigit):
+            raise ValueError(""List contains NaN values"")
+        
+        if Mathematics.isinf(isdigit):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(isdigit) > 1E308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        Total += isdigit
+        count += 1
+    
+    return Total / count",0.6584631189507961,True,0.5,0.9882230758666992,1.0,0.8293372389634991
+0,25,"import sqlite3
+
+def delete_row(connection):
+    try:
+        # Start a transaction
+        connection.execute(""BEGIN TRANSACTION"")
+
+        # Execute the complex query
+        cursor = connection.execute(""SELECT ..."")
+
+        # Fetch the row to be deleted
+        row = cursor.fetchone()
+
+        if row:
+            # Delete the row using its primary key
+            connection.execute(""DELETE FROM table_name WHERE id=?"", (row['id'],))
+
+        # Commit the transaction
+        connection.execute(""COMMIT"")
+
+        # Close the cursor
+        cursor.close()
+
+    except sqlite3.Error as error:
+        # Rollback the transaction in case of any exception
+        connection.execute(""ROLLBACK"")
+
+        # Display the error message
+        print(f""Error: {error}"")
+
+    finally:
+        # Close the database connection
+        connection.close()
+
+# Create a connection to the SQLite database
+connection = sqlite3.connect(""database.db"")
+
+# Call the function to delete the row
+delete_row(connection)","import Sqlite3
+
+def সারি_মুছুন(সংযোগ):
+    try:
+           #একটি লেনদেন শুরু করুন
+        সংযোগ.exec(""BEGIN TRANSACTION"")
+
+           #জটিল ক্যোয়ারী কার্যকর করুন
+        কার্সার = সংযোগ.exec(""SELECT ..."")
+
+           #মুছে ফেলা সারিটি আনুন
+        সারি = কার্সার.ফেচোন()
+
+        if সারি:
+               #এর প্রাথমিক কী ব্যবহার করে সারিটি মুছুন
+            সংযোগ.exec(""DELETE FROM table_name WHERE id=?"", (সারি['id'],))
+
+           #লেনদেন প্রতিশ্রুতিবদ্ধ
+        সংযোগ.exec(""COMMIT"")
+
+           #কার্সার বন্ধ করুন
+        কার্সার.close()
+
+    except Sqlite3.ত্রুটি as ত্রুটি:
+           #কোনও ব্যতিক্রম ক্ষেত্রে লেনদেন রোলব্যাক
+        সংযোগ.exec(""ROLLBACK"")
+
+           #ত্রুটি বার্তা প্রদর্শন করুন
+        print(চ""Error: {error}"")
+
+    finally:
+           #ডাটাবেস সংযোগ বন্ধ করুন
+        সংযোগ.close()
+
+   #এসকিউএলাইট ডাটাবেসের সাথে একটি সংযোগ তৈরি করুন
+সংযোগ = Sqlite3.সংযুক্ত_করুন(""database.db"")
+
+   #সারিটি মুছতে ফাংশনটি কল করুন
+সারি_মুছুন(সংযোগ)","import Sqlite3
+
+def Wipe_the_row(Connection):
+    try:
+            # Start a transaction
+        Connection.exec(""BEGIN TRANSACTION"")
+
+            # Make the complex query effective
+        Cursor = Connection.exec(""SELECT ..."")
+
+            # Bring the deleted row
+        Line = Cursor.Fetchone()
+
+        if Line:
+                # Delete the row using its initial key
+            Connection.exec(""DELETE FROM table_name WHERE id=?"", (Line['id'],))
+
+            # Transaction is committed
+        Connection.exec(""COMMIT"")
+
+            # Turn off the cursor
+        Cursor.close()
+
+    except Sqlite3.Defect as Defect:
+            # Rollback of transaction in case of any exception
+        Connection.exec(""ROLLBACK"")
+
+            # Display the error message
+        print(F""Error: {error}"")
+
+    finally:
+            # Turn off the database connection
+        Connection.close()
+
+    # Create a connection to the SQLite database
+Connection = Sqlite3.Connect(""database.db"")
+
+    # Call the function to delete the row
+Wipe_the_row(Connection)",0.3403850345099313,True,0.5,0.9597930908203125,1.0,0.7600356250660487
+0,26,"import re
+
+def extract_emails(string):
+    # Use regular expression pattern to find all email addresses in the string
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, string)
+    
+    # Remove any duplicate email addresses
+    unique_emails = list(set(matches))
+    
+    return unique_emails","import পুনঃ
+
+def ইমেলগুলি_বের_করুন(str):
+       #স্ট্রিংয়ে সমস্ত ইমেল ঠিকানাগুলি খুঁজে পেতে নিয়মিত এক্সপ্রেশন প্যাটার্ন ব্যবহার করুন
+    প্যাটার্ন = আর'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    ম্যাচ = পুনঃ.ফাইন্ডল(প্যাটার্ন, str)
+    
+       #কোনও সদৃশ ইমেল ঠিকানা সরান
+    অনন্য_ইমেল = list(set(ম্যাচ))
+    
+    return অনন্য_ইমেল","import Again
+
+def Find_out_the_emails(str):
+        # Use regular expressions pattern to find all email addresses in string
+    Pattern = More'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    Match = Again.Findle(Pattern, str)
+    
+        # Remove any duplicate email address
+    Unique_email = list(set(Match))
+    
+    return Unique_email",0.1814256510792437,False,0.0,0.927646279335022,0.9814814814814815,0.41811068237914945
+0,27,"def clean_and_sort(lst):
+   result = []
+   for element in lst:
+      if type(element) == int:
+         result.append(element + 5)
+   # implement your own sorting algorithm here
+   n = len(result)
+   for i in range(n):
+      for j in range(0, n-i-1):
+         if result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   return result
+
+print(clean_and_sort([1, 2, ""hello""]))","def পরিষ্কার_এবং_বাছাই(lst):
+   ফলাফল = []
+   for উপাদান in lst:
+      if type(উপাদান) == int:
+         ফলাফল.append(উপাদান + 5)
+      #এখানে আপনার নিজস্ব বাছাই করা অ্যালগরিদম প্রয়োগ করুন
+   এন = len(ফলাফল)
+   for আমি in range(এন):
+      for জে in range(0, এন-আমি-1):
+         if ফলাফল[জে] < ফলাফল[জে+1]:
+            ফলাফল[জে], ফলাফল[জে+1] = ফলাফল[জে+1], ফলাফল[জে]
+   return ফলাফল
+
+print(পরিষ্কার_এবং_বাছাই([1, 2, ""hello""]))","def Clean_and_pick_up(lst):
+   Result = []
+   for Component in lst:
+      if type(Component) == int:
+         Result.append(Component + 5)
+       # Apply your own pick algorithm here
+   N = len(Result)
+   for I in range(N):
+      for J in range(0, N-I-1):
+         if Result[J] < Result[J+1]:
+            Result[J], Result[J+1] = Result[J+1], Result[J]
+   return Result
+
+print(Clean_and_pick_up([1, 2, ""hello""]))",0.3896978649384041,True,0.5,0.7128610610961914,1.0,0.720511785206919
+0,28,"def is_valid_palindrome(s):
+    # Convert the string to lowercase
+    s = s.lower()
+    
+    # Initialize the two pointers
+    left = 0
+    right = len(s) - 1
+    
+    while left < right:
+        # Check if the left character is not alphabetic
+        if not s[left].isalpha():
+            left += 1
+            continue
+        
+        # Check if the right character is not alphabetic
+        if not s[right].isalpha():
+            right -= 1
+            continue
+        
+        # Check if the characters at the two positions are equal
+        if s[left] != s[right]:
+            return False
+        
+        # Move the pointers towards the middle
+        left += 1
+        right -= 1
+    
+    return True","def বৈধ_প্যালিন্ড্রোম(এস):
+       #স্ট্রিংটি ছোট হাতের দিকে রূপান্তর করুন
+    এস = এস.lower()
+    
+       #দুটি পয়েন্টার সূচনা করুন
+    বাম = 0
+    ঠিক_আছে = len(এস) - 1
+    
+    while বাম < ঠিক_আছে:
+           #বাম চরিত্রটি বর্ণানুক্রমিক নয় কিনা তা পরীক্ষা করুন
+        if not এস[বাম].isalpha():
+            বাম += 1
+            continue
+        
+           #সঠিক চরিত্রটি বর্ণানুক্রমিক নয় কিনা তা পরীক্ষা করুন
+        if not এস[ঠিক_আছে].isalpha():
+            ঠিক_আছে -= 1
+            continue
+        
+           #দুটি অবস্থানের অক্ষর সমান কিনা তা পরীক্ষা করে দেখুন
+        if এস[বাম] != এস[ঠিক_আছে]:
+            return False
+        
+           #মাঝের দিকে পয়েন্টারগুলি সরান
+        বাম += 1
+        ঠিক_আছে -= 1
+    
+    return True","def Palindrome(S):
+        # Convert the string to lowercase
+    S = S.lower()
+    
+        # Inaugurate two pointers
+    Left = 0
+    Okay = len(S) - 1
+    
+    while Left < Okay:
+            # Check if the left character is not alphabetical
+        if not S[Left].isalpha():
+            Left += 1
+            continue
+        
+            # Check if the correct character is not alphabetical
+        if not S[Okay].isalpha():
+            Okay -= 1
+            continue
+        
+            # Check if the characters in two positions are equal
+        if S[Left] != S[Okay]:
+            return False
+        
+            # Remove the pointers in the middle side
+        Left += 1
+        Okay -= 1
+    
+    return True",0.3621225996467258,True,0.5,0.9071599245071411,1.0,0.7538565048307734
+0,29,"def is_palindrome(num):
+    # Convert the number to string
+    num_str = str(num)
+    
+    # Check if the number is positive
+    if num <= 0:
+        return False
+    
+    # Check if the number has at least 5 digits
+    if len(num_str) < 5:
+        return False
+    
+    # Check if the number consists of unique digits
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+    # Check if the number is divisible by 7
+    if num % 7 != 0:
+        return False
+    
+    # Check if the number is a palindrome
+    if num_str == num_str[::-1]:
+        return True
+    
+    # Check for palindromic substrings within the number
+    for i in range(len(num_str)):
+        for j in range(i+2, len(num_str)+1):
+            sub_num = num_str[i:j]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+# Testing the script
+# Decimal number
+num_decimal = 12321
+print(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+# Hexadecimal number
+num_hexadecimal = 0x12321
+print(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+# Other test cases
+print(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(f""Is 12321 a palindrome? {is_palindrome(12321)}"")","def প্যালিনড্রোম_হয়(isdigit):
+       #নম্বরটি স্ট্রিংয়ে রূপান্তর করুন
+    সংখ্যা_স্ট্র = str(isdigit)
+    
+       #সংখ্যাটি ইতিবাচক কিনা তা পরীক্ষা করুন
+    if isdigit <= 0:
+        return False
+    
+       #সংখ্যাটিতে কমপক্ষে 5 টি সংখ্যা রয়েছে কিনা তা পরীক্ষা করুন
+    if len(সংখ্যা_স্ট্র) < 5:
+        return False
+    
+       #নম্বরটি অনন্য অঙ্কগুলি নিয়ে গঠিত কিনা তা পরীক্ষা করুন
+    if len(set(সংখ্যা_স্ট্র)) != len(সংখ্যা_স্ট্র):
+        return False
+    
+       #সংখ্যাটি 7 দ্বারা বিভাজ্য কিনা তা পরীক্ষা করুন
+    if isdigit % 7 != 0:
+        return False
+    
+       #নম্বরটি কোনও প্যালিনড্রোম কিনা তা পরীক্ষা করুন
+    if সংখ্যা_স্ট্র == সংখ্যা_স্ট্র[::-1]:
+        return True
+    
+       #সংখ্যার মধ্যে প্যালিনড্রোমিক সাবস্ট্রিংগুলির জন্য পরীক্ষা করুন
+    for আমি in range(len(সংখ্যা_স্ট্র)):
+        for জে in range(আমি+2, len(সংখ্যা_স্ট্র)+1):
+            সাব_সংখ্যা = সংখ্যা_স্ট্র[আমি:জে]
+            if সাব_সংখ্যা == সাব_সংখ্যা[::-1]:
+                return True
+    
+    return False
+
+   #স্ক্রিপ্ট পরীক্ষা করা
+   #দশমিক সংখ্যা
+সংখ্যা_দশমিক = 12321
+print(চ""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+   #হেক্সাডেসিমাল নম্বর
+নাম_হেক্সাডেসিমাল = 0x12321
+print(চ""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+   #অন্যান্য পরীক্ষার মামলা
+print(চ""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(চ""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(চ""Is 12321 a palindrome? {is_palindrome(12321)}"")","def Is_in_the_palindrome(isdigit):
+        # Convert the number to the string
+    Straw = str(isdigit)
+    
+        # Check if the number is positive
+    if isdigit <= 0:
+        return False
+    
+        # Check if the number contains at least 5 digits
+    if len(Straw) < 5:
+        return False
+    
+        # Check if the number is made up of unique digits
+    if len(set(Straw)) != len(Straw):
+        return False
+    
+        # Check if the number is divided by 7
+    if isdigit % 7 != 0:
+        return False
+    
+        # Check if the number is any palindrome
+    if Straw == Straw[::-1]:
+        return True
+    
+        # Check for Palindromic Substrings in Numbers
+    for I in range(len(Straw)):
+        for J in range(I+2, len(Straw)+1):
+            Sub__number = Straw[I:J]
+            if Sub__number == Sub__number[::-1]:
+                return True
+    
+    return False
+
+    # Script
+    # Decimal number
+Decimal_the_number_of_numbers = 12321
+print(F""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+    # Hexadecimal number
+The_name_is_hexadecimal = 0x12321
+print(F""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+    # Other examination suit
+print(F""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(F""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(F""Is 12321 a palindrome? {is_palindrome(12321)}"")",0.6776775324072699,True,0.5,0.9441377520561218,1.0,0.8243630568926783
+0,30,"import re
+
+def remove_vowels(string):
+    return re.sub(r'[aeiouAEIOU]', '', string)
+
+def sort_characters(string):
+    frequency = {}
+    for char in string:
+        frequency[char] = frequency.get(char, 0) + 1
+    sorted_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    return sorted_chars
+
+def remove_vowels_and_sort(string):
+    string_without_vowels = remove_vowels(string)
+    sorted_string = sort_characters(string_without_vowels)
+    return ''.join(sorted_string)","import পুনঃ
+
+def স্বর_সরান(str):
+    return পুনঃ.সাব(আর'[aeiouAEIOU]', '', str)
+
+def অক্ষর_বাছাই_করুন(str):
+    ফ্রিকোয়েন্সি = {}
+    for চর in str:
+        ফ্রিকোয়েন্সি[চর] = ফ্রিকোয়েন্সি.get(চর, 0) + 1
+    সাজানো_চর = sort(ফ্রিকোয়েন্সি.keys(), কী=lambda এক্স: (-ফ্রিকোয়েন্সি[এক্স], এক্স))
+    return সাজানো_চর
+
+def স্বর_সরান_এবং_বাছাই_করুন(str):
+    স্বর_ছাড়াই_স্ট্রিং = স্বর_সরান(str)
+    সাজানো_স্ট্রিং = অক্ষর_বাছাই_করুন(স্বর_ছাড়াই_স্ট্রিং)
+    return ''.join(সাজানো_স্ট্রিং)","import Again
+
+def Tone(str):
+    return Again.Sub(More'[aeiouAEIOU]', '', str)
+
+def Pick_the_characters(str):
+    Frequency = {}
+    for Mango in str:
+        Frequency[Mango] = Frequency.get(Mango, 0) + 1
+    Decorated = sort(Frequency.keys(), Key=lambda X: (-Frequency[X], X))
+    return Decorated
+
+def Remove_the_tone_and_pick_up(str):
+    String_without_the_tone = Tone(str)
+    Sorted_string = Pick_the_characters(String_without_the_tone)
+    return ''.join(Sorted_string)",0.2312340241852526,False,0.0,0.7733879685401917,0.9946808510638298,0.3998605687578548

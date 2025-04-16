@@ -1,0 +1,10 @@
+{
+    "chunk_size": 0,
+    "total_translations": 10,
+    "bleu_score": 0.7781438720190207,
+    "syntax_valid_rate": 100.0,
+    "structure_score": 0.7166666666666666,
+    "semantic_score": 0.9177283465862274,
+    "token_match": 1.0,
+    "overall_score": 0.8825077770543828
+}

@@ -1,0 +1,1978 @@
+English_code,Partial_translated_code,google_back_translated_code
+"for i in range(10):  # First digit
+    for j in range(10):  # Second digit
+        for k in range(10):  # Third digit
+            # Checking for the conditions
+            if i != 5 and j != 5 and k != 5 and i != j and i != k and j != k:
+                print(i, j, k)","for ez in range(10): #Hejmarek yekem
+    for J in range(10): #Hejmar duyemîn
+        for k in range(10): #Hejmar sêyemîn
+               #Kontrolkirina şertan
+            if ez != 5 and J != 5 and k != 5 and ez != J and ez != k and J != k:
+                print(ez, J, k)","for ez in range(10): #Hejmarek yekem
+    for J in range(10): #Hejmar duyemîn
+        for k in range(10): #Hejmar sêyemîn
+                #Kontrolkirina şertan
+            if ez != 5 and J != 5 and k != 5 and ez != J and ez != k and J != k:
+                print(ez, J, k)"
+"def count_distinct_states(matrix):
+    count = 0
+    states = set()
+    for row in matrix:
+        for col in row:
+            state = ''.join(col)
+            if state not in states:
+                count += 1
+            states.add(state)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(count_distinct_states(matrix))
+# Output: 4","def Dewletn_cihreng_hejmartin(matrix):
+    count = 0
+    dewlete = set()
+    for brkirin in matrix:
+        for col in brkirin:
+            rew = ''.join(col)
+            if rew not in dewlete:
+                count += 1
+            dewlete.add(rew)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(Dewletn_cihreng_hejmartin(matrix))
+   #Derket: 4","def Dewletn_cihreng_hejmartin(matrix):
+    count = 0
+    dewlete = set()
+    for brkirin in matrix:
+        for col in brkirin:
+            rew = ''.join(col)
+            if rew not in dewlete:
+                count += 1
+            dewlete.add(rew)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(Dewletn_cihreng_hejmartin(matrix))
+    #Derket: 4"
+"def remove_spaces_and_punctuation(s):
+    result = """"
+    for char in s:
+        if char.isalnum():
+            result += char
+    return result","def dever__xaln_rakirin(S):
+    netce = """"
+    for ekar in S:
+        if ekar.isalnum():
+            netce += ekar
+    return netce","def dever__xaln_rakirin(S):
+    netce = """"
+    for ekar in S:
+        if ekar.isalnum():
+            netce += ekar
+    return netce"
+"import math
+
+def is_prime(n):
+    # Check if the number is less than 2 or not an integer
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+    # Check if the number is divisible by any integer from 2 to the square root of n
+    for i in range(2, math.isqrt(n) + 1):
+        if n % i == 0:
+            return ""Not Prime""
+
+    return ""Prime""","import Ziman_kann
+
+def Serokwezr_e(N):
+       #Kontrol bikin ku hejmar ji 2 kêmtir e an ne yek in
+    if N < 2 or not isinstance(N, int):
+        return ""Not Prime""
+
+       #Kontrol bikin ka hejmar ji hêla her hejmarek ji 2_ê heya rootê meydana n
+    for ez in range(2, Ziman_kann.Isqrt(N) + 1):
+        if N % ez == 0:
+            return ""Not Prime""
+
+    return ""Prime""","import Ziman_kann
+
+def Serokwezr_e(N):
+        #Kontrol bikin ku hejmar ji 2 kêmtir e an ne yek in
+    if N < 2 or not isinstance(N, int):
+        return ""Not Prime""
+
+        #Kontrol bikin ka hejmar ji hêla her hejmarek ji 2_ê heya rootê meydana n
+    for ez in range(2, Ziman_kann.Isqrt(N) + 1):
+        if N % ez == 0:
+            return ""Not Prime""
+
+    return ""Prime"""
+"class String:
+    def __init__(self, string):
+        self.string = string
+
+    def replace_odd_occurrences(self, substring, replace_with):
+        count = self.string.count(substring)
+        if count % 2 == 0 or count == 0:
+            return self.string
+
+        result = """"
+        stack = []
+
+        for i in range(len(self.string)):
+            if self.string[i:i+len(substring)] == substring:
+                if len(stack) > 0 and (stack[-1] == '(' or stack[-1] == '['):
+                    stack.append(substring)
+                    result += substring
+                elif len(stack) > 0 and (stack[-1] == ')' or stack[-1] == ']'):
+                    stack.pop()
+                    result += substring
+                else:
+                    stack.append(substring)
+                    result += replace_with
+            else:
+                result += self.string[i]
+
+            if len(stack) > 0 and stack[-1] == substring:
+                stack.pop()
+
+        return result","class Ben:
+    def __init__(self, ben):
+        self.ben = ben
+
+    def byern_ecb_biguheznin(self, Substring, bi):
+        count = self.ben.count(Substring)
+        if count % 2 == 0 or count == 0:
+            return self.ben
+
+        netce = """"
+        lod = []
+
+        for ez in range(len(self.ben)):
+            if self.ben[ez:ez+len(Substring)] == Substring:
+                if len(lod) > 0 and (lod[-1] == '(' or lod[-1] == '['):
+                    lod.append(Substring)
+                    netce += Substring
+                ئەگەرنا_ئەگەر... len(lod) > 0 and (lod[-1] == ')' or lod[-1] == ']'):
+                    lod.pop()
+                    netce += Substring
+                else:
+                    lod.append(Substring)
+                    netce += bi
+            else:
+                netce += self.ben[ez]
+
+            if len(lod) > 0 and lod[-1] == Substring:
+                lod.pop()
+
+        return netce","class Ben:
+    def __init__(self, ben):
+        self.ben = ben
+
+    def byern_ecb_biguheznin(self, Substring, bi):
+        count = self.ben.count(Substring)
+        if count % 2 == 0 or count == 0:
+            return self.ben
+
+        netce = """"
+        lod = []
+
+        for ez in range(len(self.ben)):
+            if self.ben[ez:ez+len(Substring)] == Substring:
+                if len(lod) > 0 and (lod[-1] == '(' or lod[-1] == '['):
+                    lod.append(Substring)
+                    netce += Substring
+                ئەگەرنا_ئەگەر... len(lod) > 0 and (lod[-1] == ')' or lod[-1] == ']'):
+                    lod.pop()
+                    netce += Substring
+                else:
+                    lod.append(Substring)
+                    netce += bi
+            else:
+                netce += self.ben[ez]
+
+            if len(lod) > 0 and lod[-1] == Substring:
+                lod.pop()
+
+        return netce"
+"def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def has_digit_7(num):
+    while num > 0:
+        if num % 10 == 7:
+            return True
+        num //= 10
+    return False
+
+def sum_of_primes():
+    sum_of_primes = 0
+    for num in range(1000000, 2000001):
+        if is_prime(num) and not has_digit_7(num):
+            sum_of_primes += num
+    return sum_of_primes
+
+result = sum_of_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)","def Serokwezr_e(n_):
+    if n_ <= 1:
+        return False
+    for ez in range(2, int(n_**0.5) + 1):
+        if n_ % ez == 0:
+            return False
+    return True
+
+def hejmar_7_heye(n_):
+    while n_ > 0:
+        if n_ % 10 == 7:
+            return True
+        n_ //= 10
+    return False
+
+def sum_primes():
+    sum_primes = 0
+    for n_ in range(1000000, 2000001):
+        if Serokwezr_e(n_) and not hejmar_7_heye(n_):
+            sum_primes += n_
+    return sum_primes
+
+netce = sum_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", netce)","def Serokwezr_e(n_):
+    if n_ <= 1:
+        return False
+    for ez in range(2, int(n_**0.5) + 1):
+        if n_ % ez == 0:
+            return False
+    return True
+
+def hejmar_7_heye(n_):
+    while n_ > 0:
+        if n_ % 10 == 7:
+            return True
+        n_ //= 10
+    return False
+
+def sum_primes():
+    sum_primes = 0
+    for n_ in range(1000000, 2000001):
+        if Serokwezr_e(n_) and not hejmar_7_heye(n_):
+            sum_primes += n_
+    return sum_primes
+
+netce = sum_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", netce)"
+"def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def find_prime_sum_array(N, M, X):
+    prime_sum_array = []
+    current_number = M
+    sum_so_far = 0
+
+    while len(prime_sum_array) < N and current_number <= X:
+        if is_prime(sum_so_far + current_number):
+            prime_sum_array.append(current_number)
+            sum_so_far += current_number
+        current_number += M
+
+    if not is_prime(sum_so_far):
+        return []
+
+    return prime_sum_array
+
+# Example usage
+N = 5
+M = 3
+X = 20
+
+result = find_prime_sum_array(N, M, X)
+print(result)","def Serokwezr_e(n_):
+    if n_ < 2:
+        return False
+    for ez in range(2, int(n_ ** 0.5) + 1):
+        if n_ % ez == 0:
+            return False
+    return True
+
+def array_seroka_pn_bibnin(N, M, X):
+    Serokwezr_Serokwezr = []
+    Hejmara_hey = M
+    heta_nuha = 0
+
+    while len(Serokwezr_Serokwezr) < N and Hejmara_hey <= X:
+        if Serokwezr_e(heta_nuha + Hejmara_hey):
+            Serokwezr_Serokwezr.append(Hejmara_hey)
+            heta_nuha += Hejmara_hey
+        Hejmara_hey += M
+
+    if not Serokwezr_e(heta_nuha):
+        return []
+
+    return Serokwezr_Serokwezr
+
+   #Bikaranîna mînakî
+N = 5
+M = 3
+X = 20
+
+netce = array_seroka_pn_bibnin(N, M, X)
+print(netce)","def Serokwezr_e(n_):
+    if n_ < 2:
+        return False
+    for ez in range(2, int(n_ ** 0.5) + 1):
+        if n_ % ez == 0:
+            return False
+    return True
+
+def array_seroka_pn_bibnin(N, M, X):
+    Serokwezr_Serokwezr = []
+    Hejmara_hey = M
+    heta_nuha = 0
+
+    while len(Serokwezr_Serokwezr) < N and Hejmara_hey <= X:
+        if Serokwezr_e(heta_nuha + Hejmara_hey):
+            Serokwezr_Serokwezr.append(Hejmara_hey)
+            heta_nuha += Hejmara_hey
+        Hejmara_hey += M
+
+    if not Serokwezr_e(heta_nuha):
+        return []
+
+    return Serokwezr_Serokwezr
+
+    #Bikaranîna mînakî
+N = 5
+M = 3
+X = 20
+
+netce = array_seroka_pn_bibnin(N, M, X)
+print(netce)"
+"def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def max_prime_difference(arr):
+    primes = []
+    for num in arr:
+        if is_prime(abs(num)):
+            primes.append(abs(num))
+    if len(primes) < 2:
+        return 0
+    max_diff = 0
+    for i in range(len(primes)-1):
+        diff = abs(primes[i] - primes[i+1])
+        if diff > max_diff:
+            max_diff = diff
+    return max_diff","def Serokwezr_e(N):
+    if N < 2:
+        return False
+    for ez in range(2, int(N**0.5) + 1):
+        if N % ez == 0:
+            return False
+    return True
+
+def Cdahiya_her_Max(tar):
+    Primes = []
+    for n_ in tar:
+        if Serokwezr_e(abs(n_)):
+            Primes.append(abs(n_))
+    if len(Primes) < 2:
+        return 0
+    Max_diff = 0
+    for ez in range(len(Primes)-1):
+        cih = abs(Primes[ez] - Primes[ez+1])
+        if cih > Max_diff:
+            Max_diff = cih
+    return Max_diff","def Serokwezr_e(N):
+    if N < 2:
+        return False
+    for ez in range(2, int(N**0.5) + 1):
+        if N % ez == 0:
+            return False
+    return True
+
+def Cdahiya_her_Max(tar):
+    Primes = []
+    for n_ in tar:
+        if Serokwezr_e(abs(n_)):
+            Primes.append(abs(n_))
+    if len(Primes) < 2:
+        return 0
+    Max_diff = 0
+    for ez in range(len(Primes)-1):
+        cih = abs(Primes[ez] - Primes[ez+1])
+        if cih > Max_diff:
+            Max_diff = cih
+    return Max_diff"
+"import math
+
+def calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio):
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate the height using the Law of Sines
+    height = opposite_side_length * math.sin(angle_rad) / side_ratio
+
+    # Calculate the length of the adjacent side using the Law of Cosines
+    adjacent_side_length = math.sqrt(side_lengths**2 + opposite_side_length**2 - 2 * side_lengths * opposite_side_length * math.cos(angle_rad))
+
+    # Calculate the hypotenuse of the triangle
+    hypotenuse = side_lengths / math.cos(angle_rad)
+
+    # Calculate the remaining side using Pythagorean theorem
+    remaining_side_length = math.sqrt(hypotenuse**2 - adjacent_side_length**2)
+
+    # Calculate the final height of the triangle
+    height += remaining_side_length
+
+    return height
+
+
+def simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True):
+    # Initialize variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate initial velocities
+    vx = initial_velocity * math.cos(angle_rad)
+    vy = initial_velocity * math.sin(angle_rad)
+
+    # Simulate the motion until the y-coordinate becomes negative (reached the ground)
+    while y >= 0:
+        # Calculate the acceleration due to air resistance
+        if air_resistance:
+            air_resistance_acceleration = -0.5 * vy**2  # Simplified model for air resistance
+        else:
+            air_resistance_acceleration = 0.0  # No air resistance
+
+        # Calculate the new velocities using the kinematic equations
+        vx += air_resistance_acceleration * math.cos(angle_rad) * time_interval
+        vy += (-9.8 + air_resistance_acceleration * math.sin(angle_rad)) * time_interval
+
+        # Calculate the new position using the kinematic equations
+        x += vx * time_interval
+        y += vy * time_interval
+
+        # Increment the time
+        time += time_interval
+
+    return x, y, time
+
+
+# Example usage
+angle = 45  # Angle in degrees
+side_lengths = 5
+opposite_side_length = 3
+side_ratio = 2
+height = calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio)
+print(f""The height of the triangle is: {height}"")
+
+initial_velocity = 10  # m/s
+time_interval = 0.01  # seconds
+x, y, total_time = simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True)
+print(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","import Ziman_kann
+
+def Dirjbna_sgoe_hesab_bikin(qoz, بەڕێوەبەرایەتیjahiya_al, Dirjahiya_berevaj, Rjeya_aliy):
+       #Angle ji dereceyan veguherînin radians
+    Angle_Rad = Ziman_kann.radis(qoz)
+
+       #Bilindahiya bi karanîna qanûna gunehan hesab bike
+    bilind = Dirjahiya_berevaj * Ziman_kann.gneh(Angle_Rad) / Rjeya_aliy
+
+       #Dirêjahiya aliyek cîran bi karanîna zagona kozikan hesab bike
+    Dirjahiya_algir = Ziman_kann.Sqrt(بەڕێوەبەرایەتیjahiya_al**2 + Dirjahiya_berevaj**2 - 2 * بەڕێوەبەرایەتیjahiya_al * Dirjahiya_berevaj * Ziman_kann.Cos(Angle_Rad))
+
+       #Hîpotenuse ya sêgoşeyê hesab bikin
+    Hyprotenuse = بەڕێوەبەرایەتیjahiya_al / Ziman_kann.Cos(Angle_Rad)
+
+       #Li ser navê teorema pythagorean bi karanîna aliyekî mayî hesab bikin
+    Dirjbna_aliy_may = Ziman_kann.Sqrt(Hyprotenuse**2 - Dirjahiya_algir**2)
+
+       #Bilindahiya paşîn a sêgoşeyê hesab bike
+    bilind += Dirjbna_aliy_may
+
+    return bilind
+
+
+def Tevgera_sgoe_siml_bikin(leza_destpk, qoz, interval_dema, Berxwedana_heway=True):
+       #Guhertoyên destpêkê bikin
+    x = 0.0
+    y = 0.0
+    dem = 0.0
+
+       #Angle ji dereceyan veguherînin radians
+    Angle_Rad = Ziman_kann.radis(qoz)
+
+       #Leza destpêkê hesab bikin
+    VX = leza_destpk * Ziman_kann.Cos(Angle_Rad)
+    Vy = leza_destpk * Ziman_kann.gneh(Angle_Rad)
+
+       #Heya ku koordînasyona Y_ya negatîf be (gihîştiye erdê) simûlkirin
+    while y >= 0:
+           #Ji ber berxwedana hewayê lezgîn hesab bikin
+        if Berxwedana_heway:
+            Accelerasyona_berxwedana_heway = -0.5 * Vy**2 #Modela hêsan ji bo berxwedana hewayê
+        else:
+            Accelerasyona_berxwedana_heway = 0.0 #Baweriya hewayê tune
+
+           #Vebijarkên nû bi karanîna hevsengiyên kinematîk hesab bikin
+        VX += Accelerasyona_berxwedana_heway * Ziman_kann.Cos(Angle_Rad) * interval_dema
+        Vy += (-9.8 + Accelerasyona_berxwedana_heway * Ziman_kann.gneh(Angle_Rad)) * interval_dema
+
+           #Helwesta nû bi karanîna wekheviyên kinematîk hesab bikin
+        x += VX * interval_dema
+        y += Vy * interval_dema
+
+           #Wext zêde dibe
+        dem += interval_dema
+
+    return x, y, dem
+
+
+   #Bikaranîna mînakî
+qoz = 45 #Angle di derece
+بەڕێوەبەرایەتیjahiya_al = 5
+Dirjahiya_berevaj = 3
+Rjeya_aliy = 2
+bilind = Dirjbna_sgoe_hesab_bikin(qoz, بەڕێوەبەرایەتیjahiya_al, Dirjahiya_berevaj, Rjeya_aliy)
+print(an""The height of the triangle is: {height}"")
+
+leza_destpk = 10 #m / s
+interval_dema = 0.01 #seconds
+x, y, Demjimra_git = Tevgera_sgoe_siml_bikin(leza_destpk, qoz, interval_dema, Berxwedana_heway=True)
+print(an""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","import Ziman_kann
+
+def Dirjbna_sgoe_hesab_bikin(qoz, بەڕێوەبەرایەتیjahiya_al, Dirjahiya_berevaj, Rjeya_aliy):
+        #Angle ji dereceyan veguherînin radians
+    Angle_Rad = Ziman_kann.radis(qoz)
+
+        #Bilindahiya bi karanîna qanûna gunehan hesab bike
+    bilind = Dirjahiya_berevaj * Ziman_kann.gneh(Angle_Rad) / Rjeya_aliy
+
+        #Dirêjahiya aliyek cîran bi karanîna zagona kozikan hesab bike
+    Dirjahiya_algir = Ziman_kann.Sqrt(بەڕێوەبەرایەتیjahiya_al**2 + Dirjahiya_berevaj**2 - 2 * بەڕێوەبەرایەتیjahiya_al * Dirjahiya_berevaj * Ziman_kann.Cos(Angle_Rad))
+
+        #Hîpotenuse ya sêgoşeyê hesab bikin
+    Hyprotenuse = بەڕێوەبەرایەتیjahiya_al / Ziman_kann.Cos(Angle_Rad)
+
+        #Li ser navê teorema pythagorean bi karanîna aliyekî mayî hesab bikin
+    Dirjbna_aliy_may = Ziman_kann.Sqrt(Hyprotenuse**2 - Dirjahiya_algir**2)
+
+        #Bilindahiya paşîn a sêgoşeyê hesab bike
+    bilind += Dirjbna_aliy_may
+
+    return bilind
+
+
+def Tevgera_sgoe_siml_bikin(leza_destpk, qoz, interval_dema, Berxwedana_heway=True):
+        #Guhertoyên destpêkê bikin
+    x = 0.0
+    y = 0.0
+    dem = 0.0
+
+        #Angle ji dereceyan veguherînin radians
+    Angle_Rad = Ziman_kann.radis(qoz)
+
+        #Leza destpêkê hesab bikin
+    VX = leza_destpk * Ziman_kann.Cos(Angle_Rad)
+    Vy = leza_destpk * Ziman_kann.gneh(Angle_Rad)
+
+        #Heya ku koordînasyona Y_ya negatîf be (gihîştiye erdê) simûlkirin
+    while y >= 0:
+            #Ji ber berxwedana hewayê lezgîn hesab bikin
+        if Berxwedana_heway:
+            Accelerasyona_berxwedana_heway = -0.5 * Vy**2 #Modela hêsan ji bo berxwedana hewayê
+        else:
+            Accelerasyona_berxwedana_heway = 0.0 #Baweriya hewayê tune
+
+            #Vebijarkên nû bi karanîna hevsengiyên kinematîk hesab bikin
+        VX += Accelerasyona_berxwedana_heway * Ziman_kann.Cos(Angle_Rad) * interval_dema
+        Vy += (-9.8 + Accelerasyona_berxwedana_heway * Ziman_kann.gneh(Angle_Rad)) * interval_dema
+
+            #Helwesta nû bi karanîna wekheviyên kinematîk hesab bikin
+        x += VX * interval_dema
+        y += Vy * interval_dema
+
+            #Wext zêde dibe
+        dem += interval_dema
+
+    return x, y, dem
+
+
+    #Bikaranîna mînakî
+qoz = 45 #Angle di derece
+بەڕێوەبەرایەتیjahiya_al = 5
+Dirjahiya_berevaj = 3
+Rjeya_aliy = 2
+bilind = Dirjbna_sgoe_hesab_bikin(qoz, بەڕێوەبەرایەتیjahiya_al, Dirjahiya_berevaj, Rjeya_aliy)
+print(an""The height of the triangle is: {height}"")
+
+leza_destpk = 10 #m / s
+interval_dema = 0.01 #seconds
+x, y, Demjimra_git = Tevgera_sgoe_siml_bikin(leza_destpk, qoz, interval_dema, Berxwedana_heway=True)
+print(an""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")"
+"import math
+
+def calculate_circle_area(radius):
+    try:
+        radius = float(radius)
+        if radius <= 0:
+            return ""Error: Radius must be a positive number""
+        area = math.pi * radius**2
+        return ""{:.2f}"".format(area)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","import Ziman_kann
+
+def Qada_dorp_hesab_bikin(ap):
+    try:
+        ap = float(ap)
+        if ap <= 0:
+            return ""Error: Radius must be a positive number""
+        dewer = Ziman_kann.pi * ap**2
+        return ""{:.2f}"".format(dewer)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","import Ziman_kann
+
+def Qada_dorp_hesab_bikin(ap):
+    try:
+        ap = float(ap)
+        if ap <= 0:
+            return ""Error: Radius must be a positive number""
+        dewer = Ziman_kann.pi * ap**2
+        return ""{:.2f}"".format(dewer)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number"""
+"def multiply_matrices(A, B):
+    a, b, c = A[0][0], A[0][1], A[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    return [
+        [a*d + b*e, a*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+def power_matrix(A, n):
+    if n == 0:
+        return [[1, 0], [0, 1]]  # Identity matrix
+    
+    result = power_matrix(A, n // 2)
+    result = multiply_matrices(result, result)
+    
+    if n % 2 == 1:
+        result = multiply_matrices(result, A)
+    
+    return result
+
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_matrix(matrix, n - 1)
+    
+    return result[0][0]","def Matrices_pirjimar(YEK, Bic):
+    yek, bic, c = YEK[0][0], YEK[0][1], YEK[1][0]
+    D, E, an = Bic[0][0], Bic[0][1], Bic[1][0]
+    
+    return [
+        [yek*D + bic*E, yek*E + bic*an],
+        [c*D + E*D, c*E + E*an]
+    ]
+
+
+def Power_Matrix(YEK, N):
+    if N == 0:
+        return [[1, 0], [0, 1]] #Matrix nasname
+    
+    netce = Power_Matrix(YEK, N // 2)
+    netce = Matrices_pirjimar(netce, netce)
+    
+    if N % 2 == 1:
+        netce = Matrices_pirjimar(netce, YEK)
+    
+    return netce
+
+
+def fibonacci(N):
+    if N == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    netce = Power_Matrix(matrix, N - 1)
+    
+    return netce[0][0]","def Matrices_pirjimar(YEK, Bic):
+    yek, bic, c = YEK[0][0], YEK[0][1], YEK[1][0]
+    D, E, an = Bic[0][0], Bic[0][1], Bic[1][0]
+    
+    return [
+        [yek*D + bic*E, yek*E + bic*an],
+        [c*D + E*D, c*E + E*an]
+    ]
+
+
+def Power_Matrix(YEK, N):
+    if N == 0:
+        return [[1, 0], [0, 1]] #Matrix nasname
+    
+    netce = Power_Matrix(YEK, N // 2)
+    netce = Matrices_pirjimar(netce, netce)
+    
+    if N % 2 == 1:
+        netce = Matrices_pirjimar(netce, YEK)
+    
+    return netce
+
+
+def fibonacci(N):
+    if N == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    netce = Power_Matrix(matrix, N - 1)
+    
+    return netce[0][0]"
+"def debug_program(arr):
+    n = len(arr)
+    return binary_search(arr, 0, n - 1)
+
+def binary_search(arr, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end) // 2
+    
+    if arr[mid] == mid:
+        return mid
+    
+    left_result = binary_search(arr, start, min(mid - 1, arr[mid]))
+    right_result = binary_search(arr, max(mid + 1, arr[mid]), end)
+    
+    return max(left_result, right_result)","def Bernameya_Debug(tar):
+    N = len(tar)
+    return binary_lgern(tar, 0, N - 1)
+
+def binary_lgern(tar, destpkirin, daw):
+    if destpkirin > daw:
+        return -1
+    
+    d = (destpkirin + daw) // 2
+    
+    if tar[d] == d:
+        return d
+    
+    Encama_ep = binary_lgern(tar, destpkirin, min(d - 1, tar[d]))
+    encama_rast = binary_lgern(tar, max(d + 1, tar[d]), daw)
+    
+    return max(Encama_ep, encama_rast)","def Bernameya_Debug(tar):
+    N = len(tar)
+    return binary_lgern(tar, 0, N - 1)
+
+def binary_lgern(tar, destpkirin, daw):
+    if destpkirin > daw:
+        return -1
+    
+    d = (destpkirin + daw) // 2
+    
+    if tar[d] == d:
+        return d
+    
+    Encama_ep = binary_lgern(tar, destpkirin, min(d - 1, tar[d]))
+    encama_rast = binary_lgern(tar, max(d + 1, tar[d]), daw)
+    
+    return max(Encama_ep, encama_rast)"
+"import math
+
+def power(x, y):
+    # Check for invalid inputs
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+    # Check if x is between 1 and 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+    # Check if y is between 0 and 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+    # Custom algorithm for calculating power
+    result = x ** y
+
+    # Check if result exceeds threshold for scientific notation
+    if result > 1e6:
+        return ""{:.2e}"".format(result)
+    else:
+        return result
+
+# Example usage
+x = 2.5
+y = 3
+result = power(x, y)
+print(result)","import Ziman_kann
+
+def erk(x, y):
+       #Ji bo inputên nederbasdar binihêrin
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+       #Kontrol bikin ka x di navbera 1 û 10 de ye
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+       #Kontrol bikin ka y di navbera 0 û 5 de ye
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+       #Algorîtmaya xwerû ji bo hesabkirina hêzê
+    netce = x ** y
+
+       #Kontrol bikin ka encam ji benda ji bo danezana zanistî derbas dibe
+    if netce > 1e6:
+        return ""{:.2e}"".format(netce)
+    else:
+        return netce
+
+   #Bikaranîna mînakî
+x = 2.5
+y = 3
+netce = erk(x, y)
+print(netce)","import Ziman_kann
+
+def erk(x, y):
+        #Ji bo inputên nederbasdar binihêrin
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+        #Kontrol bikin ka x di navbera 1 û 10 de ye
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+        #Kontrol bikin ka y di navbera 0 û 5 de ye
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+        #Algorîtmaya xwerû ji bo hesabkirina hêzê
+    netce = x ** y
+
+        #Kontrol bikin ka encam ji benda ji bo danezana zanistî derbas dibe
+    if netce > 1e6:
+        return ""{:.2e}"".format(netce)
+    else:
+        return netce
+
+    #Bikaranîna mînakî
+x = 2.5
+y = 3
+netce = erk(x, y)
+print(netce)"
+"def bubble_sort_descending(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+sorted_arr = bubble_sort_descending(arr)
+print(sorted_arr)","def Bubble_Sort_Descending(tar):
+    N = len(tar)
+    for ez in range(N - 1):
+        for J in range(N - ez - 1):
+            if tar[J] < tar[J + 1]:
+                tar[J], tar[J + 1] = tar[J + 1], tar[J]
+    return tar
+
+tar = [3, 2, 1, 5, 4]
+arr_teng_kirin = Bubble_Sort_Descending(tar)
+print(arr_teng_kirin)","def Bubble_Sort_Descending(tar):
+    N = len(tar)
+    for ez in range(N - 1):
+        for J in range(N - ez - 1):
+            if tar[J] < tar[J + 1]:
+                tar[J], tar[J + 1] = tar[J + 1], tar[J]
+    return tar
+
+tar = [3, 2, 1, 5, 4]
+arr_teng_kirin = Bubble_Sort_Descending(tar)
+print(arr_teng_kirin)"
+"def sum_prime_numbers(arr):
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    prime_sum = 0
+    for num in arr:
+        if is_prime(num):
+            prime_sum += num
+    return prime_sum","def Hejmarn_Serokwezr(tar):
+    def Serokwezr_e(N):
+        if N <= 1:
+            return False
+        for ez in range(2, int(N**0.5) + 1):
+            if N % ez == 0:
+                return False
+        return True
+
+    Serokwezr = 0
+    for n_ in tar:
+        if Serokwezr_e(n_):
+            Serokwezr += n_
+    return Serokwezr","def Hejmarn_Serokwezr(tar):
+    def Serokwezr_e(N):
+        if N <= 1:
+            return False
+        for ez in range(2, int(N**0.5) + 1):
+            if N % ez == 0:
+                return False
+        return True
+
+    Serokwezr = 0
+    for n_ in tar:
+        if Serokwezr_e(n_):
+            Serokwezr += n_
+    return Serokwezr"
+"def calculate_factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+def calculate_factorials(arr):
+    result = []
+    for num in arr:
+        result.append(calculate_factorial(num))
+    return result
+
+arr = [1, 2, 3, 4, 5]
+factorials = calculate_factorials(arr)
+print(factorials)","def faktorek_hesab_bikin(N):
+    if N == 0:
+        return 1
+    else:
+        return N * faktorek_hesab_bikin(N - 1)
+
+def faktoran_hesab_bikin(tar):
+    netce = []
+    for n_ in tar:
+        netce.append(faktorek_hesab_bikin(n_))
+    return netce
+
+tar = [1, 2, 3, 4, 5]
+faktor = faktoran_hesab_bikin(tar)
+print(faktor)","def faktorek_hesab_bikin(N):
+    if N == 0:
+        return 1
+    else:
+        return N * faktorek_hesab_bikin(N - 1)
+
+def faktoran_hesab_bikin(tar):
+    netce = []
+    for n_ in tar:
+        netce.append(faktorek_hesab_bikin(n_))
+    return netce
+
+tar = [1, 2, 3, 4, 5]
+faktor = faktoran_hesab_bikin(tar)
+print(faktor)"
+"def count_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowel_counts = {vowel: 0 for vowel in vowels}
+    
+    for char in text:
+        if char.lower() in vowels:
+            vowel_counts[char.lower()] += 1
+    
+    return vowel_counts
+
+text = ""Hello World!""
+result = count_vowels(text)
+print(result)","def Vdyoyn_hejmartin(nivstok):
+    dmenn = ['a', 'e', 'i', 'o', 'u']
+    hejmartin_vokal = {dengdar: 0 for dengdar in dmenn}
+    
+    for ekar in nivstok:
+        if ekar.lower() in dmenn:
+            hejmartin_vokal[ekar.lower()] += 1
+    
+    return hejmartin_vokal
+
+nivstok = ""Hello World!""
+netce = Vdyoyn_hejmartin(nivstok)
+print(netce)","def Vdyoyn_hejmartin(nivstok):
+    dmenn = ['a', 'e', 'i', 'o', 'u']
+    hejmartin_vokal = {dengdar: 0 for dengdar in dmenn}
+    
+    for ekar in nivstok:
+        if ekar.lower() in dmenn:
+            hejmartin_vokal[ekar.lower()] += 1
+    
+    return hejmartin_vokal
+
+nivstok = ""Hello World!""
+netce = Vdyoyn_hejmartin(nivstok)
+print(netce)"
+"import random
+
+def generate_random_number():
+    num = 0
+    while bin(num).count('1') != 4:
+        num = random.randint(0, 15)
+    return num
+
+random_number = generate_random_number()
+print(random_number)","import bpayn
+
+def Jimareya_rastn_hilbernin():
+    n_ = 0
+    while bin(n_).count('1') != 4:
+        n_ = bpayn.Rarint(0, 15)
+    return n_
+
+Hejmara_Rastn = Jimareya_rastn_hilbernin()
+print(Hejmara_Rastn)","import bpayn
+
+def Jimareya_rastn_hilbernin():
+    n_ = 0
+    while bin(n_).count('1') != 4:
+        n_ = bpayn.Rarint(0, 15)
+    return n_
+
+Hejmara_Rastn = Jimareya_rastn_hilbernin()
+print(Hejmara_Rastn)"
+"def multiply(a, b):
+    # Calculate the sign of the result
+    sign = -1 if (a < 0) ^ (b < 0) else 1
+
+    # Convert both numbers to positive
+    a = abs(a)
+    b = abs(b)
+
+    # Initialize the result
+    result = 0
+
+    # Multiply the numbers using bitwise operations
+    while b:
+        # If b is odd, add a to the result
+        if b & 1:
+            result += a
+
+        # Shift a to the left by 1 bit
+        a <<= 1
+
+        # Shift b to the right by 1 bit
+        b >>= 1
+
+    return sign * result","def zdekirin(yek, bic):
+       #Nîşana encamê hesab bike
+    nan = -1 if (yek < 0) ^ (bic < 0) else 1
+
+       #Her du hejmar bi erênî veguherînin
+    yek = abs(yek)
+    bic = abs(bic)
+
+       #Encama destpêkê bikin
+    netce = 0
+
+       #Hejmarên bi karanîna operasyonên bitwise pirjimar bikin
+    while bic:
+           #Heke b xerîb e, encama A zêde bikin
+        if bic & 1:
+            netce += yek
+
+           #Ji hêla 1 bit 1 ve li milê çepê veguherînin
+        yek <<= 1
+
+           #Shift b bi 1 bit
+        bic >>= 1
+
+    return nan * netce","def zdekirin(yek, bic):
+        #Nîşana encamê hesab bike
+    nan = -1 if (yek < 0) ^ (bic < 0) else 1
+
+        #Her du hejmar bi erênî veguherînin
+    yek = abs(yek)
+    bic = abs(bic)
+
+        #Encama destpêkê bikin
+    netce = 0
+
+        #Hejmarên bi karanîna operasyonên bitwise pirjimar bikin
+    while bic:
+            #Heke b xerîb e, encama A zêde bikin
+        if bic & 1:
+            netce += yek
+
+            #Ji hêla 1 bit 1 ve li milê çepê veguherînin
+        yek <<= 1
+
+            #Shift b bi 1 bit
+        bic >>= 1
+
+    return nan * netce"
+"def find_longest_element(lst):
+    longest_element = ''
+    longest_index = -1
+    longest_count = 0
+    
+    for i, element in enumerate(lst):
+        if len(str(element)) > len(longest_element):
+            longest_element = str(element)
+            longest_index = i
+            longest_count = 1
+        elif len(str(element)) == len(longest_element):
+            longest_count += 1
+    
+    return longest_element, longest_index, longest_count
+
+# Example usage:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longest_element, longest_index, longest_count = find_longest_element(lst)
+
+print(""Longest Element:"", longest_element)
+print(""Index of Longest Element:"", longest_index)
+print(""Total Occurrences of Longest Element:"", longest_count)","def hmana_dirjtirn_bibnin(lst):
+    Elementa_her_dirj = ''
+    Indeksa_her_dirj = -1
+    hejmartina_dirjtirn = 0
+    
+    for ez, pve in enumerate(lst):
+        if len(str(pve)) > len(Elementa_her_dirj):
+            Elementa_her_dirj = str(pve)
+            Indeksa_her_dirj = ez
+            hejmartina_dirjtirn = 1
+        ئەگەرنا_ئەگەر... len(str(pve)) == len(Elementa_her_dirj):
+            hejmartina_dirjtirn += 1
+    
+    return Elementa_her_dirj, Indeksa_her_dirj, hejmartina_dirjtirn
+
+   #Mînak Bikaranîna:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+Elementa_her_dirj, Indeksa_her_dirj, hejmartina_dirjtirn = hmana_dirjtirn_bibnin(lst)
+
+print(""Longest Element:"", Elementa_her_dirj)
+print(""Index of Longest Element:"", Indeksa_her_dirj)
+print(""Total Occurrences of Longest Element:"", hejmartina_dirjtirn)","def hmana_dirjtirn_bibnin(lst):
+    Elementa_her_dirj = ''
+    Indeksa_her_dirj = -1
+    hejmartina_dirjtirn = 0
+    
+    for ez, pve in enumerate(lst):
+        if len(str(pve)) > len(Elementa_her_dirj):
+            Elementa_her_dirj = str(pve)
+            Indeksa_her_dirj = ez
+            hejmartina_dirjtirn = 1
+        ئەگەرنا_ئەگەر... len(str(pve)) == len(Elementa_her_dirj):
+            hejmartina_dirjtirn += 1
+    
+    return Elementa_her_dirj, Indeksa_her_dirj, hejmartina_dirjtirn
+
+    #Mînak Bikaranîna:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+Elementa_her_dirj, Indeksa_her_dirj, hejmartina_dirjtirn = hmana_dirjtirn_bibnin(lst)
+
+print(""Longest Element:"", Elementa_her_dirj)
+print(""Index of Longest Element:"", Indeksa_her_dirj)
+print(""Total Occurrences of Longest Element:"", hejmartina_dirjtirn)"
+"import math
+
+def is_prime(num):
+    if num <= 1:
+        return ""Composite""
+
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return ""Composite""
+
+    return ""Prime""","import Ziman_kann
+
+def Serokwezr_e(n_):
+    if n_ <= 1:
+        return ""Composite""
+
+    for ez in range(2, int(Ziman_kann.Sqrt(n_)) + 1):
+        if n_ % ez == 0:
+            return ""Composite""
+
+    return ""Prime""","import Ziman_kann
+
+def Serokwezr_e(n_):
+    if n_ <= 1:
+        return ""Composite""
+
+    for ez in range(2, int(Ziman_kann.Sqrt(n_)) + 1):
+        if n_ % ez == 0:
+            return ""Composite""
+
+    return ""Prime"""
+"def print_primes_without_five(lower, upper):
+    # Step 1: Create a boolean array ""is_prime[0..upper]"" and initialize
+    # all entries it as true.
+    is_prime = [True] * (upper + 1)
+    is_prime[0] = is_prime[1] = False
+
+    # Step 2: Mark all the multiples of prime numbers starting from 2
+    # as false.
+    p = 2
+    while p * p <= upper:
+        if is_prime[p]:
+            for i in range(p * p, upper + 1, p):
+                is_prime[i] = False
+        p += 1
+
+    # Step 3: Print all prime numbers in the given range excluding
+    # numbers containing the digit 5.
+    for num in range(lower, upper + 1):
+        if is_prime[num] and '5' not in str(num):
+            print(num)","def Primes_by_pnc_ap_bikin(lower, upper):
+       #Gav 1: Arrayek Boolean biafirînin ""is_prime [0..uper]"" û destpêkê
+       #Hemî ew wekî rast vedibêje.
+    Serokwezr_e = [True] * (upper + 1)
+    Serokwezr_e[0] = Serokwezr_e[1] = False
+
+       #Gav 2: Hemî pirjimarên hejmarên pêşîn ên ku ji 2 dest pê dikin nîşan bikin
+       #wek derewîn.
+    P = 2
+    while P * P <= upper:
+        if Serokwezr_e[P]:
+            for ez in range(P * P, upper + 1, P):
+                Serokwezr_e[ez] = False
+        P += 1
+
+       #Gav 3: Hemî hejmarên pêşîn ên li qada diyarkirî çap bikin
+       #hejmarên ku di hejmarê 5 de hene.
+    for n_ in range(lower, upper + 1):
+        if Serokwezr_e[n_] and '5' not in str(n_):
+            print(n_)","def Primes_by_pnc_ap_bikin(lower, upper):
+        #Gav 1: Arrayek Boolean biafirînin ""is_prime [0..uper]"" û destpêkê
+        #Hemî ew wekî rast vedibêje.
+    Serokwezr_e = [True] * (upper + 1)
+    Serokwezr_e[0] = Serokwezr_e[1] = False
+
+        #Gav 2: Hemî pirjimarên hejmarên pêşîn ên ku ji 2 dest pê dikin nîşan bikin
+        #wek derewîn.
+    P = 2
+    while P * P <= upper:
+        if Serokwezr_e[P]:
+            for ez in range(P * P, upper + 1, P):
+                Serokwezr_e[ez] = False
+        P += 1
+
+        #Gav 3: Hemî hejmarên pêşîn ên li qada diyarkirî çap bikin
+        #hejmarên ku di hejmarê 5 de hene.
+    for n_ in range(lower, upper + 1):
+        if Serokwezr_e[n_] and '5' not in str(n_):
+            print(n_)"
+"import time
+
+# Function to check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Caching mechanism for prime numbers
+prime_cache = {}
+
+# Modified function to check if a number is prime using caching
+def is_prime_cached(n):
+    if n in prime_cache:
+        return prime_cache[n]
+    prime = is_prime(n)
+    prime_cache[n] = prime
+    return prime
+
+# Timer function
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f""Execution time: {end - start} seconds"")
+        return result
+    return wrapper
+
+# List comprehension to generate the list of prime numbers
+@timer
+def generate_prime_palindromic_fibonacci():
+    return [num for num in range(10000, 20001) if is_prime_cached(num) and str(num) == str(num)[::-1] and is_fibonacci(num)]
+
+# Function to check if a number is a Fibonacci number
+def is_fibonacci(n):
+    a, b = 0, 1
+    while b < n:
+        a, b = b, a + b
+    return b == n
+
+# Test the function
+primes = generate_prime_palindromic_fibonacci()
+print(primes)","import dem
+
+   #Fonksiyonên ku hûn hejmarek pêşîn kontrol bikin
+def Serokwezr_e(N):
+    if N < 2:
+        return False
+    for ez in range(2, int(N**0.5) + 1):
+        if N % ez == 0:
+            return False
+    return True
+
+   #Mekanîzmaya caching ji bo hejmarên pêşîn
+Serokwezr_Serokwezr = {}
+
+   #Fonksiyona guherandî da ku hûn hejmarek bi karanîna caching_ê kontrol bikin
+def Serokwezr_e(N):
+    if N in Serokwezr_Serokwezr:
+        return Serokwezr_Serokwezr[N]
+    Serokwezr = Serokwezr_e(N)
+    Serokwezr_Serokwezr[N] = Serokwezr
+    return Serokwezr
+
+   #Fonksiyona Timer
+def Timer(pkenok):
+    def wrapper(*args, **kwargs):
+        destpkirin = dem.dem()
+        netce = pkenok(*args, **kwargs)
+        daw = dem.dem()
+        print(an""Execution time: {end - start} seconds"")
+        return netce
+    return wrapper
+
+   #Fêmkirina navnîşê bikin ku navnîşa hejmarên pêşîn hilberînin
+@Timer
+def FibonactiCI_ya_pn_a_Serokwezr_ava_bikin():
+    return [n_ for n_ in range(10000, 20001) if Serokwezr_e(n_) and str(n_) == str(n_)[::-1] and fibonacci_ye(n_)]
+
+   #Fonksiyonên ku hûn hejmarek hejmarek fibonacci ye kontrol bikin
+def fibonacci_ye(N):
+    yek, bic = 0, 1
+    while bic < N:
+        yek, bic = bic, yek + bic
+    return bic == N
+
+   #Fonksiyonê ceribînin
+Primes = FibonactiCI_ya_pn_a_Serokwezr_ava_bikin()
+print(Primes)","import dem
+
+    #Fonksiyonên ku hûn hejmarek pêşîn kontrol bikin
+def Serokwezr_e(N):
+    if N < 2:
+        return False
+    for ez in range(2, int(N**0.5) + 1):
+        if N % ez == 0:
+            return False
+    return True
+
+    #Mekanîzmaya caching ji bo hejmarên pêşîn
+Serokwezr_Serokwezr = {}
+
+    #Fonksiyona guherandî da ku hûn hejmarek bi karanîna caching_ê kontrol bikin
+def Serokwezr_e(N):
+    if N in Serokwezr_Serokwezr:
+        return Serokwezr_Serokwezr[N]
+    Serokwezr = Serokwezr_e(N)
+    Serokwezr_Serokwezr[N] = Serokwezr
+    return Serokwezr
+
+    #Fonksiyona Timer
+def Timer(pkenok):
+    def wrapper(*args, **kwargs):
+        destpkirin = dem.dem()
+        netce = pkenok(*args, **kwargs)
+        daw = dem.dem()
+        print(an""Execution time: {end - start} seconds"")
+        return netce
+    return wrapper
+
+    #Fêmkirina navnîşê bikin ku navnîşa hejmarên pêşîn hilberînin
+@Timer
+def FibonactiCI_ya_pn_a_Serokwezr_ava_bikin():
+    return [n_ for n_ in range(10000, 20001) if Serokwezr_e(n_) and str(n_) == str(n_)[::-1] and fibonacci_ye(n_)]
+
+    #Fonksiyonên ku hûn hejmarek hejmarek fibonacci ye kontrol bikin
+def fibonacci_ye(N):
+    yek, bic = 0, 1
+    while bic < N:
+        yek, bic = bic, yek + bic
+    return bic == N
+
+    #Fonksiyonê ceribînin
+Primes = FibonactiCI_ya_pn_a_Serokwezr_ava_bikin()
+print(Primes)"
+"import math
+
+def average_list(lst):
+    if not lst:
+        return None
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    total = 0
+    count = 0
+    
+    for num in lst:
+        if not isinstance(num, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(num, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if math.isnan(num):
+            raise ValueError(""List contains NaN values"")
+        
+        if math.isinf(num):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(num) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        total += num
+        count += 1
+    
+    return total / count","import Ziman_kann
+
+def Navna_navn(lst):
+    if not lst:
+        return Net
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    hem = 0
+    count = 0
+    
+    for n_ in lst:
+        if not isinstance(n_, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(n_, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if Ziman_kann.isnan(n_):
+            raise ValueError(""List contains NaN values"")
+        
+        if Ziman_kann.Isinf(n_):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(n_) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        hem += n_
+        count += 1
+    
+    return hem / count","import Ziman_kann
+
+def Navna_navn(lst):
+    if not lst:
+        return Net
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    hem = 0
+    count = 0
+    
+    for n_ in lst:
+        if not isinstance(n_, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(n_, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if Ziman_kann.isnan(n_):
+            raise ValueError(""List contains NaN values"")
+        
+        if Ziman_kann.Isinf(n_):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(n_) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        hem += n_
+        count += 1
+    
+    return hem / count"
+"import sqlite3
+
+def delete_row(connection):
+    try:
+        # Start a transaction
+        connection.execute(""BEGIN TRANSACTION"")
+
+        # Execute the complex query
+        cursor = connection.execute(""SELECT ..."")
+
+        # Fetch the row to be deleted
+        row = cursor.fetchone()
+
+        if row:
+            # Delete the row using its primary key
+            connection.execute(""DELETE FROM table_name WHERE id=?"", (row['id'],))
+
+        # Commit the transaction
+        connection.execute(""COMMIT"")
+
+        # Close the cursor
+        cursor.close()
+
+    except sqlite3.Error as error:
+        # Rollback the transaction in case of any exception
+        connection.execute(""ROLLBACK"")
+
+        # Display the error message
+        print(f""Error: {error}"")
+
+    finally:
+        # Close the database connection
+        connection.close()
+
+# Create a connection to the SQLite database
+connection = sqlite3.connect(""database.db"")
+
+# Call the function to delete the row
+delete_row(connection)","import sqlite3
+
+def Rzan_jbirin(tkl):
+    try:
+           #Danûstendinek dest pê bikin
+        tkl.dardekirin(""BEGIN TRANSACTION"")
+
+           #Pirsgirêka tevlihev bicîh bikin
+        kar = tkl.dardekirin(""SELECT ..."")
+
+           #Rêzika ku jê were jêbirin fet bikin
+        brkirin = kar.Fetchone()
+
+        if brkirin:
+               #Row bi karanîna mifteya xwe ya bingehîn jêbirin
+            tkl.dardekirin(""DELETE FROM table_name WHERE id=?"", (brkirin['id'],))
+
+           #Danûstendinê pêk bînin
+        tkl.dardekirin(""COMMIT"")
+
+           #Kursor bigire
+        kar.close()
+
+    except sqlite3.a as a:
+           #Di doza her îstîsnayekê de danûstendinê bişopînin
+        tkl.dardekirin(""ROLLBACK"")
+
+           #Peyama çewtiyê nîşan bide
+        print(an""Error: {error}"")
+
+    finally:
+           #Girêdana databasê bigire
+        tkl.close()
+
+   #Têkiliyek bi databasa Sqlite re çêbikin
+tkl = sqlite3.bihevgirdan(""database.db"")
+
+   #Fonksiyonê bang bikin ku rêzê jêbirin
+Rzan_jbirin(tkl)","import sqlite3
+
+def Rzan_jbirin(tkl):
+    try:
+            #Danûstendinek dest pê bikin
+        tkl.dardekirin(""BEGIN TRANSACTION"")
+
+            #Pirsgirêka tevlihev bicîh bikin
+        kar = tkl.dardekirin(""SELECT ..."")
+
+            #Rêzika ku jê were jêbirin fet bikin
+        brkirin = kar.Fetchone()
+
+        if brkirin:
+                #Row bi karanîna mifteya xwe ya bingehîn jêbirin
+            tkl.dardekirin(""DELETE FROM table_name WHERE id=?"", (brkirin['id'],))
+
+            #Danûstendinê pêk bînin
+        tkl.dardekirin(""COMMIT"")
+
+            #Kursor bigire
+        kar.close()
+
+    except sqlite3.a as a:
+            #Di doza her îstîsnayekê de danûstendinê bişopînin
+        tkl.dardekirin(""ROLLBACK"")
+
+            #Peyama çewtiyê nîşan bide
+        print(an""Error: {error}"")
+
+    finally:
+            #Girêdana databasê bigire
+        tkl.close()
+
+    #Têkiliyek bi databasa Sqlite re çêbikin
+tkl = sqlite3.bihevgirdan(""database.db"")
+
+    #Fonksiyonê bang bikin ku rêzê jêbirin
+Rzan_jbirin(tkl)"
+"import re
+
+def extract_emails(string):
+    # Use regular expression pattern to find all email addresses in the string
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, string)
+    
+    # Remove any duplicate email addresses
+    unique_emails = list(set(matches))
+    
+    return unique_emails","import maf
+
+def e_nameyan_derxnin(ben):
+       #Modela îfadeyê ya birêkûpêk bikar bînin da ku hemî navnîşên e_nameyê di rêzê de bibînin
+    mnak = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    pbaz_dike = maf.Seall(mnak, ben)
+    
+       #Navnîşanên e_nameyên dubare hilweşînin
+    Emails_Unique = list(set(pbaz_dike))
+    
+    return Emails_Unique","import maf
+
+def e_nameyan_derxnin(ben):
+        #Modela îfadeyê ya birêkûpêk bikar bînin da ku hemî navnîşên e_nameyê di rêzê de bibînin
+    mnak = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    pbaz_dike = maf.Seall(mnak, ben)
+    
+        #Navnîşanên e_nameyên dubare hilweşînin
+    Emails_Unique = list(set(pbaz_dike))
+    
+    return Emails_Unique"
+"def clean_and_sort(lst):
+   result = []
+   for element in lst:
+      if type(element) == int:
+         result.append(element + 5)
+   # implement your own sorting algorithm here
+   n = len(result)
+   for i in range(n):
+      for j in range(0, n-i-1):
+         if result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   return result
+
+print(clean_and_sort([1, 2, ""hello""]))","def paqij__crbecr(lst):
+   netce = []
+   for pve in lst:
+      if sort(pve) == int:
+         netce.append(pve + 5)
+      #Li vir algorîtmaya xwerû ya xwe bicîh bînin
+   N = len(netce)
+   for ez in range(N):
+      for J in range(0, N-ez-1):
+         if netce[J] < netce[J+1]:
+            netce[J], netce[J+1] = netce[J+1], netce[J]
+   return netce
+
+print(paqij__crbecr([1, 2, ""hello""]))","def paqij__crbecr(lst):
+   netce = []
+   for pve in lst:
+      if sort(pve) == int:
+         netce.append(pve + 5)
+       #Li vir algorîtmaya xwerû ya xwe bicîh bînin
+   N = len(netce)
+   for ez in range(N):
+      for J in range(0, N-ez-1):
+         if netce[J] < netce[J+1]:
+            netce[J], netce[J+1] = netce[J+1], netce[J]
+   return netce
+
+print(paqij__crbecr([1, 2, ""hello""]))"
+"def is_valid_palindrome(s):
+    # Convert the string to lowercase
+    s = s.lower()
+    
+    # Initialize the two pointers
+    left = 0
+    right = len(s) - 1
+    
+    while left < right:
+        # Check if the left character is not alphabetic
+        if not s[left].isalpha():
+            left += 1
+            continue
+        
+        # Check if the right character is not alphabetic
+        if not s[right].isalpha():
+            right -= 1
+            continue
+        
+        # Check if the characters at the two positions are equal
+        if s[left] != s[right]:
+            return False
+        
+        # Move the pointers towards the middle
+        left += 1
+        right -= 1
+    
+    return True","def palindrome_derbasdar_e(S):
+       #String bi tîpên piçûk veguherînin
+    S = S.lower()
+    
+       #Du nîşangiran destpêkê bikin
+    ep = 0
+    rast = len(S) - 1
+    
+    while ep < rast:
+           #Kontrol bikin ka karaktera çepê ne alfabet e
+        if not S[ep].isalpha():
+            ep += 1
+            continue
+        
+           #Kontrol bikin ka karektera rast ne alfabet e
+        if not S[rast].isalpha():
+            rast -= 1
+            continue
+        
+           #Kontrol bikin ka tîpên li her du helwestan wekhev in
+        if S[ep] != S[rast]:
+            return False
+        
+           #Nîşanên li ser navîn hilkişînin
+        ep += 1
+        rast -= 1
+    
+    return True","def palindrome_derbasdar_e(S):
+        #String bi tîpên piçûk veguherînin
+    S = S.lower()
+    
+        #Du nîşangiran destpêkê bikin
+    ep = 0
+    rast = len(S) - 1
+    
+    while ep < rast:
+            #Kontrol bikin ka karaktera çepê ne alfabet e
+        if not S[ep].isalpha():
+            ep += 1
+            continue
+        
+            #Kontrol bikin ka karektera rast ne alfabet e
+        if not S[rast].isalpha():
+            rast -= 1
+            continue
+        
+            #Kontrol bikin ka tîpên li her du helwestan wekhev in
+        if S[ep] != S[rast]:
+            return False
+        
+            #Nîşanên li ser navîn hilkişînin
+        ep += 1
+        rast -= 1
+    
+    return True"
+"def is_palindrome(num):
+    # Convert the number to string
+    num_str = str(num)
+    
+    # Check if the number is positive
+    if num <= 0:
+        return False
+    
+    # Check if the number has at least 5 digits
+    if len(num_str) < 5:
+        return False
+    
+    # Check if the number consists of unique digits
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+    # Check if the number is divisible by 7
+    if num % 7 != 0:
+        return False
+    
+    # Check if the number is a palindrome
+    if num_str == num_str[::-1]:
+        return True
+    
+    # Check for palindromic substrings within the number
+    for i in range(len(num_str)):
+        for j in range(i+2, len(num_str)+1):
+            sub_num = num_str[i:j]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+# Testing the script
+# Decimal number
+num_decimal = 12321
+print(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+# Hexadecimal number
+num_hexadecimal = 0x12321
+print(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+# Other test cases
+print(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(f""Is 12321 a palindrome? {is_palindrome(12321)}"")","def palindrome_ye(n_):
+       #Hejmara li string veguherînin
+    num_str = str(n_)
+    
+       #Kontrol bikin ka hejmar erênî ye
+    if n_ <= 0:
+        return False
+    
+       #Kontrol bikin ka hejmar bi kêmî ve 5 hejmar heye
+    if len(num_str) < 5:
+        return False
+    
+       #Kontrol bikin ka hejmar ji hejmarên bêhempa pêk tê
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+       #Kontrol bikin ka hejmar ji hêla 7 ve hatî dabeş kirin
+    if n_ % 7 != 0:
+        return False
+    
+       #Kontrol bikin ku hejmar palindrom e
+    if num_str == num_str[::-1]:
+        return True
+    
+       #Di nav hejmarê de ji bo substroms palindromic kontrol bikin
+    for ez in range(len(num_str)):
+        for J in range(ez+2, len(num_str)+1):
+            sub_num = num_str[ez:J]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+   #Testkirina skrîptê
+   #Hejmara Decimal
+Num_Decimal = 12321
+print(an""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+   #Hejmara Hexadecimal
+Num_Hexadecimal = 0x12321
+print(an""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+   #Dozên ceribandinên din
+print(an""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(an""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(an""Is 12321 a palindrome? {is_palindrome(12321)}"")","def palindrome_ye(n_):
+        #Hejmara li string veguherînin
+    num_str = str(n_)
+    
+        #Kontrol bikin ka hejmar erênî ye
+    if n_ <= 0:
+        return False
+    
+        #Kontrol bikin ka hejmar bi kêmî ve 5 hejmar heye
+    if len(num_str) < 5:
+        return False
+    
+        #Kontrol bikin ka hejmar ji hejmarên bêhempa pêk tê
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+        #Kontrol bikin ka hejmar ji hêla 7 ve hatî dabeş kirin
+    if n_ % 7 != 0:
+        return False
+    
+        #Kontrol bikin ku hejmar palindrom e
+    if num_str == num_str[::-1]:
+        return True
+    
+        #Di nav hejmarê de ji bo substroms palindromic kontrol bikin
+    for ez in range(len(num_str)):
+        for J in range(ez+2, len(num_str)+1):
+            sub_num = num_str[ez:J]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+    #Testkirina skrîptê
+    #Hejmara Decimal
+Num_Decimal = 12321
+print(an""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+    #Hejmara Hexadecimal
+Num_Hexadecimal = 0x12321
+print(an""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+    #Dozên ceribandinên din
+print(an""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(an""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(an""Is 12321 a palindrome? {is_palindrome(12321)}"")"
+"import re
+
+def remove_vowels(string):
+    return re.sub(r'[aeiouAEIOU]', '', string)
+
+def sort_characters(string):
+    frequency = {}
+    for char in string:
+        frequency[char] = frequency.get(char, 0) + 1
+    sorted_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    return sorted_chars
+
+def remove_vowels_and_sort(string):
+    string_without_vowels = remove_vowels(string)
+    sorted_string = sort_characters(string_without_vowels)
+    return ''.join(sorted_string)","import maf
+
+def dengbjan_derxnin(ben):
+    return maf.jr(r'[aeiouAEIOU]', '', ben)
+
+def Karaktern_crbecr(ben):
+    pircarn = {}
+    for ekar in ben:
+        pircarn[ekar] = pircarn.get(ekar, 0) + 1
+    Chars_crbecr = sorted(pircarn.keys(), qfle=lambda x: (-pircarn[x], x))
+    return Chars_crbecr
+
+def vokalan_hilnin__cr_bikin(ben):
+    string_b_vokal = dengbjan_derxnin(ben)
+    Rza_Rzkir = Karaktern_crbecr(string_b_vokal)
+    return ''.join(Rza_Rzkir)","import maf
+
+def dengbjan_derxnin(ben):
+    return maf.jr(r'[aeiouAEIOU]', '', ben)
+
+def Karaktern_crbecr(ben):
+    pircarn = {}
+    for ekar in ben:
+        pircarn[ekar] = pircarn.get(ekar, 0) + 1
+    Chars_crbecr = sorted(pircarn.keys(), qfle=lambda x: (-pircarn[x], x))
+    return Chars_crbecr
+
+def vokalan_hilnin__cr_bikin(ben):
+    string_b_vokal = dengbjan_derxnin(ben)
+    Rza_Rzkir = Karaktern_crbecr(string_b_vokal)
+    return ''.join(Rza_Rzkir)"

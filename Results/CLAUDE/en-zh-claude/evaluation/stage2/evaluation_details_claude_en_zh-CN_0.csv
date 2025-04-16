@@ -1,0 +1,579 @@
+chunk_size,index,original_code,translated_code,back_translated_code,bleu_score,syntax_valid,structure_score,semantic_score,token_match,overall_score
+0,1,"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","def 翻转_矩阵(矩阵):
+    新_矩阵 = []
+    for 行 in range(len(矩阵)):
+        新_矩阵.append([])
+        for list in range(len(矩阵[行])):
+            新_矩阵[行].insert(0, 矩阵[行][list])
+    return 新_矩阵
+
+  #测试用例 1
+矩阵1 = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+  #预期输出: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(翻转_矩阵(矩阵1))
+
+  #测试用例 2
+矩阵2 = [[1, 2, 3, 4],
+         [5, 6, 7, 8]]
+  #预期输出: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(翻转_矩阵(矩阵2))
+
+  #测试用例 3
+矩阵3 = [[1, 2],
+         [3, 4],
+         [5, 6]]
+  #预期输出: [[6, 5], [4, 3], [2, 1]]
+print(翻转_矩阵(矩阵3))","def reverse_matrix(matrix):
+    new_matrix = []
+    for row in range(len(matrix)):
+        new_matrix.append([])
+        for list in range(len(matrix[row])):
+            new_matrix[row].insert(0, matrix[row][list])
+    return new_matrix
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))",0.901310388578321,True,1.0,0.9913452863693237,1.0,0.9785311349895289
+0,2,"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","def 斐波那契数列(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return 斐波那契数列(n-1) + 斐波那契数列(n-2)
+
+  #使用示例
+n = 10
+斐波那契数 = 斐波那契数列(n)
+print(f""索引 {n} 处的斐波那契数是 {斐波那契数}."")","def fibonacci_sequence(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci_sequence(n-1) + fibonacci_sequence(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci_sequence(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")",0.8189006907319648,True,0.5,0.977333664894104,1.0,0.8592468711252138
+0,3,"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","def 统计_唯一_辅音(字符串):
+    辅音 = set()
+    小写_字符串 = 字符串.lower()
+    for 字符 in 小写_字符串:
+        if 字符.isalpha() with 字符 not in 'aeiou':
+            辅音.add(字符)
+    return len(辅音)","def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)",1.0,True,1.0,1.0,1.0,1.0
+0,4,"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","def 过滤_和_替换(字符串):
+    元音 = ['a', 'e', 'i', 'o', 'u']
+    过滤_单词 = []
+    
+    单词 = 字符串.partition()
+    
+    for 单词 in 单词:
+        if any(字符.isnumeric() or not 字符.是字母() for 字符 in 单词):
+            continue
+        
+        if len(单词) > 3 with any(字符 in 元音 for 字符 in 单词):
+            过滤_单词 = """"
+            for 字符 in 单词:
+                if 字符 in 元音:
+                    元音_索引 = 元音.索引(字符)
+                    下一个_元音 = 元音[(元音_索引 + 1) % len(元音)]
+                    过滤_单词 += 下一个_元音
+                else:
+                    过滤_单词 += 字符
+            过滤_单词.追加(过滤_单词)
+    
+    return "" "".连接(过滤_单词)
+
+
+  #示例用法:
+输入_字符串 = ""你好 世界！ 这是一个测试字符串。 如果包含数字或特殊字符，请过滤我。""
+输出_字符串 = 过滤_和_替换(输入_字符串)
+print(输出_字符串)","def filter_and_replace(input_string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = input_string.split()
+    
+    for word in words:
+        if any(char.isnumeric() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)",0.9300189419327614,True,1.0,0.9972018003463745,1.0,0.9854441484558272
+0,5,"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","def 是奇数质数大于_100(数字):
+    if 数字 <= 100 or 数字 % 2 == 0: #检查数字是否小于或等于100或为偶数
+        return False
+    for i in range(3, int(数字**0.5) + 1, 2): #仅检查奇数的可除性
+        if 数字 % i == 0:
+            return False
+    return True
+
+def 查找第二小的奇数质数大于_100(数组):
+    最小值 = 第二小值 = float('inf')
+    for 数字 in 数组:
+        if 是奇数质数大于_100(数字):
+            if 数字 < 最小值:
+                第二小值 = 最小值
+                最小值 = 数字
+            elif 数字 < 第二小值:
+                第二小值 = 数字
+    return 第二小值","def is_odd_prime_greater_than_100(number):
+    if number <= 100 or number % 2 == 0: #check if number is less than or equal to 100 or is even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2): #only check divisibility of odd numbers
+        if number % i == 0:
+            return False
+    return True
+
+def find_second_smallest_odd_prime_greater_than_100(array):
+    smallest = second_smallest = float('inf')
+    for number in array:
+        if is_odd_prime_greater_than_100(number):
+            if number < smallest:
+                second_smallest = smallest
+                smallest = number
+            elif number < second_smallest:
+                second_smallest = number
+    return second_smallest",0.8144331508942215,True,0.5,0.7900780439376831,1.0,0.8209022389663809
+0,6,"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","class 分隔符_未找到_错误(Exception):
+    pass
+
+class 多个_分隔符_错误(Exception):
+    pass
+
+try:
+    我的_字符串 = ""你好, 世界!""
+    分隔符 = ""#""
+
+      #不正确的字符串分隔方式
+    分隔_字符串 = 我的_字符串.split(分隔符, 1)
+    if not 分隔_字符串:
+        raise 分隔符_未找到_错误(""分隔符在字符串中未找到"")
+
+      #额外要求:
+      #如果分隔符在字符串中出现多次，引发名为""多个_分隔符_错误""的自定义异常
+
+      #不正确的字符串分隔方式
+    分隔_字符串 = 我的_字符串.split(分隔符)
+    if len(分隔_字符串) > 2:
+        raise 多个_分隔符_错误(""在字符串中找到多个分隔符"")
+
+except 分隔符_未找到_错误 as e:
+    print(""错误:"", e)
+
+except 多个_分隔符_错误 as e:
+    print(""错误:"", e)
+
+except Exception as e:
+    print(""错误:"", e)","class Delimiter_Not_Found_Error(Exception):
+    pass
+
+class Multiple_Delimiter_Error(Exception):
+    pass
+
+try:
+    my_string = ""Hello, World!""
+    delimiter = ""#""
+
+    # Incorrect string splitting method
+    split_string = my_string.split(delimiter, 1)
+    if not split_string:
+        raise Delimiter_Not_Found_Error(""Delimiter not found in string"")
+
+    # Additional requirement:
+    # If delimiter appears multiple times, raise custom exception named ""Multiple_Delimiter_Error""
+
+    # Incorrect string splitting method
+    split_string = my_string.split(delimiter)
+    if len(split_string) > 2:
+        raise Multiple_Delimiter_Error(""Multiple delimiters found in string"")
+
+except Delimiter_Not_Found_Error as e:
+    print(""Error:"", e)
+
+except Multiple_Delimiter_Error as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)",0.6385402662204135,True,0.5,0.9216356873512268,1.0,0.8120351907143281
+0,7,"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","def 创建_索引_字典(列表_一, 列表_二):
+    if len(列表_一) != len(列表_二):
+        raise ValueError(""输入列表必须长度相等"")
+    
+    索引_字典 = {}
+    for 索引 in range(len(列表_一)):
+        if isinstance(列表_一[索引], (list, dict, tuple)) with isinstance(列表_二[索引], (list, dict, tuple)):
+            if isinstance(列表_一[索引], set) or isinstance(列表_二[索引], set):
+                raise ValueError(""输入列表不能包含集合"")
+            
+            嵌套_字典 = {}
+            if isinstance(列表_一[索引], dict) with isinstance(列表_二[索引], dict):
+                if len(列表_一[索引]) != len(列表_二[索引]):
+                    raise ValueError(""嵌套字典必须具有相同数量的元素"")
+                
+                for 键 in 列表_一[索引].keys():
+                    if 键 not in 列表_二[索引]:
+                        raise ValueError(""嵌套字典的键必须相同"")
+                    嵌套_字典[键] = (列表_一[索引][键], 列表_二[索引][键])
+            elif isinstance(列表_一[索引], list) with isinstance(列表_二[索引], list):
+                if len(列表_一[索引]) != len(列表_二[索引]):
+                    raise ValueError(""嵌套列表必须具有相同长度"")
+                
+                for 子索引 in range(len(列表_一[索引])):
+                    嵌套_字典[子索引] = (列表_一[索引][子索引], 列表_二[索引][子索引])
+            elif isinstance(列表_一[索引], tuple) with isinstance(列表_二[索引], tuple):
+                if len(列表_一[索引]) != len(列表_二[索引]):
+                    raise ValueError(""元组必须具有相同长度"")
+                
+                for 子索引 in range(len(列表_一[索引])):
+                    嵌套_字典[子索引] = (列表_一[索引][子索引], 列表_二[索引][子索引])
+            
+            索引_字典[索引] = 嵌套_字典
+        else:
+            索引_字典[索引] = (列表_一[索引], 列表_二[索引])
+    
+    return 索引_字典","def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must have equal length"")
+    
+    index_dictionary = {}
+    for index in range(len(list_one)):
+        if isinstance(list_one[index], (list, dict, tuple)) and isinstance(list_two[index], (list, dict, tuple)):
+            if isinstance(list_one[index], set) or isinstance(list_two[index], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dictionary = {}
+            if isinstance(list_one[index], dict) and isinstance(list_two[index], dict):
+                if len(list_one[index]) != len(list_two[index]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[index].keys():
+                    if key not in list_two[index]:
+                        raise ValueError(""Nested dictionary keys must be the same"")
+                    nested_dictionary[key] = (list_one[index][key], list_two[index][key])
+            elif isinstance(list_one[index], list) and isinstance(list_two[index], list):
+                if len(list_one[index]) != len(list_two[index]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for sub_index in range(len(list_one[index])):
+                    nested_dictionary[sub_index] = (list_one[index][sub_index], list_two[index][sub_index])
+            elif isinstance(list_one[index], tuple) and isinstance(list_two[index], tuple):
+                if len(list_one[index]) != len(list_two[index]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for sub_index in range(len(list_one[index])):
+                    nested_dictionary[sub_index] = (list_one[index][sub_index], list_two[index][sub_index])
+            
+            index_dictionary[index] = nested_dictionary
+        else:
+            index_dictionary[index] = (list_one[index], list_two[index])
+    
+    return index_dictionary",0.6753857018963075,True,1.0,0.9929518103599548,1.0,0.9336675024512525
+0,8,"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","def 查找_最大值(甲, 乙, 丙):
+     #转换数字为二进制
+    甲_二进制 = bin(甲)
+    乙_二进制 = bin(乙)
+    丙_二进制 = bin(丙)
+    
+     #统计每个数字二进制表示中1的数量
+    甲_计数 = 甲_二进制.count('1')
+    乙_计数 = 乙_二进制.count('1')
+    丙_计数 = 丙_二进制.count('1')
+    
+     #比较计数以找出最大值
+    if 甲_计数 > 乙_计数 with 甲_计数 > 丙_计数:
+        return 甲
+    elif 乙_计数 > 甲_计数 with 乙_计数 > 丙_计数:
+        return 乙
+    else:
+        return 丙","def find_max_value(a, b, c):
+    # Convert numbers to binary
+    a_binary = bin(a)
+    b_binary = bin(b)
+    c_binary = bin(c)
+    
+    # Count the number of 1s in each number's binary representation
+    a_count = a_binary.count('1')
+    b_count = b_binary.count('1')
+    c_count = c_binary.count('1')
+    
+    # Compare counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c",0.7738035279122829,True,0.5,0.967797040939331,1.0,0.8483201137703228
+0,9,"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","def 快速_排序(数组):
+    if len(数组) <= 1:
+        return 数组, 0
+    else:
+        基准 = 数组[0]
+        较小 = [x for x in 数组[1:] if x <= 基准]
+        较大 = [x for x in 数组[1:] if x > 基准]
+        排序_较小, 比较_较小 = 快速_排序(较小)
+        排序_较大, 比较_较大 = 快速_排序(较大)
+        比较 = len(数组) - 1 + 比较_较小 + 比较_较大
+        排序_数组 = 排序_较大 + [基准] + 排序_较小
+        return 排序_数组, 比较
+
+  #测试代码
+数组 = [5, 3, 9, 5, 2, 8, 4]
+排序_数组, 比较 = 快速_排序(数组)
+print(""排序后的数组:"", 排序_数组)
+print(""比较次数:"", 比较)","def quick_sort(array):
+    if len(array) <= 1:
+        return array, 0
+    else:
+        pivot = array[0]
+        smaller = [x for x in array[1:] if x <= pivot]
+        larger = [x for x in array[1:] if x > pivot]
+        sorted_smaller, compare_smaller = quick_sort(smaller)
+        sorted_larger, compare_larger = quick_sort(larger)
+        compare = len(array) - 1 + compare_smaller + compare_larger
+        sorted_array = sorted_larger + [pivot] + sorted_smaller
+        return sorted_array, compare
+
+# Test code
+array = [5, 3, 9, 5, 2, 8, 4]
+sorted_array, compare = quick_sort(array)
+print(""Sorted array:"", sorted_array)
+print(""Number of comparisons:"", compare)",0.4895076802922566,True,1.0,0.9467552900314331,1.0,0.887252594064738
+0,10,"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","def 计算_距离(点1, 点2):
+    距离 = ((点2[0] - 点1[0])**2 + (点2[1] - 点1[1])**2 + (点2[2] - 点1[2])**2) ** 0.5
+    return 距离","def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance",1.0,True,1.0,1.0,1.0,1.0

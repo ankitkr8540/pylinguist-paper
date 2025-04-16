@@ -1,0 +1,2319 @@
+English_code,Partial_translated_code,claude_translated_code
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","καθόρισε reverse_matrix(matrix):
+    new_matrix = []
+    Για i σε εύρος(μήκος(matrix)):
+        new_matrix.προσάρτησε([])
+        Για j σε εύρος(μήκος(matrix[i])):
+            new_matrix[i].εισάγετε(0, matrix[i][j])
+    επιστροφή new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(reverse_matrix(matrix3))","καθόρισε αντιστροφή_πίνακα(πίνακας):
+    νέος_πίνακας = []
+    Για i σε εύρος(μήκος(πίνακας)):
+        νέος_πίνακας.προσάρτησε([])
+        Για j σε εύρος(μήκος(πίνακας[i])):
+            νέος_πίνακας[i].εισάγετε(0, πίνακας[i][j])
+    επιστροφή νέος_πίνακας
+
+ #Περίπτωση δοκιμής 1
+πίνακας1 = [[1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]]
+ #Αναμενόμενη έξοδος: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(αντιστροφή_πίνακα(πίνακας1))
+
+ #Περίπτωση δοκιμής 2
+πίνακας2 = [[1, 2, 3, 4],
+            [5, 6, 7, 8]]
+ #Αναμενόμενη έξοδος: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(αντιστροφή_πίνακα(πίνακας2))
+
+ #Περίπτωση δοκιμής 3
+πίνακας3 = [[1, 2],
+            [3, 4],
+            [5, 6]]
+ #Αναμενόμενη έξοδος: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(αντιστροφή_πίνακα(πίνακας3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε fibonacci(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+τύπωσε(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε fibonacci(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή fibonacci(n-1) + fibonacci(n-2)
+
+# Παράδειγμα χρήσης
+n = 10
+αριθμός_fibonacci = fibonacci(n)
+τύπωσε(f""Ο αριθμός Fibonacci στο ευρετήριο {n} είναι {αριθμός_fibonacci}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","καθόρισε count_unique_consonants(string):
+    consonants = σύνολο()
+    lowercase_string = string.πεζά()
+    Για char σε lowercase_string:
+        αν char.είναι_αλφαβητική() και char όχι σε 'aeiou':
+            consonants.πρόσθεσε(char)
+    επιστροφή μήκος(consonants)","καθόρισε μέτρηση_μοναδικών_συμφώνων(συμβολοσειρά):
+    σύμφωνα = σύνολο()
+    πεζή_συμβολοσειρά = συμβολοσειρά.πεζά()
+    Για χαρακτήρας σε πεζή_συμβολοσειρά:
+        αν χαρακτήρας.είναι_αλφαβητικός() και χαρακτήρας όχι σε 'aeiou':
+            σύμφωνα.πρόσθεσε(χαρακτήρας)
+    επιστροφή μήκος(σύμφωνα)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","καθόρισε filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.διάσπαση()
+    
+    Για word σε words:
+        αν όποια(char.είναι_ψηφίο() ή όχι char.είναι_αλφαβητική() Για char σε word):
+            συνέχισε
+        
+        αν μήκος(word) > 3 και όποια(char σε vowels Για char σε word):
+            filtered_word = """"
+            Για char σε word:
+                αν char σε vowels:
+                    vowel_index = vowels.δείκτης(char)
+                    next_vowel = vowels[(vowel_index + 1) % μήκος(vowels)]
+                    filtered_word += next_vowel
+                αλλιώς:
+                    filtered_word += char
+            filtered_words.προσάρτησε(filtered_word)
+    
+    επιστροφή "" "".ένωσε(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+τύπωσε(output_string)","καθόρισε φιλτράρισμα_και_αντικατάσταση(συμβολοσειρά):
+    φωνήεντα = ['α', 'ε', 'ι', 'ο', 'υ']
+    φιλτραρισμένες_λέξεις = []
+    
+    λέξεις = συμβολοσειρά.διάσπαση()
+    
+    Για λέξη σε λέξεις:
+        αν όποια(χαρακτήρας.είναι_ψηφίο() ή όχι χαρακτήρας.είναι_αλφαβητική() Για χαρακτήρας σε λέξη):
+            συνέχισε
+        
+        αν μήκος(λέξη) > 3 και όποια(χαρακτήρας σε φωνήεντα Για χαρακτήρας σε λέξη):
+            φιλτραρισμένη_λέξη = """"
+            Για χαρακτήρας σε λέξη:
+                αν χαρακτήρας σε φωνήεντα:
+                    δείκτης_φωνήεντος = φωνήεντα.δείκτης(χαρακτήρας)
+                    επόμενο_φωνήεν = φωνήεντα[(δείκτης_φωνήεντος + 1) % μήκος(φωνήεντα)]
+                    φιλτραρισμένη_λέξη += επόμενο_φωνήεν
+                αλλιώς:
+                    φιλτραρισμένη_λέξη += χαρακτήρας
+            φιλτραρισμένες_λέξεις.προσάρτησε(φιλτραρισμένη_λέξη)
+    
+    επιστροφή "" "".ένωσε(φιλτραρισμένες_λέξεις)
+
+ #Παράδειγμα χρήσης:
+εισαγόμενη_συμβολοσειρά = ""Γεια σου κόσμε! Αυτό είναι ένα δοκιμαστικό κείμενο. Φιλτράρισέ με αν περιέχω αριθμούς ή ειδικούς χαρακτήρες.""
+εξαγόμενη_συμβολοσειρά = φιλτράρισμα_και_αντικατάσταση(εισαγόμενη_συμβολοσειρά)
+τύπωσε(εξαγόμενη_συμβολοσειρά)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","καθόρισε isOddPrimeGreaterThan100(number):
+    αν number <= 100 ή number % 2 == 0: #Check if number is less than or equal to 100 or even
+        επιστροφή Ψευδής
+    Για i σε εύρος(3, ακέραιη(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        αν number % i == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = κινητής_υποδιαστολής('inf')
+    Για number σε array:
+        αν isOddPrimeGreaterThan100(number):
+            αν number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            αλλιώς_αν number < secondSmallest:
+                secondSmallest = number
+    επιστροφή secondSmallest","καθόρισε είναι_περιττός_πρώτος_μεγαλύτερος_από_εκατό(αριθμός):
+    αν αριθμός <= 100 ή αριθμός % 2 == 0: #Έλεγχος αν ο αριθμός είναι μικρότερος ή ίσος με 100 ή άρτιος
+        επιστροφή Ψευδής
+    Για i σε εύρος(3, ακέραιη(αριθμός**0.5) + 1, 2): #Έλεγχος διαιρετότητας μόνο από περιττούς αριθμούς
+        αν αριθμός % i == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε βρες_δεύτερο_μικρότερο_περιττό_πρώτο_μεγαλύτερο_από_εκατό(πίνακας):
+    μικρότερος = δεύτερος_μικρότερος = κινητής_υποδιαστολής('inf')
+    Για αριθμός σε πίνακας:
+        αν είναι_περιττός_πρώτος_μεγαλύτερος_από_εκατό(αριθμός):
+            αν αριθμός < μικρότερος:
+                δεύτερος_μικρότερος = μικρότερος
+                μικρότερος = αριθμός
+            αλλιώς_αν αριθμός < δεύτερος_μικρότερος:
+                δεύτερος_μικρότερος = αριθμός
+    επιστροφή δεύτερος_μικρότερος"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","κλάσση SeparatorNotFoundError(Εξαίρεση):
+    προσπέρασε
+
+κλάσση MultipleSeparatorsError(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator, 1)
+    αν όχι split_string:
+        έγειρε_εξαίρεση SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator)
+    αν μήκος(split_string) > 2:
+        έγειρε_εξαίρεση MultipleSeparatorsError(""Multiple separators found in string"")
+
+εκτός SeparatorNotFoundError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός MultipleSeparatorsError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Error:"", e)","κλάσση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+κλάσση Πολλαπλά_Διαχωριστικά_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    κείμενο_μου = ""Γεια σου, Κόσμε!""
+    διαχωριστικό = ""#""
+
+     #Λανθασμένος τρόπος διαχωρισμού της συμβολοσειράς σε διαχωριστικό
+    διαχωρισμένη_συμβολοσειρά = κείμενο_μου.διάσπαση(διαχωριστικό, 1)
+    αν όχι διαχωρισμένη_συμβολοσειρά:
+        έγειρε_εξαίρεση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(""Το διαχωριστικό δεν βρέθηκε στη συμβολοσειρά"")
+
+     #Πρόσθετη Απαίτηση:
+     #Εάν το διαχωριστικό βρεθεί περισσότερες από μία φορές στη συμβολοσειρά, να εγείρει προσαρμοσμένη εξαίρεση με όνομα ""Πολλαπλά_Διαχωριστικά_Σφάλμα""
+
+     #Λανθασμένος τρόπος διαχωρισμού της συμβολοσειράς σε διαχωριστικό
+    διαχωρισμένη_συμβολοσειρά = κείμενο_μου.διάσπαση(διαχωριστικό)
+    αν μήκος(διαχωρισμένη_συμβολοσειρά) > 2:
+        έγειρε_εξαίρεση Πολλαπλά_Διαχωριστικά_Σφάλμα(""Βρέθηκαν πολλαπλά διαχωριστικά στη συμβολοσειρά"")
+
+εκτός Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Πολλαπλά_Διαχωριστικά_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Σφάλμα:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","καθόρισε create_index_dictionary(list_one, list_two):
+    αν μήκος(list_one) != μήκος(list_two):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    Για i σε εύρος(μήκος(list_one)):
+        αν είναι_παράδειγμα(list_one[i], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(list_two[i], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(list_one[i], σύνολο) ή είναι_παράδειγμα(list_two[i], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            αν είναι_παράδειγμα(list_one[i], λεξικό) και είναι_παράδειγμα(list_two[i], λεξικό):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested dictionaries must have the same number of elements"")
+                
+                Για key σε list_one[i].κλειδιά():
+                    αν key όχι σε list_two[i]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], λίστα) και είναι_παράδειγμα(list_two[i], λίστα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested lists must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], τούπλα) και είναι_παράδειγμα(list_two[i], τούπλα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Tuples must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        αλλιώς:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    επιστροφή index_dict","καθόρισε δημιουργία_ευρετηρίου_λεξικού(λίστα_πρώτη, λίστα_δεύτερη):
+    αν μήκος(λίστα_πρώτη) != μήκος(λίστα_δεύτερη):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου πρέπει να έχουν ίσο μήκος"")
+    
+    ευρετήριο_λεξικό = {}
+    Για i σε εύρος(μήκος(λίστα_πρώτη)):
+        αν είναι_παράδειγμα(λίστα_πρώτη[i], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(λίστα_δεύτερη[i], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(λίστα_πρώτη[i], σύνολο) ή είναι_παράδειγμα(λίστα_δεύτερη[i], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου δεν μπορούν να περιέχουν σύνολα"")
+            
+            ένθετο_λεξικό = {}
+            αν είναι_παράδειγμα(λίστα_πρώτη[i], λεξικό) και είναι_παράδειγμα(λίστα_δεύτερη[i], λεξικό):
+                αν μήκος(λίστα_πρώτη[i]) != μήκος(λίστα_δεύτερη[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα ένθετα λεξικά πρέπει να έχουν τον ίδιο αριθμό στοιχείων"")
+                
+                Για κλειδί σε λίστα_πρώτη[i].κλειδιά():
+                    αν κλειδί όχι σε λίστα_δεύτερη[i]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα κλειδιά στα ένθετα λεξικά πρέπει να είναι τα ίδια"")
+                    ένθετο_λεξικό[κλειδί] = (λίστα_πρώτη[i][κλειδί], λίστα_δεύτερη[i][κλειδί])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_πρώτη[i], λίστα) και είναι_παράδειγμα(λίστα_δεύτερη[i], λίστα):
+                αν μήκος(λίστα_πρώτη[i]) != μήκος(λίστα_δεύτερη[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι ένθετες λίστες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_πρώτη[i])):
+                    ένθετο_λεξικό[j] = (λίστα_πρώτη[i][j], λίστα_δεύτερη[i][j])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_πρώτη[i], τούπλα) και είναι_παράδειγμα(λίστα_δεύτερη[i], τούπλα):
+                αν μήκος(λίστα_πρώτη[i]) != μήκος(λίστα_δεύτερη[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι τούπλες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_πρώτη[i])):
+                    ένθετο_λεξικό[j] = (λίστα_πρώτη[i][j], λίστα_δεύτερη[i][j])
+            
+            ευρετήριο_λεξικό[i] = ένθετο_λεξικό
+        αλλιώς:
+            ευρετήριο_λεξικό[i] = (λίστα_πρώτη[i], λίστα_δεύτερη[i])
+    
+    επιστροφή ευρετήριο_λεξικό"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","καθόρισε find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = δυαδική(a)
+    b_bin = δυαδική(b)
+    c_bin = δυαδική(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.μέτρησε('1')
+    b_count = b_bin.μέτρησε('1')
+    c_count = c_bin.μέτρησε('1')
+    
+     #Compare the counts to find the maximum
+    αν a_count > b_count και a_count > c_count:
+        επιστροφή a
+    αλλιώς_αν b_count > a_count και b_count > c_count:
+        επιστροφή b
+    αλλιώς:
+        επιστροφή c","καθόρισε εύρεση_μέγιστου(α, β, γ):
+    #Μετατροπή των αριθμών σε δυαδική μορφή
+    α_δυαδικό = δυαδική(α)
+    β_δυαδικό = δυαδική(β)
+    γ_δυαδικό = δυαδική(γ)
+    
+    #Μέτρηση του αριθμού των 1 στην δυαδική αναπαράσταση κάθε αριθμού
+    α_πλήθος = α_δυαδικό.μέτρησε('1')
+    β_πλήθος = β_δυαδικό.μέτρησε('1')
+    γ_πλήθος = γ_δυαδικό.μέτρησε('1')
+    
+    #Σύγκριση των πλήθων για εύρεση του μέγιστου
+    αν α_πλήθος > β_πλήθος και α_πλήθος > γ_πλήθος:
+        επιστροφή α
+    αλλιώς_αν β_πλήθος > α_πλήθος και β_πλήθος > γ_πλήθος:
+        επιστροφή β
+    αλλιώς:
+        επιστροφή γ"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","καθόρισε quick_sort(arr):
+    αν μήκος(arr) <= 1:
+        επιστροφή arr, 0
+    αλλιώς:
+        pivot = arr[0]
+        less = [x Για x σε arr[1:] αν x <= pivot]
+        greater = [x Για x σε arr[1:] αν x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = μήκος(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        επιστροφή sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+τύπωσε(""Sorted Array:"", sorted_arr)
+τύπωσε(""Number of Comparisons:"", comparisons)","καθόρισε ταχύ_ταξινόμηση(πίνακας):
+    αν μήκος(πίνακας) <= 1:
+        επιστροφή πίνακας, 0
+    αλλιώς:
+        κεντρικό_σημείο = πίνακας[0]
+        μικρότερα = [χ Για χ σε πίνακας[1:] αν χ <= κεντρικό_σημείο]
+        μεγαλύτερα = [χ Για χ σε πίνακας[1:] αν χ > κεντρικό_σημείο]
+        ταξινομημένα_μικρότερα, συγκρίσεις_μικρότερων = ταχύ_ταξινόμηση(μικρότερα)
+        ταξινομημένα_μεγαλύτερα, συγκρίσεις_μεγαλύτερων = ταχύ_ταξινόμηση(μεγαλύτερα)
+        συγκρίσεις = μήκος(πίνακας) - 1 + συγκρίσεις_μικρότερων + συγκρίσεις_μεγαλύτερων
+        ταξινομημένος_πίνακας = ταξινομημένα_μεγαλύτερα + [κεντρικό_σημείο] + ταξινομημένα_μικρότερα
+        επιστροφή ταξινομημένος_πίνακας, συγκρίσεις
+
+ #Δοκιμή του κώδικα
+πίνακας = [5, 3, 9, 5, 2, 8, 4]
+ταξινομημένος_πίνακας, συγκρίσεις = ταχύ_ταξινόμηση(πίνακας)
+τύπωσε(""Ταξινομημένος Πίνακας:"", ταξινομημένος_πίνακας)
+τύπωσε(""Αριθμός Συγκρίσεων:"", συγκρίσεις)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","καθόρισε calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    επιστροφή distance","def υπολογισμός_απόστασης(σημείο_1, σημείο_2):
+    απόσταση = ((σημείο_2[0] - σημείο_1[0])**2 + (σημείο_2[1] - σημείο_1[1])**2 + (σημείο_2[2] - σημείο_1[2])**2) ** 0.5
+    return απόσταση"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","καθόρισε reverse_matrix(matrix):
+    new_matrix = []
+    Για i σε εύρος(μήκος(matrix)):
+        new_matrix.προσάρτησε([])
+        Για j σε εύρος(μήκος(matrix[i])):
+            new_matrix[i].εισάγετε(0, matrix[i][j])
+    επιστροφή new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(reverse_matrix(matrix3))","καθόρισε Αντιστρέψτε_πίνακα(πίνακας):
+    νέος_πίνακας = []
+    Για εγώ σε εύρος(μήκος(πίνακας)):
+        νέος_πίνακας.προσάρτησε([])
+        Για j σε εύρος(μήκος(πίνακας[εγώ])):
+            νέος_πίνακας[εγώ].εισάγετε(0, πίνακας[εγώ][j])
+    επιστροφή νέος_πίνακας
+
+
+ #Περίπτωση δοκιμής 1
+πίνακας1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Αναμενόμενη έξοδος: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(Αντιστρέψτε_πίνακα(πίνακας1))
+
+ #Περίπτωση δοκιμής 2
+πίνακας2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Αναμενόμενη έξοδος: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(Αντιστρέψτε_πίνακα(πίνακας2))
+
+ #Περίπτωση δοκιμής 3
+πίνακας3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Αναμενόμενη έξοδος: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(Αντιστρέψτε_πίνακα(πίνακας3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε fibonacci(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+τύπωσε(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε φιμπονάτσι(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή φιμπονάτσι(n-1) + φιμπονάτσι(n-2)
+
+ #Παράδειγμα χρήσης
+n = 10
+αριθμός_φιμπονάτσι = φιμπονάτσι(n)
+τύπωσε(f""Ο αριθμός Φιμπονάτσι στο ευρετήριο {n} είναι {αριθμός_φιμπονάτσι}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","καθόρισε count_unique_consonants(string):
+    consonants = σύνολο()
+    lowercase_string = string.πεζά()
+    Για char σε lowercase_string:
+        αν char.είναι_αλφαβητική() και char όχι σε 'aeiou':
+            consonants.πρόσθεσε(char)
+    επιστροφή μήκος(consonants)","καθόρισε Μετρήστε_μοναδικά_σύμφωνα(σειρά):
+    σύμφωνα = σύνολο()
+    πεζή_σειρά = σειρά.πεζά()
+    Για χαρακτήρας σε πεζή_σειρά:
+        αν χαρακτήρας.είναι_αλφαβητική() και χαρακτήρας όχι σε 'aeiou':
+            σύμφωνα.πρόσθεσε(χαρακτήρας)
+    επιστροφή μήκος(σύμφωνα)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","καθόρισε filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.διάσπαση()
+    
+    Για word σε words:
+        αν όποια(char.είναι_ψηφίο() ή όχι char.είναι_αλφαβητική() Για char σε word):
+            συνέχισε
+        
+        αν μήκος(word) > 3 και όποια(char σε vowels Για char σε word):
+            filtered_word = """"
+            Για char σε word:
+                αν char σε vowels:
+                    vowel_index = vowels.δείκτης(char)
+                    next_vowel = vowels[(vowel_index + 1) % μήκος(vowels)]
+                    filtered_word += next_vowel
+                αλλιώς:
+                    filtered_word += char
+            filtered_words.προσάρτησε(filtered_word)
+    
+    επιστροφή "" "".ένωσε(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+τύπωσε(output_string)","καθόρισε φιλτράρισμα_και_αντικατάσταση(σειρά):
+    φωνήεντα = ['α', 'ε', 'ι', 'ο', 'υ']
+    φιλτραρισμένες_λέξεις = []
+    
+    λέξεις = σειρά.διάσπαση()
+    
+    Για λέξη σε λέξεις:
+        αν όποια(χαρακτήρας.είναι_ψηφίο() ή όχι χαρακτήρας.είναι_αλφαβητική() Για χαρακτήρας σε λέξη):
+            συνέχισε
+        
+        αν μήκος(λέξη) > 3 και όποια(χαρακτήρας σε φωνήεντα Για χαρακτήρας σε λέξη):
+            φιλτραρισμένη_λέξη = """"
+            Για χαρακτήρας σε λέξη:
+                αν χαρακτήρας σε φωνήεντα:
+                    δείκτης_φωνήεντος = φωνήεντα.δείκτης(χαρακτήρας)
+                    επόμενο_φωνήεν = φωνήεντα[(δείκτης_φωνήεντος + 1) % μήκος(φωνήεντα)]
+                    φιλτραρισμένη_λέξη += επόμενο_φωνήεν
+                αλλιώς:
+                    φιλτραρισμένη_λέξη += χαρακτήρας
+            φιλτραρισμένες_λέξεις.προσάρτησε(φιλτραρισμένη_λέξη)
+    
+    επιστροφή "" "".ένωσε(φιλτραρισμένες_λέξεις)
+
+
+ #Παράδειγμα χρήσης:
+εισαγόμενη_σειρά = ""Γεια σου κόσμε! Αυτό είναι ένα δοκιμαστικό κείμενο. Φιλτράρισέ με αν περιέχω αριθμούς ή ειδικούς χαρακτήρες.""
+εξαγόμενη_σειρά = φιλτράρισμα_και_αντικατάσταση(εισαγόμενη_σειρά)
+τύπωσε(εξαγόμενη_σειρά)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","καθόρισε isOddPrimeGreaterThan100(number):
+    αν number <= 100 ή number % 2 == 0: #Check if number is less than or equal to 100 or even
+        επιστροφή Ψευδής
+    Για i σε εύρος(3, ακέραιη(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        αν number % i == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = κινητής_υποδιαστολής('inf')
+    Για number σε array:
+        αν isOddPrimeGreaterThan100(number):
+            αν number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            αλλιώς_αν number < secondSmallest:
+                secondSmallest = number
+    επιστροφή secondSmallest","καθόρισε είναι_περίεργος_πρωταρχικός_μεγαλύτερος_από_100(αριθμός):
+    αν αριθμός <= 100 ή αριθμός % 2 == 0: #Ελέγξτε εάν ο αριθμός είναι μικρότερος ή ίσος με 100 ή άρτιος
+        επιστροφή Ψευδής
+    Για εγώ σε εύρος(3, ακέραιη(αριθμός**0.5) + 1, 2): #Ελέγξτε τη διαιρετότητα μόνο από περίεργους αριθμούς
+        αν αριθμός % εγώ == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε Βρείτε_δεύτερο_μικρότερο_περίεργο_πρωταρχικό_μεγαλύτερο_από_100(πίνακας):
+    μικρότερος = δεύτερος_μικρότερος = κινητής_υποδιαστολής('inf')
+    Για αριθμός σε πίνακας:
+        αν είναι_περίεργος_πρωταρχικός_μεγαλύτερος_από_100(αριθμός):
+            αν αριθμός < μικρότερος:
+                δεύτερος_μικρότερος = μικρότερος
+                μικρότερος = αριθμός
+            αλλιώς_αν αριθμός < δεύτερος_μικρότερος:
+                δεύτερος_μικρότερος = αριθμός
+    επιστροφή δεύτερος_μικρότερος"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","κλάσση SeparatorNotFoundError(Εξαίρεση):
+    προσπέρασε
+
+κλάσση MultipleSeparatorsError(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator, 1)
+    αν όχι split_string:
+        έγειρε_εξαίρεση SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator)
+    αν μήκος(split_string) > 2:
+        έγειρε_εξαίρεση MultipleSeparatorsError(""Multiple separators found in string"")
+
+εκτός SeparatorNotFoundError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός MultipleSeparatorsError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Error:"", e)","κλάσση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+κλάσση Πολλαπλά_Διαχωριστικά_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    μικρή_σειρά = ""Γεια σου, Κόσμε!""
+    διαχωριστικό = ""#""
+
+     #Λανθασμένος τρόπος διαχωρισμού της σειράς σε διαχωριστικό
+    διαχωρισμένη_σειρά = μικρή_σειρά.διάσπαση(διαχωριστικό, 1)
+    αν όχι διαχωρισμένη_σειρά:
+        έγειρε_εξαίρεση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(""Το διαχωριστικό δεν βρέθηκε στη σειρά"")
+
+     #Πρόσθετη Απαίτηση:
+     #Εάν το διαχωριστικό βρεθεί περισσότερες από μία φορές στη σειρά, εγείρετε μια προσαρμοσμένη εξαίρεση που ονομάζεται ""Πολλαπλά_Διαχωριστικά_Σφάλμα""
+
+     #Λανθασμένος τρόπος διαχωρισμού της σειράς σε διαχωριστικό
+    διαχωρισμένη_σειρά = μικρή_σειρά.διάσπαση(διαχωριστικό)
+    αν μήκος(διαχωρισμένη_σειρά) > 2:
+        έγειρε_εξαίρεση Πολλαπλά_Διαχωριστικά_Σφάλμα(""Βρέθηκαν πολλαπλά διαχωριστικά στη σειρά"")
+
+εκτός Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Πολλαπλά_Διαχωριστικά_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Σφάλμα:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","καθόρισε create_index_dictionary(list_one, list_two):
+    αν μήκος(list_one) != μήκος(list_two):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    Για i σε εύρος(μήκος(list_one)):
+        αν είναι_παράδειγμα(list_one[i], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(list_two[i], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(list_one[i], σύνολο) ή είναι_παράδειγμα(list_two[i], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            αν είναι_παράδειγμα(list_one[i], λεξικό) και είναι_παράδειγμα(list_two[i], λεξικό):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested dictionaries must have the same number of elements"")
+                
+                Για key σε list_one[i].κλειδιά():
+                    αν key όχι σε list_two[i]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], λίστα) και είναι_παράδειγμα(list_two[i], λίστα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested lists must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], τούπλα) και είναι_παράδειγμα(list_two[i], τούπλα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Tuples must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        αλλιώς:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    επιστροφή index_dict","καθόρισε Δημιουργία_ευρετηρίου_λεξικού(λίστα_ένα, λίστα_δύο):
+    αν μήκος(λίστα_ένα) != μήκος(λίστα_δύο):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου πρέπει να έχουν ίσο μήκος"")
+    
+    ευρετήριο_λεξικό = {}
+    Για εγώ σε εύρος(μήκος(λίστα_ένα)):
+        αν είναι_παράδειγμα(λίστα_ένα[εγώ], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(λίστα_δύο[εγώ], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(λίστα_ένα[εγώ], σύνολο) ή είναι_παράδειγμα(λίστα_δύο[εγώ], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου δεν μπορούν να περιέχουν σύνολα"")
+            
+            ένθετο_λεξικό = {}
+            αν είναι_παράδειγμα(λίστα_ένα[εγώ], λεξικό) και είναι_παράδειγμα(λίστα_δύο[εγώ], λεξικό):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα ένθετα λεξικά πρέπει να έχουν τον ίδιο αριθμό στοιχείων"")
+                
+                Για κλειδί σε λίστα_ένα[εγώ].κλειδιά():
+                    αν κλειδί όχι σε λίστα_δύο[εγώ]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα κλειδιά στα ένθετα λεξικά πρέπει να είναι τα ίδια"")
+                    ένθετο_λεξικό[κλειδί] = (λίστα_ένα[εγώ][κλειδί], λίστα_δύο[εγώ][κλειδί])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_ένα[εγώ], λίστα) και είναι_παράδειγμα(λίστα_δύο[εγώ], λίστα):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι ένθετες λίστες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_ένα[εγώ])):
+                    ένθετο_λεξικό[j] = (λίστα_ένα[εγώ][j], λίστα_δύο[εγώ][j])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_ένα[εγώ], τούπλα) και είναι_παράδειγμα(λίστα_δύο[εγώ], τούπλα):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι τούπλες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_ένα[εγώ])):
+                    ένθετο_λεξικό[j] = (λίστα_ένα[εγώ][j], λίστα_δύο[εγώ][j])
+            
+            ευρετήριο_λεξικό[εγώ] = ένθετο_λεξικό
+        αλλιώς:
+            ευρετήριο_λεξικό[εγώ] = (λίστα_ένα[εγώ], λίστα_δύο[εγώ])
+    
+    επιστροφή ευρετήριο_λεξικό"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","καθόρισε find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = δυαδική(a)
+    b_bin = δυαδική(b)
+    c_bin = δυαδική(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.μέτρησε('1')
+    b_count = b_bin.μέτρησε('1')
+    c_count = c_bin.μέτρησε('1')
+    
+     #Compare the counts to find the maximum
+    αν a_count > b_count και a_count > c_count:
+        επιστροφή a
+    αλλιώς_αν b_count > a_count και b_count > c_count:
+        επιστροφή b
+    αλλιώς:
+        επιστροφή c","καθόρισε Βρείτε_μέγιστο(α, β, γ):
+     #Μετατρέψτε τους αριθμούς σε δυαδικό
+    α_δυαδικό = δυαδικό(α)
+    β_δυαδικό = δυαδικό(β)
+    γ_δυαδικό = δυαδικό(γ)
+    
+     #Μετρήστε τον αριθμό των 1 στην δυαδική αναπαράσταση κάθε αριθμού
+    α_μέτρηση = α_δυαδικό.μέτρησε('1')
+    β_μέτρηση = β_δυαδικό.μέτρησε('1')
+    γ_μέτρηση = γ_δυαδικό.μέτρησε('1')
+    
+     #Συγκρίνετε τις μετρήσεις για να βρείτε το μέγιστο
+    αν α_μέτρηση > β_μέτρηση και α_μέτρηση > γ_μέτρηση:
+        επιστροφή α
+    αλλιώς_αν β_μέτρηση > α_μέτρηση και β_μέτρηση > γ_μέτρηση:
+        επιστροφή β
+    αλλιώς:
+        επιστροφή γ"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","καθόρισε quick_sort(arr):
+    αν μήκος(arr) <= 1:
+        επιστροφή arr, 0
+    αλλιώς:
+        pivot = arr[0]
+        less = [x Για x σε arr[1:] αν x <= pivot]
+        greater = [x Για x σε arr[1:] αν x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = μήκος(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        επιστροφή sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+τύπωσε(""Sorted Array:"", sorted_arr)
+τύπωσε(""Number of Comparisons:"", comparisons)","καθόρισε γρήγορη_ταξινόμηση(πίνακας):
+    αν μήκος(πίνακας) <= 1:
+        επιστροφή πίνακας, 0
+    αλλιώς:
+        κεντρικό_σημείο = πίνακας[0]
+        λιγότερα = [x Για x σε πίνακας[1:] αν x <= κεντρικό_σημείο]
+        μεγαλύτερα = [x Για x σε πίνακας[1:] αν x > κεντρικό_σημείο]
+        ταξινομημένα_λιγότερα, συγκρίσεις_λιγότερα = γρήγορη_ταξινόμηση(λιγότερα)
+        ταξινομημένα_μεγαλύτερα, συγκρίσεις_μεγαλύτερα = γρήγορη_ταξινόμηση(μεγαλύτερα)
+        συγκρίσεις = μήκος(πίνακας) - 1 + συγκρίσεις_λιγότερα + συγκρίσεις_μεγαλύτερα
+        ταξινομημένος_πίνακας = ταξινομημένα_μεγαλύτερα + [κεντρικό_σημείο] + ταξινομημένα_λιγότερα
+        επιστροφή ταξινομημένος_πίνακας, συγκρίσεις
+
+ #Δοκιμή του κώδικα
+πίνακας = [5, 3, 9, 5, 2, 8, 4]
+ταξινομημένος_πίνακας, συγκρίσεις = γρήγορη_ταξινόμηση(πίνακας)
+τύπωσε(""Ταξινομημένος Πίνακας:"", ταξινομημένος_πίνακας)
+τύπωσε(""Αριθμός Συγκρίσεων:"", συγκρίσεις)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","καθόρισε calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    επιστροφή distance","καθόρισε υπολογισμός_απόστασης(σημείο1, σημείο2):
+    απόσταση = ((σημείο2[0] - σημείο1[0])**2 + (σημείο2[1] - σημείο1[1])**2 + (σημείο2[2] - σημείο1[2])**2) ** 0.5
+    επιστροφή απόσταση"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","καθόρισε reverse_matrix(matrix):
+    new_matrix = []
+    Για i σε εύρος(μήκος(matrix)):
+        new_matrix.προσάρτησε([])
+        Για j σε εύρος(μήκος(matrix[i])):
+            new_matrix[i].εισάγετε(0, matrix[i][j])
+    επιστροφή new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(reverse_matrix(matrix3))","καθόρισε Αντίστροφη_μήτρα(μήτρα):
+    νέα_μήτρα = []
+    Για εγώ σε εύρος(μήκος(μήτρα)):
+        νέα_μήτρα.προσάρτησε([])
+        Για j σε εύρος(μήκος(μήτρα[εγώ])):
+            νέα_μήτρα[εγώ].εισάγετε(0, μήτρα[εγώ][j])
+    επιστροφή νέα_μήτρα
+
+
+ #Περίπτωση δοκιμής 1
+μήτρα1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Αναμενόμενη έξοδος: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(Αντίστροφη_μήτρα(μήτρα1))
+
+ #Περίπτωση δοκιμής 2
+μήτρα2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Αναμενόμενη έξοδος: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(Αντίστροφη_μήτρα(μήτρα2))
+
+ #Περίπτωση δοκιμής 3
+μήτρα3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Αναμενόμενη έξοδος: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(Αντίστροφη_μήτρα(μήτρα3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε fibonacci(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+τύπωσε(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε φιμπονάτσι(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή φιμπονάτσι(n-1) + φιμπονάτσι(n-2)
+
+ #Παράδειγμα χρήσης
+n = 10
+φιμπονάτσι_αριθμός = φιμπονάτσι(n)
+τύπωσε(φά""Ο αριθμός Φιμπονάτσι στο ευρετήριο {n} είναι {φιμπονάτσι_αριθμός}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","καθόρισε count_unique_consonants(string):
+    consonants = σύνολο()
+    lowercase_string = string.πεζά()
+    Για char σε lowercase_string:
+        αν char.είναι_αλφαβητική() και char όχι σε 'aeiou':
+            consonants.πρόσθεσε(char)
+    επιστροφή μήκος(consonants)","καθόρισε Μετρήστε_μοναδικά_σύμφωνα(σειρά):
+    σύμφωνα = σύνολο()
+    πεζά_σειρά = σειρά.πεζά()
+    Για χαρακτήρας σε πεζά_σειρά:
+        αν χαρακτήρας.είναι_αλφαβητική() και χαρακτήρας όχι σε 'aeiou':
+            σύμφωνα.πρόσθεσε(χαρακτήρας)
+    επιστροφή μήκος(σύμφωνα)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","καθόρισε filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.διάσπαση()
+    
+    Για word σε words:
+        αν όποια(char.είναι_ψηφίο() ή όχι char.είναι_αλφαβητική() Για char σε word):
+            συνέχισε
+        
+        αν μήκος(word) > 3 και όποια(char σε vowels Για char σε word):
+            filtered_word = """"
+            Για char σε word:
+                αν char σε vowels:
+                    vowel_index = vowels.δείκτης(char)
+                    next_vowel = vowels[(vowel_index + 1) % μήκος(vowels)]
+                    filtered_word += next_vowel
+                αλλιώς:
+                    filtered_word += char
+            filtered_words.προσάρτησε(filtered_word)
+    
+    επιστροφή "" "".ένωσε(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+τύπωσε(output_string)","καθόρισε Φιλτράρισμα_και_αντικατάσταση(σειρά):
+    φωνήεντα = ['α', 'ε', 'ι', 'ο', 'υ']
+    φιλτραρισμένες_λέξεις = []
+    
+    λέξεις = σειρά.διάσπαση()
+    
+    Για λέξη σε λέξεις:
+        αν όποια(χαρακτήρας.είναι_ψηφίο() ή όχι χαρακτήρας.είναι_αλφαβητική() Για χαρακτήρας σε λέξη):
+            συνέχισε
+        
+        αν μήκος(λέξη) > 3 και όποια(χαρακτήρας σε φωνήεντα Για χαρακτήρας σε λέξη):
+            φιλτραρισμένη_λέξη = """"
+            Για χαρακτήρας σε λέξη:
+                αν χαρακτήρας σε φωνήεντα:
+                    δείκτης_φωνήεντος = φωνήεντα.δείκτης(χαρακτήρας)
+                    επόμενο_φωνήεν = φωνήεντα[(δείκτης_φωνήεντος + 1) % μήκος(φωνήεντα)]
+                    φιλτραρισμένη_λέξη += επόμενο_φωνήεν
+                αλλιώς:
+                    φιλτραρισμένη_λέξη += χαρακτήρας
+            φιλτραρισμένες_λέξεις.προσάρτησε(φιλτραρισμένη_λέξη)
+    
+    επιστροφή "" "".ένωσε(φιλτραρισμένες_λέξεις)
+
+
+ #Παράδειγμα χρήσης:
+εισαγόμενη_σειρά = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+εξαγόμενη_σειρά = Φιλτράρισμα_και_αντικατάσταση(εισαγόμενη_σειρά)
+τύπωσε(εξαγόμενη_σειρά)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","καθόρισε isOddPrimeGreaterThan100(number):
+    αν number <= 100 ή number % 2 == 0: #Check if number is less than or equal to 100 or even
+        επιστροφή Ψευδής
+    Για i σε εύρος(3, ακέραιη(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        αν number % i == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = κινητής_υποδιαστολής('inf')
+    Για number σε array:
+        αν isOddPrimeGreaterThan100(number):
+            αν number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            αλλιώς_αν number < secondSmallest:
+                secondSmallest = number
+    επιστροφή secondSmallest","καθόρισε είναι_περίεργος_πρωταρχικός_μεγαλύτερος_από_100(αριθμός):
+    αν αριθμός <= 100 ή αριθμός % 2 == 0: #Ελέγξτε εάν ο αριθμός είναι μικρότερος ή ίσος με 100 ή άρτιος
+        επιστροφή Ψευδής
+    Για εγώ σε εύρος(3, ακέραιη(αριθμός**0.5) + 1, 2): #Ελέγξτε τη διαιρετότητα μόνο από περίεργους αριθμούς
+        αν αριθμός % εγώ == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε Βρείτε_δεύτερο_μικρότερο_περίεργο_πρωταρχικό_μεγαλύτερο_από_100(συστοιχία):
+    μικρότερος = δεύτερος_μικρότερος = κινητής_υποδιαστολής('inf')
+    Για αριθμός σε συστοιχία:
+        αν είναι_περίεργος_πρωταρχικός_μεγαλύτερος_από_100(αριθμός):
+            αν αριθμός < μικρότερος:
+                δεύτερος_μικρότερος = μικρότερος
+                μικρότερος = αριθμός
+            αλλιώς_αν αριθμός < δεύτερος_μικρότερος:
+                δεύτερος_μικρότερος = αριθμός
+    επιστροφή δεύτερος_μικρότερος"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","κλάσση SeparatorNotFoundError(Εξαίρεση):
+    προσπέρασε
+
+κλάσση MultipleSeparatorsError(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator, 1)
+    αν όχι split_string:
+        έγειρε_εξαίρεση SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator)
+    αν μήκος(split_string) > 2:
+        έγειρε_εξαίρεση MultipleSeparatorsError(""Multiple separators found in string"")
+
+εκτός SeparatorNotFoundError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός MultipleSeparatorsError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Error:"", e)","κλάσση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+κλάσση Πολλαπλά_Διαχωριστικά_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    μικρή_συμβολοσειρά = ""Hello, World!""
+    διαχωριστικό = ""#""
+
+     #Λανθασμένος τρόπος διαχωρισμού της συμβολοσειράς σε διαχωριστικό
+    διαχωρισμένη_συμβολοσειρά = μικρή_συμβολοσειρά.διάσπαση(διαχωριστικό, 1)
+    αν όχι διαχωρισμένη_συμβολοσειρά:
+        έγειρε_εξαίρεση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(""Διαχωριστικό δεν βρέθηκε στη συμβολοσειρά"")
+
+     #Πρόσθετη Απαίτηση:
+     #Εάν το διαχωριστικό βρεθεί περισσότερες από μία φορές στη συμβολοσειρά, εγείρετε μια προσαρμοσμένη εξαίρεση που ονομάζεται ""Πολλαπλά_Διαχωριστικά_Σφάλμα""
+
+     #Λανθασμένος τρόπος διαχωρισμού της συμβολοσειράς σε διαχωριστικό
+    διαχωρισμένη_συμβολοσειρά = μικρή_συμβολοσειρά.διάσπαση(διαχωριστικό)
+    αν μήκος(διαχωρισμένη_συμβολοσειρά) > 2:
+        έγειρε_εξαίρεση Πολλαπλά_Διαχωριστικά_Σφάλμα(""Βρέθηκαν πολλαπλά διαχωριστικά στη συμβολοσειρά"")
+
+εκτός Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Πολλαπλά_Διαχωριστικά_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Σφάλμα:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","καθόρισε create_index_dictionary(list_one, list_two):
+    αν μήκος(list_one) != μήκος(list_two):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    Για i σε εύρος(μήκος(list_one)):
+        αν είναι_παράδειγμα(list_one[i], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(list_two[i], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(list_one[i], σύνολο) ή είναι_παράδειγμα(list_two[i], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            αν είναι_παράδειγμα(list_one[i], λεξικό) και είναι_παράδειγμα(list_two[i], λεξικό):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested dictionaries must have the same number of elements"")
+                
+                Για key σε list_one[i].κλειδιά():
+                    αν key όχι σε list_two[i]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], λίστα) και είναι_παράδειγμα(list_two[i], λίστα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested lists must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], τούπλα) και είναι_παράδειγμα(list_two[i], τούπλα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Tuples must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        αλλιώς:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    επιστροφή index_dict","καθόρισε Δημιουργία_ευρετηρίου_λεξικού(λίστα_ένα, λίστα_δύο):
+    αν μήκος(λίστα_ένα) != μήκος(λίστα_δύο):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου πρέπει να έχουν ίσο μήκος"")
+    
+    ευρετήριο_λεξικό = {}
+    Για εγώ σε εύρος(μήκος(λίστα_ένα)):
+        αν είναι_παράδειγμα(λίστα_ένα[εγώ], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(λίστα_δύο[εγώ], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(λίστα_ένα[εγώ], σύνολο) ή είναι_παράδειγμα(λίστα_δύο[εγώ], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου δεν μπορούν να περιέχουν σύνολα"")
+            
+            ένθετο_λεξικό = {}
+            αν είναι_παράδειγμα(λίστα_ένα[εγώ], λεξικό) και είναι_παράδειγμα(λίστα_δύο[εγώ], λεξικό):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα ένθετα λεξικά πρέπει να έχουν τον ίδιο αριθμό στοιχείων"")
+                
+                Για κλειδί σε λίστα_ένα[εγώ].κλειδιά():
+                    αν κλειδί όχι σε λίστα_δύο[εγώ]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα κλειδιά στα ένθετα λεξικά πρέπει να είναι τα ίδια"")
+                    ένθετο_λεξικό[κλειδί] = (λίστα_ένα[εγώ][κλειδί], λίστα_δύο[εγώ][κλειδί])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_ένα[εγώ], λίστα) και είναι_παράδειγμα(λίστα_δύο[εγώ], λίστα):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι ένθετες λίστες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_ένα[εγώ])):
+                    ένθετο_λεξικό[j] = (λίστα_ένα[εγώ][j], λίστα_δύο[εγώ][j])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_ένα[εγώ], τούπλα) και είναι_παράδειγμα(λίστα_δύο[εγώ], τούπλα):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι τούπλες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_ένα[εγώ])):
+                    ένθετο_λεξικό[j] = (λίστα_ένα[εγώ][j], λίστα_δύο[εγώ][j])
+            
+            ευρετήριο_λεξικό[εγώ] = ένθετο_λεξικό
+        αλλιώς:
+            ευρετήριο_λεξικό[εγώ] = (λίστα_ένα[εγώ], λίστα_δύο[εγώ])
+    
+    επιστροφή ευρετήριο_λεξικό"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","καθόρισε find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = δυαδική(a)
+    b_bin = δυαδική(b)
+    c_bin = δυαδική(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.μέτρησε('1')
+    b_count = b_bin.μέτρησε('1')
+    c_count = c_bin.μέτρησε('1')
+    
+     #Compare the counts to find the maximum
+    αν a_count > b_count και a_count > c_count:
+        επιστροφή a
+    αλλιώς_αν b_count > a_count και b_count > c_count:
+        επιστροφή b
+    αλλιώς:
+        επιστροφή c","καθόρισε Βρείτε_μέγιστο(α, β, γ):
+     # Μετατρέψτε τους αριθμούς σε δυαδικό
+    α_δυαδικό = δυαδικός(α)
+    β_δυαδικό = δυαδικός(β)
+    γ_δυαδικό = δυαδικός(γ)
+    
+     # Μετρήστε τον αριθμό των 1 στην δυαδική αναπαράσταση κάθε αριθμού
+    α_μέτρηση = α_δυαδικό.μέτρησε('1')
+    β_μέτρηση = β_δυαδικό.μέτρησε('1')
+    γ_μέτρηση = γ_δυαδικό.μέτρησε('1')
+    
+     # Συγκρίνετε τις μετρήσεις για να βρείτε το μέγιστο
+    αν α_μέτρηση > β_μέτρηση και α_μέτρηση > γ_μέτρηση:
+        επιστροφή α
+    αλλιώς_αν β_μέτρηση > α_μέτρηση και β_μέτρηση > γ_μέτρηση:
+        επιστροφή β
+    αλλιώς:
+        επιστροφή γ"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","καθόρισε quick_sort(arr):
+    αν μήκος(arr) <= 1:
+        επιστροφή arr, 0
+    αλλιώς:
+        pivot = arr[0]
+        less = [x Για x σε arr[1:] αν x <= pivot]
+        greater = [x Για x σε arr[1:] αν x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = μήκος(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        επιστροφή sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+τύπωσε(""Sorted Array:"", sorted_arr)
+τύπωσε(""Number of Comparisons:"", comparisons)","καθόρισε Γρήγορη_ταξινόμηση(πίνακας):
+    αν μήκος(πίνακας) <= 1:
+        επιστροφή πίνακας, 0
+    αλλιώς:
+        κεντρικό_σημείο = πίνακας[0]
+        λιγότερα = [x Για x σε πίνακας[1:] αν x <= κεντρικό_σημείο]
+        περισσότερα = [x Για x σε πίνακας[1:] αν x > κεντρικό_σημείο]
+        ταξινομημένα_λιγότερα, συγκρίσεις_λιγότερα = Γρήγορη_ταξινόμηση(λιγότερα)
+        ταξινομημένα_περισσότερα, συγκρίσεις_περισσότερα = Γρήγορη_ταξινόμηση(περισσότερα)
+        συγκρίσεις = μήκος(πίνακας) - 1 + συγκρίσεις_λιγότερα + συγκρίσεις_περισσότερα
+        ταξινομημένος_πίνακας = ταξινομημένα_περισσότερα + [κεντρικό_σημείο] + ταξινομημένα_λιγότερα
+        επιστροφή ταξινομημένος_πίνακας, συγκρίσεις
+
+ #Δοκιμή του κώδικα
+πίνακας = [5, 3, 9, 5, 2, 8, 4]
+ταξινομημένος_πίνακας, συγκρίσεις = Γρήγορη_ταξινόμηση(πίνακας)
+τύπωσε(""Ταξινομημένος Πίνακας:"", ταξινομημένος_πίνακας)
+τύπωσε(""Αριθμός Συγκρίσεων:"", συγκρίσεις)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","καθόρισε calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    επιστροφή distance","καθόρισε Υπολογίστε_απόσταση(σημείο1, σημείο2):
+    απόσταση = ((σημείο2[0] - σημείο1[0])**2 + (σημείο2[1] - σημείο1[1])**2 + (σημείο2[2] - σημείο1[2])**2) ** 0.5
+    επιστροφή απόσταση"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","καθόρισε reverse_matrix(matrix):
+    new_matrix = []
+    Για i σε εύρος(μήκος(matrix)):
+        new_matrix.προσάρτησε([])
+        Για j σε εύρος(μήκος(matrix[i])):
+            new_matrix[i].εισάγετε(0, matrix[i][j])
+    επιστροφή new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(reverse_matrix(matrix3))","καθόρισε αντίστροφη_μήτρα(μήτρα):
+    νέα_μήτρα = []
+    Για εγώ σε εύρος(μήκος(μήτρα)):
+        νέα_μήτρα.προσάρτησε([])
+        Για j σε εύρος(μήκος(μήτρα[εγώ])):
+            νέα_μήτρα[εγώ].εισάγετε(0, μήτρα[εγώ][j])
+    επιστροφή νέα_μήτρα
+
+
+ #Περίπτωση δοκιμής 1
+μήτρα1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Αναμενόμενη έξοδος: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+τύπωσε(αντίστροφη_μήτρα(μήτρα1))
+
+ #Περίπτωση δοκιμής 2
+μήτρα2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Αναμενόμενη έξοδος: [[8, 7, 6, 5], [4, 3, 2, 1]]
+τύπωσε(αντίστροφη_μήτρα(μήτρα2))
+
+ #Περίπτωση δοκιμής 3
+μήτρα3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Αναμενόμενη έξοδος: [[6, 5], [4, 3], [2, 1]]
+τύπωσε(αντίστροφη_μήτρα(μήτρα3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε fibonacci(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+τύπωσε(f""The Fibonacci number at index {n} is {fibonacci_number}."")","καθόρισε φιαλιδάκια(n):
+    αν n == 0:
+        επιστροφή 0
+    αλλιώς_αν n == 1:
+        επιστροφή 1
+    αλλιώς:
+        επιστροφή φιαλιδάκια(n-1) + φιαλιδάκια(n-2)
+
+ #Παράδειγμα χρήσης
+n = 10
+αριθμός_φιαλιδακίων = φιαλιδάκια(n)
+τύπωσε(φά""Ο αριθμός Fibonacci στο ευρετήριο {n} είναι {αριθμός_φιαλιδακίων}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","καθόρισε count_unique_consonants(string):
+    consonants = σύνολο()
+    lowercase_string = string.πεζά()
+    Για char σε lowercase_string:
+        αν char.είναι_αλφαβητική() και char όχι σε 'aeiou':
+            consonants.πρόσθεσε(char)
+    επιστροφή μήκος(consonants)","καθόρισε Μετρήστε_μοναδικά_σύμφωνα(σειρά):
+    σύμφωνα = σύνολο()
+    πεζή_σειρά = σειρά.πεζά()
+    Για χαρακτήρας σε πεζή_σειρά:
+        αν χαρακτήρας.είναι_αλφαβητική() και χαρακτήρας όχι σε 'aeiou':
+            σύμφωνα.πρόσθεσε(χαρακτήρας)
+    επιστροφή μήκος(σύμφωνα)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","καθόρισε filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.διάσπαση()
+    
+    Για word σε words:
+        αν όποια(char.είναι_ψηφίο() ή όχι char.είναι_αλφαβητική() Για char σε word):
+            συνέχισε
+        
+        αν μήκος(word) > 3 και όποια(char σε vowels Για char σε word):
+            filtered_word = """"
+            Για char σε word:
+                αν char σε vowels:
+                    vowel_index = vowels.δείκτης(char)
+                    next_vowel = vowels[(vowel_index + 1) % μήκος(vowels)]
+                    filtered_word += next_vowel
+                αλλιώς:
+                    filtered_word += char
+            filtered_words.προσάρτησε(filtered_word)
+    
+    επιστροφή "" "".ένωσε(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+τύπωσε(output_string)","καθόρισε Φιλτράρισμα_και_αντικατάσταση(σειρά):
+    φωνήεντα = ['α', 'ε', 'ι', 'ο', 'υ']
+    φιλτραρισμένες_λέξεις = []
+    
+    λέξεις = σειρά.διάσπαση()
+    
+    Για λέξη σε λέξεις:
+        αν όποια(χαρακτήρας.είναι_ψηφίο() ή όχι χαρακτήρας.είναι_αλφαβητική() Για χαρακτήρας σε λέξη):
+            συνέχισε
+        
+        αν μήκος(λέξη) > 3 και όποια(χαρακτήρας σε φωνήεντα Για χαρακτήρας σε λέξη):
+            φιλτραρισμένη_λέξη = """"
+            Για χαρακτήρας σε λέξη:
+                αν χαρακτήρας σε φωνήεντα:
+                    δείκτης_φωνήεντος = φωνήεντα.δείκτης(χαρακτήρας)
+                    επόμενο_φωνήεν = φωνήεντα[(δείκτης_φωνήεντος + 1) % μήκος(φωνήεντα)]
+                    φιλτραρισμένη_λέξη += επόμενο_φωνήεν
+                αλλιώς:
+                    φιλτραρισμένη_λέξη += χαρακτήρας
+            φιλτραρισμένες_λέξεις.προσάρτησε(φιλτραρισμένη_λέξη)
+    
+    επιστροφή "" "".ένωσε(φιλτραρισμένες_λέξεις)
+
+
+ #Παράδειγμα χρήσης:
+εισαγόμενη_σειρά = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+εξαγόμενη_σειρά = Φιλτράρισμα_και_αντικατάσταση(εισαγόμενη_σειρά)
+τύπωσε(εξαγόμενη_σειρά)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","καθόρισε isOddPrimeGreaterThan100(number):
+    αν number <= 100 ή number % 2 == 0: #Check if number is less than or equal to 100 or even
+        επιστροφή Ψευδής
+    Για i σε εύρος(3, ακέραιη(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        αν number % i == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = κινητής_υποδιαστολής('inf')
+    Για number σε array:
+        αν isOddPrimeGreaterThan100(number):
+            αν number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            αλλιώς_αν number < secondSmallest:
+                secondSmallest = number
+    επιστροφή secondSmallest","καθόρισε είναι_περίεργος_πρωταρχικός_μεγαλύτερος_από_100(αριθμός):
+    αν αριθμός <= 100 ή αριθμός % 2 == 0: #Ελέγξτε εάν ο αριθμός είναι μικρότερος ή ίσος με 100 ή άρτιος
+        επιστροφή Ψευδής
+    Για εγώ σε εύρος(3, ακέραιη(αριθμός**0.5) + 1, 2): #Ελέγξτε τη διαιρετότητα μόνο από περίεργους αριθμούς
+        αν αριθμός % εγώ == 0:
+            επιστροφή Ψευδής
+    επιστροφή Αληθής
+
+καθόρισε Βρείτε_δεύτερο_μικρότερο_περίεργο_πρωταρχικό_μεγαλύτερο_από_100(πίνακας):
+    μικρότερος = δεύτερος_μικρότερος = κινητής_υποδιαστολής('inf')
+    Για αριθμός σε πίνακας:
+        αν είναι_περίεργος_πρωταρχικός_μεγαλύτερος_από_100(αριθμός):
+            αν αριθμός < μικρότερος:
+                δεύτερος_μικρότερος = μικρότερος
+                μικρότερος = αριθμός
+            αλλιώς_αν αριθμός < δεύτερος_μικρότερος:
+                δεύτερος_μικρότερος = αριθμός
+    επιστροφή δεύτερος_μικρότερος"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","κλάσση SeparatorNotFoundError(Εξαίρεση):
+    προσπέρασε
+
+κλάσση MultipleSeparatorsError(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator, 1)
+    αν όχι split_string:
+        έγειρε_εξαίρεση SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.διάσπαση(separator)
+    αν μήκος(split_string) > 2:
+        έγειρε_εξαίρεση MultipleSeparatorsError(""Multiple separators found in string"")
+
+εκτός SeparatorNotFoundError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός MultipleSeparatorsError σαν e:
+    τύπωσε(""Error:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Error:"", e)","κλάσση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+κλάσση Πολλαπλά_Διαχωριστικά_Σφάλμα(Εξαίρεση):
+    προσπέρασε
+
+προσπάθησε:
+    μικρή_συμβολοσειρά = ""Hello, World!""
+    διαχωριστικό = ""#""
+
+     #Λανθασμένος τρόπος διαχωρισμού της συμβολοσειράς σε διαχωριστικό
+    διαχωρισμένη_συμβολοσειρά = μικρή_συμβολοσειρά.διάσπαση(διαχωριστικό, 1)
+    αν όχι διαχωρισμένη_συμβολοσειρά:
+        έγειρε_εξαίρεση Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα(""Διαχωριστικό δεν βρέθηκε στη συμβολοσειρά"")
+
+     #Πρόσθετη Απαίτηση:
+     #Εάν το διαχωριστικό βρεθεί περισσότερες από μία φορές στη συμβολοσειρά, εγείρετε μια προσαρμοσμένη εξαίρεση που ονομάζεται ""Πολλαπλά_Διαχωριστικά_Σφάλμα""
+
+     #Λανθασμένος τρόπος διαχωρισμού της συμβολοσειράς σε διαχωριστικό
+    διαχωρισμένη_συμβολοσειρά = μικρή_συμβολοσειρά.διάσπαση(διαχωριστικό)
+    αν μήκος(διαχωρισμένη_συμβολοσειρά) > 2:
+        έγειρε_εξαίρεση Πολλαπλά_Διαχωριστικά_Σφάλμα(""Βρέθηκαν πολλαπλά διαχωριστικά στη συμβολοσειρά"")
+
+εκτός Διαχωριστικό_Δεν_Βρέθηκε_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Πολλαπλά_Διαχωριστικά_Σφάλμα σαν e:
+    τύπωσε(""Σφάλμα:"", e)
+
+εκτός Εξαίρεση σαν e:
+    τύπωσε(""Σφάλμα:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","καθόρισε create_index_dictionary(list_one, list_two):
+    αν μήκος(list_one) != μήκος(list_two):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    Για i σε εύρος(μήκος(list_one)):
+        αν είναι_παράδειγμα(list_one[i], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(list_two[i], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(list_one[i], σύνολο) ή είναι_παράδειγμα(list_two[i], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            αν είναι_παράδειγμα(list_one[i], λεξικό) και είναι_παράδειγμα(list_two[i], λεξικό):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested dictionaries must have the same number of elements"")
+                
+                Για key σε list_one[i].κλειδιά():
+                    αν key όχι σε list_two[i]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], λίστα) και είναι_παράδειγμα(list_two[i], λίστα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Nested lists must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            αλλιώς_αν είναι_παράδειγμα(list_one[i], τούπλα) και είναι_παράδειγμα(list_two[i], τούπλα):
+                αν μήκος(list_one[i]) != μήκος(list_two[i]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Tuples must have the same length"")
+                
+                Για j σε εύρος(μήκος(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        αλλιώς:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    επιστροφή index_dict","καθόρισε Δημιουργία_ευρετηρίου_λεξικού(λίστα_ένα, λίστα_δύο):
+    αν μήκος(λίστα_ένα) != μήκος(λίστα_δύο):
+        έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου πρέπει να έχουν ίσο μήκος"")
+    
+    ευρετήριο_λεξικό = {}
+    Για εγώ σε εύρος(μήκος(λίστα_ένα)):
+        αν είναι_παράδειγμα(λίστα_ένα[εγώ], (λίστα, λεξικό, τούπλα)) και είναι_παράδειγμα(λίστα_δύο[εγώ], (λίστα, λεξικό, τούπλα)):
+            αν είναι_παράδειγμα(λίστα_ένα[εγώ], σύνολο) ή είναι_παράδειγμα(λίστα_δύο[εγώ], σύνολο):
+                έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι λίστες εισόδου δεν μπορούν να περιέχουν σύνολα"")
+            
+            ένθετο_λεξικό = {}
+            αν είναι_παράδειγμα(λίστα_ένα[εγώ], λεξικό) και είναι_παράδειγμα(λίστα_δύο[εγώ], λεξικό):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα ένθετα λεξικά πρέπει να έχουν τον ίδιο αριθμό στοιχείων"")
+                
+                Για κλειδί σε λίστα_ένα[εγώ].κλειδιά():
+                    αν κλειδί όχι σε λίστα_δύο[εγώ]:
+                        έγειρε_εξαίρεση Σφάλμα_τιμής(""Τα κλειδιά στα ένθετα λεξικά πρέπει να είναι τα ίδια"")
+                    ένθετο_λεξικό[κλειδί] = (λίστα_ένα[εγώ][κλειδί], λίστα_δύο[εγώ][κλειδί])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_ένα[εγώ], λίστα) και είναι_παράδειγμα(λίστα_δύο[εγώ], λίστα):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι ένθετες λίστες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_ένα[εγώ])):
+                    ένθετο_λεξικό[j] = (λίστα_ένα[εγώ][j], λίστα_δύο[εγώ][j])
+            αλλιώς_αν είναι_παράδειγμα(λίστα_ένα[εγώ], τούπλα) και είναι_παράδειγμα(λίστα_δύο[εγώ], τούπλα):
+                αν μήκος(λίστα_ένα[εγώ]) != μήκος(λίστα_δύο[εγώ]):
+                    έγειρε_εξαίρεση Σφάλμα_τιμής(""Οι τούπλες πρέπει να έχουν το ίδιο μήκος"")
+                
+                Για j σε εύρος(μήκος(λίστα_ένα[εγώ])):
+                    ένθετο_λεξικό[j] = (λίστα_ένα[εγώ][j], λίστα_δύο[εγώ][j])
+            
+            ευρετήριο_λεξικό[εγώ] = ένθετο_λεξικό
+        αλλιώς:
+            ευρετήριο_λεξικό[εγώ] = (λίστα_ένα[εγώ], λίστα_δύο[εγώ])
+    
+    επιστροφή ευρετήριο_λεξικό"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","καθόρισε find_maximum(a, b, c):
+     #Convert the numbers to binary
+    a_bin = δυαδική(a)
+    b_bin = δυαδική(b)
+    c_bin = δυαδική(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.μέτρησε('1')
+    b_count = b_bin.μέτρησε('1')
+    c_count = c_bin.μέτρησε('1')
+    
+     #Compare the counts to find the maximum
+    αν a_count > b_count και a_count > c_count:
+        επιστροφή a
+    αλλιώς_αν b_count > a_count και b_count > c_count:
+        επιστροφή b
+    αλλιώς:
+        επιστροφή c","καθόρισε Βρείτε_μέγιστο(a, b, c):
+     #Μετατρέψτε τους αριθμούς σε δυαδικό
+    a_bin = δυαδική(a)
+    b_bin = δυαδική(b)
+    c_bin = δυαδική(c)
+    
+     #Μετρήστε τον αριθμό των 1 στην δυαδική αναπαράσταση κάθε αριθμού
+    a_count = a_bin.μέτρησε('1')
+    b_count = b_bin.μέτρησε('1')
+    c_count = c_bin.μέτρησε('1')
+    
+     #Συγκρίνετε τις μετρήσεις για να βρείτε το μέγιστο
+    αν a_count > b_count και a_count > c_count:
+        επιστροφή a
+    αλλιώς_αν b_count > a_count και b_count > c_count:
+        επιστροφή b
+    αλλιώς:
+        επιστροφή c"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","καθόρισε quick_sort(arr):
+    αν μήκος(arr) <= 1:
+        επιστροφή arr, 0
+    αλλιώς:
+        pivot = arr[0]
+        less = [x Για x σε arr[1:] αν x <= pivot]
+        greater = [x Για x σε arr[1:] αν x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = μήκος(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        επιστροφή sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+τύπωσε(""Sorted Array:"", sorted_arr)
+τύπωσε(""Number of Comparisons:"", comparisons)","καθόρισε Γρήγορη_ταξινόμηση(arr):
+    αν μήκος(arr) <= 1:
+        επιστροφή arr, 0
+    αλλιώς:
+        σημείο_άξονα = arr[0]
+        λιγότερα = [x Για x σε arr[1:] αν x <= σημείο_άξονα]
+        μεγαλύτερα = [x Για x σε arr[1:] αν x > σημείο_άξονα]
+        ταξινομημένα_λιγότερα, συγκρίσεις_λιγότερα = Γρήγορη_ταξινόμηση(λιγότερα)
+        ταξινομημένα_μεγαλύτερα, συγκρίσεις_μεγαλύτερα = Γρήγορη_ταξινόμηση(μεγαλύτερα)
+        συγκρίσεις = μήκος(arr) - 1 + συγκρίσεις_λιγότερα + συγκρίσεις_μεγαλύτερα
+        ταξινομημένος_arr = ταξινομημένα_μεγαλύτερα + [σημείο_άξονα] + ταξινομημένα_λιγότερα
+        επιστροφή ταξινομημένος_arr, συγκρίσεις
+
+ #Δοκιμή του κώδικα
+arr = [5, 3, 9, 5, 2, 8, 4]
+ταξινομημένος_arr, συγκρίσεις = Γρήγορη_ταξινόμηση(arr)
+τύπωσε(""Ταξινομημένος Πίνακας:"", ταξινομημένος_arr)
+τύπωσε(""Αριθμός Συγκρίσεων:"", συγκρίσεις)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","καθόρισε calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    επιστροφή distance","καθόρισε Υπολογίστε_απόσταση(σημείο1, σημείο2):
+    απόσταση = ((σημείο2[0] - σημείο1[0])**2 + (σημείο2[1] - σημείο1[1])**2 + (σημείο2[2] - σημείο1[2])**2) ** 0.5
+    επιστροφή απόσταση"

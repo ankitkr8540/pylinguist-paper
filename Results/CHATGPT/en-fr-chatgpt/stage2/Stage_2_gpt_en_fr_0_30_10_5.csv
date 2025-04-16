@@ -1,0 +1,1161 @@
+English_code,Partial_translated_code,gpt_translated_code
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","définir reverse_matrix(matrix):
+    new_matrix = []
+    pour i dans Portée(longueur(matrix)):
+        new_matrix.ajouter([])
+        pour j dans Portée(longueur(matrix[i])):
+            new_matrix[i].insérer(0, matrix[i][j])
+    retour new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+imprimer(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+imprimer(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+imprimer(reverse_matrix(matrix3))","définir inverser_matrice(matrice):
+    nouvelle_matrice = []
+    pour i dans portée(longueur(matrice)):
+        nouvelle_matrice.ajouter([])
+        pour j dans portée(longueur(matrice[i])):
+            nouvelle_matrice[i].insérer(0, matrice[i][j])
+    retour nouvelle_matrice
+
+
+# Cas_de_test 1
+matrice1 = [[1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]]
+# Sortie_attendue: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+imprimer(inverser_matrice(matrice1))
+
+# Cas_de_test 2
+matrice2 = [[1, 2, 3, 4],
+            [5, 6, 7, 8]]
+# Sortie_attendue: [[8, 7, 6, 5], [4, 3, 2, 1]]
+imprimer(inverser_matrice(matrice2))
+
+# Cas_de_test 3
+matrice3 = [[1, 2],
+            [3, 4],
+            [5, 6]]
+# Sortie_attendue: [[6, 5], [4, 3], [2, 1]]
+imprimer(inverser_matrice(matrice3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","définir fibonacci(n):
+    si n == 0:
+        retour 0
+    sinon_si n == 1:
+        retour 1
+    autre:
+        retour fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+imprimer(f""The Fibonacci number at index {n} is {fibonacci_number}."")","définir fibonacci(n):
+    si n == 0:
+        retour 0
+    sinon_si n == 1:
+        retour 1
+    autre:
+        retour fibonacci(n-1) + fibonacci(n-2)
+
+#Exemple d'utilisation
+n = 10
+nombre_fibonacci = fibonacci(n)
+imprimer(f""Le nombre de Fibonacci à l'indice {n} est {nombre_fibonacci}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","définir count_unique_consonants(str):
+    consonants = ensemble()
+    lowercase_string = str.plus_bas()
+    pour char dans lowercase_string:
+        si char.est_alphabétique() et char pas dans 'aeiou':
+            consonants.ajouter(char)
+    retour longueur(consonants)","définir compter_consonnes_uniques(chaîne):
+    consonnes = ensemble()
+    chaîne_en_minuscule = chaîne.plus_bas()
+    pour caractère dans chaîne_en_minuscule:
+        si caractère.est_alphabétique() et caractère pas dans 'aeiou':
+            consonnes.ajouter(caractère)
+    retour longueur(consonnes)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","définir filter_and_replace(str):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = str.diviser()
+    
+    pour word dans words:
+        si quelconque(char.est_un_chiffre() ou_alors pas char.est_alphabétique() pour char dans word):
+            Continuez
+        
+        si longueur(word) > 3 et quelconque(char dans vowels pour char dans word):
+            filtered_word = """"
+            pour char dans word:
+                si char dans vowels:
+                    vowel_index = vowels.indice(char)
+                    next_vowel = vowels[(vowel_index + 1) % longueur(vowels)]
+                    filtered_word += next_vowel
+                autre:
+                    filtered_word += char
+            filtered_words.ajouter(filtered_word)
+    
+    retour "" "".rejoindre(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+imprimer(output_string)","définir filtrer_et_remplacer(chaîne):
+    voyelles = ['a', 'e', 'i', 'o', 'u']
+    mots_filtrés = []
+    
+    mots = chaîne.diviser()
+    
+    pour mot dans mots:
+        si quelconque(car.est_un_chiffre() ou_alors pas car.est_alphabétique() pour car dans mot):
+            continue
+        
+        si longueur(mot) > 3 et quelconque(car dans voyelles pour car dans mot):
+            mot_filtré = """"
+            pour car dans mot:
+                si car dans voyelles:
+                    indice_voyelle = voyelles.indice(car)
+                    prochaine_voyelle = voyelles[(indice_voyelle + 1) % longueur(voyelles)]
+                    mot_filtré += prochaine_voyelle
+                autre:
+                    mot_filtré += car
+            mots_filtrés.ajouter(mot_filtré)
+    
+    retour "" "".rejoindre(mots_filtrés)
+
+
+# Exemple d'utilisation :
+chaîne_entrée = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+chaîne_sortie = filtrer_et_remplacer(chaîne_entrée)
+imprimer(chaîne_sortie)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","définir isOddPrimeGreaterThan100(number):
+    si number <= 100 ou_alors number % 2 == 0: #Check if number is less than or equal to 100 or even
+        retour Faux
+    pour i dans Portée(3, entier(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        si number % i == 0:
+            retour Faux
+    retour Vrai
+
+définir findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = virgulem_flottante('inf')
+    pour number dans array:
+        si isOddPrimeGreaterThan100(number):
+            si number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            sinon_si number < secondSmallest:
+                secondSmallest = number
+    retour secondSmallest","définir estImpairPremierPlusGrandQue100(nombre):
+    si nombre <= 100 ou_alors nombre % 2 == 0: #Vérifier si le nombre est inférieur ou égal à 100 ou pair
+        retour Faux
+    pour i dans Portée(3, entier(nombre**0.5) + 1, 2): #Vérifier la divisibilité par des nombres impairs uniquement
+        si nombre % i == 0:
+            retour Faux
+    retour Vrai
+
+définir trouverDeuxièmePlusPetitImpairPremierPlusGrandQue100(tableau):
+    plus_petit = deuxièmePlusPetit = virgule_flottante('inf')
+    pour nombre dans tableau:
+        si estImpairPremierPlusGrandQue100(nombre):
+            si nombre < plus_petit:
+                deuxièmePlusPetit = plus_petit
+                plus_petit = nombre
+            sinon_si nombre < deuxièmePlusPetit:
+                deuxièmePlusPetit = nombre
+    retour deuxièmePlusPetit"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","classe SeparatorNotFoundError(Exception):
+    passer
+
+classe MultipleSeparatorsError(Exception):
+    passer
+
+essayer:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.diviser(separator, 1)
+    si pas split_string:
+        lever_une_exception SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.diviser(separator)
+    si longueur(split_string) > 2:
+        lever_une_exception MultipleSeparatorsError(""Multiple separators found in string"")
+
+sauf SeparatorNotFoundError a e:
+    imprimer(""Error:"", e)
+
+sauf MultipleSeparatorsError a e:
+    imprimer(""Error:"", e)
+
+sauf Exception a e:
+    imprimer(""Error:"", e)","classe SeparateurNonTrouveErreur(Exception):
+    passer
+
+classe ErreurMultiplesSeparateurs(Exception):
+    passer
+
+essayer:
+    ma_chaine = ""Bonjour, Monde!""
+    separateur = ""#""
+
+    #Mauvaise façon de diviser la chaîne sur un séparateur
+    chaine_divisee = ma_chaine.diviser(separateur, 1)
+    si pas chaine_divisee:
+        lever_une_exception SeparateurNonTrouveErreur(""Séparateur non trouvé dans la chaîne"")
+
+    #Exigence supplémentaire:
+    #Si le séparateur est trouvé plus d'une fois dans la chaîne, lever une exception personnalisée appelée ""ErreurMultiplesSeparateurs""
+
+    #Mauvaise façon de diviser la chaîne sur un séparateur
+    chaine_divisee = ma_chaine.diviser(separateur)
+    si longueur(chaine_divisee) > 2:
+        lever_une_exception ErreurMultiplesSeparateurs(""Multiples séparateurs trouvés dans la chaîne"")
+
+sauf SeparateurNonTrouveErreur comme e:
+    imprimer(""Erreur:"", e)
+
+sauf ErreurMultiplesSeparateurs comme e:
+    imprimer(""Erreur:"", e)
+
+sauf Exception comme e:
+    imprimer(""Erreur:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","définir create_index_dictionary(list_one, list_two):
+    si longueur(list_one) != longueur(list_two):
+        lever_une_exception Erreur_de_valeur(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    pour i dans Portée(longueur(list_one)):
+        si instance(list_one[i], (liste, dictionnaire, tuple)) et instance(list_two[i], (liste, dictionnaire, tuple)):
+            si instance(list_one[i], ensemble) ou_alors instance(list_two[i], ensemble):
+                lever_une_exception Erreur_de_valeur(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            si instance(list_one[i], dictionnaire) et instance(list_two[i], dictionnaire):
+                si longueur(list_one[i]) != longueur(list_two[i]):
+                    lever_une_exception Erreur_de_valeur(""Nested dictionaries must have the same number of elements"")
+                
+                pour key dans list_one[i].clés():
+                    si key pas dans list_two[i]:
+                        lever_une_exception Erreur_de_valeur(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            sinon_si instance(list_one[i], liste) et instance(list_two[i], liste):
+                si longueur(list_one[i]) != longueur(list_two[i]):
+                    lever_une_exception Erreur_de_valeur(""Nested lists must have the same length"")
+                
+                pour j dans Portée(longueur(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            sinon_si instance(list_one[i], tuple) et instance(list_two[i], tuple):
+                si longueur(list_one[i]) != longueur(list_two[i]):
+                    lever_une_exception Erreur_de_valeur(""Tuples must have the same length"")
+                
+                pour j dans Portée(longueur(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        autre:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    retour index_dict","definir creer_dictionnaire_index(liste_un, liste_deux):
+    si longueur(liste_un) != longueur(liste_deux):
+        lever_une_exception Erreur_de_valeur(""Les listes d'entrée doivent avoir la même longueur"")
+    
+    dictionnaire_index = {}
+    pour i dans Portee(longueur(liste_un)):
+        si instance(liste_un[i], (liste, dictionnaire, tuple)) et instance(liste_deux[i], (liste, dictionnaire, tuple)):
+            si instance(liste_un[i], ensemble) ou_alors instance(liste_deux[i], ensemble):
+                lever_une_exception Erreur_de_valeur(""Les listes d'entrée ne peuvent pas contenir des ensembles"")
+            
+            dictionnaire_imbrique = {}
+            si instance(liste_un[i], dictionnaire) et instance(liste_deux[i], dictionnaire):
+                si longueur(liste_un[i]) != longueur(liste_deux[i]):
+                    lever_une_exception Erreur_de_valeur(""Les dictionnaires imbriqués doivent avoir le même nombre d'éléments"")
+                
+                pour cle dans liste_un[i].cles():
+                    si cle pas dans liste_deux[i]:
+                        lever_une_exception Erreur_de_valeur(""Les clés dans les dictionnaires imbriqués doivent être les mêmes"")
+                    dictionnaire_imbrique[cle] = (liste_un[i][cle], liste_deux[i][cle])
+            sinon_si instance(liste_un[i], liste) et instance(liste_deux[i], liste):
+                si longueur(liste_un[i]) != longueur(liste_deux[i]):
+                    lever_une_exception Erreur_de_valeur(""Les listes imbriquées doivent avoir la même longueur"")
+                
+                pour j dans Portee(longueur(liste_un[i])):
+                    dictionnaire_imbrique[j] = (liste_un[i][j], liste_deux[i][j])
+            sinon_si instance(liste_un[i], tuple) et instance(liste_deux[i], tuple):
+                si longueur(liste_un[i]) != longueur(liste_deux[i]):
+                    lever_une_exception Erreur_de_valeur(""Les tuples doivent avoir la même longueur"")
+                
+                pour j dans Portee(longueur(liste_un[i])):
+                    dictionnaire_imbrique[j] = (liste_un[i][j], liste_deux[i][j])
+            
+            dictionnaire_index[i] = dictionnaire_imbrique
+        autre:
+            dictionnaire_index[i] = (liste_un[i], liste_deux[i])
+    
+    retour dictionnaire_index"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","définir find_maximum(as, b, c):
+     #Convert the numbers to binary
+    a_bin = binaire(as)
+    b_bin = binaire(b)
+    c_bin = binaire(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.compter('1')
+    b_count = b_bin.compter('1')
+    c_count = c_bin.compter('1')
+    
+     #Compare the counts to find the maximum
+    si a_count > b_count et a_count > c_count:
+        retour as
+    sinon_si b_count > a_count et b_count > c_count:
+        retour b
+    autre:
+        retour c","définir trouver_maximum(a, b, c):
+    #Convertir les nombres en binaire
+    a_binaire = binaire(a)
+    b_binaire = binaire(b)
+    c_binaire = binaire(c)
+    
+    #Compter le nombre de 1 dans la représentation binaire de chaque nombre
+    a_compte = a_binaire.compter('1')
+    b_compte = b_binaire.compter('1')
+    c_compte = c_binaire.compter('1')
+    
+    #Comparer les comptes pour trouver le maximum
+    si a_compte > b_compte et a_compte > c_compte:
+        retour a
+    sinon_si b_compte > a_compte et b_compte > c_compte:
+        retour b
+    autre:
+        retour c"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","définir quick_sort(arr):
+    si longueur(arr) <= 1:
+        retour arr, 0
+    autre:
+        pivot = arr[0]
+        less = [x pour x dans arr[1:] si x <= pivot]
+        greater = [x pour x dans arr[1:] si x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = longueur(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        retour sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+imprimer(""Sorted Array:"", sorted_arr)
+imprimer(""Number of Comparisons:"", comparisons)","definir tri_rapide(tableau):
+    si longueur(tableau) <= 1:
+        retour tableau, 0
+    sinon:
+        pivot = tableau[0]
+        moins = [x pour x dans tableau[1:] si x <= pivot]
+        plus = [x pour x dans tableau[1:] si x > pivot]
+        moins_trie, comparaisons_moins = tri_rapide(moins)
+        plus_trie, comparaisons_plus = tri_rapide(plus)
+        comparaisons = longueur(tableau) - 1 + comparaisons_moins + comparaisons_plus
+        tableau_trie = plus_trie + [pivot] + moins_trie
+        retour tableau_trie, comparaisons
+
+#Tester le code
+tableau = [5, 3, 9, 5, 2, 8, 4]
+tableau_trie, comparaisons = tri_rapide(tableau)
+imprimer(""Tableau Trié:"", tableau_trie)
+imprimer(""Nombre de Comparaisons:"", comparaisons)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","définir calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    retour distance","définir calculer_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    retour distance"
+"def reverse_matrix(matrix):
+    new_matrix = []
+    for i in range(len(matrix)):
+        new_matrix.append([])
+        for j in range(len(matrix[i])):
+            new_matrix[i].insert(0, matrix[i][j])
+    return new_matrix
+
+
+# Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+# Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(reverse_matrix(matrix1))
+
+# Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+# Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+print(reverse_matrix(matrix2))
+
+# Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+# Expected output: [[6, 5], [4, 3], [2, 1]]
+print(reverse_matrix(matrix3))","définir reverse_matrix(matrix):
+    new_matrix = []
+    pour i dans Portée(longueur(matrix)):
+        new_matrix.ajouter([])
+        pour j dans Portée(longueur(matrix[i])):
+            new_matrix[i].insérer(0, matrix[i][j])
+    retour new_matrix
+
+
+ #Test case 1
+matrix1 = [[1, 2, 3],
+           [4, 5, 6],
+           [7, 8, 9]]
+ #Expected output: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+imprimer(reverse_matrix(matrix1))
+
+ #Test case 2
+matrix2 = [[1, 2, 3, 4],
+           [5, 6, 7, 8]]
+ #Expected output: [[8, 7, 6, 5], [4, 3, 2, 1]]
+imprimer(reverse_matrix(matrix2))
+
+ #Test case 3
+matrix3 = [[1, 2],
+           [3, 4],
+           [5, 6]]
+ #Expected output: [[6, 5], [4, 3], [2, 1]]
+imprimer(reverse_matrix(matrix3))","définir inverser_matrice(matrice):
+    nouvelle_matrice = []
+    verser je pavé Portée(longueur(matrice)):
+        nouvelle_matrice.ajouter([])
+        verser J pavé Portée(longueur(matrice[je])):
+            nouvelle_matrice[je].insérer(0, matrice[je][J])
+    remettre_à_une_revers nouvelle_matrice
+
+
+# Cas de test 1
+matrice1 = [[1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]]
+# Sortie attendue: [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+imprimer(inverser_matrice(matrice1))
+
+# Cas de test 2
+matrice2 = [[1, 2, 3, 4],
+            [5, 6, 7, 8]]
+# Sortie attendue: [[8, 7, 6, 5], [4, 3, 2, 1]]
+imprimer(inverser_matrice(matrice2))
+
+# Cas de test 3
+matrice3 = [[1, 2],
+            [3, 4],
+            [5, 6]]
+# Sortie attendue: [[6, 5], [4, 3], [2, 1]]
+imprimer(inverser_matrice(matrice3))"
+"def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+print(f""The Fibonacci number at index {n} is {fibonacci_number}."")","définir fibonacci(n):
+    si n == 0:
+        retour 0
+    sinon_si n == 1:
+        retour 1
+    autre:
+        retour fibonacci(n-1) + fibonacci(n-2)
+
+ #Example usage
+n = 10
+fibonacci_number = fibonacci(n)
+imprimer(f""The Fibonacci number at index {n} is {fibonacci_number}."")","définir fibonacci(n):
+    si n == 0:
+        remettre_à_une_revers 0
+    sinon_si n == 1:
+        remettre_à_une_revers 1
+    autre:
+        remettre_à_une_revers fibonacci(n-1) + fibonacci(n-2)
+
+# Exemple d'utilisation
+n = 10
+nombre_fibonacci = fibonacci(n)
+imprimer(f""Le nombre de Fibonacci à l'indice {n} est {nombre_fibonacci}."")"
+"def count_unique_consonants(string):
+    consonants = set()
+    lowercase_string = string.lower()
+    for char in lowercase_string:
+        if char.isalpha() and char not in 'aeiou':
+            consonants.add(char)
+    return len(consonants)","définir count_unique_consonants(str):
+    consonants = ensemble()
+    lowercase_string = str.plus_bas()
+    pour char dans lowercase_string:
+        si char.est_alphabétique() et char pas dans 'aeiou':
+            consonants.ajouter(char)
+    retour longueur(consonants)","définir compter_les_consonnes_uniques(chaîne):
+    consonnes = ensemble()
+    chaîne_en_minuscule = chaîne.plus_bas()
+    verser char pavé chaîne_en_minuscule:
+        si char.est_alphabétique() et char pas pavé 'aeiou':
+            consonnes.ajouter(char)
+    remettre_à_une_revers longueur(consonnes)"
+"def filter_and_replace(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = string.split()
+    
+    for word in words:
+        if any(char.isdigit() or not char.isalpha() for char in word):
+            continue
+        
+        if len(word) > 3 and any(char in vowels for char in word):
+            filtered_word = """"
+            for char in word:
+                if char in vowels:
+                    vowel_index = vowels.index(char)
+                    next_vowel = vowels[(vowel_index + 1) % len(vowels)]
+                    filtered_word += next_vowel
+                else:
+                    filtered_word += char
+            filtered_words.append(filtered_word)
+    
+    return "" "".join(filtered_words)
+
+
+# Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+print(output_string)","définir filter_and_replace(str):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    filtered_words = []
+    
+    words = str.diviser()
+    
+    pour word dans words:
+        si quelconque(char.est_un_chiffre() ou_alors pas char.est_alphabétique() pour char dans word):
+            Continuez
+        
+        si longueur(word) > 3 et quelconque(char dans vowels pour char dans word):
+            filtered_word = """"
+            pour char dans word:
+                si char dans vowels:
+                    vowel_index = vowels.indice(char)
+                    next_vowel = vowels[(vowel_index + 1) % longueur(vowels)]
+                    filtered_word += next_vowel
+                autre:
+                    filtered_word += char
+            filtered_words.ajouter(filtered_word)
+    
+    retour "" "".rejoindre(filtered_words)
+
+
+ #Example usage:
+input_string = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+output_string = filter_and_replace(input_string)
+imprimer(output_string)","définir filtrer_et_remplacer(chaîne):
+    voyelles = ['a', 'e', 'i', 'o', 'u']
+    mots_filtrés = []
+    
+    mots = chaîne.diviser()
+    
+    pour mot dans mots:
+        si quelconque(caractère.est_un_chiffre() ou_alors pas caractère.est_alphabétique() pour caractère dans mot):
+            Continuez
+        
+        si longueur(mot) > 3 et quelconque(caractère dans voyelles pour caractère dans mot):
+            mot_filtré = """"
+            pour caractère dans mot:
+                si caractère dans voyelles:
+                    indice_voyelle = voyelles.indice(caractère)
+                    prochaine_voyelle = voyelles[(indice_voyelle + 1) % longueur(voyelles)]
+                    mot_filtré += prochaine_voyelle
+                autre:
+                    mot_filtré += caractère
+            mots_filtrés.ajouter(mot_filtré)
+    
+    retour "" "".rejoindre(mots_filtrés)
+
+
+# Exemple d'utilisation:
+chaîne_entrée = ""Hello world! This is a test string. Filter me out if I contain numbers or special characters.""
+chaîne_sortie = filtrer_et_remplacer(chaîne_entrée)
+imprimer(chaîne_sortie)"
+"def isOddPrimeGreaterThan100(number):
+    if number <= 100 or number % 2 == 0:  # Check if number is less than or equal to 100 or even
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  # Check divisibility by odd numbers only
+        if number % i == 0:
+            return False
+    return True
+
+def findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = float('inf')
+    for number in array:
+        if isOddPrimeGreaterThan100(number):
+            if number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            elif number < secondSmallest:
+                secondSmallest = number
+    return secondSmallest","définir isOddPrimeGreaterThan100(number):
+    si number <= 100 ou_alors number % 2 == 0: #Check if number is less than or equal to 100 or even
+        retour Faux
+    pour i dans Portée(3, entier(number**0.5) + 1, 2): #Check divisibility by odd numbers only
+        si number % i == 0:
+            retour Faux
+    retour Vrai
+
+définir findSecondSmallestOddPrimeGreaterThan100(array):
+    smallest = secondSmallest = virgulem_flottante('inf')
+    pour number dans array:
+        si isOddPrimeGreaterThan100(number):
+            si number < smallest:
+                secondSmallest = smallest
+                smallest = number
+            sinon_si number < secondSmallest:
+                secondSmallest = number
+    retour secondSmallest","définir estImpairPremierSupérieurÀ100(nombre):
+    si nombre <= 100 ou_alors nombre % 2 == 0: #Vérifiez si le nombre est inférieur ou égal à 100 ou pair
+        retour Faux
+    pour je dans Portée(3, entier(nombre**0.5) + 1, 2): #Vérifiez la divisibilité par des nombres impairs uniquement
+        si nombre % je == 0:
+            retour Faux
+    retour Vrai
+
+définir trouverDeuxièmePlusPetitImpairPremierSupérieurÀ100(tableau):
+    plusPetit = deuxièmePlusPetit = virgulem_flottante('inf')
+    pour nombre dans tableau:
+        si estImpairPremierSupérieurÀ100(nombre):
+            si nombre < plusPetit:
+                deuxièmePlusPetit = plusPetit
+                plusPetit = nombre
+            sinon_si nombre < deuxièmePlusPetit:
+                deuxièmePlusPetit = nombre
+    retour deuxièmePlusPetit"
+"class SeparatorNotFoundError(Exception):
+    pass
+
+class MultipleSeparatorsError(Exception):
+    pass
+
+try:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator, 1)
+    if not split_string:
+        raise SeparatorNotFoundError(""Separator not found in string"")
+
+    # Additional Requirement:
+    # If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+    # Incorrect way to split the string on a separator
+    split_string = mystring.split(separator)
+    if len(split_string) > 2:
+        raise MultipleSeparatorsError(""Multiple separators found in string"")
+
+except SeparatorNotFoundError as e:
+    print(""Error:"", e)
+
+except MultipleSeparatorsError as e:
+    print(""Error:"", e)
+
+except Exception as e:
+    print(""Error:"", e)","classe SeparatorNotFoundError(Exception):
+    passer
+
+classe MultipleSeparatorsError(Exception):
+    passer
+
+essayer:
+    mystring = ""Hello, World!""
+    separator = ""#""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.diviser(separator, 1)
+    si pas split_string:
+        lever_une_exception SeparatorNotFoundError(""Separator not found in string"")
+
+     #Additional Requirement:
+     #If the separator is found more than once in the string, raise a custom exception called ""MultipleSeparatorsError""
+
+     #Incorrect way to split the string on a separator
+    split_string = mystring.diviser(separator)
+    si longueur(split_string) > 2:
+        lever_une_exception MultipleSeparatorsError(""Multiple separators found in string"")
+
+sauf SeparatorNotFoundError a e:
+    imprimer(""Error:"", e)
+
+sauf MultipleSeparatorsError a e:
+    imprimer(""Error:"", e)
+
+sauf Exception a e:
+    imprimer(""Error:"", e)","classe SéparateurNonTrouvéErreur(Exception):
+    passer
+
+classe ErreurMultiplesSéparateurs(Exception):
+    passer
+
+essayer:
+    ma_chaîne = ""Bonjour, Monde!""
+    séparateur = ""#""
+
+    # Façon incorrecte de diviser la chaîne sur un séparateur
+    chaîne_divisée = ma_chaîne.diviser(séparateur, 1)
+    si pas chaîne_divisée:
+        lever_une_exception SéparateurNonTrouvéErreur(""Séparateur non trouvé dans la chaîne"")
+
+    # Exigence supplémentaire:
+    # Si le séparateur est trouvé plus d'une fois dans la chaîne, lever une exception personnalisée appelée ""ErreurMultiplesSéparateurs""
+
+    # Façon incorrecte de diviser la chaîne sur un séparateur
+    chaîne_divisée = ma_chaîne.diviser(séparateur)
+    si longueur(chaîne_divisée) > 2:
+        lever_une_exception ErreurMultiplesSéparateurs(""Multiples séparateurs trouvés dans la chaîne"")
+
+sauf SéparateurNonTrouvéErreur comme e:
+    imprimer(""Erreur:"", e)
+
+sauf ErreurMultiplesSéparateurs comme e:
+    imprimer(""Erreur:"", e)
+
+sauf Exception comme e:
+    imprimer(""Erreur:"", e)"
+"def create_index_dictionary(list_one, list_two):
+    if len(list_one) != len(list_two):
+        raise ValueError(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    for i in range(len(list_one)):
+        if isinstance(list_one[i], (list, dict, tuple)) and isinstance(list_two[i], (list, dict, tuple)):
+            if isinstance(list_one[i], set) or isinstance(list_two[i], set):
+                raise ValueError(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            if isinstance(list_one[i], dict) and isinstance(list_two[i], dict):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested dictionaries must have the same number of elements"")
+                
+                for key in list_one[i].keys():
+                    if key not in list_two[i]:
+                        raise ValueError(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            elif isinstance(list_one[i], list) and isinstance(list_two[i], list):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Nested lists must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            elif isinstance(list_one[i], tuple) and isinstance(list_two[i], tuple):
+                if len(list_one[i]) != len(list_two[i]):
+                    raise ValueError(""Tuples must have the same length"")
+                
+                for j in range(len(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        else:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    return index_dict","définir create_index_dictionary(list_one, list_two):
+    si longueur(list_one) != longueur(list_two):
+        lever_une_exception Erreur_de_valeur(""Input lists must be of equal length"")
+    
+    index_dict = {}
+    pour i dans Portée(longueur(list_one)):
+        si instance(list_one[i], (liste, dictionnaire, tuple)) et instance(list_two[i], (liste, dictionnaire, tuple)):
+            si instance(list_one[i], ensemble) ou_alors instance(list_two[i], ensemble):
+                lever_une_exception Erreur_de_valeur(""Input lists cannot contain sets"")
+            
+            nested_dict = {}
+            si instance(list_one[i], dictionnaire) et instance(list_two[i], dictionnaire):
+                si longueur(list_one[i]) != longueur(list_two[i]):
+                    lever_une_exception Erreur_de_valeur(""Nested dictionaries must have the same number of elements"")
+                
+                pour key dans list_one[i].clés():
+                    si key pas dans list_two[i]:
+                        lever_une_exception Erreur_de_valeur(""Keys in nested dictionaries must be the same"")
+                    nested_dict[key] = (list_one[i][key], list_two[i][key])
+            sinon_si instance(list_one[i], liste) et instance(list_two[i], liste):
+                si longueur(list_one[i]) != longueur(list_two[i]):
+                    lever_une_exception Erreur_de_valeur(""Nested lists must have the same length"")
+                
+                pour j dans Portée(longueur(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            sinon_si instance(list_one[i], tuple) et instance(list_two[i], tuple):
+                si longueur(list_one[i]) != longueur(list_two[i]):
+                    lever_une_exception Erreur_de_valeur(""Tuples must have the same length"")
+                
+                pour j dans Portée(longueur(list_one[i])):
+                    nested_dict[j] = (list_one[i][j], list_two[i][j])
+            
+            index_dict[i] = nested_dict
+        autre:
+            index_dict[i] = (list_one[i], list_two[i])
+    
+    retour index_dict","définir créer_dictionnaire_index(liste_un, liste_deux):
+    si longueur(liste_un) != longueur(liste_deux):
+        lever_une_exception Erreur_de_valeur(""Les listes d'entrée doivent être de même longueur"")
+    
+    dictionnaire_index = {}
+    pour i dans Portée(longueur(liste_un)):
+        si instance(liste_un[i], (liste, dictionnaire, tuple)) et instance(liste_deux[i], (liste, dictionnaire, tuple)):
+            si instance(liste_un[i], ensemble) ou_alors instance(liste_deux[i], ensemble):
+                lever_une_exception Erreur_de_valeur(""Les listes d'entrée ne peuvent pas contenir d'ensembles"")
+            
+            dictionnaire_imbriqué = {}
+            si instance(liste_un[i], dictionnaire) et instance(liste_deux[i], dictionnaire):
+                si longueur(liste_un[i]) != longueur(liste_deux[i]):
+                    lever_une_exception Erreur_de_valeur(""Les dictionnaires imbriqués doivent avoir le même nombre d'éléments"")
+                
+                pour clé dans liste_un[i].clés():
+                    si clé pas dans liste_deux[i]:
+                        lever_une_exception Erreur_de_valeur(""Les clés dans les dictionnaires imbriqués doivent être les mêmes"")
+                    dictionnaire_imbriqué[clé] = (liste_un[i][clé], liste_deux[i][clé])
+            sinon_si instance(liste_un[i], liste) et instance(liste_deux[i], liste):
+                si longueur(liste_un[i]) != longueur(liste_deux[i]):
+                    lever_une_exception Erreur_de_valeur(""Les listes imbriquées doivent avoir la même longueur"")
+                
+                pour j dans Portée(longueur(liste_un[i])):
+                    dictionnaire_imbriqué[j] = (liste_un[i][j], liste_deux[i][j])
+            sinon_si instance(liste_un[i], tuple) et instance(liste_deux[i], tuple):
+                si longueur(liste_un[i]) != longueur(liste_deux[i]):
+                    lever_une_exception Erreur_de_valeur(""Les tuples doivent avoir la même longueur"")
+                
+                pour j dans Portée(longueur(liste_un[i])):
+                    dictionnaire_imbriqué[j] = (liste_un[i][j], liste_deux[i][j])
+            
+            dictionnaire_index[i] = dictionnaire_imbriqué
+        autre:
+            dictionnaire_index[i] = (liste_un[i], liste_deux[i])
+    
+    retour dictionnaire_index"
+"def find_maximum(a, b, c):
+    # Convert the numbers to binary
+    a_bin = bin(a)
+    b_bin = bin(b)
+    c_bin = bin(c)
+    
+    # Count the number of 1s in the binary representation of each number
+    a_count = a_bin.count('1')
+    b_count = b_bin.count('1')
+    c_count = c_bin.count('1')
+    
+    # Compare the counts to find the maximum
+    if a_count > b_count and a_count > c_count:
+        return a
+    elif b_count > a_count and b_count > c_count:
+        return b
+    else:
+        return c","définir find_maximum(as, b, c):
+     #Convert the numbers to binary
+    a_bin = binaire(as)
+    b_bin = binaire(b)
+    c_bin = binaire(c)
+    
+     #Count the number of 1s in the binary representation of each number
+    a_count = a_bin.compter('1')
+    b_count = b_bin.compter('1')
+    c_count = c_bin.compter('1')
+    
+     #Compare the counts to find the maximum
+    si a_count > b_count et a_count > c_count:
+        retour as
+    sinon_si b_count > a_count et b_count > c_count:
+        retour b
+    autre:
+        retour c","définir trouver_maximum(a, b, c):
+    # Convertir les nombres en binaire
+    a_bin = binaire(a)
+    b_bin = binaire(b)
+    c_bin = binaire(c)
+    
+    # Compter le nombre de 1 dans la représentation binaire de chaque nombre
+    a_compter = a_bin.compter('1')
+    b_compter = b_bin.compter('1')
+    c_compter = c_bin.compter('1')
+    
+    # Comparer les comptes pour trouver le maximum
+    si a_compter > b_compter et a_compter > c_compter:
+        remettre_à_une_revers a
+    sinon_si b_compter > a_compter et b_compter > c_compter:
+        remettre_à_une_revers b
+    autre:
+        remettre_à_une_revers c"
+"def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = len(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        return sorted_arr, comparisons
+
+# Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+print(""Sorted Array:"", sorted_arr)
+print(""Number of Comparisons:"", comparisons)","définir quick_sort(arr):
+    si longueur(arr) <= 1:
+        retour arr, 0
+    autre:
+        pivot = arr[0]
+        less = [x pour x dans arr[1:] si x <= pivot]
+        greater = [x pour x dans arr[1:] si x > pivot]
+        sorted_less, comparisons_less = quick_sort(less)
+        sorted_greater, comparisons_greater = quick_sort(greater)
+        comparisons = longueur(arr) - 1 + comparisons_less + comparisons_greater
+        sorted_arr = sorted_greater + [pivot] + sorted_less
+        retour sorted_arr, comparisons
+
+ #Testing the code
+arr = [5, 3, 9, 5, 2, 8, 4]
+sorted_arr, comparisons = quick_sort(arr)
+imprimer(""Sorted Array:"", sorted_arr)
+imprimer(""Number of Comparisons:"", comparisons)","définir tri_rapide(tableau):
+    si longueur(tableau) <= 1:
+        remettre_à_une_revers tableau, 0
+    auditeur:
+        pivot = tableau[0]
+        moins = [x pour x dans tableau[1:] si x <= pivot]
+        plus = [x pour x dans tableau[1:] si x > pivot]
+        moins_triés, comparaisons_moins = tri_rapide(moins)
+        plus_triés, comparaisons_plus = tri_rapide(plus)
+        comparaisons = longueur(tableau) - 1 + comparaisons_moins + comparaisons_plus
+        tableau_triés = plus_triés + [pivot] + moins_triés
+        remettre_à_une_revers tableau_triés, comparaisons
+
+# Test du code
+tableau = [5, 3, 9, 5, 2, 8, 4]
+tableau_triés, comparaisons = tri_rapide(tableau)
+imprimer(""Tableau Trié:"", tableau_triés)
+imprimer(""Nombre de Comparaisons:"", comparaisons)"
+"def calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    return distance","définir calculate_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    retour distance","définir calculer_distance(point1, point2):
+    distance = ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2 + (point2[2] - point1[2])**2) ** 0.5
+    remettre_à_une_revers distance"

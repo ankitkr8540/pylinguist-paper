@@ -1,0 +1,1978 @@
+chunk_size,index,original_code,translated_code,back_translated_code,bleu_score,syntax_valid,structure_score,semantic_score,token_match,overall_score
+0,1,"for i in range(10):  # First digit
+    for j in range(10):  # Second digit
+        for k in range(10):  # Third digit
+            # Checking for the conditions
+            if i != 5 and j != 5 and k != 5 and i != j and i != k and j != k:
+                print(i, j, k)","for εγώ in range(10): #Πρώτος ψηφίο
+    for j in range(10): #Δευτερόλεπτο
+        for k in range(10): #Τρίτο ψηφίο
+               #Έλεγχος για τις συνθήκες
+            if εγώ != 5 and j != 5 and k != 5 and εγώ != j and εγώ != k and j != k:
+                print(εγώ, j, k)","for I in range(10): # First digit
+    for j in range(10): # Second
+        for k in range(10): # Third digit
+                # Check for conditions
+            if I != 5 and j != 5 and k != 5 and I != j and I != k and j != k:
+                print(I, j, k)",0.7811906744382721,True,1.0,0.9968991279602051,1.0,0.9556179604796954
+0,2,"def count_distinct_states(matrix):
+    count = 0
+    states = set()
+    for row in matrix:
+        for col in row:
+            state = ''.join(col)
+            if state not in states:
+                count += 1
+            states.add(state)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(count_distinct_states(matrix))
+# Output: 4","def Μετρήστε_ξεχωριστές_καταστάσεις(μήτρα):
+    count = 0
+    κράτη = set()
+    for σειρά in μήτρα:
+        for διάσελο in σειρά:
+            κατάσταση = ''.join(διάσελο)
+            if κατάσταση not in κράτη:
+                count += 1
+            κράτη.add(κατάσταση)
+    return count
+
+μήτρα = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(Μετρήστε_ξεχωριστές_καταστάσεις(μήτρα))
+   #Έξοδος: 4","def Count_separate_situations(matrix):
+    count = 0
+    states = set()
+    for series in matrix:
+        for col in series:
+            situation = ''.join(col)
+            if situation not in states:
+                count += 1
+            states.add(situation)
+    return count
+
+matrix = [['A', 'B', 'C'],
+          ['A', 'B', 'D'],
+          ['A', 'B', 'C']]
+print(Count_separate_situations(matrix))
+    # Exit: 4",0.7986542695584117,True,0.5,0.8171045780181885,1.0,0.8231517695153201
+0,3,"def remove_spaces_and_punctuation(s):
+    result = """"
+    for char in s:
+        if char.isalnum():
+            result += char
+    return result","def Αφαιρέστε_τους_χώρους_και_τη_στίξη(μικρό):
+    αποτέλεσμα = """"
+    for απανθρακώνω in μικρό:
+        if απανθρακώνω.isalnum():
+            αποτέλεσμα += απανθρακώνω
+    return αποτέλεσμα","def Remove_spaces_and_punctuation(small):
+    result = """"
+    for char in small:
+        if char.isalnum():
+            result += char
+    return result",0.74652145828272,True,0.5,0.9888160824775696,1.0,0.8470675081520579
+0,4,"import math
+
+def is_prime(n):
+    # Check if the number is less than 2 or not an integer
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+    # Check if the number is divisible by any integer from 2 to the square root of n
+    for i in range(2, math.isqrt(n) + 1):
+        if n % i == 0:
+            return ""Not Prime""
+
+    return ""Prime""","import μαθηματικά
+
+def είναι_πρωταρχικός(n):
+       #Ελέγξτε εάν ο αριθμός είναι μικρότερος από 2 ή όχι ακέραιος
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+       #Ελέγξτε εάν ο αριθμός διαιρείται από οποιονδήποτε ακέραιο από 2 έως την τετραγωνική ρίζα του n
+    for εγώ in range(2, μαθηματικά.isqrt(n) + 1):
+        if n % εγώ == 0:
+            return ""Not Prime""
+
+    return ""Prime""","import mathematics
+
+def is_primary(n):
+        # Check if the number is smaller than 2 or not integer
+    if n < 2 or not isinstance(n, int):
+        return ""Not Prime""
+
+        #Ελέγξτε εάν ο αριθμός διαιρείται από οποιονδήποτε ακέραιο από 2 έως την τετραγωνική ρίζα του n
+    for I in range(2, mathematics.isqrt(n) + 1):
+        if n % I == 0:
+            return ""Not Prime""
+
+    return ""Prime""",0.7710334170906589,True,0.5,0.6929848790168762,1.0,0.7928036592215071
+0,5,"class String:
+    def __init__(self, string):
+        self.string = string
+
+    def replace_odd_occurrences(self, substring, replace_with):
+        count = self.string.count(substring)
+        if count % 2 == 0 or count == 0:
+            return self.string
+
+        result = """"
+        stack = []
+
+        for i in range(len(self.string)):
+            if self.string[i:i+len(substring)] == substring:
+                if len(stack) > 0 and (stack[-1] == '(' or stack[-1] == '['):
+                    stack.append(substring)
+                    result += substring
+                elif len(stack) > 0 and (stack[-1] == ')' or stack[-1] == ']'):
+                    stack.pop()
+                    result += substring
+                else:
+                    stack.append(substring)
+                    result += replace_with
+            else:
+                result += self.string[i]
+
+            if len(stack) > 0 and stack[-1] == substring:
+                stack.pop()
+
+        return result","class Σειρά:
+    def __init__(self, σειρά):
+        self.σειρά = σειρά
+
+    def Αντικαταστήστε_τα_περίεργα_περιστατικά(self, υποστρώ, αντικαθιστώ):
+        count = self.σειρά.count(υποστρώ)
+        if count % 2 == 0 or count == 0:
+            return self.σειρά
+
+        αποτέλεσμα = """"
+        σωρός = []
+
+        for εγώ in range(len(self.σειρά)):
+            if self.σειρά[εγώ:εγώ+len(υποστρώ)] == υποστρώ:
+                if len(σωρός) > 0 and (σωρός[-1] == '(' or σωρός[-1] == '['):
+                    σωρός.append(υποστρώ)
+                    αποτέλεσμα += υποστρώ
+                elif len(σωρός) > 0 and (σωρός[-1] == ')' or σωρός[-1] == ']'):
+                    σωρός.pop()
+                    αποτέλεσμα += υποστρώ
+                else:
+                    σωρός.append(υποστρώ)
+                    αποτέλεσμα += αντικαθιστώ
+            else:
+                αποτέλεσμα += self.σειρά[εγώ]
+
+            if len(σωρός) > 0 and σωρός[-1] == υποστρώ:
+                σωρός.pop()
+
+        return αποτέλεσμα","class Series:
+    def __init__(self, series):
+        self.series = series
+
+    def Replace_the_odd_incidents(self, substrate, replace):
+        count = self.series.count(substrate)
+        if count % 2 == 0 or count == 0:
+            return self.series
+
+        result = """"
+        pile = []
+
+        for I in range(len(self.series)):
+            if self.series[I:I+len(substrate)] == substrate:
+                if len(pile) > 0 and (pile[-1] == '(' or pile[-1] == '['):
+                    pile.append(substrate)
+                    result += substrate
+                elif len(pile) > 0 and (pile[-1] == ')' or pile[-1] == ']'):
+                    pile.pop()
+                    result += substrate
+                else:
+                    pile.append(substrate)
+                    result += replace
+            else:
+                result += self.series[I]
+
+            if len(pile) > 0 and pile[-1] == substrate:
+                pile.pop()
+
+        return result",0.5229041841426205,True,0.4444444444444444,0.7275488376617432,1.0,0.7389794932497616
+0,6,"def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def has_digit_7(num):
+    while num > 0:
+        if num % 10 == 7:
+            return True
+        num //= 10
+    return False
+
+def sum_of_primes():
+    sum_of_primes = 0
+    for num in range(1000000, 2000001):
+        if is_prime(num) and not has_digit_7(num):
+            sum_of_primes += num
+    return sum_of_primes
+
+result = sum_of_primes()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)","def είναι_πρωταρχικός(μειρό):
+    if μειρό <= 1:
+        return False
+    for εγώ in range(2, int(μειρό**0.5) + 1):
+        if μειρό % εγώ == 0:
+            return False
+    return True
+
+def έχει_ψηφίο_7(μειρό):
+    while μειρό > 0:
+        if μειρό % 10 == 7:
+            return True
+        μειρό //= 10
+    return False
+
+def άθροισμα_των_αρχικών():
+    άθροισμα_των_αρχικών = 0
+    for μειρό in range(1000000, 2000001):
+        if είναι_πρωταρχικός(μειρό) and not έχει_ψηφίο_7(μειρό):
+            άθροισμα_των_αρχικών += μειρό
+    return άθροισμα_των_αρχικών
+
+αποτέλεσμα = άθροισμα_των_αρχικών()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", αποτέλεσμα)","def is_primary(minor):
+    if minor <= 1:
+        return False
+    for I in range(2, int(minor**0.5) + 1):
+        if minor % I == 0:
+            return False
+    return True
+
+def has_a_digit_of_7(minor):
+    while minor > 0:
+        if minor % 10 == 7:
+            return True
+        minor //= 10
+    return False
+
+def sum_of_the_original():
+    sum_of_the_original = 0
+    for minor in range(1000000, 2000001):
+        if is_primary(minor) and not has_a_digit_of_7(minor):
+            sum_of_the_original += minor
+    return sum_of_the_original
+
+result = sum_of_the_original()
+print(""The sum of all prime numbers between 1 million and 2 million, excluding prime numbers that contain the digit 7, is:"", result)",0.5079276156925744,True,0.5,0.8968048691749573,1.0,0.7809464969735063
+0,7,"def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def find_prime_sum_array(N, M, X):
+    prime_sum_array = []
+    current_number = M
+    sum_so_far = 0
+
+    while len(prime_sum_array) < N and current_number <= X:
+        if is_prime(sum_so_far + current_number):
+            prime_sum_array.append(current_number)
+            sum_so_far += current_number
+        current_number += M
+
+    if not is_prime(sum_so_far):
+        return []
+
+    return prime_sum_array
+
+# Example usage
+N = 5
+M = 3
+X = 20
+
+result = find_prime_sum_array(N, M, X)
+print(result)","def είναι_πρωταρχικός(μειρό):
+    if μειρό < 2:
+        return False
+    for εγώ in range(2, int(μειρό ** 0.5) + 1):
+        if μειρό % εγώ == 0:
+            return False
+    return True
+
+def Βρείτε_πρωταρχική_συστοιχία(N, M, X):
+    πρωταρχική_συστοιχία = []
+    τρέχων_αριθμός = M
+    ποσό_μέχρι_τώρα = 0
+
+    while len(πρωταρχική_συστοιχία) < N and τρέχων_αριθμός <= X:
+        if είναι_πρωταρχικός(ποσό_μέχρι_τώρα + τρέχων_αριθμός):
+            πρωταρχική_συστοιχία.append(τρέχων_αριθμός)
+            ποσό_μέχρι_τώρα += τρέχων_αριθμός
+        τρέχων_αριθμός += M
+
+    if not είναι_πρωταρχικός(ποσό_μέχρι_τώρα):
+        return []
+
+    return πρωταρχική_συστοιχία
+
+   #Παράδειγμα χρήσης
+N = 5
+M = 3
+X = 20
+
+αποτέλεσμα = Βρείτε_πρωταρχική_συστοιχία(N, M, X)
+print(αποτέλεσμα)","def is_primary(minor):
+    if minor < 2:
+        return False
+    for I in range(2, int(minor ** 0.5) + 1):
+        if minor % I == 0:
+            return False
+    return True
+
+def Find_a_primary_array(N, M, X):
+    prime_array = []
+    current_number = M
+    Amount_so_far = 0
+
+    while len(prime_array) < N and current_number <= X:
+        if is_primary(Amount_so_far + current_number):
+            prime_array.append(current_number)
+            Amount_so_far += current_number
+        current_number += M
+
+    if not is_primary(Amount_so_far):
+        return []
+
+    return prime_array
+
+    # Example
+N = 5
+M = 3
+X = 20
+
+result = Find_a_primary_array(N, M, X)
+print(result)",0.6377515118328174,True,0.5,0.7223013043403625,1.0,0.772010563234636
+0,8,"def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def max_prime_difference(arr):
+    primes = []
+    for num in arr:
+        if is_prime(abs(num)):
+            primes.append(abs(num))
+    if len(primes) < 2:
+        return 0
+    max_diff = 0
+    for i in range(len(primes)-1):
+        diff = abs(primes[i] - primes[i+1])
+        if diff > max_diff:
+            max_diff = diff
+    return max_diff","def είναι_πρωταρχικός(n):
+    if n < 2:
+        return False
+    for εγώ in range(2, int(n**0.5) + 1):
+        if n % εγώ == 0:
+            return False
+    return True
+
+def Μέγιστη_διαφορά(arr):
+    πρωταρχικός = []
+    for μειρό in arr:
+        if είναι_πρωταρχικός(abs(μειρό)):
+            πρωταρχικός.append(abs(μειρό))
+    if len(πρωταρχικός) < 2:
+        return 0
+    μέγιστη_διαφορά = 0
+    for εγώ in range(len(πρωταρχικός)-1):
+        difference = abs(πρωταρχικός[εγώ] - πρωταρχικός[εγώ+1])
+        if difference > μέγιστη_διαφορά:
+            μέγιστη_διαφορά = difference
+    return μέγιστη_διαφορά","def is_primary(n):
+    if n < 2:
+        return False
+    for I in range(2, int(n**0.5) + 1):
+        if n % I == 0:
+            return False
+    return True
+
+def Maximum_difference(arr):
+    primary = []
+    for minor in arr:
+        if is_primary(abs(minor)):
+            primary.append(abs(minor))
+    if len(primary) < 2:
+        return 0
+    maximum_difference = 0
+    for I in range(len(primary)-1):
+        difference = abs(primary[I] - primary[I+1])
+        if difference > maximum_difference:
+            maximum_difference = difference
+    return maximum_difference",0.549107584149575,True,0.5,0.7013299465179443,1.0,0.750087506133504
+0,9,"import math
+
+def calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio):
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate the height using the Law of Sines
+    height = opposite_side_length * math.sin(angle_rad) / side_ratio
+
+    # Calculate the length of the adjacent side using the Law of Cosines
+    adjacent_side_length = math.sqrt(side_lengths**2 + opposite_side_length**2 - 2 * side_lengths * opposite_side_length * math.cos(angle_rad))
+
+    # Calculate the hypotenuse of the triangle
+    hypotenuse = side_lengths / math.cos(angle_rad)
+
+    # Calculate the remaining side using Pythagorean theorem
+    remaining_side_length = math.sqrt(hypotenuse**2 - adjacent_side_length**2)
+
+    # Calculate the final height of the triangle
+    height += remaining_side_length
+
+    return height
+
+
+def simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True):
+    # Initialize variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+    # Convert angle from degrees to radians
+    angle_rad = math.radians(angle)
+
+    # Calculate initial velocities
+    vx = initial_velocity * math.cos(angle_rad)
+    vy = initial_velocity * math.sin(angle_rad)
+
+    # Simulate the motion until the y-coordinate becomes negative (reached the ground)
+    while y >= 0:
+        # Calculate the acceleration due to air resistance
+        if air_resistance:
+            air_resistance_acceleration = -0.5 * vy**2  # Simplified model for air resistance
+        else:
+            air_resistance_acceleration = 0.0  # No air resistance
+
+        # Calculate the new velocities using the kinematic equations
+        vx += air_resistance_acceleration * math.cos(angle_rad) * time_interval
+        vy += (-9.8 + air_resistance_acceleration * math.sin(angle_rad)) * time_interval
+
+        # Calculate the new position using the kinematic equations
+        x += vx * time_interval
+        y += vy * time_interval
+
+        # Increment the time
+        time += time_interval
+
+    return x, y, time
+
+
+# Example usage
+angle = 45  # Angle in degrees
+side_lengths = 5
+opposite_side_length = 3
+side_ratio = 2
+height = calculate_triangle_height(angle, side_lengths, opposite_side_length, side_ratio)
+print(f""The height of the triangle is: {height}"")
+
+initial_velocity = 10  # m/s
+time_interval = 0.01  # seconds
+x, y, total_time = simulate_triangle_motion(initial_velocity, angle, time_interval, air_resistance=True)
+print(f""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","import μαθηματικά
+
+def Υπολογίστε_το_ύψος_του_τριγώνου(γωνία, πλευρικά_μήκη, αντίθετο_μήκος_πλευράς, πλευρική_αναλογία):
+       #Μετατροπή γωνία από πτυχία σε ακτίνες
+    Γωνιά_rad = μαθηματικά.ακτίνων(γωνία)
+
+       #Υπολογίστε το ύψος χρησιμοποιώντας το νόμο των Σινέλων
+    ύψος = αντίθετο_μήκος_πλευράς * μαθηματικά.αμαρτία(Γωνιά_rad) / πλευρική_αναλογία
+
+       #Υπολογίστε το μήκος της παρακείμενης πλευράς χρησιμοποιώντας το νόμο των συνημμένων
+    γειτονικό_μήκος_πλευράς = μαθηματικά.SQRT(πλευρικά_μήκη**2 + αντίθετο_μήκος_πλευράς**2 - 2 * πλευρικά_μήκη * αντίθετο_μήκος_πλευράς * μαθηματικά.για(Γωνιά_rad))
+
+       #Υπολογίστε την υποτετάνιση του τριγώνου
+    υποτείνουσα = πλευρικά_μήκη / μαθηματικά.για(Γωνιά_rad)
+
+       #Υπολογίστε την υπόλοιπη πλευρά με τη χρήση του Πυθαγόρεου Θεώρημα
+    υπόλοιπο_πλευρά_μήκους = μαθηματικά.SQRT(υποτείνουσα**2 - γειτονικό_μήκος_πλευράς**2)
+
+       #Υπολογίστε το τελικό ύψος του τριγώνου
+    ύψος += υπόλοιπο_πλευρά_μήκους
+
+    return ύψος
+
+
+def Προσομοίωση_κίνησης_τριγώνου(αρχική_ταχύτητα, γωνία, χρονικό_διάστημα, αντίσταση_στον_αέρα=True):
+       #Αρχικοποιήστε τις μεταβλητές
+    x = 0.0
+    y = 0.0
+    φορά = 0.0
+
+       #Μετατροπή γωνία από πτυχία σε ακτίνες
+    Γωνιά_rad = μαθηματικά.ακτίνων(γωνία)
+
+       #Υπολογίστε τις αρχικές ταχύτητες
+    VX = αρχική_ταχύτητα * μαθηματικά.για(Γωνιά_rad)
+    vy = αρχική_ταχύτητα * μαθηματικά.αμαρτία(Γωνιά_rad)
+
+       #Η προσομοίωση της κίνησης μέχρι να γίνει αρνητική η συντεταγμένη Y (φτάνει στο έδαφος)
+    while y >= 0:
+           #Υπολογίστε την επιτάχυνση λόγω αντίστασης στον αέρα
+        if αντίσταση_στον_αέρα:
+            επιτάχυνση_αντίστασης_στον_αέρα = -0.5 * vy**2 #Απλοποιημένο μοντέλο για αντίσταση αέρα
+        else:
+            επιτάχυνση_αντίστασης_στον_αέρα = 0.0 #Χωρίς αντίσταση αέρα
+
+           #Υπολογίστε τις νέες ταχύτητες χρησιμοποιώντας τις κινηματικές εξισώσεις
+        VX += επιτάχυνση_αντίστασης_στον_αέρα * μαθηματικά.για(Γωνιά_rad) * χρονικό_διάστημα
+        vy += (-9.8 + επιτάχυνση_αντίστασης_στον_αέρα * μαθηματικά.αμαρτία(Γωνιά_rad)) * χρονικό_διάστημα
+
+           #Υπολογίστε τη νέα θέση χρησιμοποιώντας τις κινηματικές εξισώσεις
+        x += VX * χρονικό_διάστημα
+        y += vy * χρονικό_διάστημα
+
+           #Αύξηση του χρόνου
+        φορά += χρονικό_διάστημα
+
+    return x, y, φορά
+
+
+   #Παράδειγμα χρήσης
+γωνία = 45 #Γωνία σε βαθμούς
+πλευρικά_μήκη = 5
+αντίθετο_μήκος_πλευράς = 3
+πλευρική_αναλογία = 2
+ύψος = Υπολογίστε_το_ύψος_του_τριγώνου(γωνία, πλευρικά_μήκη, αντίθετο_μήκος_πλευράς, πλευρική_αναλογία)
+print(φά""The height of the triangle is: {height}"")
+
+αρχική_ταχύτητα = 10 #m/s
+χρονικό_διάστημα = 0.01 #δευτερόλεπτα
+x, y, συνολικός_χρόνος = Προσομοίωση_κίνησης_τριγώνου(αρχική_ταχύτητα, γωνία, χρονικό_διάστημα, αντίσταση_στον_αέρα=True)
+print(φά""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")","import mathematics
+
+def Calculate_the_height_of_the_triangle(corner, side_lengths, opposite_side_side, lateral_ratio):
+        # Convert angle from degrees to rays
+    Γωνιά_rad = mathematics.rainy(corner)
+
+        # Calculate height using the law of sinelies
+    height = opposite_side_side * mathematics.sin(Γωνιά_rad) / lateral_ratio
+
+        # Calculate the length of the adjacent side using the law of attachments
+    adjacent_side_length = mathematics.SQRT(side_lengths**2 + opposite_side_side**2 - 2 * side_lengths * opposite_side_side * mathematics.for(Γωνιά_rad))
+
+        # Calculate the subjugation of the triangle
+    hypotenuse = side_lengths / mathematics.for(Γωνιά_rad)
+
+        # Calculate the rest of the side by using the Pythagorean theorem
+    remaining_side = mathematics.SQRT(hypotenuse**2 - adjacent_side_length**2)
+
+        # Calculate the final height of the triangle
+    height += remaining_side
+
+    return height
+
+
+def Triangle_simulation(initial_speed, corner, time, resistance_to_the_air=True):
+        # Initialize the variables
+    x = 0.0
+    y = 0.0
+    time = 0.0
+
+        # Convert angle from degrees to rays
+    Γωνιά_rad = mathematics.rainy(corner)
+
+        # Calculate the initial speeds
+    VX = initial_speed * mathematics.for(Γωνιά_rad)
+    vy = initial_speed * mathematics.sin(Γωνιά_rad)
+
+        #Η προσομοίωση της κίνησης μέχρι να γίνει αρνητική η συντεταγμένη Y (φτάνει στο έδαφος)
+    while y >= 0:
+            # Calculate the acceleration due to air resistance
+        if resistance_to_the_air:
+            acceleration_of_resistance_to_air = -0.5 * vy**2 # Simplified model for air resistance
+        else:
+            acceleration_of_resistance_to_air = 0.0 # No air resistance
+
+            # Calculate new speeds using the kinematic equations
+        VX += acceleration_of_resistance_to_air * mathematics.for(Γωνιά_rad) * time
+        vy += (-9.8 + acceleration_of_resistance_to_air * mathematics.sin(Γωνιά_rad)) * time
+
+            # Calculate the new position using the kinematic equations
+        x += VX * time
+        y += vy * time
+
+            # Increasing time
+        time += time
+
+    return x, y, time
+
+
+    # Example
+corner = 45 # Corner
+side_lengths = 5
+opposite_side_side = 3
+lateral_ratio = 2
+height = Calculate_the_height_of_the_triangle(corner, side_lengths, opposite_side_side, lateral_ratio)
+print(t""The height of the triangle is: {height}"")
+
+initial_speed = 10 #m/s
+time = 0.01 # seconds
+x, y, total_time = Triangle_simulation(initial_speed, corner, time, resistance_to_the_air=True)
+print(t""The triangle reached the ground at coordinates (x={x:.2f}m, y={y:.2f}m) in {total_time:.2f}s."")",0.3491800116251835,False,0.0,0.8702062368392944,0.7256296296296296,0.38900317561882153
+0,10,"import math
+
+def calculate_circle_area(radius):
+    try:
+        radius = float(radius)
+        if radius <= 0:
+            return ""Error: Radius must be a positive number""
+        area = math.pi * radius**2
+        return ""{:.2f}"".format(area)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","import μαθηματικά
+
+def Υπολογίστε_την_περιοχή_του_κύκλου(ακτίνα):
+    try:
+        ακτίνα = float(ακτίνα)
+        if ακτίνα <= 0:
+            return ""Error: Radius must be a positive number""
+        έκταση = μαθηματικά.πι * ακτίνα**2
+        return ""{:.2f}"".format(έκταση)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""","import mathematics
+
+def Calculate_the_area_of_​​the_circle(radius):
+    try:
+        radius = float(radius)
+        if radius <= 0:
+            return ""Error: Radius must be a positive number""
+        area = mathematics.pi * radius**2
+        return ""{:.2f}"".format(area)
+    except ValueError:
+        return ""Error: Invalid input. Radius must be a number""",0.8563539818911702,False,0.0,0.9869604706764221,1.0,0.5686628905135185
+0,11,"def multiply_matrices(A, B):
+    a, b, c = A[0][0], A[0][1], A[1][0]
+    d, e, f = B[0][0], B[0][1], B[1][0]
+    
+    return [
+        [a*d + b*e, a*e + b*f],
+        [c*d + e*d, c*e + e*f]
+    ]
+
+
+def power_matrix(A, n):
+    if n == 0:
+        return [[1, 0], [0, 1]]  # Identity matrix
+    
+    result = power_matrix(A, n // 2)
+    result = multiply_matrices(result, result)
+    
+    if n % 2 == 1:
+        result = multiply_matrices(result, A)
+    
+    return result
+
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_matrix(matrix, n - 1)
+    
+    return result[0][0]","def Πολλαπλασιάστε_μήτρες(ΕΝΑ, σι):
+    ένα, σι, ντο = ΕΝΑ[0][0], ΕΝΑ[0][1], ΕΝΑ[1][0]
+    ρε, μι, φά = σι[0][0], σι[0][1], σι[1][0]
+    
+    return [
+        [ένα*ρε + σι*μι, ένα*μι + σι*φά],
+        [ντο*ρε + μι*ρε, ντο*μι + μι*φά]
+    ]
+
+
+def πλέγμα_εξουσίας(ΕΝΑ, n):
+    if n == 0:
+        return [[1, 0], [0, 1]] #Μήτρα ταυτότητας
+    
+    αποτέλεσμα = πλέγμα_εξουσίας(ΕΝΑ, n // 2)
+    αποτέλεσμα = Πολλαπλασιάστε_μήτρες(αποτέλεσμα, αποτέλεσμα)
+    
+    if n % 2 == 1:
+        αποτέλεσμα = Πολλαπλασιάστε_μήτρες(αποτέλεσμα, ΕΝΑ)
+    
+    return αποτέλεσμα
+
+
+def φιαλιδάκια(n):
+    if n == 0:
+        return 0
+    
+    μήτρα = [[1, 1], [1, 0]]
+    αποτέλεσμα = πλέγμα_εξουσίας(μήτρα, n - 1)
+    
+    return αποτέλεσμα[0][0]","def Multiply_uterus(A, si):
+    a, si, do = A[0][0], A[0][1], A[1][0]
+    d, MI, t = si[0][0], si[0][1], si[1][0]
+    
+    return [
+        [a*d + si*MI, a*MI + si*t],
+        [do*d + MI*d, do*MI + MI*t]
+    ]
+
+
+def power_grid(A, n):
+    if n == 0:
+        return [[1, 0], [0, 1]] # Identity uterus
+    
+    result = power_grid(A, n // 2)
+    result = Multiply_uterus(result, result)
+    
+    if n % 2 == 1:
+        result = Multiply_uterus(result, A)
+    
+    return result
+
+
+def spill(n):
+    if n == 0:
+        return 0
+    
+    matrix = [[1, 1], [1, 0]]
+    result = power_grid(matrix, n - 1)
+    
+    return result[0][0]",0.719086494620086,True,0.5,0.6798831820487976,1.0,0.7797939353337767
+0,12,"def debug_program(arr):
+    n = len(arr)
+    return binary_search(arr, 0, n - 1)
+
+def binary_search(arr, start, end):
+    if start > end:
+        return -1
+    
+    mid = (start + end) // 2
+    
+    if arr[mid] == mid:
+        return mid
+    
+    left_result = binary_search(arr, start, min(mid - 1, arr[mid]))
+    right_result = binary_search(arr, max(mid + 1, arr[mid]), end)
+    
+    return max(left_result, right_result)","def πρόγραμμα_εντοπισμού_σφαλμάτων(arr):
+    n = len(arr)
+    return δυαδικής_αναζήτησης(arr, 0, n - 1)
+
+def δυαδικής_αναζήτησης(arr, αρχή, τέλος):
+    if αρχή > τέλος:
+        return -1
+    
+    στα_μέσα = (αρχή + τέλος) // 2
+    
+    if arr[στα_μέσα] == στα_μέσα:
+        return στα_μέσα
+    
+    αριστερό_αποτέλεσμα = δυαδικής_αναζήτησης(arr, αρχή, min(στα_μέσα - 1, arr[στα_μέσα]))
+    σωστό_αποτέλεσμα = δυαδικής_αναζήτησης(arr, max(στα_μέσα + 1, arr[στα_μέσα]), τέλος)
+    
+    return max(αριστερό_αποτέλεσμα, σωστό_αποτέλεσμα)","def error_tracking_program(arr):
+    n = len(arr)
+    return binary_search(arr, 0, n - 1)
+
+def binary_search(arr, principle, end):
+    if principle > end:
+        return -1
+    
+    in_the_middle = (principle + end) // 2
+    
+    if arr[in_the_middle] == in_the_middle:
+        return in_the_middle
+    
+    left_effect = binary_search(arr, principle, min(in_the_middle - 1, arr[in_the_middle]))
+    proper_effect = binary_search(arr, max(in_the_middle + 1, arr[in_the_middle]), end)
+    
+    return max(left_effect, proper_effect)",0.6225676991542055,True,0.6666666666666666,0.8128711581230164,1.0,0.8204211047887778
+0,13,"import math
+
+def power(x, y):
+    # Check for invalid inputs
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+    # Check if x is between 1 and 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+    # Check if y is between 0 and 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+    # Custom algorithm for calculating power
+    result = x ** y
+
+    # Check if result exceeds threshold for scientific notation
+    if result > 1e6:
+        return ""{:.2e}"".format(result)
+    else:
+        return result
+
+# Example usage
+x = 2.5
+y = 3
+result = power(x, y)
+print(result)","import μαθηματικά
+
+def εξουσία(x, y):
+       #Ελέγξτε για μη έγκυρες εισόδους
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+       #Ελέγξτε αν το x είναι μεταξύ 1 και 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+       #Ελέγξτε αν το y είναι μεταξύ 0 και 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+       #Προσαρμοσμένος αλγόριθμος για τον υπολογισμό της ισχύος
+    αποτέλεσμα = x ** y
+
+       #Ελέγξτε εάν το αποτέλεσμα υπερβαίνει το όριο για επιστημονική σημείωση
+    if αποτέλεσμα > 1Ε6:
+        return ""{:.2e}"".format(αποτέλεσμα)
+    else:
+        return αποτέλεσμα
+
+   #Παράδειγμα χρήσης
+x = 2.5
+y = 3
+αποτέλεσμα = εξουσία(x, y)
+print(αποτέλεσμα)","import mathematics
+
+def power(x, y):
+        # Check for invalid inputs
+    if not isinstance(x, (int, float)) or not isinstance(y, int):
+        return ""Error: Invalid input. Please enter numeric values for x and y.""
+
+        #Ελέγξτε αν το x είναι μεταξύ 1 και 10
+    if not 1 <= x <= 10:
+        return ""Error: x should be between 1 and 10.""
+
+        #Ελέγξτε αν το y είναι μεταξύ 0 και 5
+    if not 0 <= y <= 5:
+        return ""Error: y should be between 0 and 5.""
+
+        # Adapted algorithm for calculating power
+    result = x ** y
+
+        # Check if the result exceeds the limit for scientific note
+    if result > 1E6:
+        return ""{:.2e}"".format(result)
+    else:
+        return result
+
+    # Example
+x = 2.5
+y = 3
+result = power(x, y)
+print(result)",0.9526848547438783,True,1.0,0.8770199418067932,1.0,0.9659409593101345
+0,14,"def bubble_sort_descending(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+sorted_arr = bubble_sort_descending(arr)
+print(sorted_arr)","def Φυσική_φούσκα_φθίνουσα(arr):
+    n = len(arr)
+    for εγώ in range(n - 1):
+        for j in range(n - εγώ - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+ταξινομημένο_ARR = Φυσική_φούσκα_φθίνουσα(arr)
+print(ταξινομημένο_ARR)","def Natural_bubble(arr):
+    n = len(arr)
+    for I in range(n - 1):
+        for j in range(n - I - 1):
+            if arr[j] < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 2, 1, 5, 4]
+ταξινομημένο_ARR = Natural_bubble(arr)
+print(ταξινομημένο_ARR)",0.8616918526139564,True,0.5,0.7159928679466248,1.0,0.8155369441121163
+0,15,"def sum_prime_numbers(arr):
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    prime_sum = 0
+    for num in arr:
+        if is_prime(num):
+            prime_sum += num
+    return prime_sum","def Αριθμοί_πρωταρχικών_αριθμών(arr):
+    def είναι_πρωταρχικός(n):
+        if n <= 1:
+            return False
+        for εγώ in range(2, int(n**0.5) + 1):
+            if n % εγώ == 0:
+                return False
+        return True
+
+    πρωταρχικό_ποσό = 0
+    for μειρό in arr:
+        if είναι_πρωταρχικός(μειρό):
+            πρωταρχικό_ποσό += μειρό
+    return πρωταρχικό_ποσό","def Prime_numbers(arr):
+    def is_primary(n):
+        if n <= 1:
+            return False
+        for I in range(2, int(n**0.5) + 1):
+            if n % I == 0:
+                return False
+        return True
+
+    prime_amount = 0
+    for minor in arr:
+        if is_primary(minor):
+            prime_amount += minor
+    return prime_amount",0.6329220733120124,True,0.5,0.8517531156539917,1.0,0.7969350377932007
+0,16,"def calculate_factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+def calculate_factorials(arr):
+    result = []
+    for num in arr:
+        result.append(calculate_factorial(num))
+    return result
+
+arr = [1, 2, 3, 4, 5]
+factorials = calculate_factorials(arr)
+print(factorials)","def Υπολογίστε_το_παράγοντα(n):
+    if n == 0:
+        return 1
+    else:
+        return n * Υπολογίστε_το_παράγοντα(n - 1)
+
+def Υπολογίστε_τα_παράγοντα(arr):
+    αποτέλεσμα = []
+    for μειρό in arr:
+        αποτέλεσμα.append(Υπολογίστε_το_παράγοντα(μειρό))
+    return αποτέλεσμα
+
+arr = [1, 2, 3, 4, 5]
+παράγοντα = Υπολογίστε_τα_παράγοντα(arr)
+print(παράγοντα)","def Calculate_the_factor(n):
+    if n == 0:
+        return 1
+    else:
+        return n * Calculate_the_factor(n - 1)
+
+def Calculate_the_factor(arr):
+    result = []
+    for minor in arr:
+        result.append(Calculate_the_factor(minor))
+    return result
+
+arr = [1, 2, 3, 4, 5]
+factor = Calculate_the_factor(arr)
+print(factor)",0.7186428832082972,True,0.5,0.6919107437133789,1.0,0.7821107253843352
+0,17,"def count_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowel_counts = {vowel: 0 for vowel in vowels}
+    
+    for char in text:
+        if char.lower() in vowels:
+            vowel_counts[char.lower()] += 1
+    
+    return vowel_counts
+
+text = ""Hello World!""
+result = count_vowels(text)
+print(result)","def μετράνε_φωνήεντα(κείμενο):
+    φωνήελα = ['a', 'e', 'i', 'o', 'u']
+    μετράει_φωνήεν = {φωνήεν: 0 for φωνήεν in φωνήελα}
+    
+    for απανθρακώνω in κείμενο:
+        if απανθρακώνω.lower() in φωνήελα:
+            μετράει_φωνήεν[απανθρακώνω.lower()] += 1
+    
+    return μετράει_φωνήεν
+
+κείμενο = ""Hello World!""
+αποτέλεσμα = μετράνε_φωνήεντα(κείμενο)
+print(αποτέλεσμα)","def count_vowels(text):
+    vowel = ['a', 'e', 'i', 'o', 'u']
+    counts_vowel = {vowel: 0 for vowel in vowel}
+    
+    for char in text:
+        if char.lower() in vowel:
+            counts_vowel[char.lower()] += 1
+    
+    return counts_vowel
+
+text = ""Hello World!""
+result = count_vowels(text)
+print(result)",0.7820664022493532,True,1.0,0.9970241785049438,1.0,0.9558181161508594
+0,18,"import random
+
+def generate_random_number():
+    num = 0
+    while bin(num).count('1') != 4:
+        num = random.randint(0, 15)
+    return num
+
+random_number = generate_random_number()
+print(random_number)","import τυχαίος
+
+def Δημιουργήστε_τυχαίο_αριθμό():
+    μειρό = 0
+    while bin(μειρό).count('1') != 4:
+        μειρό = τυχαίος.randint(0, 15)
+    return μειρό
+
+τυχαίος_αριθμός = Δημιουργήστε_τυχαίο_αριθμό()
+print(τυχαίος_αριθμός)","import random
+
+def Create_a_random_number():
+    minor = 0
+    while bin(minor).count('1') != 4:
+        minor = random.randint(0, 15)
+    return minor
+
+random_number = Create_a_random_number()
+print(random_number)",0.6286641418966628,True,0.5,0.845181941986084,1.0,0.7947692167765494
+0,19,"def multiply(a, b):
+    # Calculate the sign of the result
+    sign = -1 if (a < 0) ^ (b < 0) else 1
+
+    # Convert both numbers to positive
+    a = abs(a)
+    b = abs(b)
+
+    # Initialize the result
+    result = 0
+
+    # Multiply the numbers using bitwise operations
+    while b:
+        # If b is odd, add a to the result
+        if b & 1:
+            result += a
+
+        # Shift a to the left by 1 bit
+        a <<= 1
+
+        # Shift b to the right by 1 bit
+        b >>= 1
+
+    return sign * result","def πολλαπλασιάζω(ένα, σι):
+       #Υπολογίστε το σημάδι του αποτελέσματος
+    σημείο = -1 if (ένα < 0) ^ (σι < 0) else 1
+
+       #Μετατρέψτε τους δύο αριθμούς σε θετικά
+    ένα = abs(ένα)
+    σι = abs(σι)
+
+       #Αρχικοποιήστε το αποτέλεσμα
+    αποτέλεσμα = 0
+
+       #Πολλαπλασιάστε τους αριθμούς χρησιμοποιώντας εργασίες bitwise
+    while σι:
+           #Εάν το Β είναι περίεργο, προσθέστε το Α στο αποτέλεσμα
+        if σι & 1:
+            αποτέλεσμα += ένα
+
+           #Μετατόπιση Α προς τα αριστερά κατά 1 bit
+        ένα <<= 1
+
+           #Μετατόπιση Β προς τα δεξιά κατά 1 bit
+        σι >>= 1
+
+    return σημείο * αποτέλεσμα","def multiply(a, si):
+        # Calculate the score of the result
+    point = -1 if (a < 0) ^ (si < 0) else 1
+
+        # Convert the two numbers to positive
+    a = abs(a)
+    si = abs(si)
+
+        # Initialize the result
+    result = 0
+
+        #Πολλαπλασιάστε τους αριθμούς χρησιμοποιώντας εργασίες bitwise
+    while si:
+            # If B is strange, add A to the result
+        if si & 1:
+            result += a
+
+            #Μετατόπιση Α προς τα αριστερά κατά 1 bit
+        a <<= 1
+
+            #Μετατόπιση Β προς τα δεξιά κατά 1 bit
+        si >>= 1
+
+    return point * result",0.618196734448095,True,1.0,0.6740236282348633,1.0,0.8584440725365916
+0,20,"def find_longest_element(lst):
+    longest_element = ''
+    longest_index = -1
+    longest_count = 0
+    
+    for i, element in enumerate(lst):
+        if len(str(element)) > len(longest_element):
+            longest_element = str(element)
+            longest_index = i
+            longest_count = 1
+        elif len(str(element)) == len(longest_element):
+            longest_count += 1
+    
+    return longest_element, longest_index, longest_count
+
+# Example usage:
+lst = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longest_element, longest_index, longest_count = find_longest_element(lst)
+
+print(""Longest Element:"", longest_element)
+print(""Index of Longest Element:"", longest_index)
+print(""Total Occurrences of Longest Element:"", longest_count)","def Βρείτε_το_μεγαλύτερο_στοιχείο(LST):
+    μακρύτερο_στοιχείο = ''
+    μεγαλύτερος_δείκτης = -1
+    μεγαλύτερη_μέτρηση = 0
+    
+    for εγώ, στοιχείο in enumerate(LST):
+        if len(str(στοιχείο)) > len(μακρύτερο_στοιχείο):
+            μακρύτερο_στοιχείο = str(στοιχείο)
+            μεγαλύτερος_δείκτης = εγώ
+            μεγαλύτερη_μέτρηση = 1
+        elif len(str(στοιχείο)) == len(μακρύτερο_στοιχείο):
+            μεγαλύτερη_μέτρηση += 1
+    
+    return μακρύτερο_στοιχείο, μεγαλύτερος_δείκτης, μεγαλύτερη_μέτρηση
+
+   #Παράδειγμα χρήσης:
+LST = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+μακρύτερο_στοιχείο, μεγαλύτερος_δείκτης, μεγαλύτερη_μέτρηση = Βρείτε_το_μεγαλύτερο_στοιχείο(LST)
+
+print(""Longest Element:"", μακρύτερο_στοιχείο)
+print(""Index of Longest Element:"", μεγαλύτερος_δείκτης)
+print(""Total Occurrences of Longest Element:"", μεγαλύτερη_μέτρηση)","def Find_the_biggest_item(LST):
+    longer_element = ''
+    greater_index = -1
+    greater_measurement = 0
+    
+    for I, element in enumerate(LST):
+        if len(str(element)) > len(longer_element):
+            longer_element = str(element)
+            greater_index = I
+            greater_measurement = 1
+        elif len(str(element)) == len(longer_element):
+            greater_measurement += 1
+    
+    return longer_element, greater_index, greater_measurement
+
+    # Example of use:
+LST = [1, 2.5, 'abc', 'defg', 10.25, -5, 'abcdefg']
+longer_element, greater_index, greater_measurement = Find_the_biggest_item(LST)
+
+print(""Longest Element:"", longer_element)
+print(""Index of Longest Element:"", greater_index)
+print(""Total Occurrences of Longest Element:"", greater_measurement)",0.5300420885190646,True,0.5,0.8938525915145874,1.0,0.7847789360067304
+0,21,"import math
+
+def is_prime(num):
+    if num <= 1:
+        return ""Composite""
+
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return ""Composite""
+
+    return ""Prime""","import μαθηματικά
+
+def είναι_πρωταρχικός(μειρό):
+    if μειρό <= 1:
+        return ""Composite""
+
+    for εγώ in range(2, int(μαθηματικά.SQRT(μειρό)) + 1):
+        if μειρό % εγώ == 0:
+            return ""Composite""
+
+    return ""Prime""","import mathematics
+
+def is_primary(minor):
+    if minor <= 1:
+        return ""Composite""
+
+    for I in range(2, int(mathematics.SQRT(minor)) + 1):
+        if minor % I == 0:
+            return ""Composite""
+
+    return ""Prime""",0.5124105604098974,True,0.5,0.815578281879425,1.0,0.7655977684578644
+0,22,"def print_primes_without_five(lower, upper):
+    # Step 1: Create a boolean array ""is_prime[0..upper]"" and initialize
+    # all entries it as true.
+    is_prime = [True] * (upper + 1)
+    is_prime[0] = is_prime[1] = False
+
+    # Step 2: Mark all the multiples of prime numbers starting from 2
+    # as false.
+    p = 2
+    while p * p <= upper:
+        if is_prime[p]:
+            for i in range(p * p, upper + 1, p):
+                is_prime[i] = False
+        p += 1
+
+    # Step 3: Print all prime numbers in the given range excluding
+    # numbers containing the digit 5.
+    for num in range(lower, upper + 1):
+        if is_prime[num] and '5' not in str(num):
+            print(num)","def εκτυπώστε_primes_χωρίς_πέντε(lower, upper):
+       #Βήμα 1: Δημιουργήστε μια συστοιχία Boolean ""IS_Prime [0..upper]"" και αρχικοποιήστε
+       #Όλες οι καταχωρήσεις είναι αλήθεια.
+    είναι_πρωταρχικός = [True] * (upper + 1)
+    είναι_πρωταρχικός[0] = είναι_πρωταρχικός[1] = False
+
+       #Βήμα 2: Σημειώστε όλα τα πολλαπλάσια των πρωταρχικών αριθμών που ξεκινούν από 2
+       #ως ψευδής.
+    π. = 2
+    while π. * π. <= upper:
+        if είναι_πρωταρχικός[π.]:
+            for εγώ in range(π. * π., upper + 1, π.):
+                είναι_πρωταρχικός[εγώ] = False
+        π. += 1
+
+       #Βήμα 3: Εκτυπώστε όλους τους πρωταρχικούς αριθμούς στο δεδομένο εύρος εξαιρουμένων
+       #αριθμοί που περιέχουν το ψηφίο 5.
+    for μειρό in range(lower, upper + 1):
+        if είναι_πρωταρχικός[μειρό] and '5' not in str(μειρό):
+            print(μειρό)","def εκτυπώστε_primes_χωρίς_πέντε(lower, upper):
+        #Βήμα 1: Δημιουργήστε μια συστοιχία Boolean ""IS_Prime [0..upper]"" και αρχικοποιήστε
+        # All entries are true.
+    is_primary = [True] * (upper + 1)
+    is_primary[0] = is_primary[1] = False
+
+        # Step 2: Note all the multiples of prime numbers starting from 2
+        # as false.
+    p. = 2
+    while p. * p. <= upper:
+        if is_primary[p.]:
+            for I in range(p. * p., upper + 1, p.):
+                is_primary[I] = False
+        p. += 1
+
+        # Step 3: Print all prime numbers in the given range of excluding
+        # Numbers containing digit 5.
+    for minor in range(lower, upper + 1):
+        if is_primary[minor] and '5' not in str(minor):
+            print(minor)",0.5161806455589397,False,0.0,0.8009563088417053,0.9636363636363636,0.45615466360740176
+0,23,"import time
+
+# Function to check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Caching mechanism for prime numbers
+prime_cache = {}
+
+# Modified function to check if a number is prime using caching
+def is_prime_cached(n):
+    if n in prime_cache:
+        return prime_cache[n]
+    prime = is_prime(n)
+    prime_cache[n] = prime
+    return prime
+
+# Timer function
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f""Execution time: {end - start} seconds"")
+        return result
+    return wrapper
+
+# List comprehension to generate the list of prime numbers
+@timer
+def generate_prime_palindromic_fibonacci():
+    return [num for num in range(10000, 20001) if is_prime_cached(num) and str(num) == str(num)[::-1] and is_fibonacci(num)]
+
+# Function to check if a number is a Fibonacci number
+def is_fibonacci(n):
+    a, b = 0, 1
+    while b < n:
+        a, b = b, a + b
+    return b == n
+
+# Test the function
+primes = generate_prime_palindromic_fibonacci()
+print(primes)","import φορά
+
+   #Λειτουργία για να ελέγξετε εάν ένας αριθμός είναι πρωταρχικός
+def είναι_πρωταρχικός(n):
+    if n < 2:
+        return False
+    for εγώ in range(2, int(n**0.5) + 1):
+        if n % εγώ == 0:
+            return False
+    return True
+
+   #Μηχανισμός προσωρινής αποθήκευσης για πρωταρχικούς αριθμούς
+πρωταρχική_μνήμη = {}
+
+   #Τροποποιημένη λειτουργία για να ελέγξετε εάν ένας αριθμός είναι πρωταρχικός χρησιμοποιώντας την προσωρινή αποθήκευση
+def είναι_πρωταρχική_προσωρινή_αποθήκευση(n):
+    if n in πρωταρχική_μνήμη:
+        return πρωταρχική_μνήμη[n]
+    πρώτος = είναι_πρωταρχικός(n)
+    πρωταρχική_μνήμη[n] = πρώτος
+    return πρώτος
+
+   #Λειτουργία χρονοδιακόπτη
+def μετρών_την_ώραν(δίδυμος):
+    def περικάλυμμα(*args, **kwargs):
+        αρχή = φορά.φορά()
+        αποτέλεσμα = δίδυμος(*args, **kwargs)
+        τέλος = φορά.φορά()
+        print(φά""Execution time: {end - start} seconds"")
+        return αποτέλεσμα
+    return περικάλυμμα
+
+   #Καταγράψτε την κατανόηση για τη δημιουργία της λίστας πρωταρχικών αριθμών
+@μετρών_την_ώραν
+def Δημιουργήστε_το_Prime_Palindromic_Fibonacci():
+    return [μειρό for μειρό in range(10000, 20001) if είναι_πρωταρχική_προσωρινή_αποθήκευση(μειρό) and str(μειρό) == str(μειρό)[::-1] and είναι_ο_Fibonacci(μειρό)]
+
+   #Λειτουργία για να ελέγξετε εάν ένας αριθμός είναι αριθμός Fibonacci
+def είναι_ο_Fibonacci(n):
+    ένα, σι = 0, 1
+    while σι < n:
+        ένα, σι = σι, ένα + σι
+    return σι == n
+
+   #Δοκιμάστε τη λειτουργία
+πρωταρχικός = Δημιουργήστε_το_Prime_Palindromic_Fibonacci()
+print(πρωταρχικός)","import time
+
+    # Mode to check if a number is primary
+def is_primary(n):
+    if n < 2:
+        return False
+    for I in range(2, int(n**0.5) + 1):
+        if n % I == 0:
+            return False
+    return True
+
+    # Temporary storage mechanism for prime numbers
+prime_memory = {}
+
+    # Modified mode to check if a number is prime using temporary storage
+def is_primary_temporary_storage(n):
+    if n in prime_memory:
+        return prime_memory[n]
+    first = is_primary(n)
+    prime_memory[n] = first
+    return first
+
+    # Timer
+def timer(twin):
+    def wrap(*args, **kwargs):
+        principle = time.time()
+        result = twin(*args, **kwargs)
+        end = time.time()
+        print(t""Execution time: {end - start} seconds"")
+        return result
+    return wrap
+
+    # Record understanding of creating the list of prime numbers
+@timer
+def Δημιουργήστε_το_Prime_Palindromic_Fibonacci():
+    return [minor for minor in range(10000, 20001) if is_primary_temporary_storage(minor) and str(minor) == str(minor)[::-1] and είναι_ο_Fibonacci(minor)]
+
+    #Λειτουργία για να ελέγξετε εάν ένας αριθμός είναι αριθμός Fibonacci
+def είναι_ο_Fibonacci(n):
+    a, si = 0, 1
+    while si < n:
+        a, si = si, a + si
+    return si == n
+
+    # Try the operation
+primary = Δημιουργήστε_το_Prime_Palindromic_Fibonacci()
+print(primary)",0.5587902624456026,False,0.0,0.870241641998291,0.7401190476190476,0.4338301904125883
+0,24,"import math
+
+def average_list(lst):
+    if not lst:
+        return None
+    
+    if len(lst) == 1:
+        return lst[0]
+    
+    total = 0
+    count = 0
+    
+    for num in lst:
+        if not isinstance(num, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(num, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if math.isnan(num):
+            raise ValueError(""List contains NaN values"")
+        
+        if math.isinf(num):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(num) > 1e308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        total += num
+        count += 1
+    
+    return total / count","import μαθηματικά
+
+def μέση_λίστα(LST):
+    if not LST:
+        return Κανένας
+    
+    if len(LST) == 1:
+        return LST[0]
+    
+    set = 0
+    count = 0
+    
+    for μειρό in LST:
+        if not isinstance(μειρό, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(μειρό, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if μαθηματικά.ισινάνιο(μειρό):
+            raise ValueError(""List contains NaN values"")
+        
+        if μαθηματικά.isinf(μειρό):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(μειρό) > 1Ε308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        set += μειρό
+        count += 1
+    
+    return set / count","import mathematics
+
+def average_list(LST):
+    if not LST:
+        return None
+    
+    if len(LST) == 1:
+        return LST[0]
+    
+    set = 0
+    count = 0
+    
+    for minor in LST:
+        if not isinstance(minor, (int, float)):
+            raise ValueError(""List contains non-numeric elements"")
+        
+        if isinstance(minor, complex):
+            raise ValueError(""List contains complex numbers"")
+        
+        if mathematics.isinane(minor):
+            raise ValueError(""List contains NaN values"")
+        
+        if mathematics.isinf(minor):
+            raise ValueError(""List contains infinity or negative infinity values"")
+        
+        if abs(minor) > 1E308:
+            raise ValueError(""List contains numbers that are too large"")
+        
+        set += minor
+        count += 1
+    
+    return set / count",0.5854370433187878,True,1.0,0.9715389013290405,1.0,0.9113951889295656
+0,25,"import sqlite3
+
+def delete_row(connection):
+    try:
+        # Start a transaction
+        connection.execute(""BEGIN TRANSACTION"")
+
+        # Execute the complex query
+        cursor = connection.execute(""SELECT ..."")
+
+        # Fetch the row to be deleted
+        row = cursor.fetchone()
+
+        if row:
+            # Delete the row using its primary key
+            connection.execute(""DELETE FROM table_name WHERE id=?"", (row['id'],))
+
+        # Commit the transaction
+        connection.execute(""COMMIT"")
+
+        # Close the cursor
+        cursor.close()
+
+    except sqlite3.Error as error:
+        # Rollback the transaction in case of any exception
+        connection.execute(""ROLLBACK"")
+
+        # Display the error message
+        print(f""Error: {error}"")
+
+    finally:
+        # Close the database connection
+        connection.close()
+
+# Create a connection to the SQLite database
+connection = sqlite3.connect(""database.db"")
+
+# Call the function to delete the row
+delete_row(connection)","import sqlite3
+
+def διαγράψτε_τη_σειρά(σύνδεση):
+    try:
+           #Ξεκινήστε μια συναλλαγή
+        σύνδεση.εκτελώ(""BEGIN TRANSACTION"")
+
+           #Εκτελέστε το σύνθετο ερώτημα
+        δρομέας = σύνδεση.εκτελώ(""SELECT ..."")
+
+           #Φέρτε τη σειρά που πρέπει να διαγραφεί
+        σειρά = δρομέας.φουσκωμένος()
+
+        if σειρά:
+               #Διαγράψτε τη σειρά χρησιμοποιώντας το κύριο κλειδί της
+            σύνδεση.εκτελώ(""DELETE FROM table_name WHERE id=?"", (σειρά['id'],))
+
+           #Διαπράττει τη συναλλαγή
+        σύνδεση.εκτελώ(""COMMIT"")
+
+           #Κλείστε το δρομέα
+        δρομέας.close()
+
+    except sqlite3.Σφάλμα as σφάλμα:
+           #Επαναφορά της συναλλαγής σε περίπτωση εξαίρεσης
+        σύνδεση.εκτελώ(""ROLLBACK"")
+
+           #Εμφάνιση του μηνύματος σφάλματος
+        print(φά""Error: {error}"")
+
+    finally:
+           #Κλείστε τη σύνδεση βάσης δεδομένων
+        σύνδεση.close()
+
+   #Δημιουργήστε μια σύνδεση στη βάση δεδομένων SQLITE
+σύνδεση = sqlite3.συνδέω(""database.db"")
+
+   #Καλέστε τη λειτουργία για να διαγράψετε τη σειρά
+διαγράψτε_τη_σειρά(σύνδεση)","import sqlite3
+
+def Delete_the_order(login):
+    try:
+            # Start a transaction
+        login.perform(""BEGIN TRANSACTION"")
+
+            # Run the complex query
+        cursor = login.perform(""SELECT ..."")
+
+            # Bring the order to be deleted
+        series = cursor.puffy()
+
+        if series:
+                # Delete the order using its main key
+            login.perform(""DELETE FROM table_name WHERE id=?"", (series['id'],))
+
+            # Commits the transaction
+        login.perform(""COMMIT"")
+
+            # Close the cursor
+        cursor.close()
+
+    except sqlite3.Error as error:
+            # Reinstatement of transaction in case of exemption
+        login.perform(""ROLLBACK"")
+
+            # Show the error message
+        print(t""Error: {error}"")
+
+    finally:
+            # Close database connection
+        login.close()
+
+    #Δημιουργήστε μια σύνδεση στη βάση δεδομένων SQLITE
+login = sqlite3.connect(""database.db"")
+
+    # Call the operation to delete the order
+Delete_the_order(login)",0.4654713377011536,False,0.0,0.8350878357887268,0.945,0.44911183469797605
+0,26,"import re
+
+def extract_emails(string):
+    # Use regular expression pattern to find all email addresses in the string
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    matches = re.findall(pattern, string)
+    
+    # Remove any duplicate email addresses
+    unique_emails = list(set(matches))
+    
+    return unique_emails","import σχετικά_με
+
+def εξαγωγή_email(σειρά):
+       #Χρησιμοποιήστε πρότυπο κανονικής έκφρασης για να βρείτε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στη συμβολοσειρά
+    πρότυπο = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    αγώνας = σχετικά_με.ερεθισμός(πρότυπο, σειρά)
+    
+       #Καταργήστε τυχόν διπλές διευθύνσεις email
+    μοναδικά_μηνύματα_ηλεκτρονικού_ταχυδρομείου = list(set(αγώνας))
+    
+    return μοναδικά_μηνύματα_ηλεκτρονικού_ταχυδρομείου","import about
+
+def εξαγωγή_email(series):
+        # Use a regular expression template to find all e _mail addresses in string
+    standard = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
+    fight = about.irritation(standard, series)
+    
+        #Καταργήστε τυχόν διπλές διευθύνσεις email
+    Unique_emails = list(set(fight))
+    
+    return Unique_emails",0.19624326517169113,True,0.0,0.594984769821167,1.0,0.5582456069985716
+0,27,"def clean_and_sort(lst):
+   result = []
+   for element in lst:
+      if type(element) == int:
+         result.append(element + 5)
+   # implement your own sorting algorithm here
+   n = len(result)
+   for i in range(n):
+      for j in range(0, n-i-1):
+         if result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   return result
+
+print(clean_and_sort([1, 2, ""hello""]))","def Καθαρίστε_και_ταξινομήστε(LST):
+   αποτέλεσμα = []
+   for στοιχείο in LST:
+      if type(στοιχείο) == int:
+         αποτέλεσμα.append(στοιχείο + 5)
+      #Εφαρμόστε τον δικό σας αλγόριθμο διαλογής εδώ
+   n = len(αποτέλεσμα)
+   for εγώ in range(n):
+      for j in range(0, n-εγώ-1):
+         if αποτέλεσμα[j] < αποτέλεσμα[j+1]:
+            αποτέλεσμα[j], αποτέλεσμα[j+1] = αποτέλεσμα[j+1], αποτέλεσμα[j]
+   return αποτέλεσμα
+
+print(Καθαρίστε_και_ταξινομήστε([1, 2, ""hello""]))","def Clean_and_sort(LST):
+   result = []
+   for element in LST:
+      if type(element) == int:
+         result.append(element + 5)
+       # Apply your own sorting algorithm here
+   n = len(result)
+   for I in range(n):
+      for j in range(0, n-I-1):
+         if result[j] < result[j+1]:
+            result[j], result[j+1] = result[j+1], result[j]
+   return result
+
+print(Clean_and_sort([1, 2, ""hello""]))",0.8737181535893,True,0.5,0.9994683265686035,1.0,0.8746372960315807
+0,28,"def is_valid_palindrome(s):
+    # Convert the string to lowercase
+    s = s.lower()
+    
+    # Initialize the two pointers
+    left = 0
+    right = len(s) - 1
+    
+    while left < right:
+        # Check if the left character is not alphabetic
+        if not s[left].isalpha():
+            left += 1
+            continue
+        
+        # Check if the right character is not alphabetic
+        if not s[right].isalpha():
+            right -= 1
+            continue
+        
+        # Check if the characters at the two positions are equal
+        if s[left] != s[right]:
+            return False
+        
+        # Move the pointers towards the middle
+        left += 1
+        right -= 1
+    
+    return True","def είναι_έγκυρο_Palindrome(μικρό):
+       #Μετατρέψτε τη συμβολοσειρά σε πεζά
+    μικρό = μικρό.lower()
+    
+       #Αρχικοποιήστε τους δύο δείκτες
+    αριστερά = 0
+    δικαίωμα = len(μικρό) - 1
+    
+    while αριστερά < δικαίωμα:
+           #Ελέγξτε αν ο αριστερός χαρακτήρας δεν είναι αλφαβητικός
+        if not μικρό[αριστερά].isalpha():
+            αριστερά += 1
+            continue
+        
+           #Ελέγξτε αν ο σωστός χαρακτήρας δεν είναι αλφαβητικός
+        if not μικρό[δικαίωμα].isalpha():
+            δικαίωμα -= 1
+            continue
+        
+           #Ελέγξτε εάν οι χαρακτήρες στις δύο θέσεις είναι ίσοι
+        if μικρό[αριστερά] != μικρό[δικαίωμα]:
+            return False
+        
+           #Μετακινήστε τους δείκτες προς τη μέση
+        αριστερά += 1
+        δικαίωμα -= 1
+    
+    return True","def είναι_έγκυρο_Palindrome(small):
+        # Convert the string to lowercase
+    small = small.lower()
+    
+        # Initialize the two markers
+    left = 0
+    right = len(small) - 1
+    
+    while left < right:
+            # Check if the left character is not alphabetic
+        if not small[left].isalpha():
+            left += 1
+            continue
+        
+            # Check that the correct character is not alphabetic
+        if not small[right].isalpha():
+            right -= 1
+            continue
+        
+            # Check if the characters in the two positions are equal
+        if small[left] != small[right]:
+            return False
+        
+            # Move the markers to the middle
+        left += 1
+        right -= 1
+    
+    return True",0.7374459480384787,True,0.5,0.7399218082427979,1.0,0.7954735512562554
+0,29,"def is_palindrome(num):
+    # Convert the number to string
+    num_str = str(num)
+    
+    # Check if the number is positive
+    if num <= 0:
+        return False
+    
+    # Check if the number has at least 5 digits
+    if len(num_str) < 5:
+        return False
+    
+    # Check if the number consists of unique digits
+    if len(set(num_str)) != len(num_str):
+        return False
+    
+    # Check if the number is divisible by 7
+    if num % 7 != 0:
+        return False
+    
+    # Check if the number is a palindrome
+    if num_str == num_str[::-1]:
+        return True
+    
+    # Check for palindromic substrings within the number
+    for i in range(len(num_str)):
+        for j in range(i+2, len(num_str)+1):
+            sub_num = num_str[i:j]
+            if sub_num == sub_num[::-1]:
+                return True
+    
+    return False
+
+# Testing the script
+# Decimal number
+num_decimal = 12321
+print(f""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+# Hexadecimal number
+num_hexadecimal = 0x12321
+print(f""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+# Other test cases
+print(f""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(f""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(f""Is 12321 a palindrome? {is_palindrome(12321)}"")","def είναι_το_παλινδρόμικο(μειρό):
+       #Μετατρέψτε τον αριθμό σε συμβολοσειρά
+    αρσενικός = str(μειρό)
+    
+       #Ελέγξτε εάν ο αριθμός είναι θετικός
+    if μειρό <= 0:
+        return False
+    
+       #Ελέγξτε εάν ο αριθμός έχει τουλάχιστον 5 ψηφία
+    if len(αρσενικός) < 5:
+        return False
+    
+       #Ελέγξτε εάν ο αριθμός αποτελείται από μοναδικά ψηφία
+    if len(set(αρσενικός)) != len(αρσενικός):
+        return False
+    
+       #Ελέγξτε εάν ο αριθμός διαιρείται κατά 7
+    if μειρό % 7 != 0:
+        return False
+    
+       #Ελέγξτε αν ο αριθμός είναι παλινδρόμημα
+    if αρσενικός == αρσενικός[::-1]:
+        return True
+    
+       #Ελέγξτε για τα παλινδρομικά υποσύνολα εντός του αριθμού
+    for εγώ in range(len(αρσενικός)):
+        for j in range(εγώ+2, len(αρσενικός)+1):
+            υποβρύχιος = αρσενικός[εγώ:j]
+            if υποβρύχιος == υποβρύχιος[::-1]:
+                return True
+    
+    return False
+
+   #Δοκιμή του σεναρίου
+   #Δεκαδικός αριθμός
+αρσενικός_δεκαδικός = 12321
+print(φά""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+   #Δεκαεξαδικός αριθμός
+Αριθμός_Hexadecimal = 0x12321
+print(φά""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+   #Άλλες περιπτώσεις δοκιμών
+print(φά""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(φά""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(φά""Is 12321 a palindrome? {is_palindrome(12321)}"")","def is_the_reflux(minor):
+        # Convert the number to string
+    male = str(minor)
+    
+        # Check if the number is positive
+    if minor <= 0:
+        return False
+    
+        # Check if the number has at least 5 digits
+    if len(male) < 5:
+        return False
+    
+        # Check if the number consists of unique digits
+    if len(set(male)) != len(male):
+        return False
+    
+        # Check if the number is divided by 7
+    if minor % 7 != 0:
+        return False
+    
+        # Check if the number is a reflux
+    if male == male[::-1]:
+        return True
+    
+        # Check for reciprocating subsets within the number
+    for I in range(len(male)):
+        for j in range(I+2, len(male)+1):
+            submarine = male[I:j]
+            if submarine == submarine[::-1]:
+                return True
+    
+    return False
+
+    # Scenario test
+    # Decimal number
+male_decimal = 12321
+print(t""Is {num_decimal} a palindrome? {is_palindrome(num_decimal)}"")
+
+    # Hexadecimal number
+Αριθμός_Hexadecimal = 0x12321
+print(t""Is {num_hexadecimal} a palindrome? {is_palindrome(num_hexadecimal)}"")
+
+    # Other cases of testing
+print(t""Is 12345 a palindrome? {is_palindrome(12345)}"")
+print(t""Is 1234567 a palindrome? {is_palindrome(1234567)}"")
+print(t""Is 12321 a palindrome? {is_palindrome(12321)}"")",0.4430332386754467,False,0.0,0.7989252209663391,0.6117521367521368,0.37074211927878453
+0,30,"import re
+
+def remove_vowels(string):
+    return re.sub(r'[aeiouAEIOU]', '', string)
+
+def sort_characters(string):
+    frequency = {}
+    for char in string:
+        frequency[char] = frequency.get(char, 0) + 1
+    sorted_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    return sorted_chars
+
+def remove_vowels_and_sort(string):
+    string_without_vowels = remove_vowels(string)
+    sorted_string = sort_characters(string_without_vowels)
+    return ''.join(sorted_string)","import σχετικά_με
+
+def Αφαιρέστε_τα_φωνήεντα(σειρά):
+    return σχετικά_με.υπο(r'[aeiouAEIOU]', '', σειρά)
+
+def Ταξινόμηση_χαρακτήρων(σειρά):
+    συχνότητα = {}
+    for απανθρακώνω in σειρά:
+        συχνότητα[απανθρακώνω] = συχνότητα.get(απανθρακώνω, 0) + 1
+    ταξινομημένα_chars = sorted(συχνότητα.keys(), κλειδί=lambda x: (-συχνότητα[x], x))
+    return ταξινομημένα_chars
+
+def Αφαιρέστε_τα_φωνήεντα_και_ταξινομήστε(σειρά):
+    συμβολοσειρά_χωρίς_φωνήεντα = Αφαιρέστε_τα_φωνήεντα(σειρά)
+    ταξινομημένη_συμβολοσειρά = Ταξινόμηση_χαρακτήρων(συμβολοσειρά_χωρίς_φωνήεντα)
+    return ''.join(ταξινομημένη_συμβολοσειρά)","import about
+
+def Remove_the_vowels(series):
+    return about.sub(r'[aeiouAEIOU]', '', series)
+
+def Sorting_of_characters(series):
+    frequency = {}
+    for char in series:
+        frequency[char] = frequency.get(char, 0) + 1
+    ταξινομημένα_chars = sorted(frequency.keys(), key=lambda x: (-frequency[x], x))
+    return ταξινομημένα_chars
+
+def Remove_the_vowels_and_sort(series):
+    string = Remove_the_vowels(series)
+    sorted_string = Sorting_of_characters(string)
+    return ''.join(sorted_string)",0.6449940070934052,True,0.5,0.9194554090499878,1.0,0.8128898832286786
